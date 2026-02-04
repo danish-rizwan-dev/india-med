@@ -1,26 +1,82 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* This defines 'font-montserrat' for Tailwind v4 */
+  --font-montserrat: "Montserrat", sans-serif;
+
+  /* Brand Colors */
+  --color-brand-orange: #ee4423;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer components {
+  /* Exact Spec for the Brand Label (23px Bold) */
+  .brand-label {
+    font-family: var(--font-montserrat);
+    font-weight: 700;
+    font-size: 23px;
+    line-height: 39.19px;
+    letter-spacing: -0.38px;
+    color: var(--color-brand-orange);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  /* Glassmorphism Utility */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px 0 rgba(104, 33, 19, 0.08);
+  }
+}
+@layer components {
+  .specialty-card-glass {
+    /* Layered background: 
+       1. padding-box (The translucent center)
+       2. border-box (The two gradients for the 3px rim) 
+    */
+    background:
+      linear-gradient(rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.3))
+        padding-box,
+      linear-gradient(
+          39.31deg,
+          rgba(238, 68, 35, 0) 45.41%,
+          rgba(238, 68, 35, 0.4) 113.52%
+        )
+        border-box,
+      linear-gradient(
+          222.62deg,
+          rgba(255, 255, 255, 0) 14.53%,
+          rgba(255, 255, 255, 0.6) 101.14%
+        )
+        border-box;
+
+    border: 3px solid transparent;
+
+    /* Your requested props */
+    backdrop-filter: blur(50px);
+    -webkit-backdrop-filter: blur(50px);
+    box-shadow: 10px 20px 30px 0px #43293926;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .service-glass-card {
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 3px solid transparent;
+    border-image-source:
+      linear-gradient(
+        39.31deg,
+        rgba(238, 68, 35, 0) 45.41%,
+        rgba(238, 68, 35, 0.4) 113.52%
+      ),
+      linear-gradient(
+        222.62deg,
+        rgba(255, 255, 255, 0) 14.53%,
+        rgba(255, 255, 255, 0.6) 101.14%
+      );
+    border-image-slice: 1;
+    box-shadow: 0 8px 32px 0 rgba(104, 33, 19, 0.08);
+  }
 }
