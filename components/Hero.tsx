@@ -24,7 +24,7 @@ export default function Hero() {
       {/* ================= BACKGROUND GRID ================= */}
       <div className="absolute pointer-events-none z-0 hidden md:block md:w-[508px] md:h-[723px] md:top-[-70.33px] md:right-0">
         <Image
-          src="/backgroundgrids.png"
+          src="/images/backgrounds/backgroundgrids.png"
           alt=""
           fill
           className="object-contain object-right"
