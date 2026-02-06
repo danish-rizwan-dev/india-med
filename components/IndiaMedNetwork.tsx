@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Phone, ArrowUpRight } from "lucide-react";
 
 const hospitalData = [
   {
@@ -18,6 +18,27 @@ const hospitalData = [
     image: "/images/backgrounds/patna-hosp.jpg",
   }
 ];
+
+// Custom Location SVG with a circle in the middle
+const LocationIcon = () => (
+  <svg 
+    width="18" 
+    height="22" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    className="shrink-0"
+  >
+    <path 
+      d="M12 21C16 17.5 19 14.4183 19 10C19 6.13401 15.866 3 12 3C8.13401 3 5 6.13401 5 10C5 14.4183 8 17.5 12 21Z" 
+      stroke="white" 
+      strokeWidth="2" 
+      strokeLinecap="round" 
+      strokeLinejoin="round"
+    />
+    <circle cx="12" cy="10" r="2.5" fill="white" />
+  </svg>
+);
 
 export default function IndiaMedNetwork() {
   return (
@@ -35,7 +56,6 @@ export default function IndiaMedNetwork() {
 
       <div className="relative flex flex-col lg:flex-row items-center justify-center gap-[20px] w-full max-w-[1320px] px-4">
         
-        {/* Navigation Arrows */}
         <button className="absolute left-[-20px] z-30 h-12 w-12 hidden xl:flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all">
           <ChevronLeft size={24} strokeWidth={3} />
         </button>
@@ -43,19 +63,18 @@ export default function IndiaMedNetwork() {
         {hospitalData.map((hospital, index) => (
           <div 
             key={index}
-            className="relative overflow-hidden bg-[#EE4423] transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_25px_50px_-12px_rgba(238,68,35,0.25)]"
+            className="relative overflow-hidden bg-[#EE4423] transition-all duration-500 hover:scale-[1.01]"
             style={{ 
               width: "min(650px, 100%)", 
               height: "400px", 
               borderRadius: "40px",
-              /* Light Glassmorphic Outer Shadow */
-              boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 15px -2px rgba(0, 0, 0, 0.05)",
+              boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3), 0 10px 20px -5px rgba(238, 68, 35, 0.2)"
             }}
           >
-            {/* 1. TOP SECTION - Higher z-index to stay above image */}
             <div className="relative z-20 p-8 pb-0 flex flex-col gap-2">
               <div className="flex items-center gap-2 text-white/90">
-                <MapPin size={16} fill="white" />
+                {/* Updated SVG Icon */}
+                <LocationIcon />
                 <span className="text-sm font-bold uppercase tracking-wider">{hospital.location}</span>
               </div>
               <h3 className="text-white font-bold text-2xl lg:text-[28px] leading-tight max-w-[320px] drop-shadow-md">
@@ -63,13 +82,12 @@ export default function IndiaMedNetwork() {
               </h3>
             </div>
 
-            {/* 2. HOSPITAL IMAGE - Gradient Mask to clear text space */}
             <div 
               className="absolute top-0 right-0 w-3/5 h-[70%] z-10 overflow-hidden"
               style={{
                 borderRadius: "0 40px 0 80px",
-                WebkitMaskImage: "linear-gradient(to left, black 65%, transparent 100%)",
-                maskImage: "linear-gradient(to left, black 65%, transparent 100%)"
+                WebkitMaskImage: "linear-gradient(to left, black 70%, transparent 100%)",
+                maskImage: "linear-gradient(to left, black 70%, transparent 100%)"
               }}
             >
               <Image 
@@ -80,7 +98,6 @@ export default function IndiaMedNetwork() {
               />
             </div>
 
-            {/* 3. GLASSMORPHIC BOTTOM OVERLAY */}
             <div 
               className="absolute bottom-4 left-4 right-4 h-[180px] z-30 p-6 flex items-end justify-between transition-all duration-500"
               style={{
@@ -89,7 +106,7 @@ export default function IndiaMedNetwork() {
                 WebkitBackdropFilter: "blur(25px)",
                 borderRadius: "30px",
                 border: "1px solid rgba(255, 255, 255, 0.4)",
-                boxShadow: "inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 24px 0 rgba(0, 0, 0, 0.15)"
+                boxShadow: "inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.2)"
               }}
             >
               <div className="flex flex-col gap-3 max-w-[65%]">

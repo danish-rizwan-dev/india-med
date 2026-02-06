@@ -5,11 +5,11 @@ import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const destinations = [
-  { name: "India", icon: "/images/maps/indiamap.png" },
-  { name: "United Kingdom", icon: "/images/maps/ukmap.png" },
-  { name: "Saudi Arab", icon: "/images/maps/saudimap.png" },
-  { name: "Thailand", icon: "/images/maps/thailan.png" },
-  { name: "UAE", icon: "/images/maps/uae.png" },
+  { name: "India", icon: "/images/maps/india.svg" },
+  { name: "United Kingdom", icon: "/images/maps/uk.svg" },
+  { name: "Saudi Arab", icon: "/images/maps/saudisvg.svg" },
+  { name: "Thailand", icon: "/images/maps/thai.svg" },
+  { name: "UAE", icon: "/images/maps/uae.svg" },
 ];
 
 export default function FeaturedDestination() {
@@ -18,7 +18,6 @@ export default function FeaturedDestination() {
       <section className="relative w-full overflow-hidden bg-white lg:min-h-[750px] flex flex-col items-center justify-center py-16 lg:py-0 lg:mt-[-50px]">
         
         {/* ================= BACKGROUND ILLUSTRATION ================= */}
-        {/* Center alignment fix: used left-1/2 and translate-x to keep it centered behind content */}
         <div
           className="absolute pointer-events-none z-0 hidden lg:block lg:w-[1552px] lg:h-[573px] lg:top-1/2 lg:left-1/2 lg:-translate-x-1/2 lg:-translate-y-1/2"
         >
@@ -50,7 +49,6 @@ export default function FeaturedDestination() {
           </div>
 
           {/* ================= DESTINATION CARDS ================= */}
-          {/* Ensure grid and flex logic are centered */}
           <div className="grid grid-cols-2 md:grid-cols-3 lg:flex lg:flex-row items-center justify-center gap-4 lg:gap-[48px] w-full max-w-fit mx-auto lg:mt-[100px]">
             {destinations.map((dest, index) => (
               <div

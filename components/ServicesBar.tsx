@@ -5,11 +5,11 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ServiceBar() {
   const services = [
-    { label: "Second Opinion", icon: "/images/icons/docicon.png" },
-    { label: "Get Health Checkup", icon: "/images/icons/checkup.png" },
-    { label: "Homecare", icon: "/images/icons/homecare.png" },
-    { label: "Book a Virtual Consultation", icon: "/images/icons/vc.png" },
-    { label: "Book a Test", icon: "/images/icons/test.png" },
+    { label: "Second Opinion", icon: "/images/icons/doctor.svg" },
+    { label: "Get Health Checkup", icon: "/images/icons/gethealthcheckup.svg" },
+    { label: "Homecare", icon: "/images/icons/homecare.svg" },
+    { label: "Book a Virtual Consultation", icon: "/images/icons/virtualConsult.svg" },
+    { label: "Book a Test", icon: "/images/icons/booktest.svg" },
   ];
 
   const arrowGlassStyle = `
@@ -31,7 +31,6 @@ export default function ServiceBar() {
           -translate-y-[10%] lg:-translate-y-1/2
           rounded-[30px] lg:rounded-[50px]
           p-4 lg:p-[23px]
-          /* This ensures it doesn't leave a massive gap below it */
           mb-[-50px] lg:mb-[10px] lg:mt-[-200px]
         "
         style={{
