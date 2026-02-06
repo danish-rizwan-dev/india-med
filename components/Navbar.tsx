@@ -28,7 +28,7 @@ export default function Navbar() {
         <div className="flex-shrink-0">
           <Link href="/" aria-label="India Med Service Home">
             <Image
-              src="/logo.png" 
+              src="/images/logo.png" 
               alt="India Med Service - Healthcare Solutions in India"
               width={193} 
               height={65}

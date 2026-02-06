@@ -16,8 +16,10 @@ export default function Hero() {
 
   return (
     <section
-      className="relative w-full bg-white overflow-hidden
-      px-6 py-12 lg:px-0 lg:py-0 lg:min-h-[850px]"
+      className="
+        relative w-full bg-white overflow-hidden
+        px-6 py-12 lg:px-0 lg:py-0 lg:min-h-[850px]
+      "
     >
       {/* ================= BACKGROUND GRID ================= */}
       <div
@@ -44,54 +46,67 @@ export default function Hero() {
         {/* ================= LEFT CONTENT ================= */}
         <div
           className="
-            relative lg:absolute flex flex-col z-10
+            relative lg:absolute z-10
+            flex flex-col
             w-full max-w-[584px]
             text-center lg:text-left
-            gap-[45px]
+            gap-[30px] sm:gap-[35px] lg:gap-[45px]
           "
           style={{
-            // ONLY apply desktop positioning
-            top: "75px",
-            left: "208px",
+            top: "auto",
+            left: "auto",
           }}
         >
-          <div className="flex flex-col gap-[20px]">
-            <p className="brand-label">
-              India Med Services
-            </p>
+          {/* 👇 keep exact desktop positioning */}
+          <div className="lg:[top:75px] lg:[left:208px] lg:absolute w-full">
+            <div className="flex flex-col gap-[20px]">
+              <p className="brand-label">India Med Services</p>
 
-            <h1 className="text-[#444444] font-montserrat font-bold
-              text-[30px] sm:text-[36px] lg:text-[47px] leading-tight">
-              Affordable Medical Treatment in India with World-Class Care
-            </h1>
+              <h1
+                className="
+                  text-[#444444] font-montserrat font-bold
+                  text-[28px] sm:text-[34px] md:text-[40px] lg:text-[47px]
+                  leading-tight
+                "
+              >
+                Affordable Medical Treatment in India with World-Class Care
+              </h1>
 
-            <p className="font-montserrat font-semibold
-              text-[15px] sm:text-[16px] lg:text-[17px]
-              leading-normal text-[#58595B]">
-              Looking for medical treatment in India? We help you compare treatment costs in India,
-              choose top hospitals and get complete visa & patient support.
-            </p>
+              <p
+                className="
+                  font-montserrat font-semibold
+                  text-[15px] sm:text-[16px] lg:text-[17px]
+                  leading-normal text-[#58595B]
+                "
+              >
+                Looking for medical treatment in India? We help you compare treatment costs in India,
+                choose top hospitals and get complete visa & patient support.
+              </p>
+            </div>
+
+            <Link
+              href="/appointment"
+              className="
+                flex items-center justify-center
+                bg-[#EE4423] text-white
+                transition-transform hover:scale-[1.02] active:scale-[0.98]
+                shadow-[0px_10px_20px_rgba(238,68,35,0.2)]
+                mx-auto lg:mx-0 mt-6
+              "
+              style={{
+                width: "252.18px",
+                height: "49px",
+                padding: "0 20px",
+                gap: "15px",
+                borderRadius: "50px",
+              }}
+            >
+              <CalendarIcon />
+              <span className="font-montserrat font-bold text-[17px]">
+                Book Appointment
+              </span>
+            </Link>
           </div>
-
-          <Link
-            href="/appointment"
-            className="flex items-center justify-center bg-[#EE4423] text-white
-              transition-transform hover:scale-[1.02] active:scale-[0.98]
-              shadow-[0px_10px_20px_rgba(238,68,35,0.2)]
-              mx-auto lg:mx-0"
-            style={{
-              width: "252.18px",
-              height: "49px",
-              padding: "0 20px",
-              gap: "15px",
-              borderRadius: "50px",
-            }}
-          >
-            <CalendarIcon />
-            <span className="font-montserrat font-bold text-[17px]">
-              Book Appointment
-            </span>
-          </Link>
         </div>
 
         {/* ================= DOCTOR IMAGE ================= */}
@@ -100,20 +115,19 @@ export default function Hero() {
             relative lg:absolute z-20
             w-[260px] sm:w-[320px] md:w-[380px] lg:w-[426.39px]
             h-[350px] sm:h-[420px] md:h-[500px] lg:h-[569.47px]
-            mt-12 lg:mt-0
+            mt-10 lg:mt-0
           "
-          style={{
-            top: "22px",
-            left: "853px",
-          }}
         >
-          <Image
-            src="/doctor.png"
-            alt="Healthcare Professional"
-            fill
-            className="object-contain"
-            priority
-          />
+          {/* 👇 desktop fixed position only */}
+          <div className="relative w-full h-full lg:[top:22px] lg:[left:853px] lg:absolute">
+            <Image
+              src="/doctor.png"
+              alt="Healthcare Professional"
+              fill
+              className="object-contain"
+              priority
+            />
+          </div>
         </div>
       </div>
     </section>
