@@ -5,7 +5,7 @@ export default function Hero() {
   const CalendarIcon = () => (
     <div className="relative w-5 h-5 flex items-center justify-center">
       <Image
-        src="/calender.png"
+        src="/images/icons/calender.png"
         alt="Calendar Icon"
         width={26.18}
         height={24.73}
