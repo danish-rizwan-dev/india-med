@@ -105,7 +105,7 @@ export default function Specialities() {
           {/* View All Button */}
           <Link
             href="/specialities"
-            className="group relative z-20 mt-16 flex items-center gap-3 px-10 py-2 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-xl hover:bg-[#d63a1b] hover:shadow-2xl transition-all"
+            className="group relative z-20 mt-16 flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-xl hover:bg-[#d63a1b] hover:shadow-2xl transition-all"
           >
             View All Specialities
             <span className="text-xl transition-transform duration-300 group-hover:translate-x-4">
