@@ -6,27 +6,23 @@ import Image from "next/image";
 const reasons = [
   {
     title: "World-class Hospitals",
-    description:
-      "JCI & NABH accredited hospitals ensuring top global safety and care.",
-    icon: "/images/icons/hospitals.png",
+    description: "JCI & NABH accredited hospitals ensuring top global safety and care.",
+    icon: "/images/icons/Hospital.svg", // Updated to SVG
   },
   {
     title: "Affordable Costs",
-    description:
-      "Up to 70–80% lower treatment costs compared to Western countries.",
-    icon: "/images/icons/cost.png",
+    description: "Up to 70–80% lower treatment costs compared to Western countries.",
+    icon: "/images/icons/Costs.svg", // Updated to SVG
   },
   {
     title: "Expert Doctors",
-    description:
-      "Internationally trained specialists with years of proven expertise.",
-    icon: "/images/icons/expertdoc.png",
+    description: "Internationally trained specialists with years of proven expertise.",
+    icon: "/images/icons/ExpertDoctors.svg", // Updated to SVG
   },
   {
     title: "Complete Assistance",
-    description:
-      "End-to-end support: travel, visa, treatment, and recovery care.",
-    icon: "/images/icons/assit.png",
+    description: "End-to-end support: travel, visa, treatment, and recovery care.",
+    icon: "/images/icons/Assistance.svg", // Updated to SVG
   },
 ];
 
@@ -35,7 +31,7 @@ export default function WhyChooseUs() {
     <section className="relative z-10 w-full overflow-hidden">
       {/* 🌍 WORLD MAP BACKGROUND */}
       <div
-        className="absolute inset-0 w-full h-full opacity-50 pointer-events-none -z-20"
+        className="absolute inset-0 w-full h-full opacity-30 pointer-events-none -z-20"
         style={{
           backgroundImage: "url('/images/backgrounds/worldmapsstrokes.png')",
           backgroundSize: "contain",
@@ -45,60 +41,64 @@ export default function WhyChooseUs() {
       />
 
       <div
-        className="relative flex flex-col-reverse lg:flex-row items-center justify-center mx-auto py-16 lg:py-[100px] px-6 lg:px-0 gap-12 lg:gap-[133px]"
+        className="relative flex flex-col-reverse lg:flex-row items-center justify-center mx-auto py-16 lg:py-[120px] px-6 lg:px-0 gap-12 lg:gap-[100px]"
         style={{ maxWidth: "1319px", fontFamily: "Montserrat, sans-serif" }}
       >
         {/* ================= LEFT GRID ================= */}
         <div
           className="grid grid-cols-1 md:grid-cols-2 w-full"
-          style={{ maxWidth: "650px", gap: "20px" }}
+          style={{ maxWidth: "680px", gap: "24px" }}
         >
           {reasons.map((item, index) => (
             <div
               key={index}
-              className={`relative flex flex-col items-start text-left transition-all duration-500 hover:-translate-y-2 w-full mx-auto bg-white/40 backdrop-blur-md ${
-                index % 2 !== 0 ? "lg:mt-12" : ""
-              }`}
+              className={`
+                relative flex flex-col items-start text-left transition-all duration-500 hover:-translate-y-2 w-full mx-auto bg-white/40 backdrop-blur-md
+                ${index % 2 !== 0 ? "lg:mt-12" : ""}
+              `}
               style={{
-                maxWidth: "315px",
-                height: "299px",
+                maxWidth: "320px",
+                height: "300px",
                 borderRadius: "40px",
                 padding: "40px",
-
-                /* ✅ REAL GRADIENT BORDER (FIGMA STYLE) */
-                border: "3px solid transparent",
-                borderImageSlice: 1,
-                borderImageSource: `
-                  linear-gradient(39.31deg, rgba(255,255,255,0.05) 45.41%, rgba(255,173,157,0.6) 93.87%),
-                  linear-gradient(222.62deg, rgba(245,245,245,0.2) 14.53%, rgba(227,227,227,0.8) 101.14%)
-                `,
-
-                /* ✨ WHITE + ORANGE GLOW SHADOW */
+                /* ✨ MULTI-LAYERED GLASS SHADOW */
                 boxShadow: `
                   inset 0 1px 2px rgba(255,255,255,0.6),
-                  0 6px 18px rgba(255,173,157,0.25),
-                  0 25px 60px rgba(238,68,35,0.22)
+                  0 10px 25px -5px rgba(255,173,157,0.3),
+                  0 20px 50px -10px rgba(238,68,35,0.15)
                 `,
               }}
             >
+              {/* ✅ GRADIENT BORDER FIX (Works with rounded corners) */}
+              <div 
+                className="absolute inset-0 rounded-[40px] pointer-events-none"
+                style={{
+                  padding: '3px',
+                  background: 'linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)',
+                  WebkitMask: 'linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)',
+                  WebkitMaskComposite: 'xor',
+                  maskComposite: 'exclude',
+                }}
+              />
+
               {/* ICON */}
-              <div className="flex items-center justify-center mb-6 w-[70px] h-[70px] shrink-0">
+              <div className="flex items-center justify-center mb-6 w-[60px] h-[60px] shrink-0">
                 <Image
                   src={item.icon}
                   alt={item.title}
-                  width={70}
-                  height={70}
-                  className="w-full h-full object-contain p-1"
+                  width={60}
+                  height={60}
+                  className="w-full h-full object-contain"
                 />
               </div>
 
               {/* TITLE */}
-              <h3 className="text-[#58595B] font-bold text-[22px] mb-2 leading-tight">
+              <h3 className="text-[#58595B] font-bold text-[22px] mb-3 leading-tight">
                 {item.title}
               </h3>
 
               {/* DESCRIPTION */}
-              <p className="text-[#58595B] text-[14px] leading-relaxed">
+              <p className="text-[#58595B] text-[15px] font-medium leading-relaxed opacity-90">
                 {item.description}
               </p>
             </div>
@@ -106,22 +106,22 @@ export default function WhyChooseUs() {
         </div>
 
         {/* ================= RIGHT CONTENT ================= */}
-            <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-full lg:max-w-[530px] w-full">
-              <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-4 sm:mb-6 lg:mb-8 px-4 sm:px-6 lg:px-10 h-auto lg:h-[73px] py-2 sm:py-3 lg:py-0">
-                <h2 className="text-[#58595B] font-bold text-[22px] sm:text-3xl lg:text-[42px] whitespace-nowrap">
-                  Why Choose Us?
-                </h2>
-              </div>
-  
-              <p className="text-[#58595B] text-[14px] sm:text-base lg:text-[18px] leading-relaxed mb-4 sm:mb-8 lg:mb-10">
-                Trusted by international patients worldwide, India delivers advanced
-                healthcare backed by expert doctors and complete support.
-              </p>
-  
-              <button className="flex items-center gap-2 sm:gap-3 px-6 sm:px-10 lg:px-12 py-2 sm:py-4 lg:py-5 rounded-full bg-[#EE4423] text-white font-bold text-[15px] sm:text-lg shadow-lg hover:bg-[#d63a1b] transition-all">
-                Contact Now <span className="text-lg sm:text-xl">›</span>
-              </button>
-            </div>
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-full lg:max-w-[530px] w-full">
+          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-8 h-[60px] lg:h-[73px]">
+            <h2 className="text-[#58595B] font-bold text-2xl lg:text-[42px] whitespace-nowrap leading-none">
+              Why Choose Us?
+            </h2>
+          </div>
+
+          <p className="text-[#58595B] text-base lg:text-[19px] font-medium leading-relaxed mb-10">
+            Trusted by international patients worldwide, India delivers advanced
+            healthcare backed by internationally trained specialists and complete end-to-end support.
+          </p>
+
+          <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-[0_10px_20px_rgba(238,68,35,0.3)] hover:bg-[#d63a1b] hover:shadow-[0_15px_30px_rgba(238,68,35,0.4)] transition-all active:scale-95">
+            Contact Now <span className="text-xl">›</span>
+          </button>
+        </div>
       </div>
     </section>
   );

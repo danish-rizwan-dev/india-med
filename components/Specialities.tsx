@@ -18,19 +18,20 @@ const specialities = [
 export default function Specialities() {
   return (
     <>
-      {/* Background and Layout Container */}
-      <div className="relative w-full mt-[-60px] lg:mt-[-150px] overflow-hidden">
+      <div className="relative w-full mt-[-60px] lg:mt-[-150px]">
         {/* --- SHARED GLASSMORPHIC BACKGROUND --- */}
         <div className="absolute inset-0 z-0">
           <div
-            className="absolute inset-0 w-full h-full opacity-60"
+            className="absolute inset-0 w-full h-full opacity-50 lg:mt-[-100px]"
             style={{
               backgroundImage: "url('/images/backgrounds/background.png')",
               backgroundSize: "cover",
               backgroundPosition: "center",
-              filter: "blur(40px) saturate(1.5)",
-              WebkitMaskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
-              maskImage: "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+              filter: "blur(50px) saturate(1.2)",
+              WebkitMaskImage:
+                "linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)",
+              maskImage:
+                "linear-gradient(to bottom,  transparent, black 10%, black 90%, transparent)",
             }}
           />
           <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl" />
@@ -38,7 +39,6 @@ export default function Specialities() {
 
         {/* --- SECTION CONTENT --- */}
         <section className="relative z-10 flex flex-col items-center px-6 py-16 lg:py-24">
-          
           {/* Section Heading */}
           <div
             className="flex items-center justify-center bg-white/40 backdrop-blur-xl border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-10 py-4 shadow-sm"
@@ -56,16 +56,16 @@ export default function Specialities() {
                 <Link
                   key={index}
                   href="/specialities"
-                  className="group flex flex-col items-center justify-between text-center transition-all duration-500 hover:-translate-y-3 p-8 rounded-[40px] h-full min-h-[250px]"
+                  className="group relative flex flex-col items-center justify-between text-center transition-all duration-500 hover:-translate-y-3 p-8 rounded-[40px] h-full min-h-[250px] overflow-hidden"
                   style={{
-                    background: "linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2))",
+                    background:
+                      "linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2))",
                     backdropFilter: "blur(20px)",
-                    border: "1px solid rgba(255, 255, 255, 0.4)",
                     boxShadow: "0 10px 30px -10px rgba(0,0,0,0.1)",
                   }}
                 >
                   {/* SVG ICON */}
-                  <div className="relative w-[65px] h-[65px] transition-transform duration-500 group-hover:scale-110">
+                  <div className="relative z-20 w-[65px] h-[65px] transition-transform duration-500 group-hover:scale-110">
                     <Image
                       src={item.icon}
                       alt={item.title}
@@ -75,14 +75,28 @@ export default function Specialities() {
                   </div>
 
                   {/* Title */}
-                  <div className="text-[#414042] text-[20px] font-bold font-montserrat mt-6 mb-8 group-hover:text-[#EE4423] transition-colors">
+                  <div className="relative z-20 text-[#414042] text-[20px] font-bold font-montserrat mt-6 mb-8 group-hover:text-[#EE4423] transition-colors">
                     {item.title}
                   </div>
 
                   {/* Button-style Link */}
-                  <div className="px-6 py-2 bg-white rounded-full text-[13px] font-bold text-[#EE4423] shadow-md border border-white group-hover:bg-[#EE4423] group-hover:text-white transition-all">
+                  <div className="relative z-20 px-6 py-2 bg-white rounded-full text-[13px] font-bold text-[#EE4423] shadow-md border  group-hover:bg-[#EE4423] group-hover:text-white transition-all">
                     Know More ›
                   </div>
+
+                  {/* GRADIENT BORDER DIV */}
+                  <div
+                    className="absolute inset-0 rounded-[40px] pointer-events-none z-10"
+                    style={{
+                      padding: "2px", // Thinner padding for a sleeker border
+                      background:
+                        "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
+                      WebkitMask:
+                        "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+                      WebkitMaskComposite: "xor",
+                      maskComposite: "exclude",
+                    }}
+                  />
                 </Link>
               ))}
             </div>
@@ -91,12 +105,15 @@ export default function Specialities() {
           {/* View All Button */}
           <Link
             href="/specialities"
-            className="mt-16 flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-xl hover:bg-[#d63a1b] hover:shadow-2xl transition-all"
+            className="group relative z-20 mt-16 flex items-center gap-3 px-10 py-2 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-xl hover:bg-[#d63a1b] hover:shadow-2xl transition-all"
           >
-            View All Specialities <span className="text-xl">›</span>
+            View All Specialities
+            <span className="text-xl transition-transform duration-300 group-hover:translate-x-4">
+              ›
+            </span>
           </Link>
-          
-          <div className="mt-24 w-full">
+
+          <div className="relative z-20 mt-24 w-full">
             <WhyChooseUs />
           </div>
         </section>
