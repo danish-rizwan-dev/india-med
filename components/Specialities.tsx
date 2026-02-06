@@ -6,15 +6,14 @@ import WhyChooseUs from "./whychooseus";
 
 const specialities = [
   { title: "Cardiac Care", icon: "/images/icons/cardiac.svg" },
-  { title: "Neurosciences", icon: "/images/icons/neuro.svg" },
+  { title: "Neurosciences", icon: "/images/icons/Neuro.svg" }, // Changed to 'N'
   { title: "Cancer Care", icon: "/images/icons/cancer.svg" },
-  { title: "Gastrosciences", icon: "/images/icons/gastro.svg" },
+  { title: "Gastrosciences", icon: "/images/icons/Gastro.svg" }, // Changed to 'G'
   { title: "Cardiac Care", icon: "/images/icons/cardiac.svg" },
-  { title: "Neurosciences", icon: "/images/icons/neuro.svg" },
+  { title: "Neurosciences", icon: "/images/icons/Neuro.svg" }, // Changed to 'N'
   { title: "Cancer Care", icon: "/images/icons/cancer.svg" },
-  { title: "Gastrosciences", icon: "/images/icons/gastro.svg" },
+  { title: "Gastrosciences", icon: "/images/icons/Gastro.svg" }, // Changed to 'G'
 ];
-
 export default function Specialities() {
   return (
     <>
