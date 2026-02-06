@@ -106,22 +106,22 @@ export default function WhyChooseUs() {
         </div>
 
         {/* ================= RIGHT CONTENT ================= */}
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-[530px] w-full">
-          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 lg:mb-8 px-6 lg:px-10 h-auto lg:h-[73px] py-3 lg:py-0">
-            <h2 className="text-[#58595B] font-bold text-3xl lg:text-[42px] whitespace-nowrap">
-              Why Choose Us?
-            </h2>
-          </div>
-
-          <p className="text-[#58595B] text-base lg:text-[18px] leading-relaxed mb-8 lg:mb-10">
-            Trusted by international patients worldwide, India delivers advanced
-            healthcare backed by expert doctors and complete support.
-          </p>
-
-          <button className="flex items-center gap-3 px-10 lg:px-12 py-4 lg:py-5 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-lg hover:bg-[#d63a1b] transition-all">
-            Contact Now <span className="text-xl">›</span>
-          </button>
-        </div>
+            <div className="flex flex-col items-center lg:items-start text-center lg:text-left max-w-full lg:max-w-[530px] w-full">
+              <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-4 sm:mb-6 lg:mb-8 px-4 sm:px-6 lg:px-10 h-auto lg:h-[73px] py-2 sm:py-3 lg:py-0">
+                <h2 className="text-[#58595B] font-bold text-[22px] sm:text-3xl lg:text-[42px] whitespace-nowrap">
+                  Why Choose Us?
+                </h2>
+              </div>
+  
+              <p className="text-[#58595B] text-[14px] sm:text-base lg:text-[18px] leading-relaxed mb-4 sm:mb-8 lg:mb-10">
+                Trusted by international patients worldwide, India delivers advanced
+                healthcare backed by expert doctors and complete support.
+              </p>
+  
+              <button className="flex items-center gap-2 sm:gap-3 px-6 sm:px-10 lg:px-12 py-2 sm:py-4 lg:py-5 rounded-full bg-[#EE4423] text-white font-bold text-[15px] sm:text-lg shadow-lg hover:bg-[#d63a1b] transition-all">
+                Contact Now <span className="text-lg sm:text-xl">›</span>
+              </button>
+            </div>
       </div>
     </section>
   );

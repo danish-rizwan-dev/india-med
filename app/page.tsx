@@ -6,11 +6,9 @@ import FeaturedDestination from "@/components/FeaturedDestination";
 export default function HomePage() {
   return (
     <>
-      <div className="z-0">
-        <Hero />
-        <Specialities />
-        <FeaturedDestination />
-      </div>
+      <Hero />
+      <Specialities />
+      <FeaturedDestination />
     </>
   );
 }
