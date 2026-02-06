@@ -103,7 +103,7 @@ export default function Hero() {
           {/* 👇 desktop fixed position only */}
           <div className="relative w-full h-full lg:[top:22px] lg:[left:853px] lg:absolute">
             <Image
-              src="/doctor.png"
+              src="/images/backgrounds/doctor.png"
               alt="Healthcare Professional"
               fill
               className="object-contain"
