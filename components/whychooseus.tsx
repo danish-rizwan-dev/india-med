@@ -1,6 +1,5 @@
 "use client";
 
-import React from "react";
 import Image from "next/image";
 
 const reasons = [
@@ -28,7 +27,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section className="relative z-10 w-full overflow-hidden">
+    <section className="relative z-10 w-full lg:mt-[-100px]">
       {/* 🌍 WORLD MAP BACKGROUND */}
       <div
         className="absolute inset-0 w-full h-full opacity-30 pointer-events-none -z-20"
