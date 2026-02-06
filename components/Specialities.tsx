@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import WhyChooseUs from "./whychooseus";
-import ServiceBar from "./Services";
+import ServiceBar from "./ServicesBar";
 import FeaturedDestination from "./FeaturedDestination";
 
 const specialities = [
@@ -18,7 +18,6 @@ const specialities = [
 export default function Specialities() {
   return (
     <>
-      <ServiceBar />
       {/* Changed mt to be smaller on mobile and -200px on desktop */}
       <div className="relative w-full mt-[-80px] lg:mt-[-200px]">
         {/* --- SHARED BACKGROUND SYSTEM --- */}
