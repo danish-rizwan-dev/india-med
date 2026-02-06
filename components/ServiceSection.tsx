@@ -16,8 +16,15 @@ export default function ServicesSection() {
 
   return (
     <section 
-      className="relative flex flex-col items-center overflow-hidden bg-[#F9FAFB]"
-      style={{ width: "100%", minHeight: "750px", paddingTop: "80px" }}
+      className="relative flex flex-col items-center overflow-hidden bg-[#F9FAFB] mt-10 lg:mt-20"
+      style={{ 
+        width: "100%", 
+        minHeight: "850px", 
+        paddingTop: "100px",
+        // Top and Bottom Fade Effect
+        WebkitMaskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)",
+        maskImage: "linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)"
+      }}
     >
       {/* ================= BACKGROUND PATTERN ================= */}
       <div 
@@ -42,7 +49,7 @@ export default function ServicesSection() {
 
       {/* ================= CONTENT DIV ================= */}
       <div 
-        className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-[23px] w-full max-w-[1311px]"
+        className="relative z-10 flex flex-col lg:flex-row items-center justify-center gap-[23px] w-full max-w-[1311px] pb-10"
         style={{ minHeight: "528px" }}
       >
         {/* NAV ARROWS */}
@@ -53,35 +60,36 @@ export default function ServicesSection() {
         {/* 1. LEFT TALL CARD */}
         <div 
           className="relative flex flex-col rounded-[40px] overflow-hidden transition-all duration-500 hover:-translate-y-2 group"
-          style={{ width: "399px", height: "528px", ...glassStyle }}
+          style={{ width: "399px", height: "550px", ...glassStyle }} // Increased height slightly
         >
-          <div className="relative w-full h-[320px] overflow-hidden">
+          <div className="relative w-full h-[300px] overflow-hidden">
             <Image src="/images/backgrounds/tree.jpg" alt="Hospitals" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
-          <div className="flex flex-col p-8 gap-[15px] flex-grow">
+          <div className="flex flex-col p-8 gap-[12px] flex-grow">
             <h3 className="text-[#414042] font-bold text-2xl leading-tight">World-class Hospitals</h3>
             <p className="text-[#58595B] text-sm font-medium leading-relaxed max-w-[262px]">
               JCI & NABH accredited hospitals ensuring top global safety and care.
             </p>
-            <Link href="#" className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link">
+            {/* Added margin-top to prevent overlap */}
+            <Link href="#" className="mt-4 text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
               Know More <span className="text-lg transition-transform group-hover/link:translate-x-1">›</span>
             </Link>
           </div>
         </div>
 
         {/* 2. MIDDLE BOXES (Vertical Stack) */}
-        <div className="flex flex-col gap-[23px]" style={{ width: "467px", height: "527px" }}>
+        <div className="flex flex-col gap-[23px]" style={{ width: "467px", height: "550px" }}>
           {[1, 2].map((i) => (
             <div 
               key={i}
-              className="relative flex flex-col rounded-[40px] p-10 transition-all duration-500 hover:-translate-y-1"
-              style={{ width: "467px", height: "252px", ...glassStyle }}
+              className="relative flex flex-col rounded-[40px] p-8 transition-all duration-500 hover:-translate-y-1"
+              style={{ width: "467px", height: "263px", ...glassStyle }}
             >
-              <h3 className="text-[#414042] font-bold text-2xl mb-4">World-class Hospitals</h3>
-              <p className="text-[#58595B] text-sm font-medium max-w-[262px] mb-6">
+              <h3 className="text-[#414042] font-bold text-xl mb-2">World-class Hospitals</h3>
+              <p className="text-[#58595B] text-sm font-medium max-w-[262px] mb-4">
                 JCI & NABH accredited hospitals ensuring top global safety and care.
               </p>
-              <Link href="#" className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link">
+              <Link href="#" className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
                 Know More <span className="text-lg transition-transform group-hover/link:translate-x-1">›</span>
               </Link>
             </div>
@@ -91,17 +99,17 @@ export default function ServicesSection() {
         {/* 3. RIGHT TALL CARD */}
         <div 
           className="relative flex flex-col rounded-[40px] overflow-hidden transition-all duration-500 hover:-translate-y-2 group"
-          style={{ width: "399px", height: "528px", ...glassStyle }}
+          style={{ width: "399px", height: "550px", ...glassStyle }}
         >
-          <div className="relative w-full h-[320px] overflow-hidden">
+          <div className="relative w-full h-[300px] overflow-hidden">
             <Image src="/images/backgrounds/honey.jpg" alt="Expert Care" fill className="object-cover transition-transform duration-700 group-hover:scale-105" />
           </div>
-          <div className="flex flex-col p-8 gap-[15px] flex-grow">
+          <div className="flex flex-col p-8 gap-[12px] flex-grow">
             <h3 className="text-[#414042] font-bold text-2xl leading-tight">World-class Hospitals</h3>
             <p className="text-[#58595B] text-sm font-medium leading-relaxed max-w-[262px]">
               JCI & NABH accredited hospitals ensuring top global safety and care.
             </p>
-            <Link href="#" className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link">
+            <Link href="#" className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
               Know More <span className="text-lg transition-transform group-hover/link:translate-x-1">›</span>
             </Link>
           </div>

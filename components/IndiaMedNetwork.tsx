@@ -24,7 +24,6 @@ export default function IndiaMedNetwork() {
     <section className="relative w-full flex flex-col items-center bg-white py-20 overflow-hidden">
       
       {/* ================= HEADING ================= */}
-      {/* Width: 489px, Height: 73px, Border-radius: 50px */}
       <div 
         className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-16 px-10"
         style={{ width: "min(489px, 90vw)", height: "73px", gap: "10px" }}
@@ -34,37 +33,45 @@ export default function IndiaMedNetwork() {
         </h2>
       </div>
 
-      {/* ================= NETWORK CARDS WRAPPER ================= */}
       <div className="relative flex flex-col lg:flex-row items-center justify-center gap-[20px] w-full max-w-[1320px] px-4">
         
-        {/* Navigation Arrows (Absolute positioned relative to cards) */}
-        <button className="absolute left-[-20px] z-20 h-12 w-12 hidden xl:flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all">
+        {/* Navigation Arrows */}
+        <button className="absolute left-[-20px] z-30 h-12 w-12 hidden xl:flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all">
           <ChevronLeft size={24} strokeWidth={3} />
         </button>
 
         {hospitalData.map((hospital, index) => (
           <div 
             key={index}
-            className="relative overflow-hidden bg-[#EE4423] transition-all duration-500 hover:shadow-2xl"
+            className="relative overflow-hidden bg-[#EE4423] transition-all duration-500 hover:scale-[1.01] hover:shadow-[0_25px_50px_-12px_rgba(238,68,35,0.25)]"
             style={{ 
               width: "min(650px, 100%)", 
               height: "400px", 
-              borderRadius: "40px" 
+              borderRadius: "40px",
+              /* Light Glassmorphic Outer Shadow */
+              boxShadow: "0 10px 30px -5px rgba(0, 0, 0, 0.1), 0 4px 15px -2px rgba(0, 0, 0, 0.05)",
             }}
           >
-            {/* 1. TOP SECTION (Location & Title) */}
-            <div className="p-8 pb-0 flex flex-col gap-2">
+            {/* 1. TOP SECTION - Higher z-index to stay above image */}
+            <div className="relative z-20 p-8 pb-0 flex flex-col gap-2">
               <div className="flex items-center gap-2 text-white/90">
                 <MapPin size={16} fill="white" />
                 <span className="text-sm font-bold uppercase tracking-wider">{hospital.location}</span>
               </div>
-              <h3 className="text-white font-bold text-2xl lg:text-[28px] leading-tight max-w-[300px]">
+              <h3 className="text-white font-bold text-2xl lg:text-[28px] leading-tight max-w-[320px] drop-shadow-md">
                 {hospital.name}
               </h3>
             </div>
 
-            {/* 2. HOSPITAL IMAGE (Top Right) */}
-            <div className="absolute top-0 right-0 w-1/2 h-2/3 rounded-bl-[60px] overflow-hidden">
+            {/* 2. HOSPITAL IMAGE - Gradient Mask to clear text space */}
+            <div 
+              className="absolute top-0 right-0 w-3/5 h-[70%] z-10 overflow-hidden"
+              style={{
+                borderRadius: "0 40px 0 80px",
+                WebkitMaskImage: "linear-gradient(to left, black 65%, transparent 100%)",
+                maskImage: "linear-gradient(to left, black 65%, transparent 100%)"
+              }}
+            >
               <Image 
                 src={hospital.image} 
                 alt={hospital.name} 
@@ -75,13 +82,14 @@ export default function IndiaMedNetwork() {
 
             {/* 3. GLASSMORPHIC BOTTOM OVERLAY */}
             <div 
-              className="absolute bottom-4 left-4 right-4 h-[180px] p-6 flex items-end justify-between"
+              className="absolute bottom-4 left-4 right-4 h-[180px] z-30 p-6 flex items-end justify-between transition-all duration-500"
               style={{
-                background: "rgba(255, 255, 255, 0.15)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
+                background: "linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1))",
+                backdropFilter: "blur(25px)",
+                WebkitBackdropFilter: "blur(25px)",
                 borderRadius: "30px",
-                border: "1px solid rgba(255, 255, 255, 0.3)"
+                border: "1px solid rgba(255, 255, 255, 0.4)",
+                boxShadow: "inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 24px 0 rgba(0, 0, 0, 0.15)"
               }}
             >
               <div className="flex flex-col gap-3 max-w-[65%]">
@@ -91,14 +99,14 @@ export default function IndiaMedNetwork() {
               </div>
 
               <div className="flex flex-col items-end gap-3">
-                <button className="flex items-center gap-2 text-white font-bold text-sm hover:underline">
+                <button className="flex items-center gap-2 text-white font-bold text-sm hover:underline group">
                   Know more 
-                  <div className="bg-white rounded-full p-1 shadow-md">
+                  <div className="bg-white rounded-full p-1 shadow-md transition-transform group-hover:rotate-45">
                     <ArrowUpRight size={18} className="text-[#EE4423]" strokeWidth={3} />
                   </div>
                 </button>
                 
-                <button className="bg-white text-[#58595B] px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition-transform hover:scale-105">
+                <button className="bg-white/90 text-[#58595B] px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition-all hover:bg-white hover:scale-105">
                   <Phone size={16} fill="#58595B" />
                   Contact Now
                 </button>
@@ -107,7 +115,7 @@ export default function IndiaMedNetwork() {
           </div>
         ))}
 
-        <button className="absolute right-[-20px] z-20 h-12 w-12 hidden xl:flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all">
+        <button className="absolute right-[-20px] z-30 h-12 w-12 hidden xl:flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all">
           <ChevronRight size={24} strokeWidth={3} />
         </button>
       </div>
