@@ -115,7 +115,7 @@ export default function BeyondBoundaries() {
                 <p className="text-4xl lg:text-[48px] font-bold leading-tight">
                   <Counter end={stat.value} shouldStart={hasStarted} />
                 </p>
-                <p className="text-[12px] lg:text-[14px] font-medium opacity-90 text-center lg:text-left max-w-[140px]">
+                <p className="text-[12px] lg:text-[14px] font-medium opacity-90 text-center lg:text-left max-w-[155px]">
                   {stat.label}
                 </p>
               </div>

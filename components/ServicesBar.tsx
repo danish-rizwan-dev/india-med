@@ -61,25 +61,25 @@ export default function ServiceBar() {
           <ChevronLeft size={32} strokeWidth={3} />
         </button>
 
-        {/* INNER CONTENT - REMOVED overflow-hidden */}
+        {/* INNER CONTENT */}
         <div className="relative z-10 flex flex-col lg:flex-row items-stretch justify-center w-full h-full gap-4 lg:gap-0 rounded-[20px] lg:rounded-[40px]">
           {services.map((service, index) => (
             <div
               key={index}
               className={`
-                relative flex flex-col items-center justify-center 
+                relative flex flex-row items-center justify-center 
                 bg-white/90 group cursor-pointer transition-all duration-500 
                 hover:bg-[#EE4423] 
                 w-full lg:flex-1 py-6 lg:py-0 min-h-[120px] lg:h-full
-                /* Added z-index and rounded corners to individual items */
                 rounded-[15px] lg:rounded-none first:lg:rounded-l-[40px] last:lg:rounded-r-[40px]
                 lg:border-r border-gray-100 last:border-none
                 hover:z-30 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]
+                px-4 gap-4 /* Added horizontal gap and padding */
               `}
             >
               <div
-                className="mb-3 relative transition-all duration-500 transform group-hover:-translate-y-2 group-hover:scale-110 group-hover:brightness-0 group-hover:invert"
-                style={{ width: "36px", height: "40.32px" }}
+                className="relative transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0"
+                style={{ width: "40px", height: "40px" }} /* Standardized icon container */
               >
                 <Image
                   src={service.icon}
@@ -90,8 +90,8 @@ export default function ServiceBar() {
               </div>
 
               <span
-                className="text-center px-4 group-hover:text-white text-[#58595B] transition-colors duration-300 font-montserrat font-bold text-sm sm:text-base lg:text-[18px] leading-tight"
-                style={{ maxWidth: "180px" }}
+                className="text-left group-hover:text-white text-[#58595B] transition-colors duration-300 font-montserrat font-bold text-sm sm:text-base lg:text-[18px] leading-tight"
+                style={{ maxWidth: "160px" }} /* Adjusted text width for horizontal layout */
               >
                 {service.label}
               </span>

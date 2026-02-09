@@ -28,7 +28,7 @@ export default function ServicesSection() {
     >
       {/* ================= BACKGROUND PATTERN ================= */}
       <div 
-        className="absolute inset-0 z-0 opacity-30 pointer-events-none"
+        className="absolute inset-0 z-0  pointer-events-none"
         style={{ 
           backgroundImage: "url('/images/backgrounds/backgroundlines.png')",
           backgroundSize: 'cover',
