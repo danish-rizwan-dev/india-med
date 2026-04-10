@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ServiceBar() {
   const services = [
@@ -14,15 +13,6 @@ export default function ServiceBar() {
     },
     { label: "Book a Test", icon: "/images/icons/booktest.svg" },
   ];
-
-  const arrowGlassStyle = `
-    absolute z-50 flex h-[60px] w-[60px] items-center justify-center rounded-full 
-    transition-all duration-300 transform cursor-pointer
-    border border-white/60 bg-white/40 text-[#EE4423] backdrop-blur-md
-    shadow-[0_8px_32px_rgba(0,0,0,0.1)]
-    hover:scale-110 hover:bg-[#EE4423] hover:text-white 
-    hover:border-transparent hidden lg:flex
-  `;
 
   return (
     <div className="relative w-full flex justify-center px-4 lg:px-0 z-40">
@@ -57,10 +47,6 @@ export default function ServiceBar() {
           }}
         />
 
-        <button className={`${arrowGlassStyle} lg:left-[-30px]`}>
-          <ChevronLeft size={32} strokeWidth={3} />
-        </button>
-
         {/* INNER CONTENT */}
         <div className="relative z-10 flex flex-col lg:flex-row items-stretch justify-center w-full h-full gap-4 lg:gap-0 rounded-[20px] lg:rounded-[40px]">
           {services.map((service, index) => (
@@ -79,7 +65,10 @@ export default function ServiceBar() {
             >
               <div
                 className="relative transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0"
-                style={{ width: "40px", height: "40px" }} /* Standardized icon container */
+                style={{
+                  width: "40px",
+                  height: "40px",
+                }} /* Standardized icon container */
               >
                 <Image
                   src={service.icon}
@@ -91,17 +80,15 @@ export default function ServiceBar() {
 
               <span
                 className="text-left group-hover:text-white text-[#58595B] transition-colors duration-300 font-montserrat font-bold text-sm sm:text-base lg:text-[18px] leading-tight"
-                style={{ maxWidth: "160px" }} /* Adjusted text width for horizontal layout */
+                style={{
+                  maxWidth: "160px",
+                }} /* Adjusted text width for horizontal layout */
               >
                 {service.label}
               </span>
             </div>
           ))}
         </div>
-
-        <button className={`${arrowGlassStyle} lg:right-[-30px]`}>
-          <ChevronRight size={32} strokeWidth={3} />
-        </button>
       </div>
     </div>
   );
