@@ -56,7 +56,7 @@ export default function BlogSection() {
         
         {/* LEFT COLUMN: Main Feature */}
         <article className="flex flex-col gap-6 w-full lg:w-[650px]">
-          <Link href="/blog/cataract-surgery" className="group">
+          <Link href="/under-construction" className="group">
             <div className="relative overflow-hidden w-full h-[240px] lg:h-[380px] rounded-[30px] lg:rounded-[40px]">
               <Image 
                 src="/images/backgrounds/blog1.jpg" 
@@ -72,7 +72,7 @@ export default function BlogSection() {
           </Link>
           <div className="flex items-center justify-between w-full">
             <time dateTime="2020-02-01" className="text-gray-500 font-medium text-sm lg:text-base">Feb 01, 2020</time>
-            <Link href="/blog/cataract-surgery" className="flex items-center gap-1 text-[#EE4423] font-bold group text-sm lg:text-base">
+            <Link href="/under-construction" className="flex items-center gap-1 text-[#EE4423] font-bold group text-sm lg:text-base">
               Read More <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

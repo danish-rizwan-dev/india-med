@@ -19,57 +19,34 @@ export default function ServiceBar() {
   const mobileCTA = services[4];
 
   return (
-    <div className="relative w-full flex justify-center px-4 lg:px-0 z-40">
+    <nav className="relative w-full flex justify-center px-4 lg:px-0 z-40" aria-label="Quick Services">
       
-      {/* --- MOBILE VIEW: Hidden on md (768px) and up --- */}
+      {/* --- MOBILE VIEW --- */}
       <div className="flex md:hidden justify-center translate-y-[-55%] mb-[50px]">
         <div
-          className="relative flex items-center justify-center"
-          style={{
-            width: "351.11px",
-            height: "328px",
-            borderRadius: "33.76px",
-            padding: "25px",
-            backdropFilter: "blur(10px)",
-            boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
-          }}
+          className="relative flex items-center justify-center bg-white/10 backdrop-blur-md"
+          style={{ width: "351.11px", height: "328px", borderRadius: "33.76px", padding: "25px", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)" }}
         >
-          {/* MOBILE GRADIENT BORDER */}
-          <div
-            className="absolute inset-0 rounded-[33.76px] pointer-events-none"
-            style={{
-              padding: "2.03px",
-              background:
-                "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
-              WebkitMask:
-                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-              WebkitMaskComposite: "xor",
-              maskComposite: "exclude",
-            }}
-          />
-
           <div className="relative z-10 flex flex-col gap-[4px] w-[301.11px] h-[278px]">
-            <div
-              className="grid grid-cols-2 gap-[2px] w-full bg-[#EE4423]/20 overflow-hidden"
-              style={{ borderRadius: "21.6px 21.6px 0 0" }}
-            >
+            <div className="grid grid-cols-2 gap-[2px] w-full bg-[#EE4423]/20 overflow-hidden" style={{ borderRadius: "21.6px 21.6px 0 0" }}>
               {mobileTopServices.map((service, idx) => (
                 <Link
                   href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
                   key={idx}
-                  className="group flex flex-col items-center justify-center bg-white text-center px-2 transition-all duration-200 ease-in-out hover:bg-[#EE4423] active:bg-[#EE4423]"
+                  className="group flex flex-col items-center justify-center bg-white text-center px-2 hover:bg-[#EE4423]"
                   style={{ width: "149.5px", height: "90px" }}
                 >
-                  <div className="relative w-7 h-7 mb-1 transition-all duration-200 group-hover:scale-110 group-hover:brightness-0 group-hover:invert">
+                  {/* FIX: Use a fixed-size container and fill the image inside it */}
+                  <div className="relative w-7 h-7 mb-1 transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert">
                     <Image
                       src={service.icon}
-                      alt={service.label}
+                      alt=""
                       fill
                       priority
                       className="object-contain"
                     />
                   </div>
-                  <span className="text-[11px] font-bold text-[#58595B] font-montserrat leading-tight group-hover:text-white transition-colors duration-200">
+                  <span className="text-[11px] font-bold text-[#58595B] font-montserrat leading-tight group-hover:text-white">
                     {service.label}
                   </span>
                 </Link>
@@ -78,18 +55,15 @@ export default function ServiceBar() {
 
             <Link
               href="/book-test"
-              className="flex items-center justify-center gap-[10px] bg-[#EE4423] w-full h-[90px] transition-transform duration-200 active:scale-[0.98] hover:brightness-110"
-              style={{
-                borderBottomLeftRadius: "21.6px",
-                borderBottomRightRadius: "21.6px",
-              }}
+              className="flex items-center justify-center gap-[10px] bg-[#EE4423] w-full h-[90px] active:scale-[0.98]"
+              style={{ borderBottomLeftRadius: "21.6px", borderBottomRightRadius: "21.6px" }}
             >
               <div className="relative w-10 h-10">
                 <Image
                   src={mobileCTA.icon}
-                  alt={mobileCTA.label}
-                  width={40}
-                  height={40}
+                  alt=""
+                  
+                  fill
                   className="object-contain brightness-0 invert"
                 />
               </div>
@@ -101,50 +75,33 @@ export default function ServiceBar() {
         </div>
       </div>
 
-      {/* --- TABLET & DESKTOP VIEW: Long bar starting from md (768px) --- */}
+      {/* --- TABLET & DESKTOP VIEW --- */}
       <div
         className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1317px] h-[160px] lg:h-[226px] -translate-y-1/2 rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px] mb-[10px] mt-[-140px] lg:mt-[-200px]"
-        style={{
-          backgroundColor: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(40px)",
-          WebkitBackdropFilter: "blur(40px)",
-          boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
-        }}
+        style={{ backgroundColor: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(40px)", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)" }}
       >
-        <div
-          className="absolute inset-0 rounded-[30px] lg:rounded-[50px] pointer-events-none border-[2px] lg:border-[3px] border-transparent"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%) border-box",
-            WebkitMask:
-              "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
-            WebkitMaskComposite: "destination-out",
-            maskComposite: "exclude",
-          }}
-        />
-
         <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
           {services.map((service, index) => (
             <Link
               href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
               key={index}
-              className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group cursor-pointer transition-all duration-300 hover:bg-[#EE4423] flex-1 h-full border-r border-gray-100 last:border-none px-2 lg:px-4 gap-2 lg:gap-4"
+              className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full border-r border-gray-100 last:border-none px-2 lg:px-4 gap-2 lg:gap-4"
             >
-              <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all duration-300 transform group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
+              <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
                 <Image
                   src={service.icon}
-                  alt={service.label}
+                  alt=""
                   fill
                   className="object-contain"
                 />
               </div>
-              <span className="text-center lg:text-left group-hover:text-white text-[#58595B] transition-colors duration-300 font-montserrat font-bold text-[12px] lg:text-[18px] leading-tight max-w-[120px] lg:max-w-[160px]">
+              <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[18px] leading-tight max-w-[120px] lg:max-w-[160px]">
                 {service.label}
               </span>
             </Link>
           ))}
         </div>
       </div>
-    </div>
+    </nav>
   );
 }

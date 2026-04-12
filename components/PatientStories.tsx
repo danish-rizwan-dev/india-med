@@ -1,49 +1,62 @@
 "use client";
 
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Star, Play } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const patientStories = [
   {
     name: "Richard Gruber",
     location: "Austria",
-    videoId: "dQw4w9WgXcQ",
+    image: "/images/patient Stories/img1.jpg",
     rating: 4,
   },
   {
     name: "Sophie Verschueren",
     location: "Australia",
-    videoId: "dQw4w9WgXcQ",
+    image: "/images/patient Stories/img2.jpg",
     rating: 4,
   },
   {
     name: "Dylan Walters",
     location: "United States",
-    videoId: "dQw4w9WgXcQ",
+    image: "/images/patient Stories/img3.jpg",
     rating: 5,
   },
   {
     name: "Ella Huber",
     location: "Germany",
-    videoId: "dQw4w9WgXcQ",
+    image: "/images/patient Stories/img1.jpg",
     rating: 3,
   },
 ];
 
 export default function PatientStories() {
-  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
-
-  // FIX: loop: false prevents scrolling when there are no more videos
   const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: false, 
+    loop: false,
     align: "start",
-    containScroll: "trimSnaps", 
+    containScroll: "trimSnaps",
   });
+
+  // State to handle button disabled states for better UX
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+  const onSelect = useCallback((emblaApi: any) => {
+    setPrevBtnDisabled(!emblaApi.canScrollPrev());
+    setNextBtnDisabled(!emblaApi.canScrollNext());
+  }, []);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    onSelect(emblaApi);
+    emblaApi.on("reInit", onSelect);
+    emblaApi.on("select", onSelect);
+  }, [emblaApi, onSelect]);
 
   return (
     <section id="patient-stories" className="relative flex w-full flex-col items-center bg-white py-16 lg:py-24 overflow-hidden font-sans">
@@ -54,51 +67,29 @@ export default function PatientStories() {
         </h2>
       </header>
 
-      <div className="w-full max-w-[1320px] px-0 lg:px-4 overflow-hidden" ref={emblaRef}>
-        <div className="flex lg:grid lg:grid-cols-4 lg:gap-6">
+      <div className="w-full max-w-[1320px] px-0 lg:px-4" ref={emblaRef}>
+        {/* Changed lg:grid to flex to ensure Embla carousel works correctly on all screens */}
+        <div className="flex">
           {patientStories.map((patient, index) => (
             <article 
               key={index} 
-              className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-none min-w-0 px-3 lg:px-0 flex flex-col group"
+              className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_25%] min-w-0 px-3 flex flex-col group"
             >
               <div 
-                className="relative overflow-hidden bg-black shadow-md transition-all duration-300 cursor-pointer"
+                className="relative overflow-hidden bg-gray-100 shadow-md transition-all duration-300"
                 style={{ 
                   width: "100%", 
                   height: "clamp(350px, 50vh, 517px)", 
                   borderRadius: "32px",
                 }}
-                onClick={() => setPlayingVideo(patient.videoId + index)}
               >
-                {playingVideo === (patient.videoId + index) ? (
-                  // The Actual YouTube Player
-                  <iframe
-                    width="100%"
-                    height="100%"
-                    src={`https://www.youtube.com/embed/${patient.videoId}?autoplay=1`}
-                    title={`Video story of ${patient.name}`}
-                    frameBorder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="absolute inset-0"
-                  />
-                ) : (
-                  // The SEO-Friendly Thumbnail
-                  <>
-                    <Image 
-                      src={`https://img.youtube.com/vi/${patient.videoId}/maxresdefault.jpg`} 
-                      alt={`Watch ${patient.name}'s medical success story`} 
-                      fill 
-                      className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
-                      sizes="(max-width: 1024px) 85vw, 25vw"
-                    />
-                    <div className="absolute inset-0 flex items-center justify-center z-20">
-                      <div className="flex h-16 w-16 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 bg-white/30 backdrop-blur-md border border-white/40">
-                        <Play size={32} fill="white" className="text-white ml-1" />
-                      </div>
-                    </div>
-                  </>
-                )}
+                <Image 
+                  src={patient.image} 
+                  alt={patient.name} 
+                  fill 
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(max-width: 1024px) 85vw, 25vw"
+                />
               </div>
 
               <div className="mt-5 px-4 lg:px-2 text-left">
@@ -116,10 +107,18 @@ export default function PatientStories() {
       </div>
 
       <nav aria-label="Carousel Controls" className="flex items-center justify-center gap-6 mt-12 w-full px-4">
-        <button onClick={scrollPrev} type="button" className="flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all active:scale-90">
+        <button 
+          onClick={scrollPrev} 
+          disabled={prevBtnDisabled}
+          className={`flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg border border-gray-100 transition-all active:scale-90 ${prevBtnDisabled ? 'opacity-30 cursor-not-allowed' : 'text-[#EE4423] hover:bg-[#EE4423] hover:text-white'}`}
+        >
           <ChevronLeft size={28} strokeWidth={2.5} />
         </button>
-        <button onClick={scrollNext} type="button" className="flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all active:scale-90">
+        <button 
+          onClick={scrollNext} 
+          disabled={nextBtnDisabled}
+          className={`flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg border border-gray-100 transition-all active:scale-90 ${nextBtnDisabled ? 'opacity-30 cursor-not-allowed' : 'text-[#EE4423] hover:bg-[#EE4423] hover:text-white'}`}
+        >
           <ChevronRight size={28} strokeWidth={2.5} />
         </button>
       </nav>
