@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ServiceBar() {
   const services = [
@@ -14,18 +15,95 @@ export default function ServiceBar() {
     { label: "Book a Test", icon: "/images/icons/booktest.svg" },
   ];
 
+  const mobileTopServices = services.slice(0, 4);
+  const mobileCTA = services[4];
+
   return (
     <div className="relative w-full flex justify-center px-4 lg:px-0 z-40">
+      
+      {/* --- MOBILE VIEW: Hidden on md (768px) and up --- */}
+      <div className="flex md:hidden justify-center translate-y-[-55%] mb-[50px]">
+        <div
+          className="relative flex items-center justify-center"
+          style={{
+            width: "351.11px",
+            height: "328px",
+            borderRadius: "33.76px",
+            padding: "25px",
+            backdropFilter: "blur(10px)",
+            boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
+          }}
+        >
+          {/* MOBILE GRADIENT BORDER */}
+          <div
+            className="absolute inset-0 rounded-[33.76px] pointer-events-none"
+            style={{
+              padding: "2.03px",
+              background:
+                "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
+              WebkitMask:
+                "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
+              WebkitMaskComposite: "xor",
+              maskComposite: "exclude",
+            }}
+          />
+
+          <div className="relative z-10 flex flex-col gap-[4px] w-[301.11px] h-[278px]">
+            <div
+              className="grid grid-cols-2 gap-[2px] w-full bg-[#EE4423]/20 overflow-hidden"
+              style={{ borderRadius: "21.6px 21.6px 0 0" }}
+            >
+              {mobileTopServices.map((service, idx) => (
+                <Link
+                  href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  key={idx}
+                  className="group flex flex-col items-center justify-center bg-white text-center px-2 transition-all duration-200 ease-in-out hover:bg-[#EE4423] active:bg-[#EE4423]"
+                  style={{ width: "149.5px", height: "90px" }}
+                >
+                  <div className="relative w-7 h-7 mb-1 transition-all duration-200 group-hover:scale-110 group-hover:brightness-0 group-hover:invert">
+                    <Image
+                      src={service.icon}
+                      alt={service.label}
+                      fill
+                      priority
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-[11px] font-bold text-[#58595B] font-montserrat leading-tight group-hover:text-white transition-colors duration-200">
+                    {service.label}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <Link
+              href="/book-test"
+              className="flex items-center justify-center gap-[10px] bg-[#EE4423] w-full h-[90px] transition-transform duration-200 active:scale-[0.98] hover:brightness-110"
+              style={{
+                borderBottomLeftRadius: "21.6px",
+                borderBottomRightRadius: "21.6px",
+              }}
+            >
+              <div className="relative w-10 h-10">
+                <Image
+                  src={mobileCTA.icon}
+                  alt={mobileCTA.label}
+                  width={40}
+                  height={40}
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+              <span className="text-white font-bold text-[18px] font-montserrat">
+                {mobileCTA.label}
+              </span>
+            </Link>
+          </div>
+        </div>
+      </div>
+
+      {/* --- TABLET & DESKTOP VIEW: Long bar starting from md (768px) --- */}
       <div
-        className="
-          relative flex flex-col lg:flex-row items-center justify-center
-          w-full max-w-[1317px]
-          h-auto lg:h-[226px]
-          -translate-y-[10%] lg:-translate-y-1/2
-          rounded-[30px] lg:rounded-[50px]
-          p-4 lg:p-[23px]
-          mb-[-50px] lg:mb-[10px] lg:mt-[-200px]
-        "
+        className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1317px] h-[160px] lg:h-[226px] -translate-y-1/2 rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px] mb-[10px] mt-[-140px] lg:mt-[-200px]"
         style={{
           backgroundColor: "rgba(255, 255, 255, 0.1)",
           backdropFilter: "blur(40px)",
@@ -33,43 +111,26 @@ export default function ServiceBar() {
           boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)",
         }}
       >
-        {/* GRADIENT BORDER DIV */}
         <div
-          className="absolute inset-0 rounded-[30px] lg:rounded-[50px] pointer-events-none"
+          className="absolute inset-0 rounded-[30px] lg:rounded-[50px] pointer-events-none border-[2px] lg:border-[3px] border-transparent"
           style={{
-            padding: "3px",
             background:
-              "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
+              "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%) border-box",
             WebkitMask:
-              "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-            WebkitMaskComposite: "xor",
+              "linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0)",
+            WebkitMaskComposite: "destination-out",
             maskComposite: "exclude",
           }}
         />
 
-        {/* INNER CONTENT */}
-        <div className="relative z-10 flex flex-col lg:flex-row items-stretch justify-center w-full h-full gap-4 lg:gap-0 rounded-[20px] lg:rounded-[40px]">
+        <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
           {services.map((service, index) => (
-            <div
+            <Link
+              href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
               key={index}
-              className={`
-                relative flex flex-row items-center justify-center 
-                bg-white/90 group cursor-pointer transition-all duration-500 
-                hover:bg-[#EE4423] 
-                w-full lg:flex-1 py-6 lg:py-0 min-h-[120px] lg:h-full
-                rounded-[15px] lg:rounded-none first:lg:rounded-l-[40px] last:lg:rounded-r-[40px]
-                lg:border-r border-gray-100 last:border-none
-                hover:z-30 hover:shadow-[0_25px_50px_-12px_rgba(0,0,0,0.5)]
-                px-4 gap-4 /* Added horizontal gap and padding */
-              `}
+              className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group cursor-pointer transition-all duration-300 hover:bg-[#EE4423] flex-1 h-full border-r border-gray-100 last:border-none px-2 lg:px-4 gap-2 lg:gap-4"
             >
-              <div
-                className="relative transition-all duration-500 transform group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0"
-                style={{
-                  width: "40px",
-                  height: "40px",
-                }} /* Standardized icon container */
-              >
+              <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all duration-300 transform group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
                 <Image
                   src={service.icon}
                   alt={service.label}
@@ -77,16 +138,10 @@ export default function ServiceBar() {
                   className="object-contain"
                 />
               </div>
-
-              <span
-                className="text-left group-hover:text-white text-[#58595B] transition-colors duration-300 font-montserrat font-bold text-sm sm:text-base lg:text-[18px] leading-tight"
-                style={{
-                  maxWidth: "160px",
-                }} /* Adjusted text width for horizontal layout */
-              >
+              <span className="text-center lg:text-left group-hover:text-white text-[#58595B] transition-colors duration-300 font-montserrat font-bold text-[12px] lg:text-[18px] leading-tight max-w-[120px] lg:max-w-[160px]">
                 {service.label}
               </span>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

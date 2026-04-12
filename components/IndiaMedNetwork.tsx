@@ -1,64 +1,73 @@
 "use client";
-
+import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { ChevronLeft, ChevronRight, Phone, ArrowUpRight } from "lucide-react";
 
+// 1. SEO: Moved data outside to prevent re-renders and added better Alt metadata
 const hospitalData = [
   { 
     location: "Gurugram",
     name: "Medanta Gurgaon",
     description: "World-class multi-super specialty hospital known for advanced cardiac and robotic surgeries.",
     image: "/images/backgrounds/patna-hosp.jpg",
+    alt: "Medanta Hospital building in Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Fortis Memorial",
     description: "Premium quaternary care hospital with state-of-the-art medical technology and international standards.",
     image: "/images/backgrounds/patna-hosp.jpg",
+    alt: "Fortis Memorial Research Institute Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Artemis Hospital",
     description: "First JCI & NABH accredited hospital in Gurgaon, providing depth of expertise in advanced medical interventions.",
     image: "/images/backgrounds/patna-hosp.jpg",
+    alt: "Artemis Hospital exterior view"
   },
   {
     location: "Gurugram",
     name: "Max Hospital",
     description: "Renowned for oncology, cardiology, and neurosciences with top-tier healthcare professionals.",
     image: "/images/backgrounds/patna-hosp.jpg",
+    alt: "Max Super Speciality Hospital Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Paras Health",
     description: "Leader in neurosciences and joint replacement, providing specialized care at accessible price points.",
     image: "/images/backgrounds/lucknow-hosp.png",
+    alt: "Paras Health Hospital Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Marengo Asia",
     description: "Modern multi-specialty facility offering high-end clinical care and a patient-centric approach.",
     image: "/images/backgrounds/patna-hosp.jpg",
+    alt: "Marengo Asia Hospital facility"
   },
   {
     location: "Lucknow",
     name: "India Med Super Speciality",
     description: "Spread across an area of 12.58 acres, Medanta Lucknow is one of the largest multi-super-specialty hospitals.",
     image: "/images/backgrounds/lucknow-hosp.png",
+    alt: "India Med Super Speciality Hospital Lucknow"
   },
   {
     location: "Patna",
     name: "Jay Prabha Medanta",
     description: "Established in 2020, this super-specialty hospital began operations with an Out-Patient Department (OPD).",
     image: "/images/backgrounds/patna-hosp.jpg",
+    alt: "Jay Prabha Medanta Super Speciality Hospital Patna"
   },
 ];
 
 const LocationIcon = () => (
-  <svg width="18" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0">
+  <svg width="18" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0" aria-hidden="true">
     <path d="M12 21C16 17.5 19 14.4183 19 10C19 6.13401 15.866 3 12 3C8.13401 3 5 6.13401 5 10C5 14.4183 8 17.5 12 21Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     <circle cx="12" cy="10" r="2.5" fill="white" />
   </svg>
@@ -73,17 +82,19 @@ export default function IndiaMedNetwork() {
       loop: true,
       align: (viewSize) => viewSize * 0.08, 
       skipSnaps: false,
+      duration: 35,
     },
-    [Autoplay({ delay: 4000, stopOnInteraction: false })],
+    [Autoplay({ delay: 3500, stopOnInteraction: false })]
   );
 
   const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   useEffect(() => {
+    // 2. Responsive: Passive listener for performance
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener("resize", handleResize, { passive: true });
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
@@ -96,36 +107,42 @@ export default function IndiaMedNetwork() {
   }, [emblaApi]);
 
   return (
-    <section className="relative w-full flex flex-col items-center bg-white py-20 overflow-hidden">
+    // 3. SEO: Using <section> and meaningful margin/padding classes
+    <section className="relative w-full bg-transparent flex flex-col items-center  mt-[-150] lg:-mt-12 lg:pb-32 mb-16 overflow-hidden">
+      
       {/* HEADING */}
       <div
-        className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-16 px-10"
-        style={{ width: "min(489px, 90vw)", height: "73px" }}
+        className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-6 lg:px-10"
+        style={{ width: "min(489px, 92vw)", height: "73px" }}
       >
-        <h2 className="text-[#58595B] font-bold text-2xl lg:text-[38px] font-montserrat leading-none">
+        <h2 className="text-[#58595B] font-bold text-xl md:text-2xl lg:text-[38px] font-montserrat leading-none text-center">
           India Med Network
         </h2>
       </div>
 
       <div className="relative w-full">
-        {/* ARROWS - Moved slightly upwards from 200px to 170px */}
-        <div className="absolute top-[170px] left-0 right-0 z-50 pointer-events-none flex justify-between px-4 lg:px-20">
+        {/* ARROWS - Hidden on small mobile to prevent overlap, visible from md up */}
+        <div className="absolute top-1/2 -translate-y-[50px] left-0 right-0 z-50 pointer-events-none flex justify-between px-4 lg:px-20">
           <button
             onClick={scrollPrev}
-            className="pointer-events-auto h-12 w-12 flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:scale-110 transition-all"
+            type="button"
+            aria-label="Previous Hospital"
+            className="pointer-events-auto h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:scale-110 active:scale-95 transition-all"
           >
             <ChevronLeft size={24} strokeWidth={3} />
           </button>
           <button
             onClick={scrollNext}
-            className="pointer-events-auto h-12 w-12 flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:scale-110 transition-all"
+            type="button"
+            aria-label="Next Hospital"
+            className="pointer-events-auto h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:scale-110 active:scale-95 transition-all"
           >
             <ChevronRight size={24} strokeWidth={3} />
           </button>
         </div>
 
         {/* CAROUSEL */}
-        <div className="overflow-hidden" ref={emblaRef}>
+        <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
           <div className="flex">
             {hospitalData.map((hospital, index) => {
               const total = hospitalData.length;
@@ -133,34 +150,36 @@ export default function IndiaMedNetwork() {
               const isInFront = isMobile ? diff === 0 : diff === 0 || diff === 1;
 
               return (
-                <div
+                <article
                   key={index}
-                  className="relative flex-[0_0_80%] lg:flex-[0_0_42%] px-3 min-w-0 transition-all duration-500"
+                  className="relative flex-[0_0_88%] md:flex-[0_0_60%] lg:flex-[0_0_42%] px-3 min-w-0 transition-opacity duration-700"
                   style={{ opacity: isInFront ? 1 : 0.4 }}
                 >
                   <div
                     className="relative overflow-hidden bg-[#EE4423]"
                     style={{
                       width: "100%",
-                      height: "400px",
+                      height: "clamp(350px, 50vh, 400px)", // 4. Responsive: Fluid height
                       borderRadius: "40px",
-                      boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3), 0 10px 20px -5px rgba(238, 68, 35, 0.2)",
+                      boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3)",
                     }}
                   >
-                    <div className="relative z-20 p-8 pb-0 flex flex-col gap-2">
-                      <div className="flex items-center gap-2 text-white/90">
+                    {/* Content Header */}
+                    <div className="relative z-20 p-6 lg:p-8 pb-0 flex flex-col gap-1 lg:gap-2">
+                      <address className="flex items-center gap-2 text-white/90 not-italic">
                         <LocationIcon />
-                        <span className="text-sm font-bold uppercase tracking-wider">
+                        <span className="text-xs lg:text-sm font-bold uppercase tracking-wider">
                           {hospital.location}
                         </span>
-                      </div>
-                      <h3 className="text-white font-bold text-2xl lg:text-[28px] leading-tight max-w-[320px]">
+                      </address>
+                      <h3 className="text-white font-bold text-xl lg:text-[28px] leading-tight max-w-[280px] lg:max-w-[320px]">
                         {hospital.name}
                       </h3>
                     </div>
 
+                    {/* Image Section */}
                     <div
-                      className="absolute top-0 right-0 w-3/5 h-[70%] z-10 overflow-hidden"
+                      className="absolute top-0 right-0 w-3/5 h-[65%] lg:h-[70%] z-10 overflow-hidden"
                       style={{
                         borderRadius: "0 40px 0 80px",
                         WebkitMaskImage: "linear-gradient(to left, black 70%, transparent 100%)",
@@ -169,58 +188,71 @@ export default function IndiaMedNetwork() {
                     >
                       <Image
                         src={hospital.image}
-                        alt={hospital.name}
+                        alt={hospital.alt} // 5. SEO: Descriptive alt tags
                         fill
-                        className="object-cover"
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 42vw"
+                        priority={index < 2} // 6. Performance: Priority for first two slides
+                        className="object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
 
+                    {/* Glassmorphism Bottom Card */}
                     <div
-                      className="absolute bottom-4 left-4 right-4 h-[180px] z-30 p-6 flex items-end justify-between"
+                      className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4 h-[160px] lg:h-[180px] z-30 p-5 lg:p-6 flex items-end justify-between"
                       style={{
                         background: "linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1))",
                         backdropFilter: "blur(25px)",
                         WebkitBackdropFilter: "blur(25px)",
                         borderRadius: "30px",
                         border: "1px solid rgba(255, 255, 255, 0.4)",
-                        boxShadow: "inset 0 1px 1px rgba(255, 255, 255, 0.5), 0 8px 32px 0 rgba(0, 0, 0, 0.2)",
                       }}
                     >
-                      <div className="max-w-[65%]">
-                        <p className="text-white text-xs lg:text-[14px] font-medium leading-relaxed line-clamp-4">
+                      <div className="max-w-[60%] lg:max-w-[65%]">
+                        <p className="text-white text-[11px] lg:text-[14px] font-medium leading-snug lg:leading-relaxed line-clamp-4 lg:line-clamp-none">
                           {hospital.description}
                         </p>
                       </div>
 
-                      <div className="flex flex-col items-end gap-3">
-                        <button className="flex items-center gap-2 text-white font-bold text-sm hover:underline group">
+                      <div className="flex flex-col items-end gap-2 lg:gap-3 shrink-0">
+                        <Link 
+                          href={`/hospitals/${hospital.name.toLowerCase().replace(/\s+/g, '-')}`} 
+                          title={`Learn more about ${hospital.name}`}
+                          className="flex items-center gap-2 text-white font-bold text-[12px] lg:text-sm hover:underline group"
+                        >
                           Know more
                           <div className="bg-white rounded-full p-1 transition-transform group-hover:rotate-45">
-                            <ArrowUpRight size={18} className="text-[#EE4423]" strokeWidth={3} />
+                            <ArrowUpRight size={14} className="text-[#EE4423] lg:w-[18px]" strokeWidth={3} />
                           </div>
-                        </button>
-                        <button className="bg-white/90 text-[#58595B] px-5 py-2.5 rounded-full font-bold text-sm flex items-center gap-2 shadow-lg transition-transform hover:scale-105">
-                          <Phone size={16} fill="#58595B" />
-                          Contact Now
-                        </button>
+                        </Link>
+                        <a 
+                          href="tel:+91XXXXXXXXXX" 
+                          className="bg-white/90 text-[#58595B] px-3 py-2 lg:px-5 lg:py-2.5 rounded-full font-bold text-[11px] lg:text-sm flex items-center gap-2 shadow-lg transition-transform hover:scale-105"
+                        >
+                          <Phone size={14} className="lg:w-[16px]" fill="#58595B" />
+                          <span className="whitespace-nowrap">Contact Now</span>
+                        </a>
                       </div>
                     </div>
                   </div>
-                </div>
+                </article>
               );
             })}
           </div>
         </div>
 
         {/* DOTS */}
-        <div className="flex justify-center gap-2 mt-8">
+        <nav className="flex justify-center gap-2 mt-8" aria-label="Carousel Pagination">
           {hospitalData.map((_, i) => (
-            <div
+            <button
               key={i}
-              className={`h-2 rounded-full transition-all duration-300 ${selectedIndex === i ? "w-8 bg-[#EE4423]" : "w-2 bg-gray-200"}`}
+              type="button"
+              onClick={() => emblaApi?.scrollTo(i)}
+              aria-label={`Go to slide ${i + 1}`}
+              aria-current={selectedIndex === i ? "true" : "false"}
+              className={`h-2 rounded-full transition-all duration-500 ease-out ${selectedIndex === i ? "w-8 bg-[#EE4423]" : "w-2 bg-gray-200"}`}
             />
           ))}
-        </div>
+        </nav>
       </div>
     </section>
   );

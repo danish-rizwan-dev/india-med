@@ -5,9 +5,9 @@ import Image from "next/image";
 import { Phone, ChevronRight } from "lucide-react";
 
 /**
- * Animated Counter Component
+ * Animated Counter Component - Original Logic Restored
  */
-const Counter = ({ end, duration = 2000, shouldStart }: { end: number; duration?: number; shouldStart: boolean }) => {
+const Counter = ({ end, duration = 3000, shouldStart }: { end: number; duration?: number; shouldStart: boolean }) => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
@@ -49,10 +49,11 @@ export default function BeyondBoundaries() {
   return (
     <section 
       ref={sectionRef}
+      id="beyond-boundaries"
       className="relative w-full bg-[#EE4423] overflow-hidden flex flex-col items-center justify-center min-h-[682px] py-16 lg:py-0"
     >
-      {/* 1. Background Image Layer */}
-      <div className="absolute inset-0 z-0">
+      {/* 1. Background Image Layer - SEO optimized */}
+      <div className="absolute inset-0 z-0" aria-hidden="true">
         <Image 
           src="/images/backgrounds/beyoundboundriesbglines.png"
           alt="background lines"
@@ -68,29 +69,33 @@ export default function BeyondBoundaries() {
         <div className="flex flex-col lg:flex-row items-start justify-between">
           
           {/* Left Text Column */}
-          <div className="flex-1 text-white pt-10">
+          <header className="flex-1 text-white pt-10">
             <p className="text-xl font-medium mb-6">Beyond Boundaries</p>
-            <h2 className="text-4xl lg:text-[54px] font-bold leading-[1.1] max-w-[620px] mb-10">
-              Fostering health with cutting-edge medical services across 130+countries
+            <h2 className="text-3xl sm:text-4xl lg:text-[54px] font-bold leading-[1.1] max-w-[620px] mb-10">
+              Fostering health with cutting-edge medical services across 130+ countries
             </h2>
             
-            {/* Know More with Animated Arrow */}
-            <button className="group flex items-center gap-2 text-white font-bold text-lg no-underline">
+            <button 
+              aria-label="Learn more about medical services"
+              className="group flex items-center gap-2 text-white font-bold text-lg no-underline"
+            >
               Know More 
               <ChevronRight 
                 size={22} 
                 className="transition-transform duration-300 group-hover:translate-x-3" 
+                aria-hidden="true"
               />
             </button>
-          </div>
+          </header>
 
-          {/* Right Globe Column */}
-          <div className="relative mt-10 lg:mt-0">
+          {/* Right Globe Column - Fixed responsive width */}
+          <div className="relative mt-10 lg:mt-0 flex justify-center lg:block">
             <div className="relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[524px] lg:h-[480px]">
               <Image 
                 src="/images/backgrounds/globe.png" 
-                alt="World Medical Network" 
+                alt="World Medical Network Map" 
                 fill
+                sizes="(max-width: 768px) 300px, (max-width: 1024px) 450px, 524px"
                 className="object-contain"
               />
             </div>
@@ -98,30 +103,33 @@ export default function BeyondBoundaries() {
         </div>
 
         {/* 3. Bottom Row: Aligned Contact Button & Stats */}
-        <div className="mt-12 lg:mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full">
+        <footer className="mt-12 lg:mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full">
           
-          {/* Contact Button - Now aligned to the baseline of numbers */}
-          <div className="mb-10 lg:mb-0 w-full lg:w-auto">
-            <button className="bg-white text-[#58595B] px-8 py-3.5 rounded-full font-bold flex items-center gap-3 shadow-xl transition-transform hover:scale-105 active:scale-95">
-              <Phone size={18} fill="#58595B" />
+          {/* Contact Button */}
+          <div className="mb-10 lg:mb-0 w-full lg:w-auto flex justify-center lg:block">
+            <button 
+              aria-label="Contact us for medical services"
+              className="bg-white text-[#58595B] px-8 py-3.5 rounded-full font-bold flex items-center gap-3 shadow-xl transition-transform hover:scale-105 active:scale-95"
+            >
+              <Phone size={18} fill="#58595B" aria-hidden="true" />
               Contact Now
             </button>
           </div>
 
-          {/* Statistics Grid */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-12 lg:gap-[112px]">
+          {/* Statistics Grid - Responsive Wrap */}
+          <div className="flex flex-wrap justify-center lg:justify-start gap-10 md:gap-12 lg:gap-[112px]">
             {stats.map((stat, idx) => (
-              <div key={idx} className="flex flex-col items-center lg:items-start text-white">
+              <article key={idx} className="flex flex-col items-center lg:items-start text-white">
                 <p className="text-4xl lg:text-[48px] font-bold leading-tight">
                   <Counter end={stat.value} shouldStart={hasStarted} />
                 </p>
                 <p className="text-[12px] lg:text-[14px] font-medium opacity-90 text-center lg:text-left max-w-[155px]">
                   {stat.label}
                 </p>
-              </div>
+              </article>
             ))}
           </div>
-        </div>
+        </footer>
 
       </div>
     </section>

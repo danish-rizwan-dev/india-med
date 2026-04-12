@@ -1,133 +1,128 @@
 "use client";
 
-import React from "react";
+import React, { useCallback, useState } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Play } from "lucide-react";
+import useEmblaCarousel from "embla-carousel-react";
 
 const patientStories = [
   {
     name: "Richard Gruber",
     location: "Austria",
-    image: "/images/patient Stories/img1.jpg",
+    videoId: "dQw4w9WgXcQ",
     rating: 4,
   },
   {
     name: "Sophie Verschueren",
     location: "Australia",
-    image: "/images/patient Stories/img2.jpg",
+    videoId: "dQw4w9WgXcQ",
     rating: 4,
   },
   {
     name: "Dylan Walters",
     location: "United States",
-    image: "/images/patient Stories/img3.jpg",
+    videoId: "dQw4w9WgXcQ",
     rating: 5,
   },
   {
     name: "Ella Huber",
     location: "Germany",
-    image: "/images/patient Stories/img.jpg",
+    videoId: "dQw4w9WgXcQ",
     rating: 3,
   },
 ];
 
 export default function PatientStories() {
+  const [playingVideo, setPlayingVideo] = useState<string | null>(null);
+
+  // FIX: loop: false prevents scrolling when there are no more videos
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false, 
+    align: "start",
+    containScroll: "trimSnaps", 
+  });
+
+  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
   return (
-    <section className="relative flex w-full flex-col items-center bg-white py-20 overflow-hidden font-sans">
+    <section id="patient-stories" className="relative flex w-full flex-col items-center bg-white py-16 lg:py-24 overflow-hidden font-sans">
       
-      {/* ================= HEADING ================= */}
-      <div 
-        className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-16 px-10"
-        style={{ width: "min(489px, 90vw)", height: "73px" }}
-      >
-        <h2 className="text-[#58595B] font-bold text-2xl lg:text-[32px] leading-none">
+      <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-10 h-[60px] lg:h-[73px] w-fit max-w-[90vw]">
+        <h2 className="text-[#58595B] font-bold text-xl lg:text-[32px] leading-none text-center">
           Patient Stories
         </h2>
-      </div>
+      </header>
 
-      {/* Cards Container */}
-      <div className="w-full max-w-[1320px] px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+      <div className="w-full max-w-[1320px] px-0 lg:px-4 overflow-hidden" ref={emblaRef}>
+        <div className="flex lg:grid lg:grid-cols-4 lg:gap-6">
           {patientStories.map((patient, index) => (
-            <div key={index} className="flex flex-col cursor-pointer">
-              
-              {/* Media Container */}
+            <article 
+              key={index} 
+              className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-none min-w-0 px-3 lg:px-0 flex flex-col group"
+            >
               <div 
-                className="relative overflow-hidden bg-gray-100 shadow-md"
+                className="relative overflow-hidden bg-black shadow-md transition-all duration-300 cursor-pointer"
                 style={{ 
                   width: "100%", 
-                  height: "517px", 
-                  borderRadius: "40px",
+                  height: "clamp(350px, 50vh, 517px)", 
+                  borderRadius: "32px",
                 }}
+                onClick={() => setPlayingVideo(patient.videoId + index)}
               >
-                <Image 
-                  src={patient.image} 
-                  alt={patient.name} 
-                  fill 
-                  className="object-cover"
-                />
-
-                {/* Play Button Overlay */}
-                <div className="absolute inset-0 flex items-center justify-center z-20">
-                  {/* The Button Body with Glass Effect */}
-                  <div 
-                    className="relative flex h-[92px] w-[92px] items-center justify-center rounded-full transition-all duration-300 hover:-translate-y-3"
-                    style={{
-                      background: "rgba(236, 236, 236, 0.55)",
-                      backdropFilter: "blur(10px)",
-                      WebkitBackdropFilter: "blur(10px)",
-                      border: "1px solid rgba(255, 255, 255, 0.4)",
-                      /* This mask creates the hollow 'cutout' play triangle in the center */
-                      maskImage: "radial-gradient(circle, transparent 100%, black 100%), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M8 5v14l11-7z'/%3E%3C/svg%3E\")",
-                      WebkitMaskImage: "linear-gradient(black, black), url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='black' d='M8 5v14l11-7z'/%3E%3C/svg%3E\")",
-                      maskComposite: "exclude",
-                      WebkitMaskComposite: "xor",
-                      maskPosition: "center",
-                      maskRepeat: "no-repeat",
-                      maskSize: "100%, 40px"
-                    }}
-                  >
-                    {/* Empty container because the 'icon' is now a mask cutout */}
-                  </div>
-                </div>
+                {playingVideo === (patient.videoId + index) ? (
+                  // The Actual YouTube Player
+                  <iframe
+                    width="100%"
+                    height="100%"
+                    src={`https://www.youtube.com/embed/${patient.videoId}?autoplay=1`}
+                    title={`Video story of ${patient.name}`}
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                    className="absolute inset-0"
+                  />
+                ) : (
+                  // The SEO-Friendly Thumbnail
+                  <>
+                    <Image 
+                      src={`https://img.youtube.com/vi/${patient.videoId}/maxresdefault.jpg`} 
+                      alt={`Watch ${patient.name}'s medical success story`} 
+                      fill 
+                      className="object-cover opacity-90 transition-transform duration-500 group-hover:scale-105"
+                      sizes="(max-width: 1024px) 85vw, 25vw"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center z-20">
+                      <div className="flex h-16 w-16 items-center justify-center rounded-full transition-all duration-300 group-hover:scale-110 bg-white/30 backdrop-blur-md border border-white/40">
+                        <Play size={32} fill="white" className="text-white ml-1" />
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
 
-              {/* Text Content */}
-              <div className="mt-6 px-4 text-left">
-                <div className="flex gap-1 mb-2 justify-start">
+              <div className="mt-5 px-4 lg:px-2 text-left">
+                <div className="flex gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
-                    <Star 
-                      key={i} 
-                      size={16} 
-                      fill={i < patient.rating ? "#FBBF24" : "none"} 
-                      className={i < patient.rating ? "text-[#FBBF24]" : "text-gray-300"}
-                    />
+                    <Star key={i} size={14} fill={i < patient.rating ? "#FBBF24" : "none"} className={i < patient.rating ? "text-[#FBBF24]" : "text-gray-300"} />
                   ))}
                 </div>
-                
-                <h3 className="text-[#414042] font-bold text-xl">
-                  {patient.name}
-                </h3>
-                <p className="text-[#58595B] text-sm font-medium mt-1 uppercase tracking-widest opacity-80">
-                  {patient.location}
-                </p>
+                <h3 className="text-[#414042] font-bold text-lg lg:text-xl">{patient.name}</h3>
+                <p className="text-[#58595B] text-xs font-bold mt-1 uppercase tracking-widest opacity-60">{patient.location}</p>
               </div>
-            </div>
+            </article>
           ))}
         </div>
       </div>
 
-      {/* ================= BOTTOM NAVIGATION ================= */}
-      <div className="flex items-center justify-center gap-6 mt-16 w-full px-4">
-        <button className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all duration-300 active:scale-90">
+      <nav aria-label="Carousel Controls" className="flex items-center justify-center gap-6 mt-12 w-full px-4">
+        <button onClick={scrollPrev} type="button" className="flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all active:scale-90">
           <ChevronLeft size={28} strokeWidth={2.5} />
         </button>
-
-        <button className="group flex h-14 w-14 items-center justify-center rounded-full bg-white shadow-lg text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all duration-300 active:scale-90">
+        <button onClick={scrollNext} type="button" className="flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg text-[#EE4423] border border-gray-100 hover:bg-[#EE4423] hover:text-white transition-all active:scale-90">
           <ChevronRight size={28} strokeWidth={2.5} />
         </button>
-      </div>
-
+      </nav>
     </section>
   );
 }
