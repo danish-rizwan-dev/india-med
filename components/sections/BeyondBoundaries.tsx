@@ -8,10 +8,11 @@ import { Phone, ChevronRight } from "lucide-react";
  * Animated Counter Component - Original Logic Restored
  */
 const Counter = ({ end, duration = 3000, shouldStart }: { end: number; duration?: number; shouldStart: boolean }) => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(end); // Start at end value for SSR
 
   useEffect(() => {
     if (!shouldStart) return;
+    setCount(0); // Reset to 0 only on client after hydration
     let startTime: number | null = null;
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp;

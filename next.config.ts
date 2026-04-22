@@ -6,16 +6,10 @@ const nextConfig: NextConfig = {
 
   // ── IMAGE OPTIMISATION ───────────────────────────────────────────
   images: {
-    // Modern formats: AVIF first (60% smaller than JPEG), then WebP
     formats: ["image/avif", "image/webp"],
-
-    // Precise breakpoints matching the site's responsive design
     deviceSizes: [398, 640, 768, 1024, 1280, 1512, 1920],
     imageSizes: [16, 32, 64, 96, 128, 256, 384],
-
-    // Aggressive caching: 7 days browser cache for optimised images
     minimumCacheTTL: 604800,
-
     remotePatterns: [
       {
         protocol: "https",
@@ -26,59 +20,48 @@ const nextConfig: NextConfig = {
     ],
   },
 
+  // ── 301 REDIRECTS (fix broken internal links / 404s) ─────────────
+  async redirects() {
+    return [
+      // Unbuilt pages → nearest live parent
+      { source: "/services", destination: "/speciality", permanent: true },
+      { source: "/services/:slug*", destination: "/speciality", permanent: true },
+      { source: "/contact", destination: "/#beyond-boundaries", permanent: false },
+      { source: "/appointment", destination: "/#beyond-boundaries", permanent: false },
+      { source: "/about", destination: "/", permanent: false },
+      // Blog posts → under-construction until real pages are built
+      { source: "/blog/:slug*", destination: "/under-construction", permanent: false },
+      // Trailing slash normalisation
+      { source: "/:path+/", destination: "/:path+", permanent: true },
+    ];
+  },
+
   // ── CACHE-CONTROL HEADERS (CDN-friendly) ─────────────────────────
   async headers() {
     return [
       {
-        // Static assets: 1 year immutable cache
         source: "/_next/static/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
-        // Images: 7-day cache
         source: "/images/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=604800, stale-while-revalidate=86400",
-          },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=604800, stale-while-revalidate=86400" }],
       },
       {
-        // Fonts: 1-year cache
         source: "/_next/static/media/:path*",
-        headers: [
-          {
-            key: "Cache-Control",
-            value: "public, max-age=31536000, immutable",
-          },
-        ],
+        headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }],
       },
       {
-        // HTML pages: revalidate frequently for SEO freshness
         source: "/(.*)",
         headers: [
-          {
-            key: "X-Content-Type-Options",
-            value: "nosniff",
-          },
-          {
-            key: "X-Frame-Options",
-            value: "SAMEORIGIN",
-          },
-          {
-            key: "X-XSS-Protection",
-            value: "1; mode=block",
-          },
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "X-XSS-Protection", value: "1; mode=block" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
         ],
       },
     ];
   },
 };
 
-export default nextConfig;
+export default nextConfig;

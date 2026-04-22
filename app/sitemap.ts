@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     { path: "", priority: 1.0, changeFrequency: "daily" },
     { path: "/speciality", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
   ].map((route) => ({
     url: `${SEO_CONFIG.url}${route.path}`,
     lastModified: new Date().toISOString(),
