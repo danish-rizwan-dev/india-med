@@ -51,7 +51,7 @@ export default function FeaturedDestination() {
             className="md:hidden flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] px-[40px] py-[10px]"
             style={{ width: "252px", height: "88px", gap: "10px" }}
           >
-            <h2 className="text-[#58595B] font-bold text-[22px] font-montserrat leading-[1.2] text-center">
+            <h2 aria-hidden="true" className="text-[#58595B] font-bold text-[22px] font-montserrat leading-[1.2] text-center">
               Featured<br/>Destination
             </h2>
           </div>

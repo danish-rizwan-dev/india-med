@@ -53,7 +53,7 @@ export default function ModelOfCare() {
         className="md:hidden relative z-10 flex items-center justify-center border-[2px] border-white rounded-[50px] mb-12 px-[40px] py-[10px]"
         style={{ width: "283px", height: "88px", gap: "10px" }}
       >
-        <h2 className="text-white font-bold text-[22px] font-montserrat text-center leading-[1.2]">
+        <h2 aria-hidden="true" className="text-white font-bold text-[22px] font-montserrat text-center leading-[1.2]">
           India Med<br />Model of Care
         </h2>
       </div>

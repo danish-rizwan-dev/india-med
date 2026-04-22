@@ -63,7 +63,7 @@ export default function WhyChooseUs() {
               className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-6 px-8 py-4"
               style={{ width: "min(327px, 90vw)", height: "auto" }}
             >
-              <h2 className="text-[#58595B] font-bold text-2xl md:text-3xl leading-none">
+              <h2 aria-hidden="true" className="text-[#58595B] font-bold text-2xl md:text-3xl leading-none">
                 Why Choose Us?
               </h2>
             </div>

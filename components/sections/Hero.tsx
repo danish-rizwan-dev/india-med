@@ -8,7 +8,7 @@ export default function Hero() {
     <div className="relative w-[16px] h-[16px] lg:w-[26px] lg:h-[24px] flex items-center justify-center flex-shrink-0">
       <Image
         src="/images/icons/appointmentCalender.svg"
-        alt=""
+        alt="Book appointment calendar icon"
         fill
         sizes="(max-width: 1024px) 16px, 26px"
         className="object-contain brightness-0 invert"
