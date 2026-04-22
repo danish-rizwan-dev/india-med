@@ -67,7 +67,7 @@ const hospitalData = [
 ];
 
 const LocationIcon = () => (
-  <svg width="18" height="22" viewBox="0 0 24 24" fill="none" className="shrink-0" aria-hidden="true">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0" aria-hidden="true">
     <path d="M12 21C16 17.5 19 14.4183 19 10C19 6.13401 15.866 3 12 3C8.13401 3 5 6.13401 5 10C5 14.4183 8 17.5 12 21Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     <circle cx="12" cy="10" r="2.5" fill="white" />
   </svg>
@@ -164,7 +164,7 @@ export default function IndiaMedNetwork() {
                     }}
                   >
                     {/* Content Header */}
-                    <div className="relative z-20 p-6 lg:p-8 pb-0 flex flex-col gap-1 lg:gap-2">
+                    <div className="relative z-20 pt-12 px-6 lg:p-8 pb-0 flex flex-col gap-1 lg:gap-2">
                       <address className="flex items-center gap-2 text-white/90 not-italic">
                         <LocationIcon />
                         <span className="text-xs lg:text-sm font-bold uppercase tracking-wider">
