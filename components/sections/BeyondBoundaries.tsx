@@ -58,7 +58,6 @@ export default function BeyondBoundaries() {
           src="/images/backgrounds/beyoundboundriesbglines.png"
           alt="Topographical background lines"
           fill
-          priority
           className="object-cover opacity-100"
         />
       </div>

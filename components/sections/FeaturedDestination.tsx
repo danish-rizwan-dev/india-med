@@ -36,7 +36,6 @@ export default function FeaturedDestination() {
               fill
               sizes="100vw"
               className="object-cover object-bottom lg:object-contain lg:object-center  grayscale"
-              priority
             />
           </div>
         </div>
@@ -46,7 +45,7 @@ export default function FeaturedDestination() {
       <div className="relative z-10 flex flex-col items-center mx-auto w-full max-w-[1400px]">
         
         {/* Header Block */}
-        <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full lg:mt-[-120px] px-6">
+        <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full mt-[-20px] lg:mt-[-240px] px-6">
           {/* Mobile Header Pill (252x88) */}
           <div 
             className="md:hidden flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] px-[40px] py-[10px]"

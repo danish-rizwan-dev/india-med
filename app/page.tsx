@@ -1,33 +1,35 @@
+import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
-import Specialities from "@/components/sections/Specialities";
-import FeaturedDestination from "@/components/sections/FeaturedDestination";
 import ServiceBar from "@/components/sections/ServicesBar";
-import ServicesSection from "@/components/sections/ServiceSection";
-import IndiaMedNetwork from "@/components/sections/IndiaMedNetwork";
-import PatientStories from "@/components/sections/PatientStories";
-import BeyondBoundaries from "@/components/sections/BeyondBoundaries";
-import BlogSection from "@/components/sections/BlogSection";
-import FAQSection from "@/components/sections/FAQSection";
-import Footer from "@/components/layout/Footer";
-import WhyChooseUs from "@/components/sections/WhyChooseUs";
-import ModelOfCare from "@/components/sections/ModelOfCare";
-import SharedGradientBg from "@/components/layout/SharedGradientBg";
+
+// Dynamically import below-the-fold components for better performance
+const IndiaMedNetwork = dynamic(() => import("@/components/sections/IndiaMedNetwork"));
+const Specialities = dynamic(() => import("@/components/sections/Specialities"));
+const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"));
+const FeaturedDestination = dynamic(() => import("@/components/sections/FeaturedDestination"));
+const ModelOfCare = dynamic(() => import("@/components/sections/ModelOfCare"));
+const ServicesSection = dynamic(() => import("@/components/sections/ServiceSection"));
+const PatientStories = dynamic(() => import("@/components/sections/PatientStories"));
+const BeyondBoundaries = dynamic(() => import("@/components/sections/BeyondBoundaries"));
+const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
+const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
+const SharedGradientBg = dynamic(() => import("@/components/layout/SharedGradientBg"));
+const Footer = dynamic(() => import("@/components/layout/Footer"));
 
 export default function HomePage() {
   return (
     <main className="bg-white">
+      {/* Above the fold - Critical for LCP */}
       <Hero />
       <ServiceBar />
 
-      {/* This wrapper now handles all background logic for these three */}
+      {/* Below the fold - Lazy loaded / Code split */}
       <SharedGradientBg>
         <IndiaMedNetwork />
         <Specialities />
         <WhyChooseUs />
       </SharedGradientBg>
 
-    
-      {/* 3. Outer Sections: Non-Gradient Layouts */}
       <FeaturedDestination />
       <ModelOfCare />
       <ServicesSection />

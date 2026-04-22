@@ -69,7 +69,6 @@ export default function FAQSection() {
             src="/images/backgrounds/background.png"
             alt="background"
             fill
-            priority
             className="object-cover"
           />
           {/* Blur Overlay */}

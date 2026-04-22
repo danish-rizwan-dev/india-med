@@ -11,7 +11,7 @@ export default function ModelOfCare() {
     {
       title: "Exceptional Clinical Talent",
       desc: "India Med delivers high-quality, integrated care through expert clinicians, a doctor-led approach, and strong multispecialty collaboration.",
-      circlePos: { cx: 150, cy: 360 }, 
+      circlePos: { cx: 150, cy: 360 },
     },
     {
       title: "World-class Infrastructure",
@@ -37,10 +37,9 @@ export default function ModelOfCare() {
 
   return (
     <section className="relative flex flex-col items-center bg-white md:bg-white mx-auto py-10 md:py-16 w-full max-w-[1355px] px-0 md:px-0">
-      
+
       {/* MOBILE BACKGROUND (Touching Above Section & Covering Half the Box) */}
-      {/* MOBILE BACKGROUND (Touching Above Section & Covering Half the Box) */}
-      <div className="absolute inset-x-0 bg-[#EE4423] md:hidden -top-12 h-[398px]" />
+      <div className="absolute inset-x-0 bg-[#EE4423] md:hidden -top-12 h-[450px]" />
 
       {/* DESKTOP HEADER */}
       <div className="hidden md:flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-20 px-[40px] w-full max-w-[598px] h-[73px]">
@@ -50,12 +49,12 @@ export default function ModelOfCare() {
       </div>
 
       {/* MOBILE HEADER (283x88) */}
-      <div 
+      <div
         className="md:hidden relative z-10 flex items-center justify-center border-[2px] border-white rounded-[50px] mb-12 px-[40px] py-[10px]"
         style={{ width: "283px", height: "88px", gap: "10px" }}
       >
         <h2 className="text-white font-bold text-[22px] font-montserrat text-center leading-[1.2]">
-          India Med<br/>Model of Care
+          India Med<br />Model of Care
         </h2>
       </div>
 
@@ -64,22 +63,22 @@ export default function ModelOfCare() {
         {/* SVG PATH */}
         <div className="absolute inset-0 pointer-events-none">
           <svg width="100%" height="100%" viewBox="0 0 1200 600" fill="none" preserveAspectRatio="none">
-            <path 
-              d="M 0 300 Q 75 300, 150 360 C 220 360, 280 250, 380 250 S 530 360, 600 360 S 720 250, 820 250 S 980 360, 1050 360 Q 1125 360, 1200 300" 
-              stroke="#EE4423" 
-              strokeWidth="2" 
-              strokeDasharray="10 10" 
+            <path
+              d="M 0 300 Q 75 300, 150 360 C 220 360, 280 250, 380 250 S 530 360, 600 360 S 720 250, 820 250 S 980 360, 1050 360 Q 1125 360, 1200 300"
+              stroke="#EE4423"
+              strokeWidth="2"
+              strokeDasharray="10 10"
               className="opacity-20"
             />
             {steps.map((step, idx) => (
-              <circle 
+              <circle
                 key={idx}
-                cx={step.circlePos.cx} 
-                cy={step.circlePos.cy} 
+                cx={step.circlePos.cx}
+                cy={step.circlePos.cy}
                 r={activeIndex === idx ? "10" : "8"}
-                fill={activeIndex === idx ? "#EE4423" : "white"} 
-                stroke="#EE4423" 
-                strokeWidth="2" 
+                fill={activeIndex === idx ? "#EE4423" : "white"}
+                stroke="#EE4423"
+                strokeWidth="2"
                 className="transition-all duration-300"
               />
             ))}
@@ -110,38 +109,36 @@ export default function ModelOfCare() {
         </div>
       </div>
 
-      {/* MOBILE VIEW (352x428) */}
-      <div 
+      <div
         className={`md:hidden relative z-10 bg-white flex flex-col items-center pt-[56px] gap-[24px] mb-8 transition-all duration-500 overflow-hidden px-4`}
-        style={{ 
-          width: "352px", 
-          minHeight: "428px", 
+        style={{
+          width: "min(352px, 92vw)",
+          minHeight: "428px",
           borderRadius: "34px",
           boxShadow: "0px 15px 25px 0px rgba(67, 41, 57, 0.1)"
         }}
       >
-        <div className="flex flex-col gap-[24px]">
+        <div className="flex flex-col gap-[24px] w-full items-center">
           {steps.map((step, index) => {
             const isActive = activeIndex === index;
-            // The first item is orange by default in the screenshot, but let's make it dynamic based on activeIndex
-            // If nothing is active, maybe first one stays orange or we just use isActive
             const isHighlighted = isActive || (activeIndex === null && index === 0);
-            
+
             return (
-              <div 
-                key={index} 
-                className="flex flex-col gap-[10px] cursor-pointer"
-                style={{ width: "272px" }}
+              <div
+                key={index}
+                role="button"
+                aria-expanded={isActive}
+                className="flex flex-col gap-[10px] cursor-pointer w-full max-w-[272px]"
                 onClick={() => setActiveIndex(isActive ? null : index)}
               >
                 <div className="flex items-center justify-between">
-                  <span 
+                  <span
                     className={`font-montserrat font-bold text-[16px] leading-tight flex-1 transition-colors duration-300 ${isHighlighted ? 'text-[#EE4423]' : 'text-[#58595B]'}`}
                   >
                     {step.title}
                   </span>
                   {/* Custom SVG Icon */}
-                  <div 
+                  <div
                     className={`w-[26px] h-[26px] transition-all duration-300 ${isActive ? 'rotate-180' : 'rotate-0'} ${isHighlighted ? 'brightness-0 saturate-100 invert-[34%] sepia-[90%] saturate-[3241%] hue-rotate-[349deg] brightness-[101%] contrast-[96%]' : ''}`}
                     style={{
                       backgroundImage: `url('/images/icons/modelofcareIcon.svg')`,
@@ -151,7 +148,7 @@ export default function ModelOfCare() {
                     }}
                   />
                 </div>
-                
+
                 {/* Description (Accordion Content) */}
                 <div className={`overflow-hidden transition-all duration-500 ${isActive ? 'max-h-[200px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
                   <p className="text-[#58595B] font-montserrat font-medium text-[14px] leading-[1.3] text-center">
@@ -176,8 +173,8 @@ function Card({ title, desc, isMobile }: { title: string; desc: string; isMobile
       <h3 className="text-[#58595B] font-bold mb-3 text-[18px] md:text-[23px] font-montserrat leading-[1.2] tracking-[-0.38px]">
         {title}
       </h3>
-      
-      <p 
+
+      <p
         className="text-[#58595B] mb-6 font-montserrat"
         style={{
           fontWeight: 600,

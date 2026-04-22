@@ -111,6 +111,8 @@ export default function Navbar() {
             className="lg:hidden flex items-center justify-center text-[#EE4423]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
           >
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -124,7 +126,7 @@ export default function Navbar() {
             className="fixed inset-0 top-[60px] bg-black/20 z-[55] lg:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div className="fixed inset-0 top-[60px] bg-white z-[60] lg:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
+          <div id="mobile-menu" className="fixed inset-0 top-[60px] bg-white z-[60] lg:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
             <ul
               className="flex flex-col gap-6 text-[18px] font-semibold text-[#555555] mb-8"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
