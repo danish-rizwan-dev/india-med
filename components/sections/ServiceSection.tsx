@@ -103,7 +103,7 @@ export default function ServicesSection() {
               <p className="text-[#58595B] text-sm font-medium leading-relaxed max-w-[262px]">
                 {services[0].desc}
               </p>
-              <Link href="#" title={`Learn more about ${services[0].title}`} className="mt-auto pt-4 text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
+              <Link href="/services" title={`Learn more about ${services[0].title}`} className="mt-auto pt-4 text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
                 Know More <span className="text-lg transition-transform group-hover/link:translate-x-1">›</span>
               </Link>
             </div>
@@ -121,7 +121,7 @@ export default function ServicesSection() {
                 <p className="text-[#58595B] text-sm font-medium max-w-[320px] mb-4">
                   {service.desc}
                 </p>
-                <Link href="#" title={`Learn more about ${service.title}`} className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
+                <Link href="/services" title={`Learn more about ${service.title}`} className="mt-auto text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
                   Know More <span className="text-lg transition-transform group-hover/link:translate-x-1">›</span>
                 </Link>
               </article>
@@ -147,7 +147,7 @@ export default function ServicesSection() {
               <p className="text-[#58595B] text-sm font-medium leading-relaxed max-w-[262px]">
                 {services[3].desc}
               </p>
-              <Link href="#" title={`Learn more about ${services[3].title}`} className="mt-auto pt-4 text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
+              <Link href="/services" title={`Learn more about ${services[3].title}`} className="mt-auto pt-4 text-[#EE4423] font-bold text-sm flex items-center gap-1 group/link w-fit">
                 Know More <span className="text-lg transition-transform group-hover/link:translate-x-1">›</span>
               </Link>
             </div>

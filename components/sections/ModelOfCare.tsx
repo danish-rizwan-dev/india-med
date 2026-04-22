@@ -188,7 +188,7 @@ function Card({ title, desc, isMobile }: { title: string; desc: string; isMobile
       </p>
 
       <Link
-        href="#"
+        href="/speciality"
         className="flex items-center justify-center bg-[#EE4423] text-white rounded-[50px] font-bold transition-all active:scale-95 md:hover:scale-105 shadow-md"
         style={{ width: "159.36px", height: "40px", gap: "10px" }}
       >

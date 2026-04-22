@@ -23,21 +23,21 @@ export default function BlogSection() {
       date: "2020-01-27",
       displayDate: "Jan 27, 2020",
       image: "/images/backgrounds/liver_blog.jpg",
-      slug: "/blog/liver-detox"
+      slug: "/under-construction"
     },
     {
       title: "White Spots on Skin: Causes, Symptoms, and Treatments",
       date: "2020-01-22",
       displayDate: "Jan 22, 2020",
       image: "/images/backgrounds/whitespot_blog.jpg",
-      slug: "/blog/white-spots"
+      slug: "/under-construction"
     },
     {
       title: "Yoga in Cancer Patients: Expectations, Benefits and Risks",
       date: "2020-01-22",
       displayDate: "Jan 22, 2020",
       image: "/images/backgrounds/yoga_blog.jpg",
-      slug: "/blog/yoga-cancer"
+      slug: "/under-construction"
     },
   ];
 

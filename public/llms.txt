@@ -1,0 +1,38 @@
+# India Med Service
+
+> Connecting international patients with world-class medical treatment in India.
+
+India Med Service is a leading medical tourism platform that helps international patients find affordable, high-quality healthcare in India. We connect patients with top multispecialty hospitals, expert doctors, and provide complete visa & travel support.
+
+## Key Pages
+
+- [Home](https://indiamedservice.com/): Overview of services, hospitals, and specialities
+- [Specialities](https://indiamedservice.com/speciality): Browse all medical specialities including Cardiac Care, Cancer Care, Neurosciences, Orthopaedics, and more
+
+## Medical Specialities
+
+- Cardiac Care — Heart surgery, angioplasty, bypass surgery
+- Cancer Care — Oncology, chemotherapy, radiation therapy
+- Neurosciences — Brain and spine surgery, neurological disorders
+- Gastrosciences — Digestive system treatment, liver care
+- Orthopaedics — Joint replacement, spine surgery, sports injuries
+- Nephrology — Kidney transplant, dialysis services
+- Pulmonology — Lung treatment, respiratory disorders
+- Urology — Kidney stones, prostate treatment
+
+## About India Med Service
+
+- Trusted by patients from 70+ countries
+- Access to 10+ top hospitals across India
+- 10,000+ international patients served per year
+- JCI & NABH accredited partner hospitals
+- Complete support: medical visa, airport transfers, accommodation
+- Treatment costs up to 70-80% lower than Western countries
+
+## Contact & Support
+
+For medical assistance and consultation, visit: https://indiamedservice.com
+
+## Optional
+
+llms-full.txt: https://indiamedservice.com/llms-full.txt
