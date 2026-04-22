@@ -17,7 +17,7 @@ export default function Hero() {
   );
 
   return (
-    <section 
+    <section
       className="relative w-full bg-white overflow-hidden md:min-h-[700px] lg:min-h-[850px] h-[650px] lg:h-auto"
       aria-label="Affordable Medical Treatment in India"
     >
@@ -25,7 +25,7 @@ export default function Hero() {
       <div className="absolute pointer-events-none z-0 hidden md:block md:w-[400px] lg:w-[508px] lg:h-[723px] lg:top-[-70.33px] lg:right-0">
         <Image
           src="/images/backgrounds/backgroundgrids.png"
-          alt=""
+          alt="Geometric background pattern"
           fill
           sizes="(max-width: 1024px) 400px, 508px"
           className="object-contain object-right"
@@ -33,9 +33,10 @@ export default function Hero() {
         />
       </div>
 
+
       {/* ================= MAIN CONTAINER ================= */}
       <div className="relative w-full max-w-[1512px] mx-auto h-full">
-        
+
         {/* ================= DOCTOR IMAGE ================= */}
         <div
           className="
@@ -110,8 +111,9 @@ export default function Hero() {
           </div>
 
           {/* Consult Button */}
-            <Link
+          <Link
             href="/appointment"
+            aria-label="Book a medical consultation with India Med experts"
             title="Book a medical consultation"
             className="
               flex items-center justify-center
@@ -119,7 +121,7 @@ export default function Hero() {
               transition-transform active:scale-95
               shadow-[0px_10px_20px_rgba(238,68,35,0.2)]
               w-[158.9px] lg:w-[252px] 
-              h-[36px] lg:h-[49px]
+              h-[48px] lg:h-[49px]
               p-4
               rounded-full gap-[10px] px-[20px]
               mr-auto lg:mr-0

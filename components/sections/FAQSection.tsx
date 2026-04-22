@@ -34,8 +34,26 @@ const faqData = [
 export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqData.map((faq) => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer,
+      },
+    })),
+  };
+
   return (
     <section className="relative w-full flex items-center justify-center overflow-hidden py-24 min-h-[539px]">
+      {/* FAQ Schema */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       {/* ================= BACKGROUND LAYER ================= */}
       <div
         className="absolute z-0 pointer-events-none"
@@ -126,6 +144,7 @@ export default function FAQSection() {
                 width={20}
                 height={20}
                 alt="calendar"
+                style={{ width: "auto", height: "auto" }}
               />
               Book Appointment
             </button>

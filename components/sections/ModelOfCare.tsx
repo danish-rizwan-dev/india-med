@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { ChevronDown } from "lucide-react";
 
 export default function ModelOfCare() {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
@@ -35,11 +36,26 @@ export default function ModelOfCare() {
   ];
 
   return (
-    <section className="relative flex flex-col items-center bg-white mx-auto py-10 w-full max-w-[1355px] px-4 md:px-0">
-      {/* HEADER */}
-      <div className="flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-12 md:mb-20 px-6 md:px-[40px] w-full max-w-[598px] h-[60px] md:h-[73px]">
-        <h2 className="text-[#58595B] font-bold text-[20px] md:text-[30px] font-montserrat tracking-[-0.38px] text-center">
+    <section className="relative flex flex-col items-center bg-white md:bg-white mx-auto py-10 md:py-16 w-full max-w-[1355px] px-0 md:px-0">
+      
+      {/* MOBILE BACKGROUND (Touching Above Section & Covering Half the Box) */}
+      {/* MOBILE BACKGROUND (Touching Above Section & Covering Half the Box) */}
+      <div className="absolute inset-x-0 bg-[#EE4423] md:hidden -top-12 h-[398px]" />
+
+      {/* DESKTOP HEADER */}
+      <div className="hidden md:flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-20 px-[40px] w-full max-w-[598px] h-[73px]">
+        <h2 className="text-[#58595B] font-bold text-[30px] font-montserrat tracking-[-0.38px] text-center">
           India Med Model of Care
+        </h2>
+      </div>
+
+      {/* MOBILE HEADER (283x88) */}
+      <div 
+        className="md:hidden relative z-10 flex items-center justify-center border-[2px] border-white rounded-[50px] mb-12 px-[40px] py-[10px]"
+        style={{ width: "283px", height: "88px", gap: "10px" }}
+      >
+        <h2 className="text-white font-bold text-[22px] font-montserrat text-center leading-[1.2]">
+          India Med<br/>Model of Care
         </h2>
       </div>
 
@@ -94,19 +110,61 @@ export default function ModelOfCare() {
         </div>
       </div>
 
-      {/* MOBILE VIEW */}
-      <div className="md:hidden flex flex-col items-center gap-12 w-full relative">
-        <div className="absolute top-0 bottom-0 left-1/2 -translate-x-1/2 border-l-2 border-dashed border-[#EE4423] opacity-20 pointer-events-none" />
-        {steps.map((step, index) => (
-          <div 
-            key={index} 
-            onClick={() => setActiveIndex(index)}
-            className="relative z-10 bg-white p-4 rounded-xl shadow-sm border border-gray-50 flex flex-col items-center w-full max-w-[320px]"
-          >
-            <div className={`absolute -top-3 left-1/2 -translate-x-1/2 w-4 h-4 rounded-full border-2 transition-colors duration-300 ${activeIndex === index ? 'bg-[#EE4423] border-[#EE4423]' : 'bg-white border-[#EE4423]'}`} />
-            <Card title={step.title} desc={step.desc} isMobile />
-          </div>
-        ))}
+      {/* MOBILE VIEW (352x428) */}
+      <div 
+        className={`md:hidden relative z-10 bg-white flex flex-col items-center pt-[56px] gap-[24px] mb-8 transition-all duration-500 overflow-hidden px-4`}
+        style={{ 
+          width: "352px", 
+          minHeight: "428px", 
+          borderRadius: "34px",
+          boxShadow: "0px 15px 25px 0px rgba(67, 41, 57, 0.1)"
+        }}
+      >
+        <div className="flex flex-col gap-[24px]">
+          {steps.map((step, index) => {
+            const isActive = activeIndex === index;
+            // The first item is orange by default in the screenshot, but let's make it dynamic based on activeIndex
+            // If nothing is active, maybe first one stays orange or we just use isActive
+            const isHighlighted = isActive || (activeIndex === null && index === 0);
+            
+            return (
+              <div 
+                key={index} 
+                className="flex flex-col gap-[10px] cursor-pointer"
+                style={{ width: "272px" }}
+                onClick={() => setActiveIndex(isActive ? null : index)}
+              >
+                <div className="flex items-center justify-between">
+                  <span 
+                    className={`font-montserrat font-bold text-[16px] leading-tight flex-1 transition-colors duration-300 ${isHighlighted ? 'text-[#EE4423]' : 'text-[#58595B]'}`}
+                  >
+                    {step.title}
+                  </span>
+                  {/* Custom SVG Icon */}
+                  <div 
+                    className={`w-[26px] h-[26px] transition-all duration-300 ${isActive ? 'rotate-180' : 'rotate-0'} ${isHighlighted ? 'brightness-0 saturate-100 invert-[34%] sepia-[90%] saturate-[3241%] hue-rotate-[349deg] brightness-[101%] contrast-[96%]' : ''}`}
+                    style={{
+                      backgroundImage: `url('/images/icons/modelofcareIcon.svg')`,
+                      backgroundSize: 'contain',
+                      backgroundRepeat: 'no-repeat',
+                      backgroundPosition: 'center'
+                    }}
+                  />
+                </div>
+                
+                {/* Description (Accordion Content) */}
+                <div className={`overflow-hidden transition-all duration-500 ${isActive ? 'max-h-[200px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
+                  <p className="text-[#58595B] font-montserrat font-medium text-[14px] leading-[1.3] text-center">
+                    {step.desc}
+                  </p>
+                </div>
+
+                {/* Divider */}
+                <div className="w-full h-[1px] bg-gray-200/80 mt-1" />
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
   );

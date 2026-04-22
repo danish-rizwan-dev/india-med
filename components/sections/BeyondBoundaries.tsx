@@ -50,13 +50,13 @@ export default function BeyondBoundaries() {
     <section 
       ref={sectionRef}
       id="beyond-boundaries"
-      className="relative w-full bg-[#EE4423] overflow-hidden flex flex-col items-center justify-center min-h-[682px] py-16 lg:py-0"
+      className="relative w-full bg-[#EE4423] overflow-hidden flex flex-col items-center justify-center min-h-[700px] lg:min-h-[682px] py-20 lg:py-0"
     >
-      {/* 1. Background Image Layer - SEO optimized */}
-      <div className="absolute inset-0 z-0" aria-hidden="true">
+      {/* 1. Background Image Layer */}
+      <div className="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
         <Image 
           src="/images/backgrounds/beyoundboundriesbglines.png"
-          alt="background lines"
+          alt="Topographical background lines"
           fill
           priority
           className="object-cover opacity-100"
@@ -66,18 +66,18 @@ export default function BeyondBoundaries() {
       <div className="relative z-10 w-full max-w-[1320px] px-6 flex flex-col">
         
         {/* 2. Top Content Row */}
-        <div className="flex flex-col lg:flex-row items-start justify-between">
+        <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between text-center lg:text-left">
           
           {/* Left Text Column */}
-          <header className="flex-1 text-white pt-10">
-            <p className="text-xl font-medium mb-6">Beyond Boundaries</p>
-            <h2 className="text-3xl sm:text-4xl lg:text-[54px] font-bold leading-[1.1] max-w-[620px] mb-10">
+          <header className="flex-1 text-white lg:pt-10 mb-10 lg:mb-0">
+            <p className="text-lg lg:text-xl font-medium mb-4 lg:mb-6 opacity-90">Beyond Boundaries</p>
+            <h2 className="text-[32px] sm:text-4xl lg:text-[54px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[620px] mb-8 lg:mb-10">
               Fostering health with cutting-edge medical services across 130+ countries
             </h2>
             
             <button 
               aria-label="Learn more about medical services"
-              className="group flex items-center gap-2 text-white font-bold text-lg no-underline"
+              className="group flex items-center justify-center lg:justify-start gap-2 text-white font-bold text-lg no-underline mx-auto lg:mx-0"
             >
               Know More 
               <ChevronRight 
@@ -88,14 +88,14 @@ export default function BeyondBoundaries() {
             </button>
           </header>
 
-          {/* Right Globe Column - Fixed responsive width */}
-          <div className="relative mt-10 lg:mt-0 flex justify-center lg:block">
-            <div className="relative w-[300px] h-[300px] sm:w-[450px] sm:h-[450px] lg:w-[524px] lg:h-[480px]">
+          {/* Right Globe Column */}
+          <div className="relative flex justify-center w-full lg:w-auto">
+            <div className="relative w-[280px] h-[280px] sm:w-[400px] sm:h-[400px] lg:w-[524px] lg:h-[480px]">
               <Image 
                 src="/images/backgrounds/globe.png" 
-                alt="World Medical Network Map" 
+                alt="World Medical Network Globe" 
                 fill
-                sizes="(max-width: 768px) 300px, (max-width: 1024px) 450px, 524px"
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 400px, 524px"
                 className="object-contain"
               />
             </div>
@@ -103,24 +103,27 @@ export default function BeyondBoundaries() {
         </div>
 
         {/* 3. Bottom Row: Aligned Contact Button & Stats */}
-        <footer className="mt-12 lg:mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full">
+        <footer className="mt-16 lg:mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full gap-12 lg:gap-0">
           
           {/* Contact Button */}
-          <div className="mb-10 lg:mb-0 w-full lg:w-auto flex justify-center lg:block">
+          <div className="w-full lg:w-auto flex justify-center lg:block">
             <button 
-              aria-label="Contact us for medical services"
-              className="bg-white text-[#58595B] px-8 py-3.5 rounded-full font-bold flex items-center gap-3 shadow-xl transition-transform hover:scale-105 active:scale-95"
+              aria-label="Contact us now"
+              className="bg-white text-[#58595B] px-10 py-4 lg:px-8 lg:py-3.5 rounded-full font-bold flex items-center gap-3 shadow-2xl transition-all hover:scale-105 active:scale-95"
             >
-              <Phone size={18} fill="#58595B" aria-hidden="true" />
-              Contact Now
+              <Phone size={20} fill="#58595B" aria-hidden="true" />
+              <span className="text-lg lg:text-base">Contact Now</span>
             </button>
           </div>
 
-          {/* Statistics Grid - Responsive Wrap */}
-          <div className="flex flex-wrap justify-center lg:justify-start gap-10 md:gap-12 lg:gap-[112px]">
+          {/* Statistics Grid */}
+          <div className="grid grid-cols-2 lg:flex lg:flex-row justify-center lg:justify-start gap-x-8 gap-y-10 md:gap-12 lg:gap-[112px] w-full lg:w-auto">
             {stats.map((stat, idx) => (
-              <article key={idx} className="flex flex-col items-center lg:items-start text-white">
-                <p className="text-4xl lg:text-[48px] font-bold leading-tight">
+              <article 
+                key={idx} 
+                className={`flex flex-col items-center lg:items-start text-white ${idx === 0 ? 'col-span-2' : 'col-span-1'}`}
+              >
+                <p className="text-[36px] sm:text-4xl lg:text-[48px] font-bold leading-tight">
                   <Counter end={stat.value} shouldStart={hasStarted} />
                 </p>
                 <p className="text-[12px] lg:text-[14px] font-medium opacity-90 text-center lg:text-left max-w-[155px]">

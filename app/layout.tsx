@@ -1,5 +1,5 @@
 import "./globals.css";
-import Navbar from "@/components/Navbar";
+import Navbar from "@/components/layout/Navbar";
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 

@@ -20,9 +20,11 @@ export default function ServiceBar() {
 
   return (
     <nav className="relative w-full flex justify-center px-4 lg:px-0 z-40" aria-label="Quick Services">
-      
+
       {/* --- MOBILE VIEW --- */}
-      <div className="flex md:hidden justify-center translate-y-[-55%] mb-[50px]">
+      <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[300px] h-[300px] bg-[#EE4423]/15 blur-[100px] rounded-full pointer-events-none" style={{ zIndex: -1 }} />
+      
+      <div className="flex md:hidden justify-center translate-y-[-55%] mb-[10px]">
         <div
           className="relative flex items-center justify-center bg-white/10 backdrop-blur-md"
           style={{ width: "351.11px", height: "328px", borderRadius: "33.76px", padding: "25px", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)" }}
@@ -40,7 +42,7 @@ export default function ServiceBar() {
                   <div className="relative w-7 h-7 mb-1 transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert">
                     <Image
                       src={service.icon}
-                      alt=""
+                      alt={`${service.label} icon`}
                       fill
                       priority
                       className="object-contain"
@@ -61,8 +63,8 @@ export default function ServiceBar() {
               <div className="relative w-10 h-10">
                 <Image
                   src={mobileCTA.icon}
-                  alt=""
-                  
+                  alt={`${mobileCTA.label} icon`}
+
                   fill
                   className="object-contain brightness-0 invert"
                 />
@@ -76,21 +78,31 @@ export default function ServiceBar() {
       </div>
 
       {/* --- TABLET & DESKTOP VIEW --- */}
+      <div 
+        className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] h-[180px] bg-[#EE4423]/20 blur-[120px] rounded-full pointer-events-none hidden md:block" 
+        style={{ zIndex: -1 }}
+      />
+      
       <div
         className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1317px] h-[160px] lg:h-[226px] -translate-y-1/2 rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px] mb-[10px] mt-[-140px] lg:mt-[-200px]"
-        style={{ backgroundColor: "rgba(255, 255, 255, 0.1)", backdropFilter: "blur(40px)", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)" }}
+        style={{
+          background: "rgba(255, 255, 255, 0.1)",
+          backdropFilter: "blur(50px)",
+          boxShadow: "10px 20px 30px 0px rgba(0, 0, 0, 0.1)"
+        }}
       >
+
         <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
           {services.map((service, index) => (
             <Link
               href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
               key={index}
-              className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full border-r border-gray-100 last:border-none px-2 lg:px-4 gap-2 lg:gap-4"
+              className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4"
             >
               <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
                 <Image
                   src={service.icon}
-                  alt=""
+                  alt={`${service.label} service icon`}
                   fill
                   className="object-contain"
                 />

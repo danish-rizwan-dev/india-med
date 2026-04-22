@@ -45,8 +45,8 @@ export default function WhyChooseUs() {
         aria-hidden="true"
         style={{
           backgroundImage: "url('/images/backgrounds/worldmapsstrokes.png')",
-          backgroundSize: "contain",
-          backgroundPosition: "center",
+          backgroundSize: "cover",
+          backgroundPosition: "center bottom",
           backgroundRepeat: "no-repeat",
         }}
       />
@@ -83,7 +83,7 @@ export default function WhyChooseUs() {
               Trusted by international patients worldwide, India delivers advanced
               healthcare backed by internationally trained specialists and complete end-to-end support.
             </p>
-            <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-lg hover:bg-[#d63a1b] transition-all active:scale-95">
+            <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg hover:bg-[#d63a1b] transition-all active:scale-95">
               Contact Now <span className="text-xl" aria-hidden="true">›</span>
             </button>
           </div>
@@ -94,7 +94,7 @@ export default function WhyChooseUs() {
               {reasons.map((item, index) => (
                 <article key={index} className="flex-[0_0_75%] md:flex-[0_0_45%] min-w-0 px-2">
                   <div
-                    className="relative flex flex-col items-start bg-white/60 backdrop-blur-md p-6 h-[200px] border border-orange-100 shadow-xl rounded-[25px]"
+                    className="relative flex flex-col items-start bg-white/60 backdrop-blur-md p-6 h-[200px] border border-orange-100/50 rounded-[25px]"
                   >
                     <div className="w-10 h-10 mb-4">
                       <Image 
@@ -132,7 +132,6 @@ export default function WhyChooseUs() {
                   minHeight: "300px",
                   borderRadius: "40px",
                   padding: "40px",
-                  boxShadow: `0 10px 25px -5px rgba(255,173,157,0.3), 0 20px 50px -10px rgba(238,68,35,0.15)`,
                 }}
               >
                 <div
@@ -165,7 +164,7 @@ export default function WhyChooseUs() {
 
         {/* Mobile-only CTA */}
         <div className="lg:hidden w-full flex justify-center mt-8 px-6">
-          <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg shadow-lg active:scale-95 transition-all">
+          <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg active:scale-95 transition-all">
             Contact Now <span className="text-xl" aria-hidden="true">›</span>
           </button>
         </div>

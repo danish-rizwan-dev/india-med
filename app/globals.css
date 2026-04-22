@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+@layer base {
+  html, body {
+    @apply overflow-x-hidden;
+  }
+}
+
 @theme {
   /* This defines 'font-montserrat' for Tailwind v4 */
   --font-montserrat: "Montserrat", sans-serif;

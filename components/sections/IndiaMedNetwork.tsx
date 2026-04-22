@@ -108,7 +108,7 @@ export default function IndiaMedNetwork() {
 
   return (
     // 3. SEO: Using <section> and meaningful margin/padding classes
-    <section className="relative w-full bg-transparent flex flex-col items-center  mt-[-150] lg:-mt-12 lg:pb-32 mb-16 overflow-hidden">
+    <section className="relative w-full bg-transparent flex flex-col items-center  mt-[-55] lg:-mt-0 mb-16 overflow-hidden">
       
       {/* HEADING */}
       <div
@@ -161,7 +161,6 @@ export default function IndiaMedNetwork() {
                       width: "100%",
                       height: "clamp(350px, 50vh, 400px)", // 4. Responsive: Fluid height
                       borderRadius: "40px",
-                      boxShadow: "0 20px 40px -15px rgba(0,0,0,0.3)",
                     }}
                   >
                     {/* Content Header */}
@@ -172,7 +171,7 @@ export default function IndiaMedNetwork() {
                           {hospital.location}
                         </span>
                       </address>
-                      <h3 className="text-white font-bold text-xl lg:text-[28px] leading-tight max-w-[280px] lg:max-w-[320px]">
+                      <h3 className="text-white font-bold text-[23px] lg:text-[28px] leading-[100%] lg:leading-tight max-w-[45%] lg:max-w-[320px]">
                         {hospital.name}
                       </h3>
                     </div>
@@ -198,7 +197,7 @@ export default function IndiaMedNetwork() {
 
                     {/* Glassmorphism Bottom Card */}
                     <div
-                      className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4 h-[160px] lg:h-[180px] z-30 p-5 lg:p-6 flex items-end justify-between"
+                      className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4 h-[160px] lg:h-[185px] z-30 p-5 lg:p-6 flex items-start justify-between"
                       style={{
                         background: "linear-gradient(135deg, rgba(255, 255, 255, 0.25), rgba(255, 255, 255, 0.1))",
                         backdropFilter: "blur(25px)",
@@ -207,28 +206,28 @@ export default function IndiaMedNetwork() {
                         border: "1px solid rgba(255, 255, 255, 0.4)",
                       }}
                     >
-                      <div className="max-w-[60%] lg:max-w-[65%]">
-                        <p className="text-white text-[11px] lg:text-[14px] font-medium leading-snug lg:leading-relaxed line-clamp-4 lg:line-clamp-none">
+                      <div className="max-w-[55%] lg:max-w-[60%]">
+                        <p className="text-white text-[12px] lg:text-[15px] font-medium leading-snug lg:leading-relaxed line-clamp-5 lg:line-clamp-none">
                           {hospital.description}
                         </p>
                       </div>
 
-                      <div className="flex flex-col items-end gap-2 lg:gap-3 shrink-0">
-                        <Link 
-                          href={`/hospitals/${hospital.name.toLowerCase().replace(/\s+/g, '-')}`} 
-                          title={`Learn more about ${hospital.name}`}
-                          className="flex items-center gap-2 text-white font-bold text-[12px] lg:text-sm hover:underline group"
+                      <div className="flex flex-col items-end gap-3 lg:gap-4 shrink-0 pt-1">
+                        <Link
+                          href={`/hospitals/${hospital.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          className="flex items-center gap-3 text-white font-bold text-[14px] lg:text-[18px] hover:underline group"
                         >
-                          Know more
-                          <div className="bg-white rounded-full p-1 transition-transform group-hover:rotate-45">
-                            <ArrowUpRight size={14} className="text-[#EE4423] lg:w-[18px]" strokeWidth={3} />
+                          <span className="max-w-[60px] lg:max-w-none leading-tight text-right">Know more</span>
+                          <div className="bg-white rounded-full p-2 lg:p-3 transition-transform group-hover:rotate-45 flex items-center justify-center">
+                            <ArrowUpRight size={18} className="text-[#EE4423] lg:w-[24px] lg:h-[24px]" strokeWidth={3} />
                           </div>
                         </Link>
-                        <a 
-                          href="tel:+91XXXXXXXXXX" 
-                          className="bg-white/90 text-[#58595B] px-3 py-2 lg:px-5 lg:py-2.5 rounded-full font-bold text-[11px] lg:text-sm flex items-center gap-2 shadow-lg transition-transform hover:scale-105"
+                        
+                        <a
+                          href="tel:+91XXXXXXXXXX"
+                          className="bg-white text-[#58595B] px-4 py-2.5 lg:px-6 lg:py-3 rounded-full font-bold text-[12px] lg:text-[15px] flex items-center gap-2 shadow-lg transition-transform hover:scale-105"
                         >
-                          <Phone size={14} className="lg:w-[16px]" fill="#58595B" />
+                          <Phone size={16} className="lg:w-[18px]" fill="#58595B" />
                           <span className="whitespace-nowrap">Contact Now</span>
                         </a>
                       </div>
