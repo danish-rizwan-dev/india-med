@@ -7,7 +7,7 @@ export default function Hero() {
   const CalendarIcon = () => (
     <div className="relative w-[16px] h-[16px] lg:w-[26px] lg:h-[24px] flex items-center justify-center flex-shrink-0">
       <Image
-        src="/images/icons/appointmentCalender.svg"
+        src="/images/sections/common/appointment-calendar.svg"
         alt="Book appointment calendar icon"
         fill
         sizes="(max-width: 1024px) 16px, 26px"
@@ -24,7 +24,7 @@ export default function Hero() {
       {/* ================= BACKGROUND GRID ================= */}
       <div className="absolute pointer-events-none z-0 hidden md:block md:w-[400px] lg:w-[508px] lg:h-[723px] lg:top-[-70.33px] lg:right-0">
         <Image
-          src="/images/backgrounds/backgroundgrids.png"
+          src="/images/sections/hero/background-grids.png"
           alt="Geometric background pattern"
           fill
           sizes="(max-width: 1024px) 400px, 508px"
@@ -53,7 +53,7 @@ export default function Hero() {
           "
         >
           <Image
-            src="/images/backgrounds/doctor.png"
+            src="/images/sections/hero/doctor.png"
             alt="Expert healthcare professional in India providing world-class medical assistance"
             fill
             sizes="(max-width: 768px) 215px, (max-width: 1024px) 350px, 426px"

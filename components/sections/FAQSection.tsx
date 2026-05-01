@@ -66,7 +66,7 @@ export default function FAQSection() {
       >
         <div className="relative w-full h-full">
           <Image
-            src="/images/backgrounds/background.png"
+            src="/images/sections/faq/background.png"
             alt="background"
             fill
             className="object-cover"
@@ -139,10 +139,11 @@ export default function FAQSection() {
 
             <button className="bg-[#EE4423] text-white px-8 py-3 rounded-full flex items-center gap-3 font-bold shadow-lg transition-all hover:scale-105">
               <Image
-                src="/images/icons/appointmentCalender.svg"
+                src="/images/sections/common/appointment-calendar.svg"
                 width={20}
                 height={20}
                 alt="calendar"
+                className="brightness-0 invert"
                 style={{ width: "auto", height: "auto" }}
               />
               Book Appointment

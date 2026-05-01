@@ -7,12 +7,12 @@ import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const destinations = [
-  { name: "Uzbekistan", icon: "/images/maps/Uzbekistan.svg" },
-  { name: "Russia", icon: "/images/maps/Russia.svg" },
-  { name: "Kazakhstan", icon: "/images/maps/Kazakhstan.svg" },
-  { name: "Krikistan", icon: "/images/maps/Krikistan.svg" },
-  { name: "Turkmenistan", icon: "/images/maps/Turkmenistan.svg" },
-  { name: "Tajikistan", icon: "/images/maps/Tajikistan.svg" },
+  { name: "Uzbekistan", icon: "/images/sections/maps/Uzbekistan.svg" },
+  { name: "Russia", icon: "/images/sections/maps/Russia.svg" },
+  { name: "Kazakhstan", icon: "/images/sections/maps/Kazakhstan.svg" },
+  { name: "Krikistan", icon: "/images/sections/maps/Krikistan.svg" },
+  { name: "Turkmenistan", icon: "/images/sections/maps/Turkmenistan.svg" },
+  { name: "Tajikistan", icon: "/images/sections/maps/Tajikistan.svg" },
 ];
 
 export default function FeaturedDestination() {
@@ -48,7 +48,7 @@ export default function FeaturedDestination() {
           }}
         >
           <Image
-            src="/images/backgrounds/featureddestinanotincolorbg.png"
+            src="/images/sections/featured-destinations/featureddestinanotincolorbg.png"
             alt="Colored background texture"
             fill
             sizes="1562.78px"
@@ -60,7 +60,7 @@ export default function FeaturedDestination() {
         <div className="relative w-full h-full flex items-center justify-center pt-[150px] lg:pt-0">
           <div className="relative w-full h-full max-h-[500px] lg:max-h-[573px] lg:max-w-[1552px]">
             <Image
-              src="/images/backgrounds/featureddestinanotinbg.png"
+              src="/images/sections/featured-destinations/featureddestinanotinbg.png"
               alt="World landmarks background illustration"
               fill
               sizes="100vw"

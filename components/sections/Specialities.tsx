@@ -5,14 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const specialities = [
-  { title: "Cardiological Assistance", icon: "/images/icons/cardiac.svg" },
-  { title: "Orthopedics", icon: "/images/icons/ortho.svg" },
-  { title: "Cancer Treatment", icon: "/images/icons/cancer.svg" },
-  { title: "Neuroscience", icon: "/images/icons/Neuro.svg" },
-  { title: "Gastrosciences", icon: "/images/icons/Gastro.svg" },
-  { title: "Liver Transplant", icon: "/images/icons/liver.svg" },
-  { title: "Lung Transplantation", icon: "/images/icons/lungs.svg" },
-  { title: "Obstetrics And Gynecology", icon: "/images/icons/gyno.svg" },
+  { title: "Cardiological Assistance", icon: "/images/sections/specialities/cardiac.svg" },
+  { title: "Orthopedics", icon: "/images/sections/specialities/ortho.svg" },
+  { title: "Cancer Treatment", icon: "/images/sections/specialities/cancer.svg" },
+  { title: "Neuroscience", icon: "/images/sections/specialities/neuro.svg" },
+  { title: "Gastrosciences", icon: "/images/sections/specialities/gastro.svg" },
+  { title: "Liver Transplant", icon: "/images/sections/specialities/liver.svg" },
+  { title: "Lung Transplantation", icon: "/images/sections/specialities/lungs.svg" },
+  { title: "Obstetrics And Gynecology", icon: "/images/sections/specialities/gyno.svg" },
 ];
 
 export default function Specialities() {
@@ -43,7 +43,7 @@ export default function Specialities() {
         className="absolute inset-0 w-full h-full opacity-80 pointer-events-none -z-20 hidden lg:block"
         aria-hidden="true"
         style={{
-          backgroundImage: "url('/images/backgrounds/worldmapsstrokes.png')",
+          backgroundImage: "url('/images/sections/process-flow/background-strokes.png')",
           backgroundSize: "cover",
           backgroundPosition: "center top",
           backgroundRepeat: "no-repeat",

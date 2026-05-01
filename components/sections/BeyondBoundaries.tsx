@@ -56,7 +56,7 @@ export default function BeyondBoundaries() {
       {/* 1. Background Image Layer (Desktop Only) */}
       <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block" aria-hidden="true">
         <Image 
-          src="/images/backgrounds/beyoundboundriesbglines.png"
+          src="/images/sections/common/beyond-boundaries-lines.png"
           alt="Topographical background lines"
           fill
           className="object-cover opacity-100"
@@ -69,7 +69,7 @@ export default function BeyondBoundaries() {
       >
         {/* Background Lines for Mobile Card */}
         <div className="absolute inset-0 z-0 pointer-events-none opacity-100">
-          <Image src="/images/backgrounds/beyoundboundriesbglines.png" alt="" fill className="object-cover" />
+          <Image src="/images/sections/common/beyond-boundaries-lines.png" alt="" fill className="object-cover" />
         </div>
         
         {/* Category Header */}
@@ -85,7 +85,7 @@ export default function BeyondBoundaries() {
         {/* The Globe Asset */}
         <div className="relative w-[343px] h-[311px] ml-[-15px] mb-[30px]">
           <Image 
-            src="/images/backgrounds/globe.svg" 
+            src="/images/sections/common/globe.svg" 
             alt="World Medical Network Globe" 
             fill
             className="object-contain"
@@ -134,7 +134,7 @@ export default function BeyondBoundaries() {
           </header>
           <div className="relative flex justify-center w-full lg:w-auto">
             <div className="relative w-[524px] h-[480px]">
-              <Image src="/images/backgrounds/globe.svg" alt="World Medical Network Globe" fill className="object-contain" />
+              <Image src="/images/sections/common/globe.svg" alt="World Medical Network Globe" fill className="object-contain" />
             </div>
           </div>
         </div>

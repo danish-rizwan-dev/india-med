@@ -9,25 +9,25 @@ const patientStories = [
   {
     name: "Richard Gruber",
     location: "Austria",
-    image: "/images/patient Stories/img1.jpg",
+    image: "/images/sections/patient-stories/img1.jpg",
     rating: 4,
   },
   {
     name: "Sophie Verschueren",
     location: "Australia",
-    image: "/images/patient Stories/img2.jpg",
+    image: "/images/sections/patient-stories/img2.jpg",
     rating: 4,
   },
   {
     name: "Dylan Walters",
     location: "United States",
-    image: "/images/patient Stories/img3.jpg",
+    image: "/images/sections/patient-stories/img3.jpg",
     rating: 5,
   },
   {
     name: "Ella Huber",
     location: "Germany",
-    image: "/images/patient Stories/img1.jpg",
+    image: "/images/sections/patient-stories/img1.jpg",
     rating: 3,
   },
 ];

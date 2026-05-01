@@ -5,15 +5,15 @@ import Image from "next/image";
 
 const processSteps = [
   // ROW 1
-  { id: 1, title: "Online Consultation", icon: "/images/icons/process icons/consult.svg" },
-  { id: 2, title: "Treatment plan", icon: "/images/icons/process icons/plan.svg" },
-  { id: 3, title: "Visa Support", icon: "/images/icons/process icons/visa.svg" },
-  { id: 4, title: "Air Ticket and Transfer", icon: "/images/icons/process icons/transfer.svg" },
+  { id: 1, title: "Online Consultation", icon: "/images/sections/process-flow/icons/consult.svg" },
+  { id: 2, title: "Treatment plan", icon: "/images/sections/process-flow/icons/plan.svg" },
+  { id: 3, title: "Visa Support", icon: "/images/sections/process-flow/icons/visa.svg" },
+  { id: 4, title: "Air Ticket and Transfer", icon: "/images/sections/process-flow/icons/transfer.svg" },
   // ROW 2 (Meeting -> Living -> Translators -> Support)
-  { id: 5, title: "Meeting At The Airport", icon: "/images/icons/process icons/meetingAirport.svg" },
-  { id: 6, title: "Living Near The Hospital", icon: "/images/icons/process icons/nearhospital.svg" },
-  { id: 7, title: "Professional Translators", icon: "/images/icons/process icons/translators.svg" },
-  { id: 8, title: "Full support even after the patient returns home", icon: "/images/icons/process icons/supportafterreturn.svg" },
+  { id: 5, title: "Meeting At The Airport", icon: "/images/sections/process-flow/icons/meetingAirport.svg" },
+  { id: 6, title: "Living Near The Hospital", icon: "/images/sections/process-flow/icons/nearhospital.svg" },
+  { id: 7, title: "Professional Translators", icon: "/images/sections/process-flow/icons/translators.svg" },
+  { id: 8, title: "Full support even after the patient returns home", icon: "/images/sections/process-flow/icons/supportafterreturn.svg" },
 ];
 
 const StepArrow = ({ rotate = 0, isVertical = false }: { rotate?: number, isVertical?: boolean }) => (
@@ -26,7 +26,7 @@ const StepArrow = ({ rotate = 0, isVertical = false }: { rotate?: number, isVert
     }}
   >
     <Image 
-      src="/images/icons/process icons/Arrows.svg" 
+      src="/images/sections/process-flow/icons/Arrows.svg" 
       alt="arrow" 
       width={isVertical ? 64 : 32} 
       height={isVertical ? 30 : 15} 
@@ -82,7 +82,7 @@ export default function ProcessFlow() {
       {/* BACKGROUND STROKES (Moved below cards) */}
       <div className="absolute inset-0 z-0 lg:hidden pointer-events-none flex items-center justify-center -translate-y-[40px]">
         <Image 
-          src="/images/backgrounds/worldmapsstrokes.png" 
+          src="/images/sections/process-flow/background-strokes.png" 
           alt="background strokes" 
           width={1200}
           height={600}

@@ -31,7 +31,7 @@ export default function FounderSection() {
     {
       name: "Mr. Faisal Iqbal",
       title: "Founder & Managing Director – India Med Service",
-      image: "/images/founders/Mr-Faisal-Iqbal.svg",
+      image: "/images/sections/leadership/faisal-iqbal.svg",
       bio: [
         "Mr. Faisal Iqbal is the Founder and Director of India Med Service, a trusted medical facilitation company specializing in organizing treatment for international patients in India. With over 6 years of experience in the healthcare coordination sector, he has successfully assisted more than 1,750 patients from various countries in accessing high-quality medical care.",
         "He is highly experienced in coordinating end-to-end medical journeys, including hospital selection, doctor consultations, treatment planning, and patient support. Mr. Faisal personally ensures smooth communication between patients, hospitals, and medical professionals.",
@@ -41,7 +41,7 @@ export default function FounderSection() {
     {
       name: "Mr. Daniyar Aydimirov",
       title: "Regional Director – Kazakhstan",
-      image: "/images/founders/Mr-Daniyar-Aydimirov.svg",
+      image: "/images/sections/leadership/daniyar-aydimirov.svg",
       bio: [
         "Daniyar Aydimirov oversees patient coordination in Kazakhstan, providing dedicated support to international patients. He has assisted over 1,000 patients and ensures smooth communication in Russian, Kazakh, and Uzbek, with a strong focus on patient care and trust."
       ]
@@ -51,17 +51,17 @@ export default function FounderSection() {
   const expertiseCards = [
     {
       title: "Core Expertise",
-      icon: "/images/icons/core-expertise.svg",
+      icon: "/images/sections/leadership/core-expertise.svg",
       list: ["International Patient Coordination", "Hospital & Doctor Network Management", "Medical Treatment Planning & Assistance", "End-to-End Patient Support Services"]
     },
     {
       title: "Key Achievements",
-      icon: "/images/icons/keyAcheivements.svg",
+      icon: "/images/sections/leadership/key-achievements.svg",
       list: ["6+ years of experience in medical facilitation", "2500+ international patients successfully served", "Strong network with top hospitals across India"]
     },
     {
       title: "Services Offered",
-      icon: "/images/icons/servicesOffered.svg",
+      icon: "/images/sections/leadership/services-offered.svg",
       list: ["Medical visa assistance", "Flight & accommodation arrangements", "Appointment scheduling with top doctors", "Treatment coordination and monitoring", "Post-treatment follow-up and care"]
     }
   ];

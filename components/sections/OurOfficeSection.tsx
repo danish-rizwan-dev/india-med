@@ -47,7 +47,7 @@ export default function OurOfficeSection() {
           style={{ transform: "rotate(180deg)" }}
         >
           <Image
-            src="/images/backgrounds/OurOfficeBackground.png"
+            src="/images/sections/our-offices/background.png"
             alt="office section background grid"
             fill
             className="object-cover opacity-50 lg:opacity-100"
@@ -98,7 +98,7 @@ export default function OurOfficeSection() {
                   className="relative bg-white rounded-[15px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[100px] h-[100px] lg:w-[140px] lg:h-[140px] mt-[-10px]"
                 >
                   <Image
-                    src="/images/icons/QRTOSHKENT.svg"
+                    src="/images/sections/our-offices/qr-toshkent.svg"
                     alt="Tashkent QR Code"
                     fill
                     className="p-1 lg:p-2 object-contain"
@@ -113,7 +113,7 @@ export default function OurOfficeSection() {
                   <div className="flex flex-col lg:flex-row lg:flex-nowrap items-start gap-2 lg:gap-x-12">
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
                       <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
+                        <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
@@ -124,7 +124,7 @@ export default function OurOfficeSection() {
                     </div>
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
                       <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
+                        <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
@@ -137,7 +137,7 @@ export default function OurOfficeSection() {
                   {/* Address */}
                   <div className="flex items-start gap-2 lg:gap-4 text-[#58595B]">
                     <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative mt-1 lg:mt-0">
-                      <Image src="/images/icons/loctionicon.svg" alt="location" fill className="object-contain orange-icon" />
+                      <Image src="/images/sections/our-offices/location-icon.svg" alt="location" fill className="object-contain orange-icon" />
                     </div>
                     <span
                       className="text-sm lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[200px] lg:max-w-none"
@@ -161,7 +161,7 @@ export default function OurOfficeSection() {
                   className="relative bg-white rounded-[15px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[100px] h-[100px] lg:w-[140px] lg:h-[140px] mt-[-10px]"
                 >
                   <Image
-                    src="/images/icons/QR-Qozogiston.png"
+                    src="/images/sections/our-offices/qr-qozogiston.png"
                     alt="Kazakhstan QR Code"
                     fill
                     className="p-1 lg:p-2 object-contain"
@@ -176,7 +176,7 @@ export default function OurOfficeSection() {
                   <div className="flex flex-col lg:flex-row lg:flex-nowrap items-start gap-2 lg:gap-x-12">
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
                       <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
+                        <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
@@ -187,7 +187,7 @@ export default function OurOfficeSection() {
                     </div>
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
                       <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
+                        <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
@@ -200,7 +200,7 @@ export default function OurOfficeSection() {
                   {/* Address */}
                   <div className="flex items-start gap-2 lg:gap-4 text-[#58595B]">
                     <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative mt-1 lg:mt-0">
-                      <Image src="/images/icons/loctionicon.svg" alt="location" fill className="object-contain orange-icon" />
+                      <Image src="/images/sections/our-offices/location-icon.svg" alt="location" fill className="object-contain orange-icon" />
                     </div>
                     <span
                       className="text-sm lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[200px] lg:max-w-none"
@@ -219,7 +219,7 @@ export default function OurOfficeSection() {
             className="hidden lg:block relative flex-shrink-0 w-[250px] h-[250px] lg:w-[462px] lg:h-[462px] animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
           >
             <Image
-              src="/images/icons/3dmapicon.svg"
+              src="/images/sections/our-offices/3d-map-icon.svg"
               alt="3D Map Location Icon"
               fill
               className="object-contain"

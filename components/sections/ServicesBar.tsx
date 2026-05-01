@@ -6,11 +6,11 @@ import React from "react";
 
 export default function ServiceBar() {
   const services = [
-    { label: "Second Opinion", icon: "/images/icons/doctor.svg" },
-    { label: "Treatment Cost Estimate", icon: "/images/icons/TreatmentCostIcon.svg" },
-    { label: "Medical Services", icon: "/images/icons/MedicalServicesIcon.svg" },
-    { label: "Medical Visa Assistance", icon: "/images/icons/process icons/visa.svg" },
-    { label: "Free Consultation", icon: "/images/icons/freeConsult.svg" },
+    { label: "Second Opinion", icon: "/images/sections/common/doctor.svg" },
+    { label: "Treatment Cost Estimate", icon: "/images/sections/common/treatment-cost.svg" },
+    { label: "Medical Services", icon: "/images/sections/common/medical-services.svg" },
+    { label: "Medical Visa Assistance", icon: "/images/sections/process-flow/icons/visa.svg" },
+    { label: "Free Consultation", icon: "/images/sections/common/free-consult.svg" },
   ];
 
   const mobileTopServices = services.slice(0, 4);

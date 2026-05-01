@@ -141,7 +141,7 @@ export default function ModelOfCare() {
                   <div
                     className={`w-[26px] h-[26px] transition-all duration-300 ${isActive ? 'rotate-180' : 'rotate-0'} ${isHighlighted ? 'brightness-0 saturate-100 invert-[34%] sepia-[90%] saturate-[3241%] hue-rotate-[349deg] brightness-[101%] contrast-[96%]' : ''}`}
                     style={{
-                      backgroundImage: `url('/images/icons/modelofcareIcon.svg')`,
+                      backgroundImage: `url('/images/sections/model-of-care/icon.svg')`,
                       backgroundSize: 'contain',
                       backgroundRepeat: 'no-repeat',
                       backgroundPosition: 'center'

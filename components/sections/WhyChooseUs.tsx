@@ -9,22 +9,22 @@ const reasons = [
   {
     title: "World-class Hospitals",
     description: "JCI & NABH accredited hospitals ensuring top global safety and care.",
-    icon: "/images/icons/Hospital.svg",
+    icon: "/images/sections/why-choose-us/hospital.svg",
   },
   {
     title: "Affordable Costs",
     description: "Up to 70–80% lower treatment costs compared to Western countries.",
-    icon: "/images/icons/Costs.svg",
+    icon: "/images/sections/why-choose-us/costs.svg",
   },
   {
     title: "Expert Doctors",
     description: "Internationally trained specialists with years of proven expertise.",
-    icon: "/images/icons/ExpertDoctors.svg",
+    icon: "/images/sections/why-choose-us/expert-doctors.svg",
   },
   {
     title: "Complete Assistance",
     description: "End-to-end support: travel, visa, treatment, and recovery care.",
-    icon: "/images/icons/Assistance.svg",
+    icon: "/images/sections/why-choose-us/assistance.svg",
   },
 ];
 

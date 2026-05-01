@@ -12,19 +12,19 @@ export default function BlogSection() {
     {
       title: "4D-Phaco Cataract Surgery in India: Tech...",
       date: "Feb 01:2020",
-      image: "/images/backgrounds/blog1.jpg",
+      image: "/images/sections/blog/blog1.jpg",
       slug: "/under-construction"
     },
     {
       title: "Liver Detox: Best Foods and Fruits for Nat...",
       date: "Jan 27:2020",
-      image: "/images/backgrounds/liver_blog.jpg",
+      image: "/images/sections/blog/liver_blog.jpg",
       slug: "/under-construction"
     },
     {
       title: "White Spots on Skin: Causes, Symptom...",
       date: "Jan 22:2020",
-      image: "/images/backgrounds/whitespot_blog.jpg",
+      image: "/images/sections/blog/whitespot_blog.jpg",
       slug: "/under-construction"
     }
   ];
@@ -107,7 +107,7 @@ export default function BlogSection() {
             <article className="flex flex-col gap-6 flex-1">
               <Link href="/under-construction" className="group">
                 <div className="relative overflow-hidden w-full h-[380px] rounded-[40px]">
-                  <Image src="/images/backgrounds/blog1.jpg" alt="Blog 1" fill className="object-cover transition-transform group-hover:scale-105" />
+                  <Image src="/images/sections/blog/blog1.jpg" alt="Blog 1" fill className="object-cover transition-transform group-hover:scale-105" />
                 </div>
                 <h3 className="mt-6 text-[#414042] font-bold text-[42px] leading-[1.1] group-hover:text-[#EE4423] transition-colors">
                   4D-Phaco Cataract Surgery in India: Technology, Results and Costs

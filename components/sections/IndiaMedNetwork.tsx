@@ -12,56 +12,56 @@ const hospitalData = [
     location: "Gurugram",
     name: "Medanta Gurgaon",
     description: "World-class multi-super specialty hospital known for advanced cardiac and robotic surgeries.",
-    image: "/images/backgrounds/patna-hosp.jpg",
+    image: "/images/sections/network/patna-hosp.jpg",
     alt: "Medanta Hospital building in Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Fortis Memorial",
     description: "Premium quaternary care hospital with state-of-the-art medical technology and international standards.",
-    image: "/images/backgrounds/patna-hosp.jpg",
+    image: "/images/sections/network/patna-hosp.jpg",
     alt: "Fortis Memorial Research Institute Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Artemis Hospital",
     description: "First JCI & NABH accredited hospital in Gurgaon, providing depth of expertise in advanced medical interventions.",
-    image: "/images/backgrounds/patna-hosp.jpg",
+    image: "/images/sections/network/patna-hosp.jpg",
     alt: "Artemis Hospital exterior view"
   },
   {
     location: "Gurugram",
     name: "Max Hospital",
     description: "Renowned for oncology, cardiology, and neurosciences with top-tier healthcare professionals.",
-    image: "/images/backgrounds/patna-hosp.jpg",
+    image: "/images/sections/network/patna-hosp.jpg",
     alt: "Max Super Speciality Hospital Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Paras Health",
     description: "Leader in neurosciences and joint replacement, providing specialized care at accessible price points.",
-    image: "/images/backgrounds/lucknow-hosp.png",
+    image: "/images/sections/network/lucknow-hosp.png",
     alt: "Paras Health Hospital Gurgaon"
   },
   {
     location: "Gurugram",
     name: "Marengo Asia",
     description: "Modern multi-specialty facility offering high-end clinical care and a patient-centric approach.",
-    image: "/images/backgrounds/patna-hosp.jpg",
+    image: "/images/sections/network/patna-hosp.jpg",
     alt: "Marengo Asia Hospital facility"
   },
   {
     location: "Lucknow",
     name: "India Med Super Speciality",
     description: "Spread across an area of 12.58 acres, Medanta Lucknow is one of the largest multi-super-specialty hospitals.",
-    image: "/images/backgrounds/lucknow-hosp.png",
+    image: "/images/sections/network/lucknow-hosp.png",
     alt: "India Med Super Speciality Hospital Lucknow"
   },
   {
     location: "Patna",
     name: "Jay Prabha Medanta",
     description: "Established in 2020, this super-specialty hospital began operations with an Out-Patient Department (OPD).",
-    image: "/images/backgrounds/patna-hosp.jpg",
+    image: "/images/sections/network/patna-hosp.jpg",
     alt: "Jay Prabha Medanta Super Speciality Hospital Patna"
   },
 ];
