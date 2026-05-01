@@ -39,17 +39,6 @@ export default function WhyChooseUs() {
 
   return (
     <section className="relative z-10 w-full lg:mt-[-100px] overflow-hidden py-12 lg:py-0">
-      {/* 🌍 WORLD MAP BACKGROUND */}
-      <div
-        className="absolute inset-0 w-full h-full opacity-30 pointer-events-none -z-20"
-        aria-hidden="true"
-        style={{
-          backgroundImage: "url('/images/backgrounds/worldmapsstrokes.png')",
-          backgroundSize: "cover",
-          backgroundPosition: "center bottom",
-          backgroundRepeat: "no-repeat",
-        }}
-      />
 
       <div
         className="relative flex flex-col items-center justify-center mx-auto lg:py-[120px] px-0 lg:px-0" // Changed px-6 to px-0 for mobile

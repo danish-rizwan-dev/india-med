@@ -217,7 +217,7 @@ export default function OurOfficeSection() {
 
           {/* Right: Icon of location */}
           <div
-            className="relative flex-shrink-0 transition-transform duration-500 hover:scale-105 w-[250px] h-[250px] lg:w-[462px] lg:h-[462px]"
+            className="relative flex-shrink-0 w-[250px] h-[250px] lg:w-[462px] lg:h-[462px] animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
           >
             <Image
               src="/images/icons/3dmapicon.svg"
@@ -226,6 +226,16 @@ export default function OurOfficeSection() {
               className="object-contain"
             />
           </div>
+          
+          <style jsx>{`
+            @keyframes float {
+              0%, 100% { transform: translateY(0); }
+              50% { transform: translateY(-20px); }
+            }
+            .animate-float {
+              animation: float 2s ease-in-out infinite;
+            }
+          `}</style>
         </div>
       </div>
     </section>

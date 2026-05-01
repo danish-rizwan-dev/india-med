@@ -5,14 +5,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const specialities = [
-  { title: "Cardiac Care", icon: "/images/icons/cardiac.svg" },
-  { title: "Neurosciences", icon: "/images/icons/Neuro.svg" },
-  { title: "Cancer Care", icon: "/images/icons/cancer.svg" },
+  { title: "Cardiological Assistance", icon: "/images/icons/cardiac.svg" },
+  { title: "Orthopedics", icon: "/images/icons/ortho.svg" },
+  { title: "Cancer Treatment", icon: "/images/icons/cancer.svg" },
+  { title: "Neuroscience", icon: "/images/icons/Neuro.svg" },
   { title: "Gastrosciences", icon: "/images/icons/Gastro.svg" },
-  { title: "Orthopaedics", icon: "/images/icons/cardiac.svg" },
-  { title: "Nephrology", icon: "/images/icons/Neuro.svg" },
-  { title: "Pulmonology", icon: "/images/icons/cancer.svg" },
-  { title: "Urology", icon: "/images/icons/Gastro.svg" },
+  { title: "Liver Transplant", icon: "/images/icons/liver.svg" },
+  { title: "Lung Transplantation", icon: "/images/icons/lungs.svg" },
+  { title: "Obstetrics And Gynecology", icon: "/images/icons/gyno.svg" },
 ];
 
 export default function Specialities() {
@@ -38,11 +38,22 @@ export default function Specialities() {
 
   return (
     <section className="relative w-full overflow-hidden">
+      {/* 🌍 WORLD MAP BACKGROUND */}
+      <div
+        className="absolute inset-0 w-full h-full opacity-80 pointer-events-none -z-20 hidden lg:block"
+        aria-hidden="true"
+        style={{
+          backgroundImage: "url('/images/backgrounds/worldmapsstrokes.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          backgroundRepeat: "no-repeat",
+        }}
+      />
       {/* --- SECTION CONTENT --- */}
       <div className="relative z-10 flex flex-col items-center px-6 py-16 lg:py-24">
 
         {/* SEO Header */}
-        <header className="flex items-center justify-center bg-white/20 backdrop-blur-xl border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-10 py-4 max-w-[450px] w-full">
+        <header className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-10 py-4 max-w-[450px] w-full">
           <h2 className="text-[#58595B] font-bold text-2xl lg:text-[42px] font-montserrat text-center">
             Our Specialities
           </h2>
@@ -144,12 +155,9 @@ export default function Specialities() {
               <Link
                 key={index}
                 href={`/specialities/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
-                className="group relative flex flex-col items-center justify-between text-center transition-all duration-500 hover:-translate-y-3 p-6 lg:p-8 rounded-[40px] h-full min-h-[220px] lg:min-h-[250px] overflow-hidden bg-white/40 backdrop-blur-xl border border-white/20"
-                style={{
-                  background: "linear-gradient(145deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.2))",
-                }}
+                className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 p-8 lg:p-10 rounded-[40px] h-full min-h-[260px] lg:min-h-[300px] overflow-hidden bg-white shadow-[0px_15px_35px_rgba(0,0,0,0.05)] border border-gray-100"
               >
-                <div className="relative z-20 w-[50px] h-[50px] lg:w-[65px] lg:h-[65px] transition-transform duration-500 group-hover:scale-110">
+                <div className="relative z-20 w-[60px] h-[60px] lg:w-[85px] lg:h-[85px] mb-6 transition-transform duration-500 group-hover:scale-110">
                   <Image
                     src={item.icon}
                     alt={`${item.title} icon`}
@@ -157,23 +165,13 @@ export default function Specialities() {
                     className="object-contain"
                   />
                 </div>
-                <div className="relative z-20 text-[#414042] text-lg lg:text-[20px] font-bold font-montserrat mt-4 lg:mt-6 mb-6 lg:mb-8 group-hover:text-[#EE4423] transition-colors">
+                <h3 className="relative z-20 text-[#414042] text-[18px] lg:text-[22px] font-bold font-montserrat mb-4 group-hover:text-[#EE4423] transition-colors leading-tight">
                   {item.title}
-                </div>
-                <div className="relative z-20 px-6 py-2 bg-white rounded-full text-[12px] lg:text-[13px] font-bold text-[#EE4423] border group-hover:bg-[#EE4423] group-hover:text-white transition-all">
-                  Know More ›
+                </h3>
+                <div className="relative z-20 text-[14px] font-bold text-gray-400 group-hover:text-[#EE4423] transition-all flex items-center gap-1">
+                  Know More <span>›</span>
                 </div>
 
-                {/* Gradient Border Overlay */}
-                <div
-                  className="absolute inset-0 rounded-[40px] pointer-events-none z-10 border-2 border-transparent"
-                  style={{
-                    background: "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
-                    WebkitMask: "linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0)",
-                    WebkitMaskComposite: "xor",
-                    maskComposite: "exclude",
-                  }}
-                />
               </Link>
             ))}
           </div>

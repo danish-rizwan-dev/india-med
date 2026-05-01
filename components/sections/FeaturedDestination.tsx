@@ -1,33 +1,62 @@
 "use client";
 
+import React from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 
 const destinations = [
-  { name: "India", icon: "/images/maps/india.svg" },
-  { name: "United Kingdom", icon: "/images/maps/uk.svg" },
-  { name: "Saudi Arabia", icon: "/images/maps/saudisvg.svg" },
-  { name: "Thailand", icon: "/images/maps/thai.svg" },
-  { name: "UAE", icon: "/images/maps/uae.svg" },
+  { name: "Uzbekistan", icon: "/images/maps/Uzbekistan.svg" },
+  { name: "Russia", icon: "/images/maps/Russia.svg" },
+  { name: "Kazakhstan", icon: "/images/maps/Kazakhstan.svg" },
+  { name: "Krikistan", icon: "/images/maps/Krikistan.svg" },
+  { name: "Turkmenistan", icon: "/images/maps/Turkmenistan.svg" },
+  { name: "Tajikistan", icon: "/images/maps/Tajikistan.svg" },
 ];
 
 export default function FeaturedDestination() {
-  const [emblaRef] = useEmblaCarousel({
+  const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
     containScroll: false
   }, [
-    Autoplay({ delay: 2500, stopOnInteraction: false }),
+    Autoplay({ delay: 3500, stopOnInteraction: false }),
   ]);
 
+  const scrollPrev = React.useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+  const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
   return (
-    <section id="destinations" className="relative w-full overflow-hidden bg-white flex flex-col items-center py-12 lg:py-0 lg:min-h-[750px] lg:justify-center">
-      
-      {/* ================= BACKGROUND ILLUSTRATION ================= */}
+    <section id="destinations" className="relative w-full bg-transparent flex flex-col items-center py-12 lg:py-0 lg:min-h-[750px] lg:justify-center">
+
+      {/* ================= BACKGROUND ILLUSTRATION LAYERS ================= */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        {/* Mobile: Pushed up to start below heading | Desktop: Center */}
+        {/* Top Fade Overlay (Hides any hard lines) */}
+        <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
+
+        {/* Layer 1: Colored Background (Full Opacity with Dual Fade) */}
+        <div 
+          className="absolute z-0 pointer-events-none"
+          style={{
+            width: "1562.78px",
+            height: "1000px",
+            left: "-10px",
+            top: "-550px",
+            maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+          }}
+        >
+          <Image
+            src="/images/backgrounds/featureddestinanotincolorbg.png"
+            alt="Colored background texture"
+            fill
+            sizes="1562.78px"
+            className="object-cover"
+          />
+        </div>
+
+        {/* Layer 2: Landmarks Background */}
         <div className="relative w-full h-full flex items-center justify-center pt-[150px] lg:pt-0">
           <div className="relative w-full h-full max-h-[500px] lg:max-h-[573px] lg:max-w-[1552px]">
             <Image
@@ -35,7 +64,7 @@ export default function FeaturedDestination() {
               alt="World landmarks background illustration"
               fill
               sizes="100vw"
-              className="object-cover object-bottom lg:object-contain lg:object-center  grayscale"
+              className="object-cover object-bottom lg:object-contain lg:object-center grayscale"
             />
           </div>
         </div>
@@ -43,58 +72,48 @@ export default function FeaturedDestination() {
 
       {/* ================= CONTENT WRAPPER ================= */}
       <div className="relative z-10 flex flex-col items-center mx-auto w-full max-w-[1400px]">
-        
-        {/* Header Block */}
-        <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full mt-[-20px] lg:mt-[-240px] px-6">
-          {/* Mobile Header Pill (252x88) */}
-          <div 
-            className="md:hidden flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] px-[40px] py-[10px]"
-            style={{ width: "252px", height: "88px", gap: "10px" }}
-          >
-            <h2 aria-hidden="true" className="text-[#58595B] font-bold text-[22px] font-montserrat leading-[1.2] text-center">
-              Featured<br/>Destination
-            </h2>
-          </div>
 
+        {/* Header Block */}
+        <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full mt-[-20px] lg:mt-[-140px] px-6">
           {/* Desktop Header Pill */}
-          <div className="hidden md:flex items-center justify-center border-2 border-[#58595B] rounded-full px-8 lg:px-10 h-[60px] lg:h-[73px] w-fit bg-white/50 backdrop-blur-sm">
+          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full px-8 lg:px-10 h-[60px] lg:h-[73px] w-fit bg-white/50 backdrop-blur-sm shadow-sm">
             <h2 className="text-[#58595B] font-bold text-2xl lg:text-[42px] font-montserrat leading-none">
               Featured Destination
             </h2>
           </div>
 
-          <p className="text-[#58595B] font-montserrat font-medium max-w-[340px] lg:max-w-[700px] text-[14px] lg:text-[18px] leading-[100%] text-center opacity-90 lg:opacity-100">
-            Trusted by international patients worldwide, India delivers advanced 
-            healthcare backed by expert doctors, modern facilities, and complete 
+          <p className="text-[#58595B] font-montserrat font-medium max-w-[340px] lg:max-w-[700px] text-[14px] lg:text-[18px] leading-[1.2] text-center opacity-90">
+            Trusted by international patients worldwide, India delivers advanced
+            healthcare backed by expert doctors, modern facilities, and complete
             care and support at every step of the treatment journey.
           </p>
         </header>
 
         {/* ================= DESTINATION CARDS ================= */}
-        <div className="w-full mb-20 lg:mb-0">
-          {/* Mobile/Tablet View (Carousel - Square 3 items) */}
+        <div className="w-full mb-10 lg:mb-0">
+          {/* Mobile/Tablet View (Carousel) */}
           <div className="lg:hidden overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {destinations.map((dest, index) => (
-                <article key={index} className="flex-[0_0_33.33%] min-w-0 px-2 flex justify-center">
-                  <div 
+                <article key={index} className="flex-[0_0_40%] sm:flex-[0_0_33.33%] min-w-0 px-2 flex justify-center">
+                  <div
                     className="relative flex flex-col items-center justify-center bg-white/80 backdrop-blur-xl border border-white rounded-[25px] shadow-lg shadow-gray-200/50 overflow-hidden"
                     style={{
-                      width: "110px", 
-                      height: "110px",
-                      padding: "10px",
-                      gap: "6px"
+                      width: "140px",
+                      height: "140px",
+                      padding: "15px",
+                      gap: "10px"
                     }}
                   >
-                    <div className="relative w-12 h-12 rounded-full overflow-hidden border-2 border-white shadow-sm">
-                      <Image 
-                        src={dest.icon} 
-                        alt={`${dest.name} flag`} 
-                        fill 
-                        className="object-cover" 
+                    <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-sm">
+                      <Image
+                        src={dest.icon}
+                        alt={`${dest.name} map`}
+                        fill
+                        className="object-contain p-1"
                       />
                     </div>
-                    <span className="text-[#58595B] font-montserrat font-bold text-center text-[10px] px-1 leading-tight line-clamp-1">
+                    <span className="text-[#58595B] font-montserrat font-bold text-center text-[12px] px-1 leading-tight">
                       {dest.name}
                     </span>
                   </div>
@@ -103,29 +122,50 @@ export default function FeaturedDestination() {
             </div>
           </div>
 
-          {/* Desktop View (Standard Look) */}
-          <div className="hidden lg:flex flex-row items-center justify-center gap-[30px] xl:gap-[48px] lg:mt-[100px]">
+          {/* Desktop View (Standard Look with Smooth Fade) */}
+          <div className="hidden lg:flex flex-row flex-wrap items-center justify-center gap-[30px] xl:gap-[40px] lg:mt-[40px]">
             {destinations.map((dest, index) => (
               <article
                 key={index}
-                className="relative flex flex-col items-center justify-center w-[180px] h-[189px] rounded-[35px] transition-all duration-500 hover:-translate-y-2 bg-white/40 backdrop-blur-md border border-white/50 shadow-md overflow-hidden"
+                className="group relative flex flex-col items-center justify-center w-[180px] h-[189px] rounded-[35px] transition-all duration-500 bg-white/40 hover:bg-white/90 backdrop-blur-md border border-white/50 shadow-md overflow-hidden cursor-pointer"
               >
-                <div className="relative w-[66px] h-[66px] mb-4">
-                  <Image 
-                    src={dest.icon} 
-                    alt={`${dest.name} map`} 
-                    fill 
-                    className="object-contain" 
+                {/* Map/Icon with Fade Effect */}
+                <div className="relative w-[70px] h-[70px] mb-4 transition-opacity duration-500 group-hover:opacity-100 opacity-80">
+                  <Image
+                    src={dest.icon}
+                    alt={`${dest.name} map illustration`}
+                    fill
+                    className="object-contain"
                   />
                 </div>
-                <span className="text-[#58595B] font-montserrat font-bold text-center text-[16px] px-2 leading-tight">
+                <span className="text-[#58595B] font-montserrat font-bold text-center text-[16px] px-2 leading-tight transition-colors duration-500 group-hover:text-[#EE4423]">
                   {dest.name}
                 </span>
+
+                {/* Subtle Glow Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </article>
             ))}
           </div>
         </div>
 
+        {/* ================= NAVIGATION BUTTONS ================= */}
+        <div className="hidden lg:flex items-center justify-center gap-6 mt-10 lg:mt-16">
+          <button
+            onClick={scrollPrev}
+            className="w-12 h-12 lg:w-[60px] lg:h-[60px] rounded-full border border-white/40 flex items-center justify-center bg-white/20 backdrop-blur-xl text-[#58595B] hover:bg-[#EE4423] hover:text-white hover:border-[#EE4423] transition-all duration-300 shadow-xl"
+            aria-label="Previous destination"
+          >
+            <ChevronLeft size={24} className="lg:w-[32px] lg:h-[32px]" />
+          </button>
+          <button
+            onClick={scrollNext}
+            className="w-12 h-12 lg:w-[60px] lg:h-[60px] rounded-full border border-white/40 flex items-center justify-center bg-white/20 backdrop-blur-xl text-[#58595B] hover:bg-[#EE4423] hover:text-white hover:border-[#EE4423] transition-all duration-300 shadow-xl"
+            aria-label="Next destination"
+          >
+            <ChevronRight size={24} className="lg:w-[32px] lg:h-[32px]" />
+          </button>
+        </div>
 
       </div>
     </section>

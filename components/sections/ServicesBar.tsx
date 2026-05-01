@@ -2,17 +2,15 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import React from "react";
 
 export default function ServiceBar() {
   const services = [
     { label: "Second Opinion", icon: "/images/icons/doctor.svg" },
-    { label: "Get Health Checkup", icon: "/images/icons/gethealthcheckup.svg" },
-    { label: "Homecare", icon: "/images/icons/homecare.svg" },
-    {
-      label: "Book a Virtual Consultation",
-      icon: "/images/icons/virtualConsult.svg",
-    },
-    { label: "Book a Test", icon: "/images/icons/booktest.svg" },
+    { label: "Treatment Cost Estimate", icon: "/images/icons/TreatmentCostIcon.svg" },
+    { label: "Medical Services", icon: "/images/icons/MedicalServicesIcon.svg" },
+    { label: "Medical Visa Assistance", icon: "/images/icons/process icons/visa.svg" },
+    { label: "Free Consultation", icon: "/images/icons/freeConsult.svg" },
   ];
 
   const mobileTopServices = services.slice(0, 4);
@@ -38,7 +36,6 @@ export default function ServiceBar() {
                   className="group flex flex-col items-center justify-center bg-white text-center px-2 hover:bg-[#EE4423]"
                   style={{ width: "149.5px", height: "90px" }}
                 >
-                  {/* FIX: Use a fixed-size container and fill the image inside it */}
                   <div className="relative w-7 h-7 mb-1 transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert">
                     <Image
                       src={service.icon}
@@ -56,7 +53,7 @@ export default function ServiceBar() {
             </div>
 
             <Link
-              href="/book-test"
+              href="/free-consultation"
               className="flex items-center justify-center gap-[10px] bg-[#EE4423] w-full h-[90px] active:scale-[0.98]"
               style={{ borderBottomLeftRadius: "21.6px", borderBottomRightRadius: "21.6px" }}
             >
@@ -64,7 +61,6 @@ export default function ServiceBar() {
                 <Image
                   src={mobileCTA.icon}
                   alt={`${mobileCTA.label} icon`}
-
                   fill
                   className="object-contain brightness-0 invert"
                 />
@@ -83,37 +79,52 @@ export default function ServiceBar() {
         style={{ zIndex: -1 }}
       />
       
-      <div
-        className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1317px] h-[160px] lg:h-[226px] -translate-y-1/2 rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px] mb-[10px] mt-[-140px] lg:mt-[-200px]"
-        style={{
-          background: "rgba(255, 255, 255, 0.1)",
-          backdropFilter: "blur(50px)",
-          boxShadow: "10px 20px 30px 0px rgba(0, 0, 0, 0.1)"
-        }}
-      >
+      <div className="relative flex items-center justify-center w-full max-w-[1400px] -translate-y-1/2 mt-[-100px] lg:mt-[-160px]">
+        
+        {/* Glassmorphic Left Arrow */}
+        <button className="hidden md:flex absolute left-[-15px] lg:left-[-20px] top-1/2 -translate-y-1/2 z-50 w-[60px] h-[60px] lg:w-[85px] lg:h-[85px] bg-white/20 backdrop-blur-xl rounded-full items-center justify-center shadow-lg border border-white/30 hover:bg-[#EE4423]/40 transition-all group">
+          <span className="text-[#EE4423] text-3xl lg:text-4xl group-hover:-translate-x-1 transition-transform">‹</span>
+        </button>
 
-        <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
-          {services.map((service, index) => (
-            <Link
-              href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
-              key={index}
-              className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4"
-            >
-              <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
-                <Image
-                  src={service.icon}
-                  alt={`${service.label} service icon`}
-                  fill
-                  className="object-contain"
-                />
-              </div>
-              <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[18px] leading-tight max-w-[120px] lg:max-w-[160px]">
-                {service.label}
-              </span>
-            </Link>
-          ))}
+        <div
+          className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1317px] h-[160px] lg:h-[226px] rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px]"
+          style={{
+            background: "rgba(255, 255, 255, 0.1)",
+            backdropFilter: "blur(50px)",
+            boxShadow: "10px 20px 30px 0px rgba(0, 0, 0, 0.1)"
+          }}
+        >
+          <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
+            {services.map((service, index) => (
+              <Link
+                href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
+                key={index}
+                className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4"
+              >
+                <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
+                  <Image
+                    src={service.icon}
+                    alt={`${service.label} service icon`}
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+                <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[18px] leading-tight max-w-[120px] lg:max-w-[160px]">
+                  {service.label}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
+
+        {/* Glassmorphic Right Arrow */}
+        <button className="hidden md:flex absolute right-[-15px] lg:right-[-20px] top-1/2 -translate-y-1/2 z-50 w-[60px] h-[60px] lg:w-[85px] lg:h-[85px] bg-white/20 backdrop-blur-xl rounded-full items-center justify-center shadow-lg border border-white/30 hover:bg-[#EE4423]/40 transition-all group">
+          <span className="text-[#EE4423] text-3xl lg:text-4xl group-hover:translate-x-1 transition-transform">›</span>
+        </button>
       </div>
+
+      {/* --- MOBILE VIEW HELPER (Optional: Simplified version for mobile) --- */}
+      {/* Handled by hidden md:flex and absolute/relative adjustments */}
     </nav>
   );
-}
+}

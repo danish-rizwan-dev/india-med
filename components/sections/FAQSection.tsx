@@ -88,7 +88,7 @@ export default function FAQSection() {
 
       <div className="relative z-10 flex flex-col lg:flex-row w-full max-w-[1320px] gap-12 px-6">
         {/* LEFT COLUMN */}
-        <div className="flex flex-col gap-5 w-full lg:w-[427px]">
+        <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[427px] text-center lg:text-left">
           {/* FAQs Heading */}
           <div
             className="flex items-center justify-center border-2 border-[#58595B]"
@@ -108,7 +108,7 @@ export default function FAQSection() {
 
           {/* Frequently asked together / Questions below */}
           <h2 className="text-[#58595B] font-montserrat font-bold text-[42px] leading-[100%] tracking-[0px]">
-            Frequently asked <br /> questions
+            Frequently asked <br className="hidden lg:block" /> questions
           </h2>
 
           {/* Book Call Card with Shadow */}

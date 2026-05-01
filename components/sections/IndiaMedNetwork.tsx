@@ -108,7 +108,7 @@ export default function IndiaMedNetwork() {
 
   return (
     // 3. SEO: Using <section> and meaningful margin/padding classes
-    <section className="relative w-full bg-transparent flex flex-col items-center  mt-[-55] lg:-mt-0 mb-16 overflow-hidden">
+    <section className="relative w-full bg-transparent flex flex-col items-center mt-8 lg:-mt-0 mb-16 overflow-hidden">
       
       {/* HEADING */}
       <div

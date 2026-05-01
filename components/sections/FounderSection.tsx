@@ -47,8 +47,8 @@ export default function FounderSection() {
   };
 
   return (
-    <section 
-      className="relative w-full bg-[#F14E2F] pt-12 pb-16 lg:pt-16 lg:pb-24 min-h-[1841px] overflow-hidden font-montserrat" 
+    <section
+      className="relative w-full bg-[#F14E2F] pt-12 pb-16 lg:pt-16 lg:pb-24 min-h-[1841px] overflow-hidden font-montserrat"
       id="leadership"
       aria-label="Leadership Team"
     >

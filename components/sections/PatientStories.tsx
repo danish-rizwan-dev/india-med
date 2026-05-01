@@ -2,7 +2,7 @@
 
 import React, { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
+import { ChevronLeft, ChevronRight, Star, Play } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 
 const patientStories = [
@@ -60,39 +60,59 @@ export default function PatientStories() {
 
   return (
     <section id="patient-stories" className="relative flex w-full flex-col items-center bg-white py-16 lg:py-24 overflow-hidden font-sans">
-      
+
       <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-10 h-[60px] lg:h-[73px] w-fit max-w-[90vw]">
         <h2 className="text-[#58595B] font-bold text-xl lg:text-[32px] leading-none text-center">
           Patient Stories
         </h2>
       </header>
 
-      <div className="w-full max-w-[1320px] px-0 lg:px-4" ref={emblaRef}>
+      <div className="w-full max-w-[1320px] px-0 lg:px-4 " ref={emblaRef}>
         {/* Changed lg:grid to flex to ensure Embla carousel works correctly on all screens */}
-        <div className="flex">
+        <div className="flex gap-4">
           {patientStories.map((patient, index) => (
-            <article 
-              key={index} 
-              className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_25%] min-w-0 px-3 flex flex-col group"
+            <article
+              key={index}
+              className="flex-[0_0_85%] md:flex-[0_0_45%] lg:flex-[0_0_315px] min-w-0 px-[10px] flex flex-col group"
             >
-              <div 
-                className="relative overflow-hidden bg-gray-100 shadow-md transition-all duration-300"
-                style={{ 
-                  width: "100%", 
-                  height: "clamp(350px, 50vh, 517px)", 
-                  borderRadius: "32px",
+              <div
+                className="relative overflow-hidden bg-gray-100 shadow-md transition-all duration-300 group"
+                style={{
+                  width: "315px",
+                  height: "517px",
+                  borderRadius: "40px",
                 }}
               >
-                <Image 
-                  src={patient.image} 
-                  alt={patient.name} 
-                  fill 
+                <Image
+                  src={patient.image}
+                  alt={patient.name}
+                  fill
                   className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  sizes="(max-width: 1024px) 85vw, 25vw"
+                  sizes="315px"
                 />
+
+                {/* Glassmorphic Knockout Play Button */}
+                <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                  <div className="w-[80px] h-[80px] transition-all duration-300 group-hover:scale-110">
+                    <svg width="100%" height="100%" viewBox="0 0 92 92" fill="none" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-xl">
+                      <defs>
+                        <filter id="glassBlur" x="-20%" y="-20%" width="140%" height="140%">
+                          <feGaussianBlur in="SourceGraphic" stdDeviation="5" />
+                        </filter>
+                      </defs>
+                      <g className="backdrop-blur-[5px]">
+                        <path
+                          d="M46 0C71.4051 0 92 20.5949 92 46C92 71.4051 71.4051 92 46 92C20.5949 92 0 71.4051 0 46C0 20.5949 20.5949 0 46 0ZM40.4805 30.0645C38.0271 28.648 34.96 30.4191 34.96 33.252V58.748C34.9602 61.5807 38.0272 63.3509 40.4805 61.9346L62.5596 49.1865C65.0129 47.7701 65.0129 44.2289 62.5596 42.8125L40.4805 30.0645Z"
+                          fill="#ECECEC"
+                          fillOpacity="0.55"
+                        />
+                      </g>
+                    </svg>
+                  </div>
+                </div>
               </div>
 
-              <div className="mt-5 px-4 lg:px-2 text-left">
+              <div className="mt-5 px-0 text-left">
                 <div className="flex gap-1 mb-2">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} size={14} fill={i < patient.rating ? "#FBBF24" : "none"} className={i < patient.rating ? "text-[#FBBF24]" : "text-gray-300"} />
@@ -107,17 +127,17 @@ export default function PatientStories() {
       </div>
 
       <nav aria-label="Carousel Controls" className="flex items-center justify-center gap-6 mt-12 w-full px-4">
-        <button 
-          onClick={scrollPrev} 
+        <button
+          onClick={scrollPrev}
           disabled={prevBtnDisabled}
-          className={`flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg border border-gray-100 transition-all active:scale-90 ${prevBtnDisabled ? 'opacity-30 cursor-not-allowed' : 'text-[#EE4423] hover:bg-[#EE4423] hover:text-white'}`}
+          className={`flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-xl border border-gray-100 transition-all active:scale-90 ${prevBtnDisabled ? 'opacity-30 cursor-not-allowed' : 'text-[#EE4423] hover:bg-gray-50'}`}
         >
           <ChevronLeft size={28} strokeWidth={2.5} />
         </button>
-        <button 
-          onClick={scrollNext} 
+        <button
+          onClick={scrollNext}
           disabled={nextBtnDisabled}
-          className={`flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-lg border border-gray-100 transition-all active:scale-90 ${nextBtnDisabled ? 'opacity-30 cursor-not-allowed' : 'text-[#EE4423] hover:bg-[#EE4423] hover:text-white'}`}
+          className={`flex h-12 w-12 lg:h-14 lg:w-14 items-center justify-center rounded-full bg-white shadow-xl border border-gray-100 transition-all active:scale-90 ${nextBtnDisabled ? 'opacity-30 cursor-not-allowed' : 'text-[#EE4423] hover:bg-gray-50'}`}
         >
           <ChevronRight size={28} strokeWidth={2.5} />
         </button>
