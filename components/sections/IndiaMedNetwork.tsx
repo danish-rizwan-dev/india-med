@@ -8,7 +8,7 @@ import { ChevronLeft, ChevronRight, Phone, ArrowUpRight } from "lucide-react";
 
 // 1. SEO: Moved data outside to prevent re-renders and added better Alt metadata
 const hospitalData = [
-  { 
+  {
     location: "Gurugram",
     name: "Medanta Gurgaon",
     description: "World-class multi-super specialty hospital known for advanced cardiac and robotic surgeries.",
@@ -80,7 +80,7 @@ export default function IndiaMedNetwork() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
-      align: (viewSize) => viewSize * 0.08, 
+      align: (viewSize) => viewSize * 0.08,
       skipSnaps: false,
       duration: 35,
     },
@@ -109,7 +109,7 @@ export default function IndiaMedNetwork() {
   return (
     // 3. SEO: Using <section> and meaningful margin/padding classes
     <section className="relative w-full bg-transparent flex flex-col items-center mt-8 lg:-mt-0 mb-16 overflow-hidden">
-      
+
       {/* HEADING */}
       <div
         className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-6 lg:px-10"
@@ -121,23 +121,47 @@ export default function IndiaMedNetwork() {
       </div>
 
       <div className="relative w-full">
-        {/* ARROWS - Hidden on small mobile to prevent overlap, visible from md up */}
-        <div className="absolute top-1/2 -translate-y-[50px] left-0 right-0 z-50 pointer-events-none flex justify-between px-4 lg:px-20">
+        {/* ================= NAVIGATION BUTTONS - HIGH-FIDELITY SVG ================= */}
+        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 lg:-translate-y-[65%] lg:-mt-[3px] left-0 right-0 z-50 pointer-events-none flex justify-between px-4 lg:px-20">
           <button
             onClick={scrollPrev}
-            type="button"
-            aria-label="Previous Hospital"
-            className="pointer-events-auto h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:scale-110 active:scale-95 transition-all"
+            className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
+            aria-label="Previous hospital"
           >
-            <ChevronLeft size={24} strokeWidth={3} />
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <foreignObject x="0" y="0" width="80" height="80">
+                  <div style={{ backdropFilter: "blur(5px)", clipPath: "url(#bgblur_network_left_clip)", height: "100%", width: "100%" }}></div>
+                </foreignObject>
+                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423" />
+              </g>
+              <defs>
+                <clipPath id="bgblur_network_left_clip">
+                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" />
+                </clipPath>
+              </defs>
+            </svg>
           </button>
           <button
             onClick={scrollNext}
-            type="button"
-            aria-label="Next Hospital"
-            className="pointer-events-auto h-10 w-10 md:h-12 md:w-12 flex items-center justify-center rounded-full bg-white shadow-xl text-[#EE4423] border border-gray-100 hover:scale-110 active:scale-95 transition-all"
+            className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
+            aria-label="Next hospital"
           >
-            <ChevronRight size={24} strokeWidth={3} />
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-180">
+              <g>
+                <foreignObject x="0" y="0" width="80" height="80">
+                  <div style={{ backdropFilter: "blur(5px)", clipPath: "url(#bgblur_network_right_clip)", height: "100%", width: "100%" }}></div>
+                </foreignObject>
+                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423" />
+              </g>
+              <defs>
+                <clipPath id="bgblur_network_right_clip">
+                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" />
+                </clipPath>
+              </defs>
+            </svg>
           </button>
         </div>
 
@@ -222,7 +246,7 @@ export default function IndiaMedNetwork() {
                             <ArrowUpRight size={18} className="text-[#EE4423] lg:w-[24px] lg:h-[24px]" strokeWidth={3} />
                           </div>
                         </Link>
-                        
+
                         <a
                           href="tel:+91XXXXXXXXXX"
                           className="bg-white text-[#58595B] px-4 py-2.5 lg:px-6 lg:py-3 rounded-full font-bold text-[12px] lg:text-[15px] flex items-center gap-2 shadow-lg transition-transform hover:scale-105"

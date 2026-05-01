@@ -149,21 +149,47 @@ export default function FeaturedDestination() {
           </div>
         </div>
 
-        {/* ================= NAVIGATION BUTTONS ================= */}
+        {/* ================= NAVIGATION BUTTONS - HIGH-FIDELITY SVG (BOTTOM) ================= */}
         <div className="hidden lg:flex items-center justify-center gap-6 mt-10 lg:mt-16">
           <button
             onClick={scrollPrev}
-            className="w-12 h-12 lg:w-[60px] lg:h-[60px] rounded-full border border-white/40 flex items-center justify-center bg-white/20 backdrop-blur-xl text-[#58595B] hover:bg-[#EE4423] hover:text-white hover:border-[#EE4423] transition-all duration-300 shadow-xl"
+            className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
             aria-label="Previous destination"
           >
-            <ChevronLeft size={24} className="lg:w-[32px] lg:h-[32px]" />
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g>
+                <foreignObject x="0" y="0" width="80" height="80">
+                  <div style={{ backdropFilter: "blur(5px)", clipPath: "url(#bgblur_dest_left_clip_hf)", height: "100%", width: "100%" }}></div>
+                </foreignObject>
+                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423"/>
+              </g>
+              <defs>
+                <clipPath id="bgblur_dest_left_clip_hf">
+                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5"/>
+                </clipPath>
+              </defs>
+            </svg>
           </button>
           <button
             onClick={scrollNext}
-            className="w-12 h-12 lg:w-[60px] lg:h-[60px] rounded-full border border-white/40 flex items-center justify-center bg-white/20 backdrop-blur-xl text-[#58595B] hover:bg-[#EE4423] hover:text-white hover:border-[#EE4423] transition-all duration-300 shadow-xl"
+            className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
             aria-label="Next destination"
           >
-            <ChevronRight size={24} className="lg:w-[32px] lg:h-[32px]" />
+            <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-180">
+              <g>
+                <foreignObject x="0" y="0" width="80" height="80">
+                  <div style={{ backdropFilter: "blur(5px)", clipPath: "url(#bgblur_dest_right_clip_hf)", height: "100%", width: "100%" }}></div>
+                </foreignObject>
+                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3"/>
+                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423"/>
+              </g>
+              <defs>
+                <clipPath id="bgblur_dest_right_clip_hf">
+                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5"/>
+                </clipPath>
+              </defs>
+            </svg>
           </button>
         </div>
 
