@@ -8,7 +8,6 @@ const Specialities = dynamic(() => import("@/components/sections/Specialities"))
 const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"));
 const FeaturedDestination = dynamic(() => import("@/components/sections/FeaturedDestination"));
 const ModelOfCare = dynamic(() => import("@/components/sections/ModelOfCare"));
-const ServicesSection = dynamic(() => import("@/components/sections/ServiceSection"));
 const PatientStories = dynamic(() => import("@/components/sections/PatientStories"));
 const BeyondBoundaries = dynamic(() => import("@/components/sections/BeyondBoundaries"));
 const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
@@ -36,7 +35,6 @@ export default function HomePage() {
 
       <FeaturedDestination />
       <ModelOfCare />
-      <ServicesSection />
       <PatientStories />
       <BeyondBoundaries />
       <BlogSection />
