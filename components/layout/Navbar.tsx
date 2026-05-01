@@ -32,11 +32,11 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" aria-label="India Med Service Home">
               <Image
-                src="/images/Logo.svg"
+                src="/images/logo.svg"
                 alt="India Med Service"
-                width={193}
-                height={65}
-                className="object-contain w-[111.58px] lg:w-[193px] h-[40px] lg:h-auto"
+                width={203}
+                height={56}
+                className="object-contain w-[120px] lg:w-[202.52px] h-[33px] lg:h-[56px] opacity-100"
                 priority
               />
             </Link>

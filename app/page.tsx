@@ -14,6 +14,7 @@ const BeyondBoundaries = dynamic(() => import("@/components/sections/BeyondBound
 const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
 const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
 const OurOfficeSection = dynamic(() => import("@/components/sections/OurOfficeSection"));
+const FounderSection = dynamic(() => import("@/components/sections/FounderSection"));
 const SharedGradientBg = dynamic(() => import("@/components/layout/SharedGradientBg"));
 const Footer = dynamic(() => import("@/components/layout/Footer"));
 
@@ -39,6 +40,7 @@ export default function HomePage() {
       <BlogSection />
       <FAQSection />
       <OurOfficeSection />
+      <FounderSection />
       <Footer />
     </main>
   );
