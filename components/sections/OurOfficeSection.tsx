@@ -33,7 +33,7 @@ export default function OurOfficeSection() {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center py-12 lg:py-32 mt-[-40px] lg:mt-[-80px] min-h-screen lg:min-h-[853px] overflow-hidden bg-white" id="our-office">
+    <section className="relative w-full flex items-center justify-center py-12 lg:py-32 mt-[-200px] lg:mt-[-20px] min-h-screen lg:min-h-[853px] overflow-hidden bg-white" id="our-office">
       {/* Schema for SEO */}
       <script
         type="application/ld+json"
@@ -50,7 +50,7 @@ export default function OurOfficeSection() {
             src="/images/backgrounds/OurOfficeBackground.png"
             alt="office section background grid"
             fill
-            className="object-cover"
+            className="object-cover opacity-50 lg:opacity-100"
             priority={true}
           />
         </div>
@@ -64,8 +64,7 @@ export default function OurOfficeSection() {
 
         {/* ================= OUR OFFICE HEADING ================= */}
         <div
-          className="inline-flex items-center justify-center border-2 border-[#58595B] bg-white shadow-sm w-full max-w-[329px] h-[60px] lg:h-[73px] rounded-full px-5 lg:px-[40px]"
-          style={{ gap: "10px" }}
+          className="inline-flex items-center justify-center border-2 border-[#58595B] bg-white shadow-sm w-[240px] lg:w-[329px] h-[54px] lg:h-[73px] rounded-full px-5 lg:px-[40px]"
         >
           <h2
             className="text-[#58595B] font-bold text-2xl lg:text-[42px] whitespace-nowrap"
@@ -76,45 +75,45 @@ export default function OurOfficeSection() {
               textAlign: "center"
             }}
           >
-            Our Office
+            Our Offices
           </h2>
         </div>
 
         {/* ================= CONTENT DIV ================= */}
         <div
-          className="w-full flex flex-col lg:flex-row items-center justify-center gap-[60px] lg:gap-[110px] lg:h-[462px]"
+          className="w-full flex flex-col lg:flex-row items-center justify-center gap-[40px] lg:gap-[110px] lg:h-[462px]"
         >
           {/* Left: Details and QR Div */}
           <div
-            className="flex flex-col w-full lg:max-w-[758px] gap-8 lg:gap-[40px]"
+            className="flex flex-col w-full lg:max-w-[758px] gap-10 lg:gap-[40px]"
           >
             {/* Toshkent Section */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[#E84E36] font-bold text-2xl lg:text-[32px] leading-tight text-center lg:text-left">
                 Toshkent:
               </h3>
-              <div className="flex flex-col md:flex-row items-center lg:items-start gap-6 lg:gap-8">
+              <div className="flex flex-row items-start justify-center lg:justify-start gap-4 lg:gap-8">
                 {/* QR Code */}
                 <div
-                  className="relative bg-white rounded-[20px] p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[120px] h-[120px] lg:w-[140px] lg:h-[140px]"
+                  className="relative bg-white rounded-[15px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[100px] h-[100px] lg:w-[140px] lg:h-[140px] mt-[-10px]"
                 >
                   <Image
                     src="/images/icons/QRTOSHKENT.svg"
                     alt="Tashkent QR Code"
                     fill
-                    className="p-2 object-contain"
+                    className="p-1 lg:p-2 object-contain"
                   />
                 </div>
 
                 {/* Info Div */}
                 <div
-                  className="flex flex-col items-center lg:items-start pt-0 lg:pt-4 pl-0 lg:pl-6 w-full lg:w-[536px] lg:h-[140px] justify-end gap-12"
+                  className="flex flex-col items-start lg:pt-4 w-full lg:w-[536px] justify-start gap-3 lg:gap-12"
                 >
                   {/* Phones */}
-                  <div className="flex flex-row flex-nowrap items-center lg:items-start gap-4 lg:gap-x-12">
+                  <div className="flex flex-col lg:flex-row lg:flex-nowrap items-start gap-2 lg:gap-x-12">
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
-                      <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain" />
+                      <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
+                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
@@ -124,8 +123,8 @@ export default function OurOfficeSection() {
                       </span>
                     </div>
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
-                      <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain" />
+                      <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
+                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
@@ -136,12 +135,12 @@ export default function OurOfficeSection() {
                     </div>
                   </div>
                   {/* Address */}
-                  <div className="flex items-center gap-4 text-[#58595B]">
-                    <div className="flex-shrink-0 w-6 h-6 relative">
-                      <Image src="/images/icons/loctionicon.svg" alt="location" fill className="object-contain" />
+                  <div className="flex items-start gap-2 lg:gap-4 text-[#58595B]">
+                    <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative mt-1 lg:mt-0">
+                      <Image src="/images/icons/loctionicon.svg" alt="location" fill className="object-contain orange-icon" />
                     </div>
                     <span
-                      className="text-base lg:text-[23px] text-center lg:text-left break-words lg:whitespace-nowrap"
+                      className="text-sm lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[200px] lg:max-w-none"
                       style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.2" }}
                     >
                       Toshkent shahri, Shifokorlar ko'chasi, 6B-uy
@@ -156,58 +155,58 @@ export default function OurOfficeSection() {
               <h3 className="text-[#E84E36] font-bold text-2xl lg:text-[32px] leading-tight text-center lg:text-left">
                 Qozog’iston:
               </h3>
-              <div className="flex flex-col md:flex-row items-center lg:items-start gap-6 lg:gap-8">
+              <div className="flex flex-row items-start justify-center lg:justify-start gap-4 lg:gap-8">
                 {/* QR Code */}
                 <div
-                  className="relative bg-white rounded-[20px] p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[120px] h-[120px] lg:w-[140px] lg:h-[140px]"
+                  className="relative bg-white rounded-[15px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[100px] h-[100px] lg:w-[140px] lg:h-[140px] mt-[-10px]"
                 >
                   <Image
-                    src="/images/icons/QRQozog’iston.png"
+                    src="/images/icons/QR-Qozogiston.png"
                     alt="Kazakhstan QR Code"
                     fill
-                    className="p-2 object-contain"
+                    className="p-1 lg:p-2 object-contain"
                   />
                 </div>
 
                 {/* Info Div */}
                 <div
-                  className="flex flex-col items-center lg:items-start pt-0 lg:pt-4 pl-0 lg:pl-6 w-full lg:w-[536px] lg:h-[140px] justify-end gap-12"
+                  className="flex flex-col items-start lg:pt-4 w-full lg:w-[536px] justify-start gap-3 lg:gap-12"
                 >
                   {/* Phones */}
-                  <div className="flex flex-row flex-nowrap items-center lg:items-start gap-4 lg:gap-x-12">
+                  <div className="flex flex-col lg:flex-row lg:flex-nowrap items-start gap-2 lg:gap-x-12">
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
-                      <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain" />
+                      <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
+                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
                         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "100%" }}
                       >
-                        +998 78 555 11 71
+                        +777 688 414 93
                       </span>
                     </div>
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
-                      <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
-                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain" />
+                      <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative">
+                        <Image src="/images/icons/phoneicon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
                       <span
                         className="text-sm lg:text-[23px] whitespace-nowrap"
                         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "100%" }}
                       >
-                        +998 99 929 11 66
+                        +7777 884 14 93
                       </span>
                     </div>
                   </div>
                   {/* Address */}
-                  <div className="flex items-center gap-4 text-[#58595B]">
-                    <div className="flex-shrink-0 w-6 h-6 relative">
-                      <Image src="/images/icons/loctionicon.svg" alt="location" fill className="object-contain" />
+                  <div className="flex items-start gap-2 lg:gap-4 text-[#58595B]">
+                    <div className="flex-shrink-0 w-4 h-4 lg:w-6 lg:h-6 relative mt-1 lg:mt-0">
+                      <Image src="/images/icons/loctionicon.svg" alt="location" fill className="object-contain orange-icon" />
                     </div>
                     <span
-                      className="text-base lg:text-[23px] text-center lg:text-left break-words lg:whitespace-nowrap"
+                      className="text-sm lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[200px] lg:max-w-none"
                       style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.2" }}
                     >
-                      Toshkent shahri, Shifokorlar ko'chasi, 6B-uy
+                      Chimkent shahri, Tauke xon shohko'chasi, 130
                     </span>
                   </div>
                 </div>
@@ -215,9 +214,9 @@ export default function OurOfficeSection() {
             </div>
           </div>
 
-          {/* Right: Icon of location */}
+          {/* Right: Icon of location (Desktop Only) */}
           <div
-            className="relative flex-shrink-0 w-[250px] h-[250px] lg:w-[462px] lg:h-[462px] animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+            className="hidden lg:block relative flex-shrink-0 w-[250px] h-[250px] lg:w-[462px] lg:h-[462px] animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
           >
             <Image
               src="/images/icons/3dmapicon.svg"
@@ -234,6 +233,11 @@ export default function OurOfficeSection() {
             }
             .animate-float {
               animation: float 2s ease-in-out infinite;
+            }
+            @media (max-width: 1023px) {
+              .orange-icon {
+                filter: invert(41%) sepia(91%) saturate(2335%) hue-rotate(345deg) brightness(96%) contrast(97%);
+              }
             }
           `}</style>
         </div>
