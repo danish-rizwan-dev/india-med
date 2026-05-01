@@ -30,13 +30,12 @@ export default function Navbar() {
           
           {/* LOGO */}
           <div className="flex-shrink-0">
-            <Link href="/" aria-label="India Med Service Home">
+            <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[202.52px] h-[33px] lg:h-[56px]">
               <Image
-                src="/images/logo.svg"
+                src="/images/Logo.svg"
                 alt="India Med Service"
-                width={203}
-                height={56}
-                className="object-contain w-[120px] lg:w-[202.52px] h-[33px] lg:h-[56px] opacity-100"
+                fill
+                className="object-contain opacity-100"
                 priority
               />
             </Link>
