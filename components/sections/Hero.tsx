@@ -1,9 +1,15 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Hero() {
+  const t = useTranslations('Hero');
+  const locale = useLocale();
+  const isEn = locale === 'en';
+  const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
+
   const CalendarIcon = () => (
     <div className="relative w-[16px] h-[16px] lg:w-[26px] lg:h-[24px] flex items-center justify-center flex-shrink-0">
       <Image
@@ -64,49 +70,51 @@ export default function Hero() {
 
         {/* ================= CONTENT BOX ================= */}
         <div
-          className="
+          className={`
             absolute flex flex-col items-center md:items-start
             /* Mobile Spec: 19px left */
-            w-[357px] h-[360px]
-            top-[32px] left-[19px]
-            gap-[40px] z-20
+            w-[357px] h-auto
+            ${isLongLocale ? 'top-[10px]' : 'top-[32px]'} left-[19px]
+            ${isLongLocale ? 'gap-[20px] lg:gap-[40px]' : 'gap-[40px] lg:gap-[45px]'} z-20
             /* iPad Air & Pro: Adjust left position to be fluid */
             md:max-w-[450px] md:top-[80px] md:left-[5vw]
-            /* Desktop Spec: 208px left */
-            lg:w-full lg:max-w-[584px] lg:h-auto
-            lg:top-[75px] lg:left-[calc(max(40px,min(208px,14vw)))] lg:gap-[45px]
-          "
+            /* Desktop Spec: Matches your exact 75px top / 208px left specs from baseline */
+            lg:w-full lg:max-w-[584px]
+            lg:top-[75px] lg:left-[calc(max(40px,min(208px,14vw)))]
+          `}
         >
           {/* Brand & Heading Group */}
-          <div className="flex flex-col gap-[20px] w-full text-center md:text-left">
-            <span className="font-montserrat font-bold text-[20px] lg:text-[24px] text-[#EE4423] leading-[39.19px] block">
-              India Med Services
+          <div className={`flex flex-col w-full ${isLongLocale ? 'gap-[10px] lg:gap-[16px]' : 'gap-[20px]'} text-center md:text-left`}>
+            <span 
+              className={`font-montserrat font-bold text-[#EE4423] block ${isLongLocale ? 'text-[22px] lg:text-[26px] leading-tight' : 'text-[20px] lg:text-[24px] leading-[39.19px]'}`}
+            >
+              {t('brand')}
             </span>
 
             <h1
-              className="
+              className={`
                 text-[#444444] font-montserrat font-bold
-                text-[28px] md:text-[36px] lg:text-[47px]
-                leading-[1.1] lg:leading-tight
-              "
+                ${locale === 'kk' || locale === 'uz' ? 'text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]' : 
+                  locale === 'ru' ? 'text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]' : 
+                  'text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight'}
+              `}
             >
-              Affordable Medical Treatment in India with
-              <span className="text-[#EE4423]"> World-Class Care</span>
+              {t('heading_main')}
+              <span className="text-[#EE4423]"> {t('heading_highlight')}</span>
             </h1>
 
             <p
-              className="
+              className={`
                 font-montserrat font-medium text-[#58595B]
-                text-[14px] lg:text-[17px]
-                leading-relaxed lg:leading-normal
+                ${locale === 'kk' || locale === 'uz' ? 'text-[14px] lg:text-[17px] leading-relaxed' :
+                  locale === 'ru' ? 'text-[15px] lg:text-[19px] leading-relaxed' : 
+                  'text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal'}
                 w-[203px] md:w-full 
                 text-left
                 mx-0
-              "
+              `}
             >
-              Looking for medical treatment in India? We help you compare
-              treatment costs in India, choose top hospitals and get complete
-              visa & patient support.
+              {t('description')}
             </p>
           </div>
 
@@ -115,25 +123,22 @@ export default function Hero() {
             href="/appointment"
             aria-label="Book a medical consultation with India Med experts"
             title="Book a medical consultation"
-            className="
+            className={`
               flex items-center justify-center
               bg-[#EE4423] text-white
               transition-transform active:scale-95
               shadow-[0px_10px_20px_rgba(238,68,35,0.2)]
-              w-[158.9px] lg:w-[252px] 
-              h-[48px] lg:h-[49px]
-              p-4
-              rounded-full gap-[10px] px-[20px]
-              mr-auto lg:mr-0
-            "
+              rounded-full mr-auto lg:mr-0
+              ${isLongLocale ? 'w-fit px-[25px] h-[48px] lg:h-[49px] gap-[10px]' : 'w-[158.9px] lg:w-[252px] h-[48px] lg:h-[49px] gap-[10px] px-[20px]'}
+            `}
           >
             <CalendarIcon />
-            <span className="font-montserrat font-bold text-[14px] lg:text-[17px] whitespace-nowrap">
-              Consult Now
+            <span className={`font-montserrat font-bold whitespace-nowrap ${isLongLocale ? 'text-[15px] lg:text-[18px]' : 'text-[14px] lg:text-[17px]'}`}>
+              {t('button')}
             </span>
           </Link>
         </div>
       </div>
     </section>
   );
-}
+}

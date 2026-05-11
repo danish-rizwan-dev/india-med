@@ -1,0 +1,228 @@
+{
+  "Metadata": {
+    "title": "India Med Service | Medical Treatment in India",
+    "description": "India Med Service — connect with top hospitals & expert doctors in India. Affordable surgery, medical visa support, and complete care for international patients.",
+    "keywords": "India Med Service, India Med, medical treatment India, best hospitals India, medical tourism India, surgery India, medical visa India"
+  },
+  "Navbar": {
+    "home": "Home",
+    "speciality": "Speciality",
+    "services": "Services",
+    "contact": "Contact Us",
+    "request_call": "Request Call Back",
+    "search_placeholder": "Search..."
+  },
+  "Hero": {
+    "brand": "India Med Services",
+    "heading_main": "Affordable Medical Treatment in India with",
+    "heading_highlight": " World-Class Care",
+    "description": "Looking for medical treatment in India? We help you compare treatment costs in India, choose top hospitals and get complete visa & patient support.",
+    "button": "Consult Now"
+  },
+  "ServiceBar": {
+    "opinion": "Second Opinion",
+    "cost": "Treatment Cost Estimate",
+    "services": "Medical Services",
+    "visa": "Medical Visa Assistance",
+    "consult": "Free Consultation"
+  },
+  "Specialities": {
+    "title": "Our Specialities",
+    "search_placeholder": "Search specialities...",
+    "view_all": "View All Specialities",
+    "show_less": "Show Less",
+    "know_more": "Know More",
+    "cardio": "Cardiological Assistance",
+    "ortho": "Orthopedics",
+    "cancer": "Cancer Treatment",
+    "neuro": "Neuroscience",
+    "gastro": "Gastrosciences",
+    "liver": "Liver Transplant",
+    "lungs": "Lung Transplantation",
+    "gyno": "Obstetrics And Gynecology"
+  },
+  "WhyChooseUs": {
+    "title": "Why Choose Us?",
+    "header_desc": "Trusted by international patients worldwide, India delivers advanced healthcare backed by expert doctors and complete care support.",
+    "contact_button": "Contact Now",
+    "reason_1_title": "World-class Hospitals",
+    "reason_1_desc": "JCI & NABH accredited hospitals ensuring top global safety and care.",
+    "reason_2_title": "Affordable Costs",
+    "reason_2_desc": "Up to 70–80% lower treatment costs compared to Western countries.",
+    "reason_3_title": "Expert Doctors",
+    "reason_3_desc": "Internationally trained specialists with years of proven expertise.",
+    "reason_4_title": "Complete Assistance",
+    "reason_4_desc": "End-to-end support: travel, visa, treatment, and recovery care."
+  },
+  "IndiaMedNetwork": {
+    "title": "India Med Network",
+    "know_more": "Know more",
+    "contact_now": "Contact Now",
+    "locations": {
+      "gurugram": "Gurugram",
+      "lucknow": "Lucknow",
+      "patna": "Patna"
+    },
+    "hospitals": {
+      "medanta": "Medanta Gurgaon",
+      "medanta_desc": "World-class multi-super specialty hospital known for advanced cardiac and robotic surgeries.",
+      "fortis": "Fortis Memorial",
+      "fortis_desc": "Premium quaternary care hospital with state-of-the-art medical technology and international standards.",
+      "artemis": "Artemis Hospital",
+      "artemis_desc": "First JCI & NABH accredited hospital in Gurgaon, providing depth of expertise in advanced medical interventions.",
+      "max": "Max Hospital",
+      "max_desc": "Renowned for oncology, cardiology, and neurosciences with top-tier healthcare professionals.",
+      "paras": "Paras Health",
+      "paras_desc": "Leader in neurosciences and joint replacement, providing specialized care at accessible price points.",
+      "marengo": "Marengo Asia",
+      "marengo_desc": "Modern multi-specialty facility offering high-end clinical care and a patient-centric approach.",
+      "indiamed_lucknow": "India Med Super Speciality",
+      "indiamed_lucknow_desc": "Spread across an area of 12.58 acres, Medanta Lucknow is one of the largest multi-super-specialty hospitals.",
+      "jay_prabha": "Jay Prabha Medanta",
+      "jay_prabha_desc": "Established in 2020, this super-specialty hospital began operations with an Out-Patient Department (OPD)."
+    }
+  },
+  "FeaturedDestination": {
+    "title": "Featured Destination",
+    "desc": "Trusted by international patients worldwide, India delivers advanced healthcare backed by expert doctors, modern facilities, and complete care and support at every step of the treatment journey.",
+    "countries": {
+      "uzbekistan": "Uzbekistan",
+      "russia": "Russia",
+      "kazakhstan": "Kazakhstan",
+      "krikistan": "Kyrgyzstan",
+      "turkmenistan": "Turkmenistan",
+      "tajikistan": "Tajikistan"
+    }
+  },
+  "ModelOfCare": {
+    "title": "India Med Model of Care",
+    "know_more": "Know More",
+    "step_1_title": "Exceptional Clinical Talent",
+    "step_1_desc": "India Med delivers high-quality, integrated care through expert clinicians, a doctor-led approach, and strong multispecialty collaboration.",
+    "step_2_title": "World-class Infrastructure",
+    "step_2_desc": "India Med provides advanced infrastructure, high OT & ICU capacity, and strict infection control to support complex care and faster patient recovery.",
+    "step_3_title": "Latest High-end Technology",
+    "step_3_desc": "India Med delivers advanced tertiary and quaternary care using cutting-edge technology, enabling doctors to perform complex diagnostics and treatments with precision.",
+    "step_4_title": "Caring Systems And Processes",
+    "step_4_desc": "India Med uses advanced digital solutions to improve access and quality of care, supported by uniform clinical standards that ensure safe, effective treatment.",
+    "step_5_title": "Trust-based Compassionate Care",
+    "step_5_desc": "India Med delivers advanced healthcare through integrated centres of excellence, combining care, research, and learning with a patient-first philosophy."
+  },
+  "BeyondBoundaries": {
+    "title": "Beyond Boundaries",
+    "heading": "Fostering health with cutting-edge medical services across 130+ countries",
+    "know_more": "Know More",
+    "contact_now": "Contact Now",
+    "stat_patients": "Average International Patients Per Year",
+    "stat_countries": "Countries",
+    "stat_hospitals": "Hospitals in India"
+  },
+  "PatientStories": {
+    "title": "Patient Stories",
+    "richard_name": "Richard Gruber",
+    "richard_loc": "Austria",
+    "sophie_name": "Sophie Verschueren",
+    "sophie_loc": "Australia",
+    "dylan_name": "Dylan Walters",
+    "dylan_loc": "United States",
+    "ella_name": "Ella Huber",
+    "ella_loc": "Germany"
+  },
+  "ProcessFlow": {
+    "step_1": "Online Consultation",
+    "step_2": "Treatment plan",
+    "step_3": "Visa Support",
+    "step_4": "Air Ticket and Transfer",
+    "step_5": "Meeting At The Airport",
+    "step_6": "Living Near The Hospital",
+    "step_7": "Professional Translators",
+    "step_8": "Full support even after the patient returns home"
+  },
+  "Leadership": {
+    "title": "Leadership",
+    "faisal_name": "Mr. Faisal Iqbal",
+    "faisal_title": "Founder & Managing Director – India Med Service",
+    "faisal_bio_1": "Mr. Faisal Iqbal is the Founder and Director of India Med Service, a trusted medical facilitation company specializing in organizing treatment for international patients in India. With over 6 years of experience in the healthcare coordination sector, he has successfully assisted more than 1,750 patients from various countries in accessing high-quality medical care.",
+    "faisal_bio_2": "He is highly experienced in coordinating end-to-end medical journeys, including hospital selection, doctor consultations, treatment planning, and patient support. Mr. Faisal personally ensures smooth communication between patients, hospitals, and medical professionals.",
+    "faisal_bio_3": "Under his leadership, India Med Service has built strong collaborations with leading hospitals and specialists across India, delivering reliable, transparent, and patient-focused services.",
+    "daniyar_name": "Mr. Daniyar Aydimirov",
+    "daniyar_title": "Regional Director – Kazakhstan",
+    "daniyar_bio": "Daniyar Aydimirov oversees patient coordination in Kazakhstan, providing dedicated support to international patients. He has assisted over 1,000 patients and ensures smooth communication in Russian, Kazakh, and Uzbek, with a strong focus on patient care and trust.",
+    "expertise_title": "Core Expertise",
+    "expertise_list": ["International Patient Coordination", "Hospital & Doctor Network Management", "Medical Treatment Planning & Assistance", "End-to-End Patient Support Services"],
+    "achievements_title": "Key Achievements",
+    "achievements_list": ["6+ years of experience in medical facilitation", "2500+ international patients successfully served", "Strong network with top hospitals across India"],
+    "services_title": "Services Offered",
+    "services_list": ["Medical visa assistance", "Flight & accommodation arrangements", "Appointment scheduling with top doctors", "Treatment coordination and monitoring", "Post-treatment follow-up and care"]
+  },
+  "OurOffices": {
+    "title": "Our Offices",
+    "uzbekistan": "Uzbekistan:",
+    "kazakhstan": "Kazakhstan:",
+    "tashkent_addr": "Toshkent shahri, Shifokorlar ko'chasi, 6B-uy",
+    "shymkent_addr": "Chimkent shahri, Tauke xon shohko'chasi, 130"
+  },
+  "FAQ": {
+    "title": "FAQs",
+    "subtitle": "Frequently asked questions",
+    "book_title": "Book a 15 min call",
+    "book_desc": "If you have any questions, just book a 15-minute call with us.",
+    "book_button": "Book Appointment",
+    "q1": "How does India Med help with medical treatments?",
+    "a1": "India Med connects you with top-tier healthcare providers, helps compare treatment options, and provides support throughout your medical journey.",
+    "q2": "What specialties does India Med cover?",
+    "a2": "We cover a wide range of specialties including Cardiology, Oncology, Orthopedics, and more.",
+    "q3": "How can I get a treatment quote?",
+    "a3": "You can upload your medical reports through our portal, and our experts will provide a detailed cost estimate within 24-48 hours.",
+    "q4": "Does India Med offer international patient services?",
+    "a4": "Yes, we provide full concierge services including visa assistance, airport transfers, and language interpretation.",
+    "q5": "How do I schedule an appointment with a doctor?",
+    "a5": "Simply book a call through our website or use the appointment feature to select your preferred specialist."
+  },
+  "Blog": {
+    "title": "Blogs",
+    "read_more": "Read More",
+    "view_all": "View all blogs",
+    "blog1_title": "4D-Phaco Cataract Surgery in India: Technology, Results and Costs",
+    "blog2_title": "Liver Detox: Best Foods and Fruits for Nat...",
+    "blog3_title": "White Spots on Skin: Causes, Symptom..."
+  },
+  "Footer": {
+    "desc": "Empowering international patients with world-class healthcare in India. Trusted hospitals, transparent costs, and seamless travel support.",
+    "col_1_title": "For Patients",
+    "col_2_title": "Specialities",
+    "col_3_title": "Our Hospitals",
+    "col_4_title": "Corporate",
+    "copyright": "© {year} India Med Network. A Global Healthcare Initiative.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms & Conditions",
+    "links": {
+      "find_doctor": "Find a Doctor",
+      "book_apt": "Book Appointment",
+      "treatments": "Treatments",
+      "emergency": "Emergency 24x7",
+      "technology": "Technology",
+      "testimonials": "Patient Testimonials",
+      "disclaimer": "Disclaimer",
+      "privacy": "Privacy Policy",
+      "cardiac": "Cardiac Care",
+      "cancer": "Cancer Care",
+      "neuro": "Neurosciences",
+      "ortho": "Orthopaedics",
+      "renal": "Renal Care",
+      "liver": "Liver Transplant",
+      "bone": "Bone Marrow",
+      "lung": "Lung Transplant",
+      "gurugram": "India Med Gurugram",
+      "patna": "India Med Patna",
+      "lucknow": "India Med Lucknow",
+      "indore": "India Med Indore",
+      "noida": "India Med Noida",
+      "help": "Help Desk",
+      "about": "About us",
+      "blogs": "Blogs",
+      "feedback": "Feedback",
+      "contact": "Contact Us"
+    }
+  }
+}

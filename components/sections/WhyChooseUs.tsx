@@ -4,35 +4,39 @@ import Image from "next/image";
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-
-const reasons = [
-  {
-    title: "World-class Hospitals",
-    description: "JCI & NABH accredited hospitals ensuring top global safety and care.",
-    icon: "/images/sections/why-choose-us/hospital.svg",
-  },
-  {
-    title: "Affordable Costs",
-    description: "Up to 70–80% lower treatment costs compared to Western countries.",
-    icon: "/images/sections/why-choose-us/costs.svg",
-  },
-  {
-    title: "Expert Doctors",
-    description: "Internationally trained specialists with years of proven expertise.",
-    icon: "/images/sections/why-choose-us/expert-doctors.svg",
-  },
-  {
-    title: "Complete Assistance",
-    description: "End-to-end support: travel, visa, treatment, and recovery care.",
-    icon: "/images/sections/why-choose-us/assistance.svg",
-  },
-];
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function WhyChooseUs() {
-  const [emblaRef] = useEmblaCarousel({ 
-    loop: true, 
+  const t = useTranslations('WhyChooseUs');
+  const locale = useLocale();
+
+  const reasons = [
+    {
+      title: t('reason_1_title'),
+      description: t('reason_1_desc'),
+      icon: "/images/sections/why-choose-us/hospital.svg",
+    },
+    {
+      title: t('reason_2_title'),
+      description: t('reason_2_desc'),
+      icon: "/images/sections/why-choose-us/costs.svg",
+    },
+    {
+      title: t('reason_3_title'),
+      description: t('reason_3_desc'),
+      icon: "/images/sections/why-choose-us/expert-doctors.svg",
+    },
+    {
+      title: t('reason_4_title'),
+      description: t('reason_4_desc'),
+      icon: "/images/sections/why-choose-us/assistance.svg",
+    },
+  ];
+
+  const [emblaRef] = useEmblaCarousel({
+    loop: true,
     align: "center",
-    containScroll: false 
+    containScroll: false
   }, [
     Autoplay({ delay: 2000, stopOnInteraction: false }),
   ]);
@@ -41,43 +45,41 @@ export default function WhyChooseUs() {
     <section className="relative z-10 w-full lg:mt-[-100px] overflow-hidden py-12 lg:py-0">
 
       <div
-        className="relative flex flex-col items-center justify-center mx-auto lg:py-[120px] px-0 lg:px-0" // Changed px-6 to px-0 for mobile
+        className="relative flex flex-col items-center justify-center mx-auto lg:py-[120px] px-0 lg:px-0"
         style={{ maxWidth: "1319px", fontFamily: "Montserrat, sans-serif" }}
       >
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:flex-row lg:justify-center lg:gap-[60px] xl:gap-[100px]">
-          
+
           {/* ================= MOBILE/TABLET HEADER ================= */}
-          <header className="flex flex-col items-center lg:hidden mb-12 px-6"> {/* Added px-6 here to keep text aligned */}
+          <header className="flex flex-col items-center lg:hidden mb-12 px-6">
             <div 
-              className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-6 px-8 py-4"
-              style={{ width: "min(327px, 90vw)", height: "auto" }}
+              className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-6 px-8 py-4 w-fit min-w-[280px] mx-auto"
             >
-              <h2 aria-hidden="true" className="text-[#58595B] font-bold text-2xl md:text-3xl leading-none">
-                Why Choose Us?
+              <h2 aria-hidden="true" className={`text-[#58595B] font-bold leading-none whitespace-nowrap ${locale === 'en' ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'}`}>
+                {t('title')}
               </h2>
             </div>
             <p className="text-[#58595B] text-base md:text-lg font-medium leading-relaxed max-w-[500px]">
-              Trusted by international patients worldwide, India delivers advanced healthcare backed by expert doctors and complete care support.
+              {t('header_desc')}
             </p>
           </header>
 
           {/* ================= DESKTOP RIGHT SECTION ================= */}
           <div className="hidden lg:flex flex-col items-start text-left max-w-[530px] order-2 lg:pt-[100px] xl:pt-[150px] px-6 lg:px-0">
-            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-8 h-[73px]">
-              <h2 className="text-[#58595B] font-bold text-[32px] xl:text-[42px] whitespace-nowrap leading-none">
-                Why Choose Us?
+            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-10 h-[73px] w-fit">
+              <h2 className={`text-[#58595B] font-bold whitespace-nowrap leading-none ${locale === 'en' ? 'text-[32px] xl:text-[42px]' : 'text-[24px] xl:text-[28px]'}`}>
+                {t('title')}
               </h2>
             </header>
             <p className="text-[#58595B] text-lg xl:text-[19px] font-medium leading-relaxed mb-10">
-              Trusted by international patients worldwide, India delivers advanced
-              healthcare backed by internationally trained specialists and complete end-to-end support.
+              {t('header_desc')}
             </p>
             <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg hover:bg-[#d63a1b] transition-all active:scale-95">
-              Contact Now <span className="text-xl" aria-hidden="true">›</span>
+              {t('contact_button')} <span className="text-xl" aria-hidden="true">›</span>
             </button>
           </div>
 
-          {/* ================= MOBILE CAROUSEL (Now edge-to-edge) ================= */}
+          {/* ================= MOBILE CAROUSEL ================= */}
           <div className="block lg:hidden w-full overflow-hidden mb-8" ref={emblaRef}>
             <div className="flex">
               {reasons.map((item, index) => (
@@ -86,13 +88,13 @@ export default function WhyChooseUs() {
                     className="relative flex flex-col items-start bg-white/60 backdrop-blur-md p-6 h-[200px] border border-orange-100/50 rounded-[25px]"
                   >
                     <div className="w-10 h-10 mb-4">
-                      <Image 
-                        src={item.icon} 
-                        alt={`${item.title} icon`} 
-                        width={40} 
-                        height={40} 
+                      <Image
+                        src={item.icon}
+                        alt={`${item.title} icon`}
+                        width={40}
+                        height={40}
                         style={{ height: 'auto' }}
-                        className="object-contain" 
+                        className="object-contain"
                       />
                     </div>
                     <h3 className="text-[#58595B] font-bold text-base leading-tight text-left mb-2">
@@ -135,13 +137,13 @@ export default function WhyChooseUs() {
                   }}
                 />
                 <div className="flex items-center justify-center mb-6 w-12 h-12 xl:w-[60px] xl:h-[60px] shrink-0">
-                  <Image 
-                    src={item.icon} 
-                    alt={item.title} 
-                    width={60} 
-                    height={60} 
+                  <Image
+                    src={item.icon}
+                    alt={item.title}
+                    width={60}
+                    height={60}
                     style={{ height: 'auto' }}
-                    className="w-full h-full object-contain" 
+                    className="w-full h-full object-contain"
                   />
                 </div>
                 <h3 className="text-[#58595B] font-bold text-xl xl:text-[22px] mb-3 leading-tight">{item.title}</h3>
@@ -154,7 +156,7 @@ export default function WhyChooseUs() {
         {/* Mobile-only CTA */}
         <div className="lg:hidden w-full flex justify-center mt-8 px-6">
           <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg active:scale-95 transition-all">
-            Contact Now <span className="text-xl" aria-hidden="true">›</span>
+            {t('contact_button')} <span className="text-xl" aria-hidden="true">›</span>
           </button>
         </div>
       </div>

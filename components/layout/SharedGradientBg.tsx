@@ -11,7 +11,7 @@ export default function SharedGradientBg({ children }: SharedGradientBgProps) {
     /* 1. Negative Margin: Pulls the background up to overlap the ServiceBar
        2. isolate: Ensures the background stays behind the ServiceBar buttons.
     */
-    <section className="relative w-full isolate mt-[-100px] md:mt-[-140px] lg:mt-[-150px] lg:pb-32 mb-16 overflow-hidden">
+    <section className="relative w-full isolate mt-[-40px] md:mt-[-80px] lg:mt-[-100px] lg:pb-32 mb-16 overflow-hidden">
 
       {/* ================= BACKGROUND LAYER ================= */}
       <div
@@ -28,7 +28,7 @@ export default function SharedGradientBg({ children }: SharedGradientBgProps) {
         <div
           className="absolute inset-[-10%] w-[120%] h-[120%] opacity-60"
           style={{
-            backgroundImage: "url('/images/backgrounds/background.png')",
+            backgroundImage: "url('/images/backgrounds/backgroundlines.png')",
             backgroundSize: "cover",
             backgroundPosition: "center",
           }}
@@ -37,7 +37,7 @@ export default function SharedGradientBg({ children }: SharedGradientBgProps) {
         <div
           className="absolute top-[-20%] left-[-10%] w-[120%] h-[80%] opacity-40 scale-125"
           style={{
-            backgroundImage: "url('/images/backgrounds/background.png')",
+            backgroundImage: "url('/images/backgrounds/backgroundlines.png')",
             backgroundSize: "cover",
             backgroundPosition: "top center",
           }}
@@ -46,7 +46,7 @@ export default function SharedGradientBg({ children }: SharedGradientBgProps) {
         <div
           className="absolute bottom-[-10%] right-[-5%] w-[110%] h-[60%] opacity-30 rotate-180"
           style={{
-            backgroundImage: "url('/images/backgrounds/background.png')",
+            backgroundImage: "url('/images/backgrounds/backgroundlines.png')",
             backgroundSize: "cover",
             backgroundPosition: "bottom center",
           }}

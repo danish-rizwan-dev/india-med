@@ -2,43 +2,44 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-
-const specialities = [
-  { title: "Cardiological Assistance", icon: "/images/sections/specialities/cardiac.svg" },
-  { title: "Orthopedics", icon: "/images/sections/specialities/ortho.svg" },
-  { title: "Cancer Treatment", icon: "/images/sections/specialities/cancer.svg" },
-  { title: "Neuroscience", icon: "/images/sections/specialities/neuro.svg" },
-  { title: "Gastrosciences", icon: "/images/sections/specialities/gastro.svg" },
-  { title: "Liver Transplant", icon: "/images/sections/specialities/liver.svg" },
-  { title: "Lung Transplantation", icon: "/images/sections/specialities/lungs.svg" },
-  { title: "Obstetrics And Gynecology", icon: "/images/sections/specialities/gyno.svg" },
-];
+import {Link} from "@/i18n/routing";
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function Specialities() {
+  const t = useTranslations('Specialities');
+  const locale = useLocale();
+  
+  const specialities = [
+    { title: t('cardio'), icon: "/images/sections/specialities/cardiac.svg", slug: "cardiological-assistance" },
+    { title: t('ortho'), icon: "/images/sections/specialities/ortho.svg", slug: "orthopedics" },
+    { title: t('cancer'), icon: "/images/sections/specialities/cancer.svg", slug: "cancer-treatment" },
+    { title: t('neuro'), icon: "/images/sections/specialities/neuro.svg", slug: "neuroscience" },
+    { title: t('gastro'), icon: "/images/sections/specialities/gastro.svg", slug: "gastrosciences" },
+    { title: t('liver'), icon: "/images/sections/specialities/liver.svg", slug: "liver-transplant" },
+    { title: t('lungs'), icon: "/images/sections/specialities/lungs.svg", slug: "lung-transplantation" },
+    { title: t('gyno'), icon: "/images/sections/specialities/gyno.svg", slug: "obstetrics-and-gynecology" },
+  ];
+
   const [search, setSearch] = useState("");
   const [isExpanded, setIsExpanded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // 1. Cycling logic: Moves the items up by 4 every 3000ms
   useEffect(() => {
     if (search || isExpanded) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 4) % specialities.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [search, isExpanded]);
+  }, [search, isExpanded, specialities.length]);
 
   const filtered = specialities.filter((s) =>
     s.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  // When searching/expanded, show full or filtered list
   const showScrolling = !search && !isExpanded;
 
   return (
-    <section className="relative w-full overflow-hidden">
-      {/* 🌍 WORLD MAP BACKGROUND */}
+    <section id="specialities" className="relative w-full overflow-hidden">
       <div
         className="absolute inset-0 w-full h-full opacity-80 pointer-events-none -z-20 hidden lg:block"
         aria-hidden="true"
@@ -49,17 +50,19 @@ export default function Specialities() {
           backgroundRepeat: "no-repeat",
         }}
       />
-      {/* --- SECTION CONTENT --- */}
       <div className="relative z-10 flex flex-col items-center px-6 py-16 lg:py-24">
 
-        {/* SEO Header */}
-        <header className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-10 py-4 max-w-[450px] w-full">
-          <h2 className="text-[#58595B] font-bold text-2xl lg:text-[42px] font-montserrat text-center">
-            Our Specialities
+        <header className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-6 md:px-12 py-4 w-fit mx-auto max-w-[90vw]">
+          <h2 className={`text-[#58595B] font-bold font-montserrat text-center whitespace-nowrap ${
+            locale === 'en' 
+              ? 'text-2xl lg:text-[42px]' 
+              : 'text-lg md:text-xl lg:text-[24px]'
+          }`}>
+            {t('title')}
           </h2>
         </header>
 
-        {/* --- MOBILE/IPAD VIEW: LIST LAYOUT --- */}
+        {/* --- MOBILE/IPAD VIEW --- */}
         <div className="flex md:hidden flex-col items-center bg-white/60 backdrop-blur-3xl border-[2.03px] border-white/80 rounded-[33.76px] p-[25px] gap-[20px] w-full max-w-[351px] transition-all duration-500 overflow-hidden">
 
           {showScrolling ? (
@@ -69,11 +72,10 @@ export default function Specialities() {
                 style={{ transform: `translateY(-${currentIndex * 82}px)` }}
                 aria-label="Scrolling specialities list"
               >
-                {/* Double the list for seamless looping feel */}
                 {[...specialities, ...specialities].map((item, index) => (
                   <Link
                     key={index}
-                    href={`/specialities/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
+                    href={`/specialities/${item.slug}`}
                     className="group flex items-center justify-between w-full h-[50px] border-b border-black/5 pb-2 shrink-0 transition-colors"
                     title={`Learn more about ${item.title}`}
                   >
@@ -99,7 +101,7 @@ export default function Specialities() {
               {filtered.map((item, index) => (
                 <Link
                   key={index}
-                  href={`/specialities/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={`/specialities/${item.slug}`}
                   className="group flex items-center justify-between w-full h-[50px] border-b border-black/5 pb-2 transition-colors"
                 >
                   <div className="flex items-center gap-[20px]">
@@ -120,13 +122,12 @@ export default function Specialities() {
             </nav>
           )}
 
-          {/* Search Bar */}
           <div className="relative w-full h-[49px] mt-4">
             <label htmlFor="speciality-search" className="sr-only">Search Specialities</label>
             <input
               id="speciality-search"
               type="search"
-              placeholder="Search specialities..."
+              placeholder={t('search_placeholder')}
               value={search}
               onChange={(e) => setSearch(e.target.value)}
               className="w-full h-full rounded-full border border-[#EE4423] px-12 focus:outline-none text-sm font-montserrat placeholder:text-gray-400"
@@ -141,20 +142,19 @@ export default function Specialities() {
               onClick={() => setIsExpanded(!isExpanded)}
               className="flex items-center w-full h-[49px] bg-[#EE4423] rounded-full text-white font-bold pl-[40px] pr-[30px] active:scale-95 transition-all hover:bg-[#d63a1b] whitespace-nowrap"
             >
-              <span className="mr-3">{isExpanded ? "Show Less" : "View All Specialities"}</span>
+              <span className="mr-3">{isExpanded ? t('show_less') : t('view_all')}</span>
               <span className={`text-xl transition-transform ${isExpanded ? "-rotate-90" : "rotate-0"}`}>›</span>
             </button>
           )}
         </div>
 
-        {/* --- DESKTOP & TABLET VIEW: GRID LAYOUT --- */}
-        {/* Shows from md (768px) upwards. Changed grid from 4 to 2 on tablets (md) */}
+        {/* --- DESKTOP & TABLET VIEW --- */}
         <div className="hidden md:block w-full max-w-[1318px]">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
             {specialities.map((item, index) => (
               <Link
                 key={index}
-                href={`/specialities/${item.title.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/specialities/${item.slug}`}
                 className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 p-8 lg:p-10 rounded-[40px] h-full min-h-[260px] lg:min-h-[300px] overflow-hidden bg-white shadow-[0px_15px_35px_rgba(0,0,0,0.05)] border border-gray-100"
               >
                 <div className="relative z-20 w-[60px] h-[60px] lg:w-[85px] lg:h-[85px] mb-6 transition-transform duration-500 group-hover:scale-110">
@@ -169,9 +169,8 @@ export default function Specialities() {
                   {item.title}
                 </h3>
                 <div className="relative z-20 text-[14px] font-bold text-gray-400 group-hover:text-[#EE4423] transition-all flex items-center gap-1">
-                  Know More <span>›</span>
+                  {t('know_more')} <span>›</span>
                 </div>
-
               </Link>
             ))}
           </div>
@@ -181,7 +180,7 @@ export default function Specialities() {
               href="/specialities"
               className="group relative z-20 flex items-center gap-3 px-8 lg:px-10 py-3 lg:py-4 rounded-full bg-[#EE4423] text-white font-bold text-base lg:text-lg hover:bg-[#d63a1b] transition-all"
             >
-              View All Specialities
+              {t('view_all')}
               <span className="text-xl transition-transform duration-300 group-hover:translate-x-2">
                 ›
               </span>
@@ -190,6 +189,5 @@ export default function Specialities() {
         </div>
       </div>
     </section>
-
   );
 }

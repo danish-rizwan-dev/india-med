@@ -1,6 +1,7 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
 import ServiceBar from "@/components/sections/ServicesBar";
+import {setRequestLocale} from 'next-intl/server';
 
 // Dynamically import below-the-fold components for better performance
 const IndiaMedNetwork = dynamic(() => import("@/components/sections/IndiaMedNetwork"));
@@ -18,7 +19,10 @@ const ProcessFlow = dynamic(() => import("@/components/sections/ProcessFlow"));
 const SharedGradientBg = dynamic(() => import("@/components/layout/SharedGradientBg"));
 const Footer = dynamic(() => import("@/components/layout/Footer"));
 
-export default function HomePage() {
+export default async function HomePage({params}: {params: Promise<{locale: string}>}) {
+  const {locale} = await params;
+  setRequestLocale(locale);
+
   return (
     <main className="bg-white">
       {/* Above the fold - Critical for LCP */}
@@ -27,11 +31,9 @@ export default function HomePage() {
       <ProcessFlow />
 
       {/* Below the fold - Lazy loaded / Code split */}
-      <SharedGradientBg>
-        <Specialities />
-        <IndiaMedNetwork />
-        <WhyChooseUs />
-      </SharedGradientBg>
+      <Specialities />
+      <IndiaMedNetwork />
+      <WhyChooseUs />
 
       <FeaturedDestination />
       <ModelOfCare />

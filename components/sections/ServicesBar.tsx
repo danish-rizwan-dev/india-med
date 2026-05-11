@@ -1,23 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import React from "react";
+import { useTranslations } from 'next-intl';
 
 export default function ServiceBar() {
+  const t = useTranslations('ServiceBar');
+
   const services = [
-    { label: "Second Opinion", icon: "/images/sections/common/doctor.svg" },
-    { label: "Treatment Cost Estimate", icon: "/images/sections/common/treatment-cost.svg" },
-    { label: "Medical Services", icon: "/images/sections/common/medical-services.svg" },
-    { label: "Medical Visa Assistance", icon: "/images/sections/process-flow/icons/visa.svg" },
-    { label: "Free Consultation", icon: "/images/sections/common/free-consult.svg" },
+    { label: t('opinion'), icon: "/images/sections/common/doctor.svg", slug: "second-opinion" },
+    { label: t('cost'), icon: "/images/sections/common/treatment-cost.svg", slug: "treatment-cost-estimate" },
+    { label: t('services'), icon: "/images/sections/common/medical-services.svg", slug: "medical-services" },
+    { label: t('visa'), icon: "/images/sections/process-flow/icons/visa.svg", slug: "medical-visa-assistance" },
+    { label: t('consult'), icon: "/images/sections/common/free-consult.svg", slug: "free-consultation" },
   ];
 
   const mobileTopServices = services.slice(0, 4);
   const mobileCTA = services[4];
 
   return (
-    <nav className="relative w-full flex justify-center px-4 lg:px-0 z-40" aria-label="Quick Services">
+    <nav id="services" className="relative w-full flex justify-center px-4 lg:px-0 z-40" aria-label="Quick Services">
 
       {/* --- MOBILE VIEW --- */}
       <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[300px] h-[300px] bg-[#EE4423]/15 blur-[100px] rounded-full pointer-events-none" style={{ zIndex: -1 }} />
@@ -31,7 +34,7 @@ export default function ServiceBar() {
             <div className="grid grid-cols-2 gap-[2px] w-full bg-[#EE4423]/20 overflow-hidden" style={{ borderRadius: "21.6px 21.6px 0 0" }}>
               {mobileTopServices.map((service, idx) => (
                 <Link
-                  href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
+                  href={`/${service.slug}`}
                   key={idx}
                   className="group flex flex-col items-center justify-center bg-white text-center px-2 hover:bg-[#EE4423]"
                   style={{ width: "149.5px", height: "90px" }}
@@ -54,10 +57,10 @@ export default function ServiceBar() {
 
             <Link
               href="/free-consultation"
-              className="flex items-center justify-center gap-[10px] bg-[#EE4423] w-full h-[90px] active:scale-[0.98]"
+              className="flex items-center justify-center gap-2 bg-[#EE4423] w-full h-[90px] active:scale-[0.98] px-4"
               style={{ borderBottomLeftRadius: "21.6px", borderBottomRightRadius: "21.6px" }}
             >
-              <div className="relative w-10 h-10">
+              <div className="relative w-8 h-8 shrink-0">
                 <Image
                   src={mobileCTA.icon}
                   alt={`${mobileCTA.label} icon`}
@@ -65,7 +68,7 @@ export default function ServiceBar() {
                   className="object-contain brightness-0 invert"
                 />
               </div>
-              <span className="text-white font-bold text-[18px] font-montserrat">
+              <span className={`text-white font-bold font-montserrat leading-tight text-center ${mobileCTA.label.length > 20 ? 'text-[14px]' : 'text-[18px]'}`}>
                 {mobileCTA.label}
               </span>
             </Link>
@@ -81,7 +84,7 @@ export default function ServiceBar() {
 
       <div className="relative flex items-center justify-center w-full max-w-[1400px] -translate-y-1/2 mt-[-100px] lg:mt-[-160px]">
 
-        {/* Glassmorphic Left Arrow - Exact User SVG */}
+        {/* Glassmorphic Left Arrow */}
         <button
           onClick={() => { }}
           className="hidden md:flex absolute left-[-15px] lg:left-[5px] xl:left-[15px] top-1/2 -translate-y-[38%] z-50 w-20 h-20 items-center justify-center transition-all hover:scale-110 active:scale-95 group pointer-events-auto"
@@ -114,7 +117,7 @@ export default function ServiceBar() {
           <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
             {services.map((service, index) => (
               <Link
-                href={`/${service.label.toLowerCase().replace(/\s+/g, "-")}`}
+                href={`/${service.slug}`}
                 key={index}
                 className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4"
               >
@@ -134,7 +137,7 @@ export default function ServiceBar() {
           </div>
         </div>
 
-        {/* Glassmorphic Right Arrow - Exact User SVG (Rotated) */}
+        {/* Glassmorphic Right Arrow */}
         <button
           onClick={() => { }}
           className="hidden md:flex absolute right-[-15px] lg:right-[5px] xl:right-[15px] top-1/2 -translate-y-[62%] z-50 w-20 h-20 items-center justify-center transition-all hover:scale-110 active:scale-95 group pointer-events-auto"
@@ -156,9 +159,6 @@ export default function ServiceBar() {
           </svg>
         </button>
       </div>
-
-      {/* --- MOBILE VIEW HELPER (Optional: Simplified version for mobile) --- */}
-      {/* Handled by hidden md:flex and absolute/relative adjustments */}
     </nav>
   );
 }

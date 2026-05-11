@@ -1,28 +1,30 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
+import {useTranslations} from 'next-intl';
 
 export default function BlogSection() {
+  const t = useTranslations('Blog');
   const scrollRef = useRef<HTMLDivElement>(null);
   
   const blogs = [
     {
-      title: "4D-Phaco Cataract Surgery in India: Tech...",
+      title: t('blog1_title'),
       date: "Feb 01:2020",
       image: "/images/sections/blog/blog1.jpg",
       slug: "/under-construction"
     },
     {
-      title: "Liver Detox: Best Foods and Fruits for Nat...",
+      title: t('blog2_title'),
       date: "Jan 27:2020",
       image: "/images/sections/blog/liver_blog.jpg",
       slug: "/under-construction"
     },
     {
-      title: "White Spots on Skin: Causes, Symptom...",
+      title: t('blog3_title'),
       date: "Jan 22:2020",
       image: "/images/sections/blog/whitespot_blog.jpg",
       slug: "/under-construction"
@@ -41,7 +43,7 @@ export default function BlogSection() {
       
       {/* HEADER */}
       <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 px-10 py-3">
-        <h2 className="text-[#58595B] font-bold text-[28px] leading-none">Blogs</h2>
+        <h2 className="text-[#58595B] font-bold text-[28px] leading-none">{t('title')}</h2>
       </header>
 
       {/* --- MOBILE VIEW: HORIZONTAL CAROUSEL --- */}
@@ -83,7 +85,7 @@ export default function BlogSection() {
                 <div className="flex items-center justify-between w-[265px] mt-auto">
                   <span className="text-gray-400 font-medium text-[14px]">{blog.date}</span>
                   <Link href={blog.slug} className="flex items-center gap-1 text-[#EE4423] font-bold text-[14px]">
-                    Read More <ChevronRight size={14} strokeWidth={3} />
+                    {t('read_more')} <ChevronRight size={14} strokeWidth={3} />
                   </Link>
                 </div>
               </div>
@@ -96,13 +98,12 @@ export default function BlogSection() {
           href="/under-construction"
           className="mt-4 bg-[#EE4423] text-white font-bold text-[18px] px-8 py-3 rounded-[40px] flex items-center gap-2 shadow-lg active:scale-95 transition-all"
         >
-          View all blogs <ChevronRight size={20} strokeWidth={3} />
+          {t('view_all')} <ChevronRight size={20} strokeWidth={3} />
         </Link>
       </div>
 
       {/* --- DESKTOP VIEW: ORIGINAL GRID --- */}
       <div className="hidden lg:flex relative bg-white flex-row items-start justify-center p-12 gap-10 shadow-sm rounded-[40px] w-full max-w-[1450px]">
-         {/* (Desktop content remains as high-fidelity grid) */}
          <div className="flex flex-col lg:flex-row gap-10 w-full">
             <article className="flex flex-col gap-6 flex-1">
               <Link href="/under-construction" className="group">
@@ -110,13 +111,13 @@ export default function BlogSection() {
                   <Image src="/images/sections/blog/blog1.jpg" alt="Blog 1" fill className="object-cover transition-transform group-hover:scale-105" />
                 </div>
                 <h3 className="mt-6 text-[#414042] font-bold text-[42px] leading-[1.1] group-hover:text-[#EE4423] transition-colors">
-                  4D-Phaco Cataract Surgery in India: Technology, Results and Costs
+                  {t('blog1_title')}
                 </h3>
               </Link>
               <div className="flex items-center justify-between w-full">
                 <time className="text-gray-500 font-medium">Feb 01, 2020</time>
                 <Link href="/under-construction" className="flex items-center gap-1 text-[#EE4423] font-bold group">
-                  Read More <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
+                  {t('read_more')} <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </article>
@@ -132,7 +133,7 @@ export default function BlogSection() {
                     <div className="flex items-center justify-between w-full mt-auto">
                       <span className="text-gray-400 text-sm font-medium">{blog.date}</span>
                       <Link href={blog.slug} className="flex items-center gap-1 text-[#EE4423] font-bold text-sm group">
-                        Read More <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                        {t('read_more')} <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
                       </Link>
                     </div>
                   </div>

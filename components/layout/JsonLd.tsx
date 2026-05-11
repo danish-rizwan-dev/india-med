@@ -1,36 +1,43 @@
 import React from "react";
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function JsonLd() {
+  const t = useTranslations();
+  const locale = useLocale();
+
+  const title = t('Metadata.title');
+  const description = t('Metadata.description');
+
   const structuredData = {
     "@context": "https://schema.org",
     "@graph": [
-      // ── 1. WebSite (enables Sitelinks Search Box) ──────────────────
+      // ── 1. WebSite ──────────────────
       {
         "@type": "WebSite",
-        "@id": "https://indiamedservice.com/#website",
-        "name": "India Med Service",
+        "@id": `https://indiamedservice.com/${locale}/#website`,
+        "name": title,
         "alternateName": ["India Med", "India Med Services", "IndiaMed"],
-        "url": "https://indiamedservice.com",
-        "description": "India Med Service — Affordable Medical Treatment & Top Hospitals in India for international patients.",
-        "inLanguage": "en-US",
+        "url": `https://indiamedservice.com/${locale}`,
+        "description": description,
+        "inLanguage": locale === 'en' ? 'en-US' : locale === 'ru' ? 'ru-RU' : locale === 'kk' ? 'kk-KZ' : 'uz-UZ',
         "potentialAction": {
           "@type": "SearchAction",
           "target": {
             "@type": "EntryPoint",
-            "urlTemplate": "https://indiamedservice.com/search?q={search_term_string}"
+            "urlTemplate": `https://indiamedservice.com/${locale}/search?q={search_term_string}`
           },
           "query-input": "required name=search_term_string"
         }
       },
 
-      // ── 2. MedicalOrganization (core brand entity) ─────────────────
+      // ── 2. MedicalOrganization ─────────────────
       {
         "@type": "MedicalOrganization",
-        "@id": "https://indiamedservice.com/#organization",
-        "name": "India Med Service",
+        "@id": `https://indiamedservice.com/${locale}/#organization`,
+        "name": title,
         "alternateName": ["India Med", "India Med Services"],
         "legalName": "India Med Service",
-        "url": "https://indiamedservice.com",
+        "url": `https://indiamedservice.com/${locale}`,
         "logo": {
           "@type": "ImageObject",
           "url": "https://indiamedservice.com/images/Logo.svg",
@@ -38,56 +45,48 @@ export default function JsonLd() {
           "height": 65
         },
         "image": "https://indiamedservice.com/images/og-image.jpg",
-        "description": "India Med Service is a leading medical tourism company connecting international patients with top JCI & NABH accredited hospitals and expert doctors across India for affordable, world-class healthcare.",
+        "description": description,
         "medicalSpecialty": [
-          "Cardiology", "Oncology", "Neurosciences", "Orthopaedics",
-          "Gastrosciences", "Nephrology", "Pulmonology", "Urology"
-        ],
-        "hasCredential": [
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "JCI Accredited Partner Hospitals" },
-          { "@type": "EducationalOccupationalCredential", "credentialCategory": "NABH Accredited Partner Hospitals" }
+          t('Footer.links.cardiac'), 
+          t('Footer.links.cancer'), 
+          t('Footer.links.neuro'), 
+          t('Footer.links.ortho'),
+          t('Footer.links.renal'),
+          t('Footer.links.liver'),
+          t('Footer.links.lung')
         ],
         "address": {
           "@type": "PostalAddress",
           "addressLocality": "New Delhi",
           "addressCountry": "IN"
         },
-        "areaServed": {
-          "@type": "Country",
-          "name": "Worldwide"
-        },
         "contactPoint": [
           {
             "@type": "ContactPoint",
             "contactType": "customer service",
             "email": "info@indiamedservice.com",
-            "areaServed": ["IN", "US", "GB", "AE", "SA", "NG", "KE"],
-            "availableLanguage": ["English", "Hindi", "Arabic"]
+            "areaServed": ["IN", "US", "GB", "AE", "SA", "NG", "KE", "UZ", "RU", "KZ"],
+            "availableLanguage": ["English", "Russian", "Kazakh", "Uzbek"]
           }
         ],
         "sameAs": [
           "https://facebook.com/indiamedservice",
           "https://twitter.com/indiamedservice",
           "https://instagram.com/indiamedservice",
-          "https://linkedin.com/company/indiamedservice",
-          "https://youtube.com/indiamedservice"
-        ],
-        "knowsAbout": [
-          "Medical Tourism", "Hospital Selection India", "Cardiac Surgery India",
-          "Cancer Treatment India", "Affordable Healthcare India", "Medical Visa India"
+          "https://linkedin.com/company/indiamedservice"
         ]
       },
 
       // ── 3. WebPage ─────────────────────────────────────────────────
       {
         "@type": "WebPage",
-        "@id": "https://indiamedservice.com/#webpage",
-        "url": "https://indiamedservice.com",
-        "name": "Affordable Medical Treatment in India | India Med Service",
-        "isPartOf": { "@id": "https://indiamedservice.com/#website" },
-        "about": { "@id": "https://indiamedservice.com/#organization" },
-        "description": "Connect with top hospitals & expert doctors in India. Affordable surgery, medical visa support, and complete care for international patients.",
-        "inLanguage": "en-US"
+        "@id": `https://indiamedservice.com/${locale}/#webpage`,
+        "url": `https://indiamedservice.com/${locale}`,
+        "name": title,
+        "isPartOf": { "@id": `https://indiamedservice.com/${locale}/#website` },
+        "about": { "@id": `https://indiamedservice.com/${locale}/#organization` },
+        "description": description,
+        "inLanguage": locale === 'en' ? 'en-US' : locale === 'ru' ? 'ru-RU' : locale === 'kk' ? 'kk-KZ' : 'uz-UZ'
       },
 
       // ── 4. BreadcrumbList ──────────────────────────────────────────
@@ -97,20 +96,20 @@ export default function JsonLd() {
           {
             "@type": "ListItem",
             "position": 1,
-            "name": "Home",
-            "item": "https://indiamedservice.com"
+            "name": t('Navbar.home'),
+            "item": `https://indiamedservice.com/${locale}`
           },
           {
             "@type": "ListItem",
             "position": 2,
-            "name": "Specialities",
-            "item": "https://indiamedservice.com/speciality"
+            "name": t('Navbar.speciality'),
+            "item": `https://indiamedservice.com/${locale}/#specialities`
           },
           {
             "@type": "ListItem",
             "position": 3,
-            "name": "Contact",
-            "item": "https://indiamedservice.com/contact"
+            "name": t('Navbar.contact'),
+            "item": `https://indiamedservice.com/${locale}/#contact`
           }
         ]
       },
@@ -118,46 +117,46 @@ export default function JsonLd() {
       // ── 5. FAQPage ─────────────────────────────────────────────────
       {
         "@type": "FAQPage",
-        "@id": "https://indiamedservice.com/#faq",
+        "@id": `https://indiamedservice.com/${locale}/#faq`,
         "mainEntity": [
           {
             "@type": "Question",
-            "name": "How does India Med Service help with medical treatments?",
+            "name": t('FAQ.q1'),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "India Med Service connects you with top JCI & NABH accredited hospitals in India, helps compare treatment options and costs, arranges medical visas, and provides complete support throughout your medical journey."
+              "text": t('FAQ.a1')
             }
           },
           {
             "@type": "Question",
-            "name": "What medical specialities does India Med Service cover?",
+            "name": t('FAQ.q2'),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "We cover a wide range of specialities including Cardiac Care, Cancer (Oncology), Neurosciences, Orthopaedics, Gastrosciences, Nephrology, Pulmonology, and Urology."
+              "text": t('FAQ.a2')
             }
           },
           {
             "@type": "Question",
-            "name": "How can I get a treatment cost estimate for India?",
+            "name": t('FAQ.q3'),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "You can contact us via our website and share your medical reports. Our expert coordinators will provide a detailed cost estimate within 24–48 hours, comparing prices across top hospitals in India."
+              "text": t('FAQ.a3')
             }
           },
           {
             "@type": "Question",
-            "name": "Does India Med Service offer international patient services?",
+            "name": t('FAQ.q4'),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Yes. We provide full concierge services for international patients including medical visa assistance, airport transfers, hospital accommodation, language interpretation, and post-treatment follow-up support."
+              "text": t('FAQ.a4')
             }
           },
           {
             "@type": "Question",
-            "name": "How much can I save on medical treatment in India?",
+            "name": t('FAQ.q5'),
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "Medical treatment costs in India are typically 60–80% lower than in the US, UK, or Australia. For example, heart bypass surgery costs $5,000–$7,000 in India compared to $70,000–$100,000 in the US."
+              "text": t('FAQ.a5')
             }
           }
         ]

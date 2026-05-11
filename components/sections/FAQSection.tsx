@@ -2,37 +2,36 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-
-const faqData = [
-  {
-    question: "How does India Med help with medical treatments?",
-    answer:
-      "India Med connects you with top-tier healthcare providers, helps compare treatment options, and provides support throughout your medical journey.",
-  },
-  {
-    question: "What specialties does India Med cover?",
-    answer:
-      "We cover a wide range of specialties including Cardiology, Oncology, Orthopedics, and more.",
-  },
-  {
-    question: "How can I get a treatment quote?",
-    answer:
-      "You can upload your medical reports through our portal, and our experts will provide a detailed cost estimate within 24-48 hours.",
-  },
-  {
-    question: "Does India Med offer international patient services?",
-    answer:
-      "Yes, we provide full concierge services including visa assistance, airport transfers, and language interpretation.",
-  },
-  {
-    question: "How do I schedule an appointment with a doctor?",
-    answer:
-      "Simply book a call through our website or use the appointment feature to select your preferred specialist.",
-  },
-];
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function FAQSection() {
+  const t = useTranslations('FAQ');
+  const locale = useLocale();
+  const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const faqData = [
+    {
+      question: t('q1'),
+      answer: t('a1'),
+    },
+    {
+      question: t('q2'),
+      answer: t('a2'),
+    },
+    {
+      question: t('q3'),
+      answer: t('a3'),
+    },
+    {
+      question: t('q4'),
+      answer: t('a4'),
+    },
+    {
+      question: t('q5'),
+      answer: t('a5'),
+    },
+  ];
 
   const faqSchema = {
     "@context": "https://schema.org",
@@ -91,24 +90,16 @@ export default function FAQSection() {
         <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[427px] text-center lg:text-left">
           {/* FAQs Heading */}
           <div
-            className="flex items-center justify-center border-2 border-[#58595B]"
-            style={{
-              width: "193px",
-              height: "73px",
-              borderRadius: "50px",
-              paddingLeft: "40px",
-              paddingRight: "40px",
-              gap: "10px",
-            }}
+            className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] px-8 lg:px-10 py-4 w-fit min-w-[193px] min-h-[73px] mx-auto lg:mx-0"
           >
-            <span className="text-[#58595B] font-bold text-[28px] uppercase">
-              FAQs
+            <span className={`text-[#58595B] font-bold uppercase whitespace-nowrap ${isLongLocale ? 'text-[18px] lg:text-[24px]' : 'text-[22px] lg:text-[28px]'}`}>
+              {t('title')}
             </span>
           </div>
 
           {/* Frequently asked together / Questions below */}
           <h2 className="text-[#58595B] font-montserrat font-bold text-[42px] leading-[100%] tracking-[0px]">
-            Frequently asked <br className="hidden lg:block" /> questions
+            {t('subtitle')}
           </h2>
 
           {/* Book Call Card with Shadow */}
@@ -131,10 +122,10 @@ export default function FAQSection() {
             />
 
             <h4 className="text-[22px] font-bold text-[#414042] mb-3">
-              Book a 15 min call
+              {t('book_title')}
             </h4>
             <p className="text-[#58595B] text-[15px] mb-8 max-w-[240px] leading-snug">
-              If you have any questions, just book a 15-minute call with us.
+              {t('book_desc')}
             </p>
 
             <button className="bg-[#EE4423] text-white px-8 py-3 rounded-full flex items-center gap-3 font-bold shadow-lg transition-all hover:scale-105">
@@ -146,7 +137,7 @@ export default function FAQSection() {
                 className="brightness-0 invert"
                 style={{ width: "auto", height: "auto" }}
               />
-              Book Appointment
+              {t('book_button')}
             </button>
           </div>
         </div>

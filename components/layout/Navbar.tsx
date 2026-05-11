@@ -2,17 +2,22 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Search, Phone, Menu, X } from "lucide-react";
+import LanguageSwitcher from "./LanguageSwitcher";
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Navbar() {
+  const t = useTranslations('Navbar');
+  const locale = useLocale();
+  const isEn = locale === 'en';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
-    { name: "Home", href: "/" },
-    { name: "Speciality", href: "/speciality" },
-    { name: "Services", href: "/services" },
-    { name: "Contact Us", href: "/contact" },
+    { name: t('home'), href: "/" },
+    { name: t('speciality'), href: "/speciality" },
+    { name: t('services'), href: "/services" },
+    { name: t('contact'), href: "/contact" },
   ];
 
   return (
@@ -26,8 +31,8 @@ export default function Navbar() {
         aria-label="Main Medical Navigation"
       >
         {/* MAIN WRAPPER */}
-        <div className="flex items-center justify-between w-full px-[25px] md:px-[50px] lg:px-[96px]">
-          
+        <div className="flex items-center justify-between w-full px-[25px] md:px-[50px] lg:pl-[96px] lg:pr-[60px]">
+
           {/* LOGO */}
           <div className="flex-shrink-0">
             <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[202.52px] h-[33px] lg:h-[56px]">
@@ -42,13 +47,14 @@ export default function Navbar() {
           </div>
 
           {/* DESKTOP & IPAD PRO NAV */}
-          <div className="hidden lg:flex items-center flex-grow justify-between ml-4 xl:ml-[159px]">
+          <div className="hidden lg:flex items-center flex-grow">
+            {/* LINKS - Locale-aware positioning & Pixel-Perfect Dimensions */}
             <ul
-              className="flex items-center gap-[15px] xl:gap-[35px]"
+              className={`flex items-center gap-[35px] ${isEn ? "ml-12 xl:ml-[191px] w-[400px] h-[21px]" : "ml-6 xl:ml-[60px]"}`}
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: "500",
-                fontSize: "min(17px, 1.2vw)",
+                fontSize: isEn ? "min(17px, 1.2vw)" : "min(15px, 1.1vw)",
                 lineHeight: "100%",
                 color: "#555555",
               }}
@@ -65,7 +71,11 @@ export default function Navbar() {
               ))}
             </ul>
 
-            <div className="flex items-center gap-[12px] xl:gap-[24px]">
+            {/* SPACER TO CREATE THE LARGE GAP SHOWN IN SCREENSHOT */}
+            <div className="flex-grow" />
+
+            {/* SEARCH + CALL + LANG - RIGHT END */}
+            <div className="flex items-center gap-[12px] xl:gap-[16px] ml-6 xl:ml-12">
               {/* SEARCH BAR */}
               <form
                 action="/search"
@@ -79,7 +89,7 @@ export default function Navbar() {
                 <input
                   type="search"
                   name="q"
-                  placeholder="Search..."
+                  placeholder={t('search_placeholder')}
                   className="w-full pl-[55px] pr-2 h-full font-medium text-[15px] xl:text-[17px] outline-none bg-transparent placeholder:text-[#A0A0A0] text-[#555555]"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 />
@@ -88,20 +98,25 @@ export default function Navbar() {
               {/* REQUEST CALL BACK BUTTON */}
               <Link
                 href="/contact"
-                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] w-[180px] xl:w-[237px] h-[49px] gap-[6px] xl:gap-[10px] flex-shrink-0"
+                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] min-w-[180px] xl:min-w-[237px] w-fit px-4 xl:px-6 h-[49px] gap-[6px] xl:gap-[10px] flex-shrink-0"
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
                   fontWeight: "600",
-                  fontSize: "min(17px, 1.1vw)",
+                  fontSize: isEn ? "min(17px, 1.1vw)" : "min(13px, 0.9vw)",
                 }}
               >
-                <Phone 
-                  className="w-[18px] h-[18px] xl:w-[24px] xl:h-[24px]" 
-                  fill="currentColor" 
-                  stroke="none" 
+                <Phone
+                  className="w-[18px] h-[18px] xl:w-[24px] xl:h-[24px]"
+                  fill="currentColor"
+                  stroke="none"
                 />
-                <span className="whitespace-nowrap">Request Call Back</span>
+                <span className="whitespace-nowrap">{t('request_call')}</span>
               </Link>
+
+              {/* COMPACT LANGUAGE SWITCHER */}
+              <div className="ml-[12px] xl:ml-[17px]">
+                <LanguageSwitcher />
+              </div>
             </div>
           </div>
 
@@ -126,6 +141,9 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           />
           <div id="mobile-menu" className="fixed inset-0 top-[60px] bg-white z-[60] lg:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
+            <div className="mb-6 pb-6 border-b border-gray-100 flex justify-center">
+              <LanguageSwitcher />
+            </div>
             <ul
               className="flex flex-col gap-6 text-[18px] font-semibold text-[#555555] mb-8"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -148,11 +166,11 @@ export default function Navbar() {
               onClick={() => setIsMenuOpen(false)}
             >
               <Phone size={20} fill="currentColor" stroke="none" />
-              Request Call Back
+              {t('request_call')}
             </Link>
           </div>
         </>
       )}
     </header>
   );
-} 
+}

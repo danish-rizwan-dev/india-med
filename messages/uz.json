@@ -1,0 +1,228 @@
+{
+  "Metadata": {
+    "title": "Hindiston Med Xizmati | Hindistonda tibbiy davolanish",
+    "description": "Hindiston Med Xizmati — Hindistondagi eng yaxshi shifoxonalar va ekspert shifokorlar bilan bog'laning. Hamyonbop operatsiyalar, viza yordami va to'liq parvarish.",
+    "keywords": "Hindiston Med Xizmati, Hindiston Med, Hindistonda davolanish, Hindistondagi eng yaxshi shifoxonalar, tibbiy turizm Hindiston, Hindistondagi operatsiyalar, tibbiy viza Hindiston"
+  },
+  "Navbar": {
+    "home": "Bosh sahifa",
+    "speciality": "Mutaxassisliklar",
+    "services": "Xizmatlar",
+    "contact": "Bog'lanish",
+    "request_call": "Qo'ng'iroqqa buyurtma berish",
+    "search_placeholder": "Izlash..."
+  },
+  "Hero": {
+    "brand": "Hindistondagi tibbiy xizmatlar",
+    "heading_main": "Hindistonda hamyonbop tibbiy davolanish va ",
+    "heading_highlight": "jahon darajasidagi parvarish",
+    "description": "Hindistonda davolanishni qidiryapsizmi? Biz sizga davolanish xarajatlarini solishtirish, eng yaxshi shifoxonalarni tanlash va to'liq viza va bemorlarni qo'llab-quvvatlashda yordam beramiz.",
+    "button": "Hoziroq maslahat oling"
+  },
+  "ServiceBar": {
+    "opinion": "Ikkinchi fikr",
+    "cost": "Davolash narxini baholash",
+    "services": "Tibbiy xizmatlar",
+    "visa": "Tibbiy viza yordami",
+    "consult": "Bepul maslahat"
+  },
+  "Specialities": {
+    "title": "Bizning mutaxassisliklarimiz",
+    "search_placeholder": "Mutaxassisliklarni qidirish...",
+    "view_all": "Barcha mutaxassisliklarni ko'rish",
+    "show_less": "Kamroq ko'rsatish",
+    "know_more": "Batafsil",
+    "cardio": "Kardiologiya yordami",
+    "ortho": "Ortopediya",
+    "cancer": "Saratonni davolash",
+    "neuro": "Nevrologiya",
+    "gastro": "Gastrologiya",
+    "liver": "Jigar transplantatsiyasi",
+    "lungs": "O'pka transplantatsiyasi",
+    "gyno": "Akusherlik va ginekologiya"
+  },
+  "WhyChooseUs": {
+    "title": "Nima uchun bizni tanlash kerak?",
+    "header_desc": "Butun dunyodagi xalqaro bemorlar ishonch bildiradigan Hindiston mutaxassis shifokorlar ko'magida va to'liq parvarish bilan ilg'or sog'liqni saqlashni taklif etadi.",
+    "contact_button": "Hozir bog'lanish",
+    "reason_1_title": "Jahon darajasidagi shifoxonalar",
+    "reason_1_desc": "Yuqori global xavfsizlik va parvarishni ta'minlaydigan JCI va NABH akkreditatsiyalangan shifoxonalar.",
+    "reason_2_title": "Hamyonbop xarajatlar",
+    "reason_2_desc": "G'arb mamlakatlari bilan solishtirganda davolanish narxi 70–80% gacha past.",
+    "reason_3_title": "Ekspert shifokorlar",
+    "reason_3_desc": "Ko'p yillik tajribaga ega xalqaro miqyosda tayyorlangan mutaxassislar.",
+    "reason_4_title": "To'liq yordam",
+    "reason_4_desc": "Kompleks qo'llab-quvvatlash: sayohat, viza, davolanish va reabilitatsiya parvarishi."
+  },
+  "IndiaMedNetwork": {
+    "title": "Hindiston Med tarmog'i",
+    "know_more": "Batafsil",
+    "contact_now": "Hozir bog'lanish",
+    "locations": {
+      "gurugram": "Gurugram",
+      "lucknow": "Laknau",
+      "patna": "Patna"
+    },
+    "hospitals": {
+      "medanta": "Medanta Gurugram",
+      "medanta_desc": "Ilg'or kardiologiya va robotlashtirilgan operatsiyalari bilan tanilgan jahon darajasidagi ko'p tarmoqli shifoxona.",
+      "fortis": "Fortis Memorial",
+      "fortis_desc": "Zamonaviy tibbiy texnologiyalari va xalqaro standartlariga ega premium-klassdagi shifoxona.",
+      "artemis": "Artemis shifoxonasi",
+      "artemis_desc": "Gurugramdagi birinchi JCI va NABH akkreditatsiyalangan shifoxona, murakkab tibbiy holatlarda ekspert yordamini ko'rsatadi.",
+      "max": "Max shifoxonasi",
+      "max_desc": "Eng yaxshi sog'liqni saqlash mutaxassislari ishtirokida onkologiya, kardiologiya va neyrologiya sohasida tanilgan.",
+      "paras": "Paras Health",
+      "paras_desc": "Neyrologiya va bo'g'imlarni almashtirish sohasidagi yetakchi, hamyonbop narxlarda ixtisoslashtirilgan yordam ko'rsatadi.",
+      "marengo": "Marengo Osiyo",
+      "marengo_desc": "Yuqori darajadagi klinik parvarish va bemorga yo'naltirilgan yondashuvni taklif qiluvchi zamonaviy ko'p tarmoqli muassasa.",
+      "indiamed_lucknow": "Hindiston Med super ixtisoslashgan",
+      "indiamed_lucknow_desc": "12,58 akr maydonni egallagan Medanta Laknau - eng yirik ko'p tarmoqli shifoxonalardan biri.",
+      "jay_prabha": "Jay Prabha Medanta",
+      "jay_prabha_desc": "2020 yilda tashkil etilgan ushbu ixtisoslashtirilgan shifoxona o'z faoliyatini ambulatoriya bo'limidan (OPD) boshlagan."
+    }
+  },
+  "FeaturedDestination": {
+    "title": "Mashhur yo'nalishlar",
+    "desc": "Butun dunyodagi xalqaro bemorlar ishonch bildiradigan Hindiston mutaxassis shifokorlar va zamonaviy uskunalar ko'magida ilg'or sog'liqni saqlashni taklif etadi.",
+    "countries": {
+      "uzbekistan": "O'zbekiston",
+      "russia": "Rossiya",
+      "kazakhstan": "Qozog'iston",
+      "krikistan": "Qirg'iziston",
+      "turkmenistan": "Turkmaniston",
+      "tajikistan": "Tojikiston"
+    }
+  },
+  "ModelOfCare": {
+    "title": "Hindiston Med parvarish modeli",
+    "know_more": "Batafsil",
+    "step_1_title": "Istisno klinik iqtidorlar",
+    "step_1_desc": "Hindiston Med ekspert klinisistlar va shifokorlar rahbarligida yuqori sifatli kompleks parvarishni taqdim etadi.",
+    "step_2_title": "Jahon darajasidagi infratuzilma",
+    "step_2_desc": "Hindiston Med murakkab davolanish va tezroq sog'ayishni qo'llab-quvvatlash uchun ilg'or infratuzilmani taqdim etadi.",
+    "step_3_title": "Eng so'nggi yuqori texnologiyalar",
+    "step_3_desc": "Hindiston Med aniq diagnostika va murakkab davolash uchun zamonaviy texnologiyalardan foydalanadi.",
+    "step_4_title": "Parvarish tizimlari va jarayonlari",
+    "step_4_desc": "Hindiston Med xavfsiz va samarali davolashni ta'minlash uchun raqamli yechimlar va yagona standartlardan foydalanadi.",
+    "step_5_title": "Ishonchga asoslangan mehribon parvarish",
+    "step_5_desc": "Hindiston Med davolash, tadqiqot va o'qitishni «bemor birinchi navbatda» falsafasi bilan birlashtiradi."
+  },
+  "BeyondBoundaries": {
+    "title": "Chegaradan tashqari",
+    "heading": "130 dan ortiq mamlakatda ilg'or tibbiy xizmatlar orqali salomatlikni saqlash",
+    "know_more": "Batafsil",
+    "contact_now": "Hozir bog'lanish",
+    "stat_patients": "Yiliga keladigan xalqaro bemorlarning o'rtacha soni",
+    "stat_countries": "Davlatlar",
+    "stat_hospitals": "Hindistondagi shifoxonalar"
+  },
+  "PatientStories": {
+    "title": "Bemorlarning hikoyalari",
+    "richard_name": "Richard Gruber",
+    "richard_loc": "Avstriya",
+    "sophie_name": "Sofi Vershuren",
+    "sophie_loc": "Avstraliya",
+    "dylan_name": "Dylan Walters",
+    "dylan_loc": "AQSH",
+    "ella_name": "Ella Huber",
+    "ella_loc": "Germaniya"
+  },
+  "ProcessFlow": {
+    "step_1": "Onlayn maslahat",
+    "step_2": "Davolash rejasi",
+    "step_3": "Viza qo'llab-quvvatlash",
+    "step_4": "Aviabilet va transfer",
+    "step_5": "Aeroportda kutib olish",
+    "step_6": "Shifoxona yaqinida yashash",
+    "step_7": "Professional tarjimonlar",
+    "step_8": "Bemor uyiga qaytgandan keyin ham to'liq qo'llab-quvvatlash"
+  },
+  "Leadership": {
+    "title": "Rahbariyat",
+    "faisal_name": "Faysal Iqbol janoblari",
+    "faisal_title": "Asoschi va boshqaruvchi direktor – Hindiston Med Xizmati",
+    "faisal_bio_1": "Faysal Iqbol janoblari Hindistonda xalqaro bemorlar uchun davolanishni tashkil etishga ixtisoslashgan ishonchli tibbiy fasilitatsiya kompaniyasi – Hindiston Med Xizmati asoschisi va direktoridir. Sog'liqni saqlashni muvofiqlashtirish sohasida 6 yildan ortiq tajribaga ega bo'lib, u turli mamlakatlardan kelgan 1750 dan ortiq bemorga yuqori sifatli tibbiy yordam olishda muvaffaqiyatli yordam bergan.",
+    "faisal_bio_2": "U shifoxona tanlash, shifokorlar maslahati, davolanishni rejalashtirish va bemorlarni qo'llab-quvvatlash kabi tibbiy sayohatlarni to'liq muvofiqlashtirishda katta tajribaga ega. Iqbol janoblari bemorlar, shifoxonalar va tibbiyot mutaxassislari o'rtasidagi uzluksiz aloqani shaxsan ta'minlaydi.",
+    "faisal_bio_3": "Uning rahbarligida Hindiston Med Xizmati Hindistondagi yetakchi shifoxonalar va mutaxassislar bilan mustahkam hamkorlik o'rnatib, ishonchli, shaffof va bemorga yo'naltirilgan xizmatlarni taqdim etadi.",
+    "daniyar_name": "Daniyar Aydimirov janoblari",
+    "daniyar_title": "Mintaqaviy direktor – Qozog'iston",
+    "daniyar_bio": "Daniyar Aydimirov Qozog'istonda bemorlarni muvofiqlashtirishni nazorat qiladi va xalqaro bemorlarga maxsus yordam ko'rsatadi. U 1000 dan ortiq bemorga yordam bergan va bemorlarga g'amxo'rlik hamda ishonchga asoslangan holda rus, qozoq va o'zbek tillarida uzluksiz muloqotni ta'minlaydi.",
+    "expertise_title": "Asosiy ekspertiza",
+    "expertise_list": ["Xalqaro bemorlarni muvofiqlashtirish", "Shifoxonalar va shifokorlar tarmog'ini boshqarish", "Tibbiy davolanishni rejalashtirish va yordam", "Bemorlarni qo'llab-quvvatlashning kompleks xizmatlari"],
+    "achievements_title": "Asosiy yutuqlar",
+    "achievements_list": ["Tibbiy fasilitatsiyada 6 yildan ortiq tajriba", "2500 dan ortiq xalqaro bemorga muvaffaqiyatli xizmat ko'rsatildi", "Hindistondagi eng yaxshi shifoxonalar bilan mustahkam tarmoq"],
+    "services_title": "Taklif etilayotgan xizmatlar",
+    "services_list": ["Tibbiy viza olishda yordam", "Parvoz va joylashishni tashkil etish", "Eng yaxshi shifokorlar bilan uchrashuvlarni rejalashtirish", "Davolanishni muvofiqlashtirish va nazorat qilish", "Davolanishdan keyingi nazorat va parvarish"]
+  },
+  "OurOffices": {
+    "title": "Bizning ofislarimiz",
+    "uzbekistan": "O'zbekiston:",
+    "kazakhstan": "Qozog'iston:",
+    "tashkent_addr": "Toshkent shahri, Shifokorlar ko'chasi, 6B-uy",
+    "shymkent_addr": "Chimkent shahri, Tauke xon shohko'chasi, 130"
+  },
+  "FAQ": {
+    "title": "Savol-javob",
+    "subtitle": "Tez-tez beriladigan savollar",
+    "book_title": "15 daqiqalik qo'ng'iroqqa buyurtma bering",
+    "book_desc": "Agar sizda savollar bo'lsa, biz bilan 15 daqiqalik qo'ng'iroqqa buyurtma bering.",
+    "book_button": "Uchrashuvga yozilish",
+    "q1": "Hindiston Med tibbiy davolanishda qanday yordam beradi?",
+    "a1": "Hindiston Med sizni yuqori darajadagi sog'liqni saqlash provayderlari bilan bog'laydi, davolash variantlarini solishtirishga yordam beradi va tibbiy sayohatingiz davomida yordam beradi.",
+    "q2": "Hindiston Med qaysi mutaxassisliklarni qamrab oladi?",
+    "a2": "Biz kardiologiya, onkologiya, ortopediya va boshqa ko'plab mutaxassisliklarni qamrab olamiz.",
+    "q3": "Davolanish narxini qanday bilish mumkin?",
+    "a3": "Siz tibbiy hisobotlaringizni bizning portal orqali yuklashingiz mumkin va bizning mutaxassislarimiz 24-48 soat ichida batafsil xarajatlar smetasini taqdim etadilar.",
+    "q4": "Hindiston Med xalqaro bemorlarga xizmat ko'rsatadimi?",
+    "a4": "Ha, biz viza qo'llab-quvvatlash, aeroportdan transfer va tarjimonlik xizmatlarini o'z ichiga olgan to'liq konsyerj xizmatlarini taklif etamiz.",
+    "q5": "Shifokor qabuliga qanday yozilish mumkin?",
+    "a5": "Veb-saytimiz orqali qo'ng'iroqqa buyurtma bering yoki kerakli mutaxassisni tanlash uchun uchrashuv funksiyasidan foydalaning."
+  },
+  "Blog": {
+    "title": "Bloglar",
+    "read_more": "Batafsil",
+    "view_all": "Barcha bloglar",
+    "blog1_title": "Hindistonda 4D-Phaco katarakta jarrohligi: texnologiya, natijalar va xarajatlar",
+    "blog2_title": "Jigar detoksi: Tabiiy uchun eng yaxshi ovqatlar va mevalar...",
+    "blog3_title": "Teridagi oq dog'lar: sabablari, belgilari..."
+  },
+  "Footer": {
+    "desc": "Hindistonda xalqaro bemorlarga jahon darajasidagi sog'liqni saqlash xizmatlari orqali yordam berish. Ishonchli shifoxonalar, shaffof xarajatlar va uzluksiz sayohat yordami.",
+    "col_1_title": "Bemorlar uchun",
+    "col_2_title": "Mutaxassisliklar",
+    "col_3_title": "Bizning shifoxonalarimiz",
+    "col_4_title": "Korporativ",
+    "copyright": "© {year} Hindiston Med Tarmog'i. Global sog'liqni saqlash tashabbusi.",
+    "privacy": "Maxfiylik siyosati",
+    "terms": "Foydalanish shartlari",
+    "links": {
+      "find_doctor": "Shifokor topish",
+      "book_apt": "Uchrashuvga yozilish",
+      "treatments": "Davolash turlari",
+      "emergency": "Favqulodda yordam 24x7",
+      "technology": "Texnologiya",
+      "testimonials": "Bemorlar fikrlari",
+      "disclaimer": "Mas'uliyatdan voz kechish",
+      "privacy": "Maxfiylik siyosati",
+      "cardiac": "Kardiologiya",
+      "cancer": "Onkologiya",
+      "neuro": "Nevrologiya",
+      "ortho": "Ortopediya",
+      "renal": "Nefrologiya",
+      "liver": "Jigar transplantatsiyasi",
+      "bone": "Suyak ko'migi",
+      "lung": "O'pka transplantatsiyasi",
+      "gurugram": "Hindiston Med Gurugram",
+      "patna": "Hindiston Med Patna",
+      "lucknow": "Hindiston Med Laknau",
+      "indore": "Hindiston Med Indor",
+      "noida": "Hindiston Med Noyda",
+      "help": "Yordam stoli",
+      "about": "Biz haqimizda",
+      "blogs": "Bloglar",
+      "feedback": "Fikr-mulohaza",
+      "contact": "Biz bilan bog'lanish"
+    }
+  }
+}

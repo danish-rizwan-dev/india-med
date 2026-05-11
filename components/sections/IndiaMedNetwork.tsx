@@ -1,79 +1,75 @@
 "use client";
-import Link from "next/link";
+import {Link} from "@/i18n/routing";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import { ChevronLeft, ChevronRight, Phone, ArrowUpRight } from "lucide-react";
-
-// 1. SEO: Moved data outside to prevent re-renders and added better Alt metadata
-const hospitalData = [
-  {
-    location: "Gurugram",
-    name: "Medanta Gurgaon",
-    description: "World-class multi-super specialty hospital known for advanced cardiac and robotic surgeries.",
-    image: "/images/sections/network/patna-hosp.jpg",
-    alt: "Medanta Hospital building in Gurgaon"
-  },
-  {
-    location: "Gurugram",
-    name: "Fortis Memorial",
-    description: "Premium quaternary care hospital with state-of-the-art medical technology and international standards.",
-    image: "/images/sections/network/patna-hosp.jpg",
-    alt: "Fortis Memorial Research Institute Gurgaon"
-  },
-  {
-    location: "Gurugram",
-    name: "Artemis Hospital",
-    description: "First JCI & NABH accredited hospital in Gurgaon, providing depth of expertise in advanced medical interventions.",
-    image: "/images/sections/network/patna-hosp.jpg",
-    alt: "Artemis Hospital exterior view"
-  },
-  {
-    location: "Gurugram",
-    name: "Max Hospital",
-    description: "Renowned for oncology, cardiology, and neurosciences with top-tier healthcare professionals.",
-    image: "/images/sections/network/patna-hosp.jpg",
-    alt: "Max Super Speciality Hospital Gurgaon"
-  },
-  {
-    location: "Gurugram",
-    name: "Paras Health",
-    description: "Leader in neurosciences and joint replacement, providing specialized care at accessible price points.",
-    image: "/images/sections/network/lucknow-hosp.png",
-    alt: "Paras Health Hospital Gurgaon"
-  },
-  {
-    location: "Gurugram",
-    name: "Marengo Asia",
-    description: "Modern multi-specialty facility offering high-end clinical care and a patient-centric approach.",
-    image: "/images/sections/network/patna-hosp.jpg",
-    alt: "Marengo Asia Hospital facility"
-  },
-  {
-    location: "Lucknow",
-    name: "India Med Super Speciality",
-    description: "Spread across an area of 12.58 acres, Medanta Lucknow is one of the largest multi-super-specialty hospitals.",
-    image: "/images/sections/network/lucknow-hosp.png",
-    alt: "India Med Super Speciality Hospital Lucknow"
-  },
-  {
-    location: "Patna",
-    name: "Jay Prabha Medanta",
-    description: "Established in 2020, this super-specialty hospital began operations with an Out-Patient Department (OPD).",
-    image: "/images/sections/network/patna-hosp.jpg",
-    alt: "Jay Prabha Medanta Super Speciality Hospital Patna"
-  },
-];
-
-const LocationIcon = () => (
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0" aria-hidden="true">
-    <path d="M12 21C16 17.5 19 14.4183 19 10C19 6.13401 15.866 3 12 3C8.13401 3 5 6.13401 5 10C5 14.4183 8 17.5 12 21Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    <circle cx="12" cy="10" r="2.5" fill="white" />
-  </svg>
-);
+import { Phone, ArrowUpRight } from "lucide-react";
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function IndiaMedNetwork() {
+  const t = useTranslations('IndiaMedNetwork');
+  const locale = useLocale();
+  
+  const hospitalData = [
+    {
+      location: t('locations.gurugram'),
+      name: t('hospitals.medanta'),
+      description: t('hospitals.medanta_desc'),
+      image: "/images/sections/network/patna-hosp.jpg",
+      alt: "Medanta Hospital building in Gurgaon"
+    },
+    {
+      location: t('locations.gurugram'),
+      name: t('hospitals.fortis'),
+      description: t('hospitals.fortis_desc'),
+      image: "/images/sections/network/patna-hosp.jpg",
+      alt: "Fortis Memorial Research Institute Gurgaon"
+    },
+    {
+      location: t('locations.gurugram'),
+      name: t('hospitals.artemis'),
+      description: t('hospitals.artemis_desc'),
+      image: "/images/sections/network/patna-hosp.jpg",
+      alt: "Artemis Hospital exterior view"
+    },
+    {
+      location: t('locations.gurugram'),
+      name: t('hospitals.max'),
+      description: t('hospitals.max_desc'),
+      image: "/images/sections/network/patna-hosp.jpg",
+      alt: "Max Super Speciality Hospital Gurgaon"
+    },
+    {
+      location: t('locations.gurugram'),
+      name: t('hospitals.paras'),
+      description: t('hospitals.paras_desc'),
+      image: "/images/sections/network/lucknow-hosp.png",
+      alt: "Paras Health Hospital Gurgaon"
+    },
+    {
+      location: t('locations.gurugram'),
+      name: t('hospitals.marengo'),
+      description: t('hospitals.marengo_desc'),
+      image: "/images/sections/network/patna-hosp.jpg",
+      alt: "Marengo Asia Hospital facility"
+    },
+    {
+      location: t('locations.lucknow'),
+      name: t('hospitals.indiamed_lucknow'),
+      description: t('hospitals.indiamed_lucknow_desc'),
+      image: "/images/sections/network/lucknow-hosp.png",
+      alt: "India Med Super Speciality Hospital Lucknow"
+    },
+    {
+      location: t('locations.patna'),
+      name: t('hospitals.jay_prabha'),
+      description: t('hospitals.jay_prabha_desc'),
+      image: "/images/sections/network/patna-hosp.jpg",
+      alt: "Jay Prabha Medanta Super Speciality Hospital Patna"
+    },
+  ];
+
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [isMobile, setIsMobile] = useState(true);
 
@@ -91,7 +87,6 @@ export default function IndiaMedNetwork() {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   useEffect(() => {
-    // 2. Responsive: Passive listener for performance
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
     handleResize();
     window.addEventListener("resize", handleResize, { passive: true });
@@ -107,7 +102,6 @@ export default function IndiaMedNetwork() {
   }, [emblaApi]);
 
   return (
-    // 3. SEO: Using <section> and meaningful margin/padding classes
     <section className="relative w-full bg-transparent flex flex-col items-center mt-8 lg:-mt-0 mb-16 overflow-hidden">
 
       {/* HEADING */}
@@ -115,13 +109,17 @@ export default function IndiaMedNetwork() {
         className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-6 lg:px-10"
         style={{ width: "min(489px, 92vw)", height: "73px" }}
       >
-        <h2 className="text-[#58595B] font-bold text-xl md:text-2xl lg:text-[38px] font-montserrat leading-none text-center">
-          India Med Network
+        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center ${
+          locale === 'en' 
+            ? "text-xl md:text-2xl lg:text-[38px]" 
+            : "text-[16px] md:text-[20px] lg:text-[28px]"
+        }`}>
+          {t('title')}
         </h2>
       </div>
 
       <div className="relative w-full">
-        {/* ================= NAVIGATION BUTTONS - HIGH-FIDELITY SVG ================= */}
+        {/* ================= NAVIGATION BUTTONS ================= */}
         <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 lg:-translate-y-[65%] lg:-mt-[3px] left-0 right-0 z-50 pointer-events-none flex justify-between px-4 lg:px-20">
           <button
             onClick={scrollPrev}
@@ -183,14 +181,16 @@ export default function IndiaMedNetwork() {
                     className="relative overflow-hidden bg-[#EE4423]"
                     style={{
                       width: "100%",
-                      height: "clamp(350px, 50vh, 400px)", // 4. Responsive: Fluid height
+                      height: "clamp(350px, 50vh, 400px)",
                       borderRadius: "40px",
                     }}
                   >
-                    {/* Content Header */}
                     <div className="relative z-20 pt-12 px-6 lg:p-8 pb-0 flex flex-col gap-1 lg:gap-2">
                       <address className="flex items-center gap-2 text-white/90 not-italic">
-                        <LocationIcon />
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" className="shrink-0" aria-hidden="true">
+                          <path d="M12 21C16 17.5 19 14.4183 19 10C19 6.13401 15.866 3 12 3C8.13401 3 5 6.13401 5 10C5 14.4183 8 17.5 12 21Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                          <circle cx="12" cy="10" r="2.5" fill="white" />
+                        </svg>
                         <span className="text-xs lg:text-sm font-bold uppercase tracking-wider">
                           {hospital.location}
                         </span>
@@ -200,7 +200,6 @@ export default function IndiaMedNetwork() {
                       </h3>
                     </div>
 
-                    {/* Image Section */}
                     <div
                       className="absolute top-0 right-0 w-3/5 h-[65%] lg:h-[70%] z-10 overflow-hidden"
                       style={{
@@ -211,15 +210,14 @@ export default function IndiaMedNetwork() {
                     >
                       <Image
                         src={hospital.image}
-                        alt={hospital.alt} // 5. SEO: Descriptive alt tags
+                        alt={hospital.name}
                         fill
                         sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 42vw"
-                        priority={index < 2} // 6. Performance: Priority for first two slides
+                        priority={index < 2}
                         className="object-cover transition-transform duration-700 hover:scale-105"
                       />
                     </div>
 
-                    {/* Glassmorphism Bottom Card */}
                     <div
                       className="absolute bottom-3 lg:bottom-4 left-3 lg:left-4 right-3 lg:right-4 h-[160px] lg:h-[185px] z-30 p-5 lg:p-6 flex items-start justify-between"
                       style={{
@@ -241,7 +239,9 @@ export default function IndiaMedNetwork() {
                           href={`/hospitals/${hospital.name.toLowerCase().replace(/\s+/g, '-')}`}
                           className="flex items-center gap-3 text-white font-bold text-[14px] lg:text-[18px] hover:underline group"
                         >
-                          <span className="max-w-[60px] lg:max-w-none leading-tight text-right">Know more</span>
+                          <span className={`leading-tight text-right ${locale === 'en' ? 'text-[14px] lg:text-[18px]' : 'text-[11px] lg:text-[15px]'}`}>
+                            {t('know_more')}
+                          </span>
                           <div className="bg-white rounded-full p-2 lg:p-3 transition-transform group-hover:rotate-45 flex items-center justify-center">
                             <ArrowUpRight size={18} className="text-[#EE4423] lg:w-[24px] lg:h-[24px]" strokeWidth={3} />
                           </div>
@@ -252,7 +252,7 @@ export default function IndiaMedNetwork() {
                           className="bg-white text-[#58595B] px-4 py-2.5 lg:px-6 lg:py-3 rounded-full font-bold text-[12px] lg:text-[15px] flex items-center gap-2 shadow-lg transition-transform hover:scale-105"
                         >
                           <Phone size={16} className="lg:w-[18px]" fill="#58595B" />
-                          <span className="whitespace-nowrap">Contact Now</span>
+                          <span className="whitespace-nowrap">{t('contact_now')}</span>
                         </a>
                       </div>
                     </div>
@@ -263,7 +263,6 @@ export default function IndiaMedNetwork() {
           </div>
         </div>
 
-        {/* DOTS */}
         <nav className="flex justify-center gap-2 mt-8" aria-label="Carousel Pagination">
           {hospitalData.map((_, i) => (
             <button

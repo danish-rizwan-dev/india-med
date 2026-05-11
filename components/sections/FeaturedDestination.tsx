@@ -2,20 +2,23 @@
 
 import React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-
-const destinations = [
-  { name: "Uzbekistan", icon: "/images/sections/maps/Uzbekistan.svg" },
-  { name: "Russia", icon: "/images/sections/maps/Russia.svg" },
-  { name: "Kazakhstan", icon: "/images/sections/maps/Kazakhstan.svg" },
-  { name: "Krikistan", icon: "/images/sections/maps/Krikistan.svg" },
-  { name: "Turkmenistan", icon: "/images/sections/maps/Turkmenistan.svg" },
-  { name: "Tajikistan", icon: "/images/sections/maps/Tajikistan.svg" },
-];
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function FeaturedDestination() {
+  const t = useTranslations('FeaturedDestination');
+  const locale = useLocale();
+
+  const destinations = [
+    { name: t('countries.uzbekistan'), icon: "/images/sections/maps/Uzbekistan.svg" },
+    { name: t('countries.russia'), icon: "/images/sections/maps/Russia.svg" },
+    { name: t('countries.kazakhstan'), icon: "/images/sections/maps/Kazakhstan.svg" },
+    { name: t('countries.krikistan'), icon: "/images/sections/maps/Krikistan.svg" },
+    { name: t('countries.turkmenistan'), icon: "/images/sections/maps/Turkmenistan.svg" },
+    { name: t('countries.tajikistan'), icon: "/images/sections/maps/Tajikistan.svg" },
+  ];
+
   const [emblaRef, emblaApi] = useEmblaCarousel({
     loop: true,
     align: "start",
@@ -32,10 +35,8 @@ export default function FeaturedDestination() {
 
       {/* ================= BACKGROUND ILLUSTRATION LAYERS ================= */}
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        {/* Top Fade Overlay (Hides any hard lines) */}
         <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
 
-        {/* Layer 1: Colored Background (Full Opacity with Dual Fade) */}
         <div 
           className="absolute z-0 pointer-events-none"
           style={{
@@ -56,7 +57,6 @@ export default function FeaturedDestination() {
           />
         </div>
 
-        {/* Layer 2: Landmarks Background */}
         <div className="relative w-full h-full flex items-center justify-center pt-[150px] lg:pt-0">
           <div className="relative w-full h-full max-h-[500px] lg:max-h-[573px] lg:max-w-[1552px]">
             <Image
@@ -75,23 +75,21 @@ export default function FeaturedDestination() {
 
         {/* Header Block */}
         <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full mt-[-20px] lg:mt-[-140px] px-6">
-          {/* Desktop Header Pill */}
-          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full px-8 lg:px-10 h-[60px] lg:h-[73px] w-fit bg-white/50 backdrop-blur-sm shadow-sm">
-            <h2 className="text-[#58595B] font-bold text-2xl lg:text-[42px] font-montserrat leading-none">
-              Featured Destination
+          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full px-8 lg:px-10 h-[60px] lg:h-[73px] w-fit bg-white/50 backdrop-blur-sm shadow-sm max-w-[90vw]">
+            <h2 className={`text-[#58595B] font-bold font-montserrat leading-none whitespace-nowrap ${
+              locale === 'en' ? 'text-2xl lg:text-[42px]' : 'text-xl lg:text-[28px]'
+            }`}>
+              {t('title')}
             </h2>
           </div>
 
           <p className="text-[#58595B] font-montserrat font-medium max-w-[340px] lg:max-w-[700px] text-[14px] lg:text-[18px] leading-[1.2] text-center opacity-90">
-            Trusted by international patients worldwide, India delivers advanced
-            healthcare backed by expert doctors, modern facilities, and complete
-            care and support at every step of the treatment journey.
+            {t('desc')}
           </p>
         </header>
 
         {/* ================= DESTINATION CARDS ================= */}
         <div className="w-full mb-10 lg:mb-0">
-          {/* Mobile/Tablet View (Carousel) */}
           <div className="lg:hidden overflow-hidden" ref={emblaRef}>
             <div className="flex">
               {destinations.map((dest, index) => (
@@ -108,7 +106,7 @@ export default function FeaturedDestination() {
                     <div className="relative w-16 h-16 rounded-full overflow-hidden border-2 border-white shadow-sm">
                       <Image
                         src={dest.icon}
-                        alt={`${dest.name} map`}
+                        alt={dest.name}
                         fill
                         className="object-contain p-1"
                       />
@@ -122,14 +120,12 @@ export default function FeaturedDestination() {
             </div>
           </div>
 
-          {/* Desktop View (Standard Look with Smooth Fade) */}
           <div className="hidden lg:flex flex-row flex-wrap items-center justify-center gap-[30px] xl:gap-[40px] lg:mt-[40px]">
             {destinations.map((dest, index) => (
               <article
                 key={index}
                 className="group relative flex flex-col items-center justify-center w-[180px] h-[189px] rounded-[35px] transition-all duration-500 bg-white/40 hover:bg-white/90 backdrop-blur-md border border-white/50 shadow-md overflow-hidden cursor-pointer"
               >
-                {/* Map/Icon with Fade Effect */}
                 <div className="relative w-[70px] h-[70px] mb-4 transition-opacity duration-500 group-hover:opacity-100 opacity-80">
                   <Image
                     src={dest.icon}
@@ -142,14 +138,13 @@ export default function FeaturedDestination() {
                   {dest.name}
                 </span>
 
-                {/* Subtle Glow Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-white/0 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
               </article>
             ))}
           </div>
         </div>
 
-        {/* ================= NAVIGATION BUTTONS - HIGH-FIDELITY SVG (BOTTOM) ================= */}
+        {/* ================= NAVIGATION BUTTONS ================= */}
         <div className="hidden lg:flex items-center justify-center gap-6 mt-10 lg:mt-16">
           <button
             onClick={scrollPrev}

@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
+import { useTranslations, useLocale } from 'next-intl';
 
 /**
  * FounderSection Component
@@ -11,6 +12,7 @@ import Autoplay from "embla-carousel-autoplay";
  * A high-fidelity section highlighting the leadership of India Med Service.
  */
 export default function FounderSection() {
+  const t = useTranslations('Leadership');
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -29,40 +31,40 @@ export default function FounderSection() {
 
   const leaders = [
     {
-      name: "Mr. Faisal Iqbal",
-      title: "Founder & Managing Director – India Med Service",
+      name: t('faisal_name'),
+      title: t('faisal_title'),
       image: "/images/sections/leadership/faisal-iqbal.svg",
       bio: [
-        "Mr. Faisal Iqbal is the Founder and Director of India Med Service, a trusted medical facilitation company specializing in organizing treatment for international patients in India. With over 6 years of experience in the healthcare coordination sector, he has successfully assisted more than 1,750 patients from various countries in accessing high-quality medical care.",
-        "He is highly experienced in coordinating end-to-end medical journeys, including hospital selection, doctor consultations, treatment planning, and patient support. Mr. Faisal personally ensures smooth communication between patients, hospitals, and medical professionals.",
-        "Under his leadership, India Med Service has built strong collaborations with leading hospitals and specialists across India, delivering reliable, transparent, and patient-focused services."
+        t('faisal_bio_1'),
+        t('faisal_bio_2'),
+        t('faisal_bio_3')
       ]
     },
     {
-      name: "Mr. Daniyar Aydimirov",
-      title: "Regional Director – Kazakhstan",
+      name: t('daniyar_name'),
+      title: t('daniyar_title'),
       image: "/images/sections/leadership/daniyar-aydimirov.svg",
       bio: [
-        "Daniyar Aydimirov oversees patient coordination in Kazakhstan, providing dedicated support to international patients. He has assisted over 1,000 patients and ensures smooth communication in Russian, Kazakh, and Uzbek, with a strong focus on patient care and trust."
+        t('daniyar_bio')
       ]
     }
   ];
 
   const expertiseCards = [
     {
-      title: "Core Expertise",
+      title: t('expertise_title'),
       icon: "/images/sections/leadership/core-expertise.svg",
-      list: ["International Patient Coordination", "Hospital & Doctor Network Management", "Medical Treatment Planning & Assistance", "End-to-End Patient Support Services"]
+      list: t.raw('expertise_list') as string[]
     },
     {
-      title: "Key Achievements",
+      title: t('achievements_title'),
       icon: "/images/sections/leadership/key-achievements.svg",
-      list: ["6+ years of experience in medical facilitation", "2500+ international patients successfully served", "Strong network with top hospitals across India"]
+      list: t.raw('achievements_list') as string[]
     },
     {
-      title: "Services Offered",
+      title: t('services_title'),
       icon: "/images/sections/leadership/services-offered.svg",
-      list: ["Medical visa assistance", "Flight & accommodation arrangements", "Appointment scheduling with top doctors", "Treatment coordination and monitoring", "Post-treatment follow-up and care"]
+      list: t.raw('services_list') as string[]
     }
   ];
 
@@ -72,12 +74,28 @@ export default function FounderSection() {
       id="leadership"
       aria-label="Leadership Team"
     >
+      {/* ================= PREMIUM DECORATIVE STROKE ================= */}
+      <div
+        className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[1511px] h-[1px] z-20"
+        style={{
+          background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%)",
+          boxShadow: "0 0 8px rgba(255, 255, 255, 0.4)"
+        }}
+        aria-hidden="true"
+      />
+
       {/* ================= BACKGROUND LINES (Desktop Only) ================= */}
-      <div className="hidden lg:block absolute inset-0 pointer-events-none">
-        <div className="absolute left-[96px] top-0 h-full w-[1px] bg-white/20" />
-        <div className="absolute left-[1415px] top-0 h-full w-[1px] bg-white/20" />
-        <div className="absolute top-[170px] left-0 w-full h-[1px] bg-white/10" />
-        <div className="absolute top-[827px] left-0 w-full h-[1px] bg-white/10" />
+      <div className="hidden lg:block absolute inset-0 pointer-events-none z-10">
+        <div className="absolute left-[96px] top-0 h-full w-[1px]"
+          style={{ background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%)" }} />
+        <div className="absolute left-[1415px] top-0 h-full w-[1px]"
+          style={{ background: "linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%)" }} />
+        <div className="absolute top-[170px] left-0 w-full h-[1px]"
+          style={{ background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%)" }} />
+        <div className="absolute top-[780px] left-0 w-full h-[1px]"
+          style={{ background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%)" }} />
+        <div className="absolute top-[1217px] left-0 w-full h-[1px]"
+          style={{ background: "linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 100%)" }} />
       </div>
 
       <div className="relative z-10 w-full max-w-[1319px] mx-auto px-6 flex flex-col items-center">
@@ -86,7 +104,7 @@ export default function FounderSection() {
         <header className="mb-12 lg:mb-16">
           <div className="inline-flex items-center justify-center border-2 border-white rounded-full w-[240px] lg:w-[324px] h-[54px] lg:h-[73px] backdrop-blur-sm">
             <h2 className="text-white font-bold text-2xl lg:text-[42px] tracking-tight m-0">
-              Leadership
+              {t('title')}
             </h2>
           </div>
         </header>
@@ -127,11 +145,11 @@ export default function FounderSection() {
         </div>
 
         {/* ================= EXPERTISE CARDS (Clipped Carousel on Mobile) ================= */}
-        <div className="w-full mb-16 lg:mb-[150px]">
+        <div className="w-full mb-20 lg:mb-[180px]">
           {isMobile ? (
             <div className="w-full pr-[15px]"> {/* 15px Orange gap on the right edge */}
               <div className="w-full " ref={emblaRef}>
-                <div className="flex">
+                <div className="flex items-stretch">
                   {expertiseCards.map((card, i) => (
                     <div key={i} className="flex-[0_0_85%] pr-4 min-w-0">
                       <ExpertiseCard card={card} />
@@ -141,7 +159,7 @@ export default function FounderSection() {
               </div>
             </div>
           ) : (
-            <div className="w-full max-w-[1319px] mx-auto px-6 flex flex-row justify-center gap-8 xl:gap-[60px]">
+            <div className="w-full max-w-[1319px] mx-auto px-6 flex flex-row justify-center gap-8 xl:gap-[60px] items-stretch">
               {expertiseCards.map((card, i) => (
                 <ExpertiseCard key={i} card={card} />
               ))}
@@ -189,20 +207,25 @@ export default function FounderSection() {
 }
 
 function ExpertiseCard({ card }: { card: any }) {
+  const locale = useLocale();
+  const isEn = locale === 'en';
+
   return (
-    <div className="bg-white rounded-[30px] lg:rounded-[40px] pt-6 lg:pt-[30px] pb-6 lg:pb-[30px] px-5 lg:px-[20px] shadow-xl flex flex-col w-full lg:w-[323px] h-full min-h-[300px] lg:h-[329px]">
-      <div className="flex items-center gap-4 mb-4">
+    <div className={`bg-white rounded-[40px] pt-[30px] pb-[30px] px-[20px] shadow-xl flex flex-col w-full lg:w-[323px] min-h-[319px] ${isEn ? 'lg:h-[319px]' : 'h-auto'}`}>
+      <div className="flex items-center gap-[16px] mb-4">
         <div className="w-[45px] h-[45px] lg:w-[52px] lg:h-[52px] bg-[#F14E2F] rounded-full flex items-center justify-center shrink-0 shadow-lg">
           <Image src={card.icon} alt={card.title} width={26} height={26} className="invert brightness-0" />
         </div>
-        <h4 className="text-[#333] font-bold text-lg lg:text-[22px] leading-tight">{card.title}</h4>
+        <h4 className={`text-[#333] font-bold leading-tight ${isEn ? 'text-lg lg:text-[22px]' : 'text-base lg:text-[19px]'}`}>
+          {card.title}
+        </h4>
       </div>
 
-      <ul className="text-[#58595B] text-left space-y-3 font-semibold text-sm lg:text-[17px] leading-tight">
+      <ul className={`text-[#58595B] text-left space-y-1.5 font-montserrat font-semibold tracking-normal leading-[120%] ${isEn ? 'text-[17px]' : 'text-[15px]'}`}>
         {card.list.map((item: string, idx: number) => (
-          <li key={idx} className="flex items-start gap-2">
-            <span className="text-[#58595B] opacity-40 shrink-0 mt-1">•</span>
-            <span>{item}</span>
+          <li key={idx} className="flex items-start gap-3 h-auto">
+            <span className={`text-[#58595B] shrink-0 w-[5px] h-[5px] rounded-full bg-[#58595B] block ${isEn ? 'mt-[6px]' : 'mt-[5px]'}`}></span>
+            <span className="break-words">{item}</span>
           </li>
         ))}
       </ul>

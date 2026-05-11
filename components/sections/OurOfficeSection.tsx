@@ -2,8 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
+import {useTranslations} from 'next-intl';
 
 export default function OurOfficeSection() {
+  const t = useTranslations('OurOffices');
+
   const officeSchema = {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
@@ -64,7 +67,7 @@ export default function OurOfficeSection() {
 
         {/* ================= OUR OFFICE HEADING ================= */}
         <div
-          className="inline-flex items-center justify-center border-2 border-[#58595B] bg-white shadow-sm w-[240px] lg:w-[329px] h-[54px] lg:h-[73px] rounded-full px-5 lg:px-[40px]"
+          className="inline-flex items-center justify-center border-2 border-[#58595B] bg-white shadow-sm min-w-[240px] lg:min-w-[329px] w-fit h-[54px] lg:h-[73px] rounded-full px-8 lg:px-[60px]"
         >
           <h2
             className="text-[#58595B] font-bold text-2xl lg:text-[42px] whitespace-nowrap"
@@ -75,7 +78,7 @@ export default function OurOfficeSection() {
               textAlign: "center"
             }}
           >
-            Our Offices
+            {t('title')}
           </h2>
         </div>
 
@@ -90,7 +93,7 @@ export default function OurOfficeSection() {
             {/* Toshkent Section */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[#E84E36] font-bold text-2xl lg:text-[32px] leading-tight text-center lg:text-left">
-                Toshkent:
+                {t('uzbekistan')}
               </h3>
               <div className="flex flex-row items-start justify-center lg:justify-start gap-4 lg:gap-8">
                 {/* QR Code */}
@@ -143,7 +146,7 @@ export default function OurOfficeSection() {
                       className="text-sm lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[200px] lg:max-w-none"
                       style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.2" }}
                     >
-                      Toshkent shahri, Shifokorlar ko'chasi, 6B-uy
+                      {t('tashkent_addr')}
                     </span>
                   </div>
                 </div>
@@ -153,7 +156,7 @@ export default function OurOfficeSection() {
             {/* Qozog’iston Section */}
             <div className="flex flex-col gap-4">
               <h3 className="text-[#E84E36] font-bold text-2xl lg:text-[32px] leading-tight text-center lg:text-left">
-                Qozog’iston:
+                {t('kazakhstan')}
               </h3>
               <div className="flex flex-row items-start justify-center lg:justify-start gap-4 lg:gap-8">
                 {/* QR Code */}
@@ -206,7 +209,7 @@ export default function OurOfficeSection() {
                       className="text-sm lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[200px] lg:max-w-none"
                       style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.2" }}
                     >
-                      Chimkent shahri, Tauke xon shohko'chasi, 130
+                      {t('shymkent_addr')}
                     </span>
                   </div>
                 </div>

@@ -2,44 +2,27 @@
 
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
-
-const processSteps = [
-  // ROW 1
-  { id: 1, title: "Online Consultation", icon: "/images/sections/process-flow/icons/consult.svg" },
-  { id: 2, title: "Treatment plan", icon: "/images/sections/process-flow/icons/plan.svg" },
-  { id: 3, title: "Visa Support", icon: "/images/sections/process-flow/icons/visa.svg" },
-  { id: 4, title: "Air Ticket and Transfer", icon: "/images/sections/process-flow/icons/transfer.svg" },
-  // ROW 2 (Meeting -> Living -> Translators -> Support)
-  { id: 5, title: "Meeting At The Airport", icon: "/images/sections/process-flow/icons/meetingAirport.svg" },
-  { id: 6, title: "Living Near The Hospital", icon: "/images/sections/process-flow/icons/nearhospital.svg" },
-  { id: 7, title: "Professional Translators", icon: "/images/sections/process-flow/icons/translators.svg" },
-  { id: 8, title: "Full support even after the patient returns home", icon: "/images/sections/process-flow/icons/supportafterreturn.svg" },
-];
-
-const StepArrow = ({ rotate = 0, isVertical = false }: { rotate?: number, isVertical?: boolean }) => (
-  <div 
-    className="relative flex items-center justify-center shrink-0"
-    style={{ 
-      width: isVertical ? '30px' : '32px', 
-      height: isVertical ? '64px' : '15px',
-      transform: `rotate(${rotate}deg)` 
-    }}
-  >
-    <Image 
-      src="/images/sections/process-flow/icons/Arrows.svg" 
-      alt="arrow" 
-      width={isVertical ? 64 : 32} 
-      height={isVertical ? 30 : 15} 
-      className="object-contain"
-    />
-  </div>
-);
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function ProcessFlow() {
+  const t = useTranslations('ProcessFlow');
   const [isMounted, setIsMounted] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
+
+  const processSteps = [
+    // ROW 1
+    { id: 1, title: t('step_1'), icon: "/images/sections/process-flow/icons/consult.svg" },
+    { id: 2, title: t('step_2'), icon: "/images/sections/process-flow/icons/plan.svg" },
+    { id: 3, title: t('step_3'), icon: "/images/sections/process-flow/icons/visa.svg" },
+    { id: 4, title: t('step_4'), icon: "/images/sections/process-flow/icons/transfer.svg" },
+    // ROW 2 (Meeting -> Living -> Translators -> Support)
+    { id: 5, title: t('step_5'), icon: "/images/sections/process-flow/icons/meetingAirport.svg" },
+    { id: 6, title: t('step_6'), icon: "/images/sections/process-flow/icons/nearhospital.svg" },
+    { id: 7, title: t('step_7'), icon: "/images/sections/process-flow/icons/translators.svg" },
+    { id: 8, title: t('step_8'), icon: "/images/sections/process-flow/icons/supportafterreturn.svg" },
+  ];
   
   const row1 = processSteps.slice(0, 4);
   const row2 = processSteps.slice(4, 8).reverse(); 
@@ -63,7 +46,7 @@ export default function ProcessFlow() {
       }
     }, 3000);
     return () => clearInterval(timer);
-  }, [isMounted, isPaused, activeStep]);
+  }, [isMounted, isPaused, activeStep, processSteps.length]);
 
   // Handle manual scroll to update activeStep
   const handleScroll = () => {
@@ -165,8 +148,30 @@ export default function ProcessFlow() {
   );
 }
 
+const StepArrow = ({ rotate = 0, isVertical = false }: { rotate?: number, isVertical?: boolean }) => (
+  <div 
+    className="relative flex items-center justify-center shrink-0"
+    style={{ 
+      width: isVertical ? '30px' : '32px', 
+      height: isVertical ? '64px' : '15px',
+      transform: `rotate(${rotate}deg)` 
+    }}
+  >
+    <Image 
+      src="/images/sections/process-flow/icons/Arrows.svg" 
+      alt="arrow" 
+      width={isVertical ? 64 : 32} 
+      height={isVertical ? 30 : 15} 
+      className="object-contain"
+    />
+  </div>
+);
+
 function ProcessCard({ step }: { step: any }) {
   const isWider = step.id === 8;
+  const locale = useLocale();
+  const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
+  
   return (
     <article className="relative group shrink-0">
       {/* Gradient Border Wrap */}
@@ -179,10 +184,10 @@ function ProcessCard({ step }: { step: any }) {
       >
         <div 
           className="w-full h-full bg-white rounded-[39px] flex flex-col items-center justify-start transition-transform group-hover:scale-[1.02] duration-300"
-          style={{ padding: '24px 16px' }}
+          style={{ padding: '16px 12px' }}
         >
           {/* Icon Area */}
-          <div className="relative w-[64px] h-[64px] mb-[16px] shrink-0">
+          <div className="relative w-[64px] h-[64px] mb-[12px] shrink-0">
             <Image 
               src={step.icon} 
               alt={`${step.title} icon`} 
@@ -193,8 +198,8 @@ function ProcessCard({ step }: { step: any }) {
           
           {/* Title Area */}
           <h3 
-            className="text-[20px] font-bold text-[#58595B] leading-[100%] text-center font-montserrat capitalize flex items-center justify-center"
-            style={{ width: '168px', height: '48px' }}
+            className={`font-bold text-[#58595B] leading-[1.2] text-center font-montserrat flex items-center justify-center ${isLongLocale ? 'text-[15px]' : 'text-[20px]'}`}
+            style={{ width: '176px', minHeight: '48px' }}
           >
             {step.title}
           </h3>
