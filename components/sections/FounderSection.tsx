@@ -111,7 +111,7 @@ export default function FounderSection() {
 
         {/* ================= LEADER 1: FAISAL IQBAL ================= */}
         <div className="w-full flex flex-col items-center mb-12 lg:mb-[100px]">
-          <article className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[76px] w-full">
+          <article className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-8 xl:gap-[76px] w-full">
             {/* Portrait Image */}
             <div className="relative flex-shrink-0 order-1 lg:order-2">
               <div className="relative w-[300px] h-[360px] lg:w-[365px] lg:h-[441px] border-[5px] border-white/40 rounded-tr-[60px] lg:rounded-tr-[80px] rounded-bl-[60px] lg:rounded-bl-[80px] p-2 bg-white/10 shadow-2xl">
@@ -129,10 +129,10 @@ export default function FounderSection() {
 
             {/* Text Content */}
             <div className="flex-grow max-w-[635px] text-white order-2 lg:order-1 text-left lg:text-left">
-              <h3 className="text-3xl lg:text-[42px] font-bold leading-tight mb-2">
+              <h3 className="text-3xl lg:text-[34px] xl:text-[42px] font-bold leading-tight mb-2">
                 {leaders[0].name}
               </h3>
-              <p className="text-lg lg:text-[23px] font-bold mb-6 text-white/90">
+              <p className="text-lg lg:text-[19px] xl:text-[23px] font-bold mb-6 text-white/90">
                 {leaders[0].title}
               </p>
               <div className="flex flex-col gap-4 lg:gap-6 text-sm lg:text-[17px] font-medium lg:font-semibold leading-relaxed">
@@ -159,7 +159,7 @@ export default function FounderSection() {
               </div>
             </div>
           ) : (
-            <div className="w-full max-w-[1319px] mx-auto px-6 flex flex-row justify-center gap-8 xl:gap-[60px] items-stretch">
+            <div className="w-full max-w-[1319px] mx-auto px-6 flex flex-row justify-center gap-4 xl:gap-[60px] items-stretch">
               {expertiseCards.map((card, i) => (
                 <ExpertiseCard key={i} card={card} />
               ))}
@@ -169,7 +169,7 @@ export default function FounderSection() {
 
         {/* ================= LEADER 2: DANIYAR AYDIMIROV ================= */}
         <div className="w-full flex flex-col items-center">
-          <article className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-[122px] w-full">
+          <article className="flex flex-col lg:flex-row items-center justify-center gap-10 lg:gap-12 xl:gap-[122px] w-full">
             {/* Portrait Image */}
             <div className="relative flex-shrink-0">
               <div className="relative w-[300px] h-[360px] lg:w-[365px] lg:h-[441px] border-[5px] border-white/40 rounded-tr-[60px] lg:rounded-tr-[80px] rounded-bl-[60px] lg:rounded-bl-[80px] p-2 bg-white/10 shadow-2xl">
@@ -186,10 +186,10 @@ export default function FounderSection() {
 
             {/* Text Content */}
             <div className="flex-grow max-w-[635px] text-white text-left">
-              <h3 className="text-3xl lg:text-[42px] font-bold leading-tight mb-2">
+              <h3 className="text-3xl lg:text-[34px] xl:text-[42px] font-bold leading-tight mb-2">
                 {leaders[1].name}
               </h3>
-              <p className="text-lg lg:text-[23px] font-bold mb-6 text-white/90">
+              <p className="text-lg lg:text-[19px] xl:text-[23px] font-bold mb-6 text-white/90">
                 {leaders[1].title}
               </p>
               <div className="flex flex-col gap-4 lg:gap-6 text-sm lg:text-[17px] font-medium lg:font-semibold leading-relaxed">
@@ -211,7 +211,7 @@ function ExpertiseCard({ card }: { card: any }) {
   const isEn = locale === 'en';
 
   return (
-    <div className={`bg-white rounded-[40px] pt-[30px] pb-[30px] px-[20px] shadow-xl flex flex-col w-full lg:w-[323px] min-h-[319px] ${isEn ? 'lg:h-[319px]' : 'h-auto'}`}>
+    <div className={`bg-white rounded-[40px] pt-[30px] pb-[30px] px-[20px] shadow-xl flex flex-col w-full lg:w-[280px] xl:w-[323px] min-h-[319px] ${isEn ? 'lg:h-[319px]' : 'h-auto'}`}>
       <div className="flex items-center gap-[16px] mb-4">
         <div className="w-[45px] h-[45px] lg:w-[52px] lg:h-[52px] bg-[#F14E2F] rounded-full flex items-center justify-center shrink-0 shadow-lg">
           <Image src={card.icon} alt={card.title} width={26} height={26} className="invert brightness-0" />

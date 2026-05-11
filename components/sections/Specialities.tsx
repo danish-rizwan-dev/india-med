@@ -148,13 +148,13 @@ export default function Specialities() {
         </div>
 
         {/* --- DESKTOP & TABLET VIEW --- */}
-        <div className="hidden md:block w-full max-w-[1318px]">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-12">
+        <div className="hidden md:block w-full max-w-[1317px] px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 lg:gap-4 xl:gap-6">
             {specialities.map((item, index) => (
               <Link
                 key={index}
                 href={`/specialities/${item.slug}`}
-                className="group relative flex flex-col items-center justify-center text-center transition-all duration-500 hover:-translate-y-3 p-8 lg:p-10 rounded-[40px] h-full min-h-[260px] lg:min-h-[300px] overflow-hidden bg-white shadow-[0px_15px_35px_rgba(0,0,0,0.05)] border border-gray-100"
+                className="group relative flex flex-col items-center justify-center bg-white border border-[#E5E7EB] rounded-[24px] lg:rounded-[32px] p-4 lg:p-5 xl:p-8 transition-all hover:border-[#EE4423] hover:shadow-xl cursor-pointer"
               >
                 <div className="relative z-20 w-[60px] h-[60px] lg:w-[85px] lg:h-[85px] mb-6 transition-transform duration-500 group-hover:scale-110">
                   <Image

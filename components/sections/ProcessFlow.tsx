@@ -116,10 +116,10 @@ export default function ProcessFlow() {
       </div>
 
       {/* --- DESKTOP VIEW --- */}
-      <div className="hidden lg:flex relative w-full max-w-[1122px] flex-col items-center z-10">
+      <div className="hidden lg:flex relative w-full max-w-[1000px] xl:max-w-[1122px] flex-col items-center z-10">
         
         {/* ROW 1: 1 -> 2 -> 3 -> 4 */}
-        <div className="flex items-center justify-end w-full gap-[32px] mb-8">
+        <div className="flex items-center justify-end w-full gap-[20px] xl:gap-[32px] mb-8">
           {row1.map((step, idx) => (
             <React.Fragment key={step.id}>
               <ProcessCard step={step} />
@@ -134,7 +134,7 @@ export default function ProcessFlow() {
         </div>
 
         {/* ROW 2: 8 <- 7 <- 6 <- 5 */}
-        <div className="flex items-center justify-end w-full gap-[32px] relative left-[20px]">
+        <div className="flex items-center justify-end w-full gap-[20px] xl:gap-[32px] relative left-[20px]">
           {row2.map((step, idx) => (
             <React.Fragment key={step.id}>
               <ProcessCard step={step} />

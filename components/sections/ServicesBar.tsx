@@ -107,7 +107,7 @@ export default function ServiceBar() {
         </button>
 
         <div
-          className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1317px] h-[160px] lg:h-[226px] rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px]"
+          className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1000px] xl:max-w-[1317px] h-[160px] lg:h-[226px] rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px]"
           style={{
             background: "rgba(255, 255, 255, 0.1)",
             backdropFilter: "blur(50px)",
@@ -129,7 +129,7 @@ export default function ServiceBar() {
                     className="object-contain"
                   />
                 </div>
-                <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[18px] leading-tight max-w-[120px] lg:max-w-[160px]">
+                <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[15px] xl:text-[18px] leading-tight max-w-[120px] lg:max-w-[130px] xl:max-w-[160px]">
                   {service.label}
                 </span>
               </Link>

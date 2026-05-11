@@ -128,7 +128,7 @@ export default function BeyondBoundaries() {
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between text-center lg:text-left">
           <header className="flex-1 text-white lg:pt-10 mb-10 lg:mb-0">
             <p className="text-lg lg:text-xl font-medium mb-4 lg:mb-6 opacity-90">{t('title')}</p>
-            <h2 className="text-[32px] sm:text-4xl lg:text-[54px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[620px] mb-8 lg:mb-10">
+            <h2 className="text-[32px] sm:text-4xl lg:text-[42px] xl:text-[54px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[480px] xl:max-w-[620px] mb-8 lg:mb-10">
               {t('heading')}
             </h2>
             <button className="group flex items-center justify-center lg:justify-start gap-2 text-white font-bold text-lg no-underline mx-auto lg:mx-0">
@@ -136,7 +136,7 @@ export default function BeyondBoundaries() {
             </button>
           </header>
           <div className="relative flex justify-center w-full lg:w-auto">
-            <div className="relative w-[524px] h-[480px]">
+            <div className="relative w-[400px] h-[360px] xl:w-[524px] xl:h-[480px]">
               <Image src="/images/sections/common/globe.svg" alt="World Medical Network Globe" fill className="object-contain" />
             </div>
           </div>
@@ -148,10 +148,10 @@ export default function BeyondBoundaries() {
               <span>{t('contact_now')}</span>
             </button>
           </div>
-          <div className="flex flex-row justify-center lg:justify-start gap-[112px] w-full lg:w-auto">
+          <div className="flex flex-row justify-center lg:justify-start gap-[40px] xl:gap-[112px] w-full lg:w-auto">
             {stats.map((stat, idx) => (
               <article key={idx} className="flex flex-col items-start text-white">
-                <p className="text-[48px] font-bold leading-tight">
+                <p className="text-[36px] xl:text-[48px] font-bold leading-tight">
                   <Counter end={stat.value} shouldStart={hasStarted} />
                 </p>
                 <p className="text-[14px] font-medium opacity-90 max-w-[155px]">{stat.label}</p>

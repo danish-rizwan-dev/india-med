@@ -85,14 +85,14 @@ export default function FAQSection() {
         </div>
       </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row w-full max-w-[1320px] gap-12 px-6">
+      <div className="relative z-10 flex flex-col lg:flex-row w-full max-w-[1000px] xl:max-w-[1320px] gap-8 xl:gap-12 px-6">
         {/* LEFT COLUMN */}
-        <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[427px] text-center lg:text-left">
+        <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[320px] xl:w-[427px] text-center lg:text-left">
           {/* FAQs Heading */}
           <div
             className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] px-8 lg:px-10 py-4 w-fit min-w-[193px] min-h-[73px] mx-auto lg:mx-0"
           >
-            <span className={`text-[#58595B] font-bold uppercase whitespace-nowrap ${isLongLocale ? 'text-[18px] lg:text-[24px]' : 'text-[22px] lg:text-[28px]'}`}>
+            <span className={`text-[#58595B] font-bold uppercase whitespace-nowrap ${isLongLocale ? 'text-[18px] lg:text-[20px] xl:text-[24px]' : 'text-[22px] lg:text-[24px] xl:text-[28px]'}`}>
               {t('title')}
             </span>
           </div>

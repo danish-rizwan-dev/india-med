@@ -98,10 +98,10 @@ export default function Footer() {
       <h2 id="footer-heading" className="sr-only">Footer</h2>
 
       {/* ================= DESKTOP VIEW ================= */}
-      <div className="hidden lg:flex max-w-[1320px] mx-auto flex-col lg:flex-row lg:gap-20">
+      <div className="hidden lg:flex max-w-[1320px] mx-auto flex-col lg:flex-row lg:gap-8 xl:gap-20">
 
         {/* Brand & Contact Section */}
-        <div className="flex flex-col gap-10 w-full lg:w-[380px] px-6 lg:px-0 py-10 lg:py-0 items-start text-left">
+        <div className="flex flex-col gap-10 w-full lg:w-[280px] xl:w-[380px] px-6 lg:px-0 py-10 lg:py-0 items-start text-left">
           <Link href="/" className="relative w-[212px] h-[76px] block">
             <Image
               src="/images/Logo.svg"
@@ -112,7 +112,7 @@ export default function Footer() {
             />
           </Link>
 
-          <p className="text-[#58595B] font-montserrat font-medium text-[16px] leading-relaxed">
+          <p className="text-[#58595B] font-montserrat font-medium text-[14px] xl:text-[16px] leading-relaxed">
             {t('desc')}
           </p>
 
@@ -138,10 +138,10 @@ export default function Footer() {
         </div>
 
         {/* Navigation Grid */}
-        <div className="flex-1 grid grid-cols-4 gap-10">
+        <div className="flex-1 grid grid-cols-4 gap-4 xl:gap-10">
           {footerSections.map((col, idx) => (
             <nav key={idx} aria-labelledby={`footer-col-${idx}`}>
-              <h4 id={`footer-col-${idx}`} className="text-[#EE4423] font-montserrat font-bold text-[24px] mb-10">
+              <h4 id={`footer-col-${idx}`} className="text-[#EE4423] font-montserrat font-bold text-[18px] xl:text-[24px] mb-6 xl:mb-10">
                 {col.title}
               </h4>
               <ul className="flex flex-col gap-3">
@@ -149,7 +149,7 @@ export default function Footer() {
                   <li key={i}>
                     <Link
                       href={item.href}
-                      className="text-[#58595B] font-montserrat font-semibold text-[17px] hover:text-[#EE4423] transition-colors opacity-90 hover:opacity-100"
+                      className="text-[#58595B] font-montserrat font-semibold text-[14px] xl:text-[17px] hover:text-[#EE4423] transition-colors opacity-90 hover:opacity-100"
                     >
                       {item.label}
                     </Link>

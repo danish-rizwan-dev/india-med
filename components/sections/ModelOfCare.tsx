@@ -44,26 +44,26 @@ export default function ModelOfCare() {
       <div className="absolute inset-x-0 bg-[#EE4423] md:hidden -top-12 h-[450px]" />
 
       {/* DESKTOP HEADER */}
-      <div className="hidden md:flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-20 px-8 md:px-[40px] w-full max-w-[650px] h-[73px]">
+      <div className="hidden lg:flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-20 px-8 md:px-[40px] w-full max-w-[650px] h-[73px]">
         <h2 className={`text-[#58595B] font-bold font-montserrat tracking-[-0.38px] text-center ${locale === 'en' ? 'text-[30px]' : 'text-[22px] lg:text-[26px]'
           }`}>
           {t('title')}
         </h2>
       </div>
 
-      {/* MOBILE HEADER */}
+      {/* MOBILE/TABLET HEADER */}
       <div
-        className="md:hidden relative z-10 flex items-center justify-center border-[2px] border-white rounded-[50px] mb-12 px-6 py-2"
+        className="lg:hidden relative z-10 flex items-center justify-center border-[2px] border-[#58595B] lg:border-white rounded-[50px] mb-12 px-6 py-2"
         style={{ width: "min(300px, 90vw)", height: "88px" }}
       >
-        <h2 aria-hidden="true" className={`text-white font-bold font-montserrat text-center leading-[1.2] ${locale === 'en' ? 'text-[22px]' : 'text-[18px]'
+        <h2 aria-hidden="true" className={`text-[#58595B] lg:text-white font-bold font-montserrat text-center leading-[1.2] ${locale === 'en' ? 'text-[22px]' : 'text-[18px]'
           }`}>
           {t('title')}
         </h2>
       </div>
 
       {/* DESKTOP VIEW */}
-      <div className="hidden md:block relative w-full max-w-[1200px] h-[650px]">
+      <div className="hidden lg:block relative w-full max-w-[1200px] h-[650px] lg:scale-[0.8] xl:scale-100 origin-center">
         <div className="absolute inset-0 pointer-events-none">
           <svg width="100%" height="100%" viewBox="0 0 1200 600" fill="none" preserveAspectRatio="none">
             <path
@@ -112,9 +112,9 @@ export default function ModelOfCare() {
         </div>
       </div>
 
-      {/* MOBILE VIEW */}
+      {/* MOBILE/TABLET VIEW */}
       <div
-        className={`md:hidden relative z-10 bg-white flex flex-col items-center pt-[56px] gap-[24px] mb-8 transition-all duration-500 overflow-hidden px-4`}
+        className={`lg:hidden relative z-10 bg-white flex flex-col items-center pt-[56px] gap-[24px] mb-8 transition-all duration-500 overflow-hidden px-4`}
         style={{
           width: "min(352px, 92vw)",
           minHeight: "428px",

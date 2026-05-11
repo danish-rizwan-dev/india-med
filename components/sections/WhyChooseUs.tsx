@@ -48,7 +48,7 @@ export default function WhyChooseUs() {
         className="relative flex flex-col items-center justify-center mx-auto lg:py-[120px] px-0 lg:px-0"
         style={{ maxWidth: "1319px", fontFamily: "Montserrat, sans-serif" }}
       >
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:flex-row lg:justify-center lg:gap-[60px] xl:gap-[100px]">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:flex-row lg:justify-center lg:gap-[40px] xl:gap-[100px]">
 
           {/* ================= MOBILE/TABLET HEADER ================= */}
           <header className="flex flex-col items-center lg:hidden mb-12 px-6">
@@ -65,7 +65,7 @@ export default function WhyChooseUs() {
           </header>
 
           {/* ================= DESKTOP RIGHT SECTION ================= */}
-          <div className="hidden lg:flex flex-col items-start text-left max-w-[530px] order-2 lg:pt-[100px] xl:pt-[150px] px-6 lg:px-0">
+          <div className="hidden lg:flex flex-col items-start text-left max-w-[420px] xl:max-w-[530px] order-2 lg:pt-[100px] xl:pt-[150px] px-6 lg:px-0">
             <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-10 h-[73px] w-fit">
               <h2 className={`text-[#58595B] font-bold whitespace-nowrap leading-none ${locale === 'en' ? 'text-[32px] xl:text-[42px]' : 'text-[24px] xl:text-[28px]'}`}>
                 {t('title')}
@@ -110,7 +110,7 @@ export default function WhyChooseUs() {
           </div>
 
           {/* ================= DESKTOP/TABLET GRID ================= */}
-          <div className="hidden lg:grid grid-cols-2 w-full max-w-[680px] gap-6 xl:gap-8 order-1 px-6 lg:px-0">
+          <div className="hidden lg:grid grid-cols-2 w-full max-w-[540px] xl:max-w-[680px] gap-4 xl:gap-8 order-1 px-6 lg:px-0">
             {reasons.map((item, index) => (
               <article
                 key={index}
@@ -122,9 +122,17 @@ export default function WhyChooseUs() {
                   maxWidth: "320px",
                   minHeight: "300px",
                   borderRadius: "40px",
-                  padding: "40px",
+                  padding: "var(--card-padding, 40px)",
                 }}
               >
+                <style jsx>{`
+                  @media (min-width: 1024px) and (max-width: 1279px) {
+                    article {
+                      max-width: 260px !important;
+                      padding: 25px !important;
+                    }
+                  }
+                `}</style>
                 <div
                   className="absolute inset-0 rounded-[40px] pointer-events-none"
                   aria-hidden="true"

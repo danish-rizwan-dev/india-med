@@ -102,15 +102,15 @@ export default function BlogSection() {
         </Link>
       </div>
 
-      {/* --- DESKTOP VIEW: ORIGINAL GRID --- */}
-      <div className="hidden lg:flex relative bg-white flex-row items-start justify-center p-12 gap-10 shadow-sm rounded-[40px] w-full max-w-[1450px]">
+      {/* --- DESKTOP VIEW --- */}
+      <div className="hidden lg:grid grid-cols-3 gap-4 xl:gap-[38px] w-full max-w-[1000px] xl:max-w-[1318px] mb-16">
          <div className="flex flex-col lg:flex-row gap-10 w-full">
             <article className="flex flex-col gap-6 flex-1">
               <Link href="/under-construction" className="group">
-                <div className="relative overflow-hidden w-full h-[380px] rounded-[40px]">
+                <div className="relative overflow-hidden w-full h-[280px] xl:h-[380px] rounded-[40px]">
                   <Image src="/images/sections/blog/blog1.jpg" alt="Blog 1" fill className="object-cover transition-transform group-hover:scale-105" />
                 </div>
-                <h3 className="mt-6 text-[#414042] font-bold text-[42px] leading-[1.1] group-hover:text-[#EE4423] transition-colors">
+                <h3 className="mt-6 text-[#414042] font-bold text-[28px] xl:text-[42px] leading-[1.1] group-hover:text-[#EE4423] transition-colors">
                   {t('blog1_title')}
                 </h3>
               </Link>
@@ -125,7 +125,7 @@ export default function BlogSection() {
             <div className="flex flex-col gap-8 flex-1">
               {blogs.slice(1).map((blog, idx) => (
                 <article key={idx} className="flex gap-6 items-center group">
-                  <Link href={blog.slug} className="relative shrink-0 overflow-hidden w-[315px] h-[190px] rounded-[40px]">
+                  <Link href={blog.slug} className="relative shrink-0 overflow-hidden w-[220px] xl:w-[315px] h-[190px] rounded-[40px]">
                     <Image src={blog.image} alt={blog.title} fill className="object-cover transition-transform group-hover:scale-105" />
                   </Link>
                   <div className="flex flex-col justify-between h-[190px] py-2">

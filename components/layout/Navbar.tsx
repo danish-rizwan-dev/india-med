@@ -35,7 +35,7 @@ export default function Navbar() {
 
           {/* LOGO */}
           <div className="flex-shrink-0">
-            <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[202.52px] h-[33px] lg:h-[56px]">
+            <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[160px] xl:w-[202.52px] h-[33px] lg:h-[44px] xl:h-[56px]">
               <Image
                 src="/images/Logo.svg"
                 alt="India Med Service"
@@ -47,10 +47,10 @@ export default function Navbar() {
           </div>
 
           {/* DESKTOP & IPAD PRO NAV */}
-          <div className="hidden lg:flex items-center flex-grow">
+          <div className="hidden min-[1000px]:flex items-center flex-grow">
             {/* LINKS - Locale-aware positioning & Pixel-Perfect Dimensions */}
             <ul
-              className={`flex items-center gap-[35px] ${isEn ? "ml-12 xl:ml-[191px] w-[400px] h-[21px]" : "ml-6 xl:ml-[60px]"}`}
+              className={`flex items-center gap-[20px] xl:gap-[35px] ${isEn ? "ml-6 xl:ml-[191px] w-auto xl:w-[400px] h-[21px]" : "ml-4 xl:ml-[60px]"}`}
               style={{
                 fontFamily: "'Montserrat', sans-serif",
                 fontWeight: "500",
@@ -75,13 +75,13 @@ export default function Navbar() {
             <div className="flex-grow" />
 
             {/* SEARCH + CALL + LANG - RIGHT END */}
-            <div className="flex items-center gap-[12px] xl:gap-[16px] ml-6 xl:ml-12">
+            <div className="flex items-center gap-[8px] xl:gap-[16px] ml-4 xl:ml-12">
               {/* SEARCH BAR */}
               <form
                 action="/search"
                 method="GET"
                 role="search"
-                className="relative flex items-center bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] border border-[#F8F8F8] rounded-full group w-[140px] xl:w-[182px] h-[49px] transition-all"
+                className="relative flex items-center bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] border border-[#F8F8F8] rounded-full group w-[120px] xl:w-[182px] h-[45px] xl:h-[49px] transition-all"
               >
                 <div className="absolute left-0 top-0 bg-[#EE4423] rounded-full flex items-center justify-center text-white w-[49px] h-[49px] transition-all duration-300 group-hover:scale-105 cursor-pointer">
                   <Search size={20} strokeWidth={2.5} />
@@ -90,7 +90,7 @@ export default function Navbar() {
                   type="search"
                   name="q"
                   placeholder={t('search_placeholder')}
-                  className="w-full pl-[55px] pr-2 h-full font-medium text-[15px] xl:text-[17px] outline-none bg-transparent placeholder:text-[#A0A0A0] text-[#555555]"
+                  className="w-full pl-[50px] pr-2 h-full font-medium text-[13px] xl:text-[17px] outline-none bg-transparent placeholder:text-[#A0A0A0] text-[#555555]"
                   style={{ fontFamily: "'Montserrat', sans-serif" }}
                 />
               </form>
@@ -98,7 +98,7 @@ export default function Navbar() {
               {/* REQUEST CALL BACK BUTTON */}
               <Link
                 href="/contact"
-                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] min-w-[180px] xl:min-w-[237px] w-fit px-4 xl:px-6 h-[49px] gap-[6px] xl:gap-[10px] flex-shrink-0"
+                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] min-w-[150px] xl:min-w-[237px] w-fit px-3 xl:px-6 h-[45px] xl:h-[49px] gap-[4px] xl:gap-[10px] flex-shrink-0"
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
                   fontWeight: "600",
@@ -122,7 +122,7 @@ export default function Navbar() {
 
           {/* MOBILE MENU TOGGLE */}
           <button
-            className="lg:hidden flex items-center justify-center text-[#EE4423]"
+            className="min-[1000px]:hidden flex items-center justify-center text-[#EE4423]"
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             aria-label="Toggle Menu"
             aria-expanded={isMenuOpen}
@@ -137,10 +137,10 @@ export default function Navbar() {
       {isMenuOpen && (
         <>
           <div
-            className="fixed inset-0 top-[60px] bg-black/20 z-[55] lg:hidden"
+            className="fixed inset-0 top-[60px] bg-black/20 z-[55] min-[1000px]:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div id="mobile-menu" className="fixed inset-0 top-[60px] bg-white z-[60] lg:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
+          <div id="mobile-menu" className="fixed inset-0 top-[60px] bg-white z-[60] min-[1000px]:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
             <div className="mb-6 pb-6 border-b border-gray-100 flex justify-center">
               <LanguageSwitcher />
             </div>
