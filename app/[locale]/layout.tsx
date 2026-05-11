@@ -84,13 +84,10 @@ export async function generateMetadata({
       telephone: false,
     },
     metadataBase: new URL("https://indiamedservice.com"),
-    alternates: {
-      canonical: "/",
-    },
     openGraph: {
       title: title,
       description: description,
-      url: "https://indiamedservice.com",
+      url: `https://indiamedservice.com/${locale}`,
       siteName: title,
       images: [
         {
