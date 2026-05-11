@@ -42,7 +42,7 @@ export default function WhyChooseUs() {
   ]);
 
   return (
-    <section className="relative z-10 w-full lg:mt-[-100px] overflow-hidden py-12 lg:py-0">
+    <section className="relative z-10 w-full lg:mt-0 overflow-hidden py-12 lg:py-0">
 
       <div
         className="relative flex flex-col items-center justify-center mx-auto lg:pt-[120px] lg:pb-12 px-0 lg:px-0"

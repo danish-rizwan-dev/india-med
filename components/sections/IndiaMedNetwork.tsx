@@ -102,7 +102,7 @@ export default function IndiaMedNetwork() {
   }, [emblaApi]);
 
   return (
-    <section className="relative w-full bg-transparent flex flex-col items-center mt-32 lg:mt-[146px] mb-16 overflow-hidden">
+    <section className="relative w-full bg-transparent flex flex-col items-center mt-16 lg:mt-24 mb-16 overflow-hidden">
 
       {/* HEADING */}
       <div
