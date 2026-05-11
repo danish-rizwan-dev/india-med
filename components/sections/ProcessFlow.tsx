@@ -116,10 +116,10 @@ export default function ProcessFlow() {
       </div>
 
       {/* --- DESKTOP VIEW --- */}
-      <div className="hidden lg:flex relative w-full max-w-[1000px] xl:max-w-[1122px] flex-col items-center z-10">
+      <div className="hidden lg:flex relative w-full max-w-[95%] lg:max-w-[980px] xl:max-w-[1122px] flex-col items-center z-10">
         
         {/* ROW 1: 1 -> 2 -> 3 -> 4 */}
-        <div className="flex items-center justify-end w-full gap-[20px] xl:gap-[32px] mb-8">
+        <div className="flex items-center justify-end w-full gap-[12px] xl:gap-[32px] mb-8">
           {row1.map((step, idx) => (
             <React.Fragment key={step.id}>
               <ProcessCard step={step} />
@@ -134,7 +134,7 @@ export default function ProcessFlow() {
         </div>
 
         {/* ROW 2: 8 <- 7 <- 6 <- 5 */}
-        <div className="flex items-center justify-end w-full gap-[20px] xl:gap-[32px] relative left-[20px]">
+        <div className="flex items-center justify-end w-full gap-[12px] xl:gap-[32px] relative left-[10px] xl:left-[20px]">
           {row2.map((step, idx) => (
             <React.Fragment key={step.id}>
               <ProcessCard step={step} />
@@ -176,12 +176,20 @@ function ProcessCard({ step }: { step: any }) {
     <article className="relative group shrink-0">
       {/* Gradient Border Wrap */}
       <div 
-        className="relative h-[176px] p-[1px] rounded-[40px] shadow-[0px_10px_30px_rgba(0,0,0,0.03)]"
+        className="relative h-[176px] p-[1px] rounded-[40px] shadow-[0px_10px_30px_rgba(0,0,0,0.03)] transition-all"
         style={{
-          width: isWider ? '312px' : '200px',
+          width: isWider ? 'var(--wider-card-w, 312px)' : 'var(--standard-card-w, 200px)',
           background: 'linear-gradient(39.31deg, rgba(238, 68, 35, 0) 45.41%, rgba(238, 68, 35, 0.4) 113.52%), linear-gradient(222.62deg, rgba(255, 255, 255, 0) 14.53%, rgba(255, 255, 255, 0.75) 101.14%)'
         }}
       >
+        <style jsx>{`
+          @media (min-width: 1024px) and (max-width: 1279px) {
+            div {
+              --wider-card-w: 260px;
+              --standard-card-w: 170px;
+            }
+          }
+        `}</style>
         <div 
           className="w-full h-full bg-white rounded-[39px] flex flex-col items-center justify-start transition-transform group-hover:scale-[1.02] duration-300"
           style={{ padding: '16px 12px' }}
@@ -198,8 +206,8 @@ function ProcessCard({ step }: { step: any }) {
           
           {/* Title Area */}
           <h3 
-            className={`font-bold text-[#58595B] leading-[1.2] text-center font-montserrat flex items-center justify-center ${isLongLocale ? 'text-[15px]' : 'text-[20px]'}`}
-            style={{ width: '176px', minHeight: '48px' }}
+            className={`font-bold text-[#58595B] leading-[1.2] text-center font-montserrat flex items-center justify-center ${isLongLocale ? 'text-[14px]' : 'text-[16px] xl:text-[20px]'}`}
+            style={{ width: '100%', maxWidth: isWider ? '240px' : '150px', minHeight: '48px' }}
           >
             {step.title}
           </h3>
