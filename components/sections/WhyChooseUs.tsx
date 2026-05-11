@@ -45,7 +45,7 @@ export default function WhyChooseUs() {
     <section className="relative z-10 w-full lg:mt-[-100px] overflow-hidden py-12 lg:py-0">
 
       <div
-        className="relative flex flex-col items-center justify-center mx-auto lg:py-[120px] px-0 lg:px-0"
+        className="relative flex flex-col items-center justify-center mx-auto lg:pt-[120px] lg:pb-0 px-0 lg:px-0"
         style={{ maxWidth: "1319px", fontFamily: "Montserrat, sans-serif" }}
       >
         <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:flex-row lg:justify-center lg:gap-[40px] xl:gap-[100px]">
