@@ -4,7 +4,7 @@ import React, { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";
-import {useTranslations, useLocale} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function PatientStories() {
   const t = useTranslations('PatientStories');
@@ -66,9 +66,8 @@ export default function PatientStories() {
     <section id="patient-stories" className="relative flex w-full flex-col items-center bg-white py-16 lg:py-24 overflow-hidden font-sans">
 
       <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-10 h-[60px] lg:h-[73px] w-fit max-w-[90vw]">
-        <h2 className={`text-[#58595B] font-bold leading-none text-center whitespace-nowrap ${
-          locale === 'en' ? 'text-xl lg:text-[32px]' : 'text-lg lg:text-[24px]'
-        }`}>
+        <h2 className={`text-[#58595B] font-bold leading-none text-center whitespace-nowrap ${locale === 'en' ? 'text-xl lg:text-[32px]' : 'text-lg lg:text-[24px]'
+          }`}>
           {t('title')}
         </h2>
       </header>

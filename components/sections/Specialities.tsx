@@ -2,13 +2,13 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import {Link} from "@/i18n/routing";
-import {useTranslations, useLocale} from 'next-intl';
+import { Link } from "@/i18n/routing";
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function Specialities() {
   const t = useTranslations('Specialities');
   const locale = useLocale();
-  
+
   const specialities = [
     { title: t('cardio'), icon: "/images/sections/specialities/cardiac.svg", slug: "cardiological-assistance" },
     { title: t('ortho'), icon: "/images/sections/specialities/ortho.svg", slug: "orthopedics" },
@@ -53,11 +53,10 @@ export default function Specialities() {
       <div className="relative z-10 flex flex-col items-center px-6 py-16 lg:py-24">
 
         <header className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-6 md:px-12 py-4 w-fit mx-auto max-w-[90vw]">
-          <h2 className={`text-[#58595B] font-bold font-montserrat text-center whitespace-nowrap ${
-            locale === 'en' 
-              ? 'text-2xl lg:text-[42px]' 
+          <h2 className={`text-[#58595B] font-bold font-montserrat text-center whitespace-nowrap ${locale === 'en'
+              ? 'text-2xl lg:text-[42px]'
               : 'text-lg md:text-xl lg:text-[24px]'
-          }`}>
+            }`}>
             {t('title')}
           </h2>
         </header>
@@ -67,7 +66,7 @@ export default function Specialities() {
 
           {showScrolling ? (
             <div className="w-full h-[328px] overflow-hidden relative">
-              <nav 
+              <nav
                 className="w-full flex flex-col gap-[32px] transition-transform duration-700 ease-in-out"
                 style={{ transform: `translateY(-${currentIndex * 82}px)` }}
                 aria-label="Scrolling specialities list"

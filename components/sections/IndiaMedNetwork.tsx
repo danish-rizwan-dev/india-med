@@ -1,16 +1,16 @@
 "use client";
-import {Link} from "@/i18n/routing";
+import { Link } from "@/i18n/routing";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { Phone, ArrowUpRight } from "lucide-react";
-import {useTranslations, useLocale} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function IndiaMedNetwork() {
   const t = useTranslations('IndiaMedNetwork');
   const locale = useLocale();
-  
+
   const hospitalData = [
     {
       location: t('locations.gurugram'),
@@ -109,11 +109,10 @@ export default function IndiaMedNetwork() {
         className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-6 lg:px-10"
         style={{ width: "min(489px, 92vw)", height: "73px" }}
       >
-        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center ${
-          locale === 'en' 
-            ? "text-xl md:text-2xl lg:text-[38px]" 
+        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center ${locale === 'en'
+            ? "text-xl md:text-2xl lg:text-[38px]"
             : "text-[16px] md:text-[20px] lg:text-[28px]"
-        }`}>
+          }`}>
           {t('title')}
         </h2>
       </div>

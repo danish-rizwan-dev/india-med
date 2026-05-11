@@ -85,7 +85,7 @@ export default function Hero() {
         >
           {/* Brand & Heading Group */}
           <div className={`flex flex-col w-full ${isLongLocale ? 'gap-[10px] lg:gap-[16px]' : 'gap-[20px]'} text-center md:text-left`}>
-            <span 
+            <span
               className={`font-montserrat font-bold text-[#EE4423] block ${isLongLocale ? 'text-[22px] lg:text-[26px] leading-tight' : 'text-[20px] lg:text-[24px] leading-[39.19px]'}`}
             >
               {t('brand')}
@@ -94,9 +94,9 @@ export default function Hero() {
             <h1
               className={`
                 text-[#444444] font-montserrat font-bold
-                ${locale === 'kk' || locale === 'uz' ? 'text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]' : 
-                  locale === 'ru' ? 'text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]' : 
-                  'text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight'}
+                ${locale === 'kk' || locale === 'uz' ? 'text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]' :
+                  locale === 'ru' ? 'text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]' :
+                    'text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight'}
               `}
             >
               {t('heading_main')}
@@ -107,8 +107,8 @@ export default function Hero() {
               className={`
                 font-montserrat font-medium text-[#58595B]
                 ${locale === 'kk' || locale === 'uz' ? 'text-[14px] lg:text-[17px] leading-relaxed' :
-                  locale === 'ru' ? 'text-[15px] lg:text-[19px] leading-relaxed' : 
-                  'text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal'}
+                  locale === 'ru' ? 'text-[15px] lg:text-[19px] leading-relaxed' :
+                    'text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal'}
                 w-[203px] md:w-full 
                 text-left
                 mx-0
@@ -141,4 +141,4 @@ export default function Hero() {
       </div>
     </section>
   );
-}
+}

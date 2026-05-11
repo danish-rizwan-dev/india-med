@@ -1,8 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import {Link} from "@/i18n/routing";
-import {useTranslations, useLocale} from 'next-intl';
+import { Link } from "@/i18n/routing";
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function ModelOfCare() {
   const t = useTranslations('ModelOfCare');
@@ -45,9 +45,8 @@ export default function ModelOfCare() {
 
       {/* DESKTOP HEADER */}
       <div className="hidden md:flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-20 px-8 md:px-[40px] w-full max-w-[650px] h-[73px]">
-        <h2 className={`text-[#58595B] font-bold font-montserrat tracking-[-0.38px] text-center ${
-          locale === 'en' ? 'text-[30px]' : 'text-[22px] lg:text-[26px]'
-        }`}>
+        <h2 className={`text-[#58595B] font-bold font-montserrat tracking-[-0.38px] text-center ${locale === 'en' ? 'text-[30px]' : 'text-[22px] lg:text-[26px]'
+          }`}>
           {t('title')}
         </h2>
       </div>
@@ -57,9 +56,8 @@ export default function ModelOfCare() {
         className="md:hidden relative z-10 flex items-center justify-center border-[2px] border-white rounded-[50px] mb-12 px-6 py-2"
         style={{ width: "min(300px, 90vw)", height: "88px" }}
       >
-        <h2 aria-hidden="true" className={`text-white font-bold font-montserrat text-center leading-[1.2] ${
-          locale === 'en' ? 'text-[22px]' : 'text-[18px]'
-        }`}>
+        <h2 aria-hidden="true" className={`text-white font-bold font-montserrat text-center leading-[1.2] ${locale === 'en' ? 'text-[22px]' : 'text-[18px]'
+          }`}>
           {t('title')}
         </h2>
       </div>
