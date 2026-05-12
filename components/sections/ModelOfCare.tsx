@@ -44,23 +44,24 @@ export default function ModelOfCare() {
       <div className="absolute inset-x-0 bg-[#EE4423] md:hidden -top-12 h-[450px]" />
 
       {/* DESKTOP HEADER */}
-      <div className="hidden lg:flex items-center justify-center border-[2px] border-[#58595B] rounded-[50px] mb-20 px-8 md:px-[40px] w-full max-w-[650px] h-[73px]">
-        <h2 className={`text-[#58595B] font-bold font-montserrat tracking-[-0.38px] text-center ${locale === 'en' ? 'text-[30px]' : 'text-[22px] lg:text-[26px]'
+      <header className="hidden lg:flex items-center justify-center border-2 border-[#58595B] rounded-full mb-20 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
+        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+            ? "text-2xl md:text-3xl lg:text-[42px]"
+            : "text-[20px] md:text-[28px] lg:text-[38px]"
           }`}>
           {t('title')}
         </h2>
-      </div>
+      </header>
 
       {/* MOBILE/TABLET HEADER */}
-      <div
-        className="lg:hidden relative z-10 flex items-center justify-center border-[2px] border-[#58595B] lg:border-white rounded-[50px] mb-12 px-6 py-2"
-        style={{ width: "min(300px, 90vw)", height: "88px" }}
-      >
-        <h2 aria-hidden="true" className={`text-[#58595B] lg:text-white font-bold font-montserrat text-center leading-[1.2] ${locale === 'en' ? 'text-[22px]' : 'text-[18px]'
+      <header className="lg:hidden relative z-10 flex items-center justify-center border-2 border-white rounded-full mb-12 px-8 py-3 w-fit mx-auto">
+        <h2 className={`text-white font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+            ? "text-xl md:text-2xl"
+            : "text-[18px] md:text-[24px]"
           }`}>
           {t('title')}
         </h2>
-      </div>
+      </header>
 
       {/* DESKTOP VIEW */}
       <div className="hidden lg:block relative w-full max-w-[1200px] h-[650px] lg:scale-[0.8] xl:scale-100 origin-center">

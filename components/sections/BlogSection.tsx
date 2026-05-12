@@ -4,29 +4,36 @@ import React, { useRef } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import {Link} from "@/i18n/routing";
-import {useTranslations} from 'next-intl';
+import {useTranslations, useLocale} from 'next-intl';
 
 export default function BlogSection() {
   const t = useTranslations('Blog');
+  const locale = useLocale();
   const scrollRef = useRef<HTMLDivElement>(null);
   
   const blogs = [
     {
       title: t('blog1_title'),
-      date: "Feb 01:2020",
+      date: t('blog1_date'),
       image: "/images/sections/blog/blog1.jpg",
       slug: "/under-construction"
     },
     {
       title: t('blog2_title'),
-      date: "Jan 27:2020",
+      date: t('blog2_date'),
       image: "/images/sections/blog/liver_blog.jpg",
       slug: "/under-construction"
     },
     {
       title: t('blog3_title'),
-      date: "Jan 22:2020",
+      date: t('blog3_date'),
       image: "/images/sections/blog/whitespot_blog.jpg",
+      slug: "/under-construction"
+    },
+    {
+      title: t('blog4_title'),
+      date: t('blog4_date'),
+      image: "/images/sections/blog/yoga_blog.jpg",
       slug: "/under-construction"
     }
   ];
@@ -42,8 +49,13 @@ export default function BlogSection() {
     <section className="relative w-full flex flex-col items-center py-12 lg:py-24 bg-[#F5F5F5] font-montserrat">
       
       {/* HEADER */}
-      <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 px-10 py-3">
-        <h2 className="text-[#58595B] font-bold text-[28px] leading-none">{t('title')}</h2>
+      <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
+        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+            ? "text-2xl md:text-3xl lg:text-[42px]"
+            : "text-[20px] md:text-[28px] lg:text-[38px]"
+          }`}>
+          {t('title')}
+        </h2>
       </header>
 
       {/* --- MOBILE VIEW: HORIZONTAL CAROUSEL --- */}
@@ -103,44 +115,63 @@ export default function BlogSection() {
       </div>
 
       {/* --- DESKTOP VIEW --- */}
-      <div className="hidden lg:grid grid-cols-3 gap-4 xl:gap-[38px] w-full max-w-[1000px] xl:max-w-[1318px] mb-16">
-         <div className="flex flex-col lg:flex-row gap-10 w-full">
-            <article className="flex flex-col gap-6 flex-1">
-              <Link href="/under-construction" className="group">
-                <div className="relative overflow-hidden w-full h-[280px] xl:h-[380px] rounded-[40px]">
-                  <Image src="/images/sections/blog/blog1.jpg" alt="Blog 1" fill className="object-cover transition-transform group-hover:scale-105" />
-                </div>
-                <h3 className="mt-6 text-[#414042] font-bold text-[28px] xl:text-[42px] leading-[1.1] group-hover:text-[#EE4423] transition-colors">
-                  {t('blog1_title')}
-                </h3>
-              </Link>
-              <div className="flex items-center justify-between w-full">
-                <time className="text-gray-500 font-medium">Feb 01, 2020</time>
-                <Link href="/under-construction" className="flex items-center gap-1 text-[#EE4423] font-bold group">
-                  {t('read_more')} <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
-                </Link>
+      <div className="hidden lg:flex flex-col items-center w-full max-w-[1318px] bg-white rounded-[60px] p-12 shadow-sm mb-16">
+        <div className="flex flex-row gap-12 w-full">
+          {/* Left Column: One Large Card */}
+          <article className="flex-[1.2] flex flex-col">
+            <Link href={blogs[0].slug} className="group">
+              <div className="relative overflow-hidden w-full h-[450px] rounded-[40px]">
+                <Image 
+                  src={blogs[0].image} 
+                  alt={blogs[0].title} 
+                  fill 
+                  className="object-cover transition-transform group-hover:scale-105" 
+                />
               </div>
-            </article>
-
-            <div className="flex flex-col gap-8 flex-1">
-              {blogs.slice(1).map((blog, idx) => (
-                <article key={idx} className="flex gap-6 items-center group">
-                  <Link href={blog.slug} className="relative shrink-0 overflow-hidden w-[220px] xl:w-[315px] h-[190px] rounded-[40px]">
-                    <Image src={blog.image} alt={blog.title} fill className="object-cover transition-transform group-hover:scale-105" />
-                  </Link>
-                  <div className="flex flex-col justify-between h-[190px] py-2">
-                    <h4 className="text-[#414042] font-bold text-xl leading-snug group-hover:text-[#EE4423] transition-colors">{blog.title}</h4>
-                    <div className="flex items-center justify-between w-full mt-auto">
-                      <span className="text-gray-400 text-sm font-medium">{blog.date}</span>
-                      <Link href={blog.slug} className="flex items-center gap-1 text-[#EE4423] font-bold text-sm group">
-                        {t('read_more')} <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
-                      </Link>
-                    </div>
-                  </div>
-                </article>
-              ))}
+              <h3 className="mt-8 text-[#414042] font-bold text-[36px] leading-[1.2] group-hover:text-[#EE4423] transition-colors line-clamp-3">
+                {blogs[0].title}
+              </h3>
+            </Link>
+            <div className="flex items-center justify-between w-full mt-6">
+              <time className="text-gray-500 font-medium text-lg">{blogs[0].date}</time>
+              <Link href={blogs[0].slug} className="flex items-center gap-1 text-[#EE4423] font-bold text-lg group">
+                {t('read_more')} <ChevronRight size={20} className="transition-transform group-hover:translate-x-1" />
+              </Link>
             </div>
-         </div>
+          </article>
+
+          {/* Right Column: Three Smaller Cards */}
+          <div className="flex-[1] flex flex-col gap-6">
+            {blogs.slice(1).map((blog, idx) => (
+              <article key={idx} className="flex gap-6 group">
+                <Link href={blog.slug} className="relative shrink-0 overflow-hidden w-[240px] h-[150px] rounded-[30px]">
+                  <Image src={blog.image} alt={blog.title} fill className="object-cover transition-transform group-hover:scale-105" />
+                </Link>
+                <div className="flex flex-col justify-between flex-grow py-1">
+                  <h4 className="text-[#414042] font-bold text-[20px] leading-tight group-hover:text-[#EE4423] transition-colors line-clamp-3">
+                    {blog.title}
+                  </h4>
+                  <div className="flex items-center justify-between w-full mt-auto">
+                    <span className="text-gray-400 text-[14px] font-medium">{blog.date}</span>
+                    <Link href={blog.slug} className="flex items-center gap-1 text-[#EE4423] font-bold text-[14px] group">
+                      {t('read_more')} <ChevronRight size={14} strokeWidth={3} className="transition-transform group-hover:translate-x-1" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+
+        {/* View All Button at bottom right */}
+        <div className="w-full flex justify-end mt-8">
+          <Link 
+            href="/under-construction"
+            className="bg-[#EE4423] text-white font-bold text-[16px] px-10 py-3 rounded-full flex items-center gap-2 shadow-lg hover:scale-105 transition-all"
+          >
+            {t('view_all')} <ChevronRight size={18} strokeWidth={3} />
+          </Link>
+        </div>
       </div>
 
       <style jsx>{`

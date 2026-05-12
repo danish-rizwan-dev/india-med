@@ -129,6 +129,7 @@
     "ella_loc": "Germaniya"
   },
   "ProcessFlow": {
+    "title": "Bu qanday ishlaydi",
     "step_1": "Onlayn maslahat",
     "step_2": "Davolash rejasi",
     "step_3": "Viza qo'llab-quvvatlash",
@@ -182,10 +183,15 @@
   "Blog": {
     "title": "Bloglar",
     "read_more": "Batafsil",
-    "view_all": "Barcha bloglar",
+    "view_all": "Barcha bloglarni ko'rish",
     "blog1_title": "Hindistonda 4D-Phaco katarakta jarrohligi: texnologiya, natijalar va xarajatlar",
-    "blog2_title": "Jigar detoksi: Tabiiy uchun eng yaxshi ovqatlar va mevalar...",
-    "blog3_title": "Teridagi oq dog'lar: sabablari, belgilari..."
+    "blog1_date": "01 fev 2020",
+    "blog2_title": "Jigar detoksi: jigarni tabiiy tozalash uchun eng yaxshi oziq-ovqat va mevalar",
+    "blog2_date": "27 yan 2020",
+    "blog3_title": "Teridagi oq dog'lar: sabablari, alomatlari va davolash usullari",
+    "blog3_date": "22 yan 2020",
+    "blog4_title": "Saraton kasallarida yoga: kutilmalar, foyda va xavflar",
+    "blog4_date": "22 yan 2020"
   },
   "Footer": {
     "desc": "Hindistonda xalqaro bemorlarga jahon darajasidagi sog'liqni saqlash xizmatlari orqali yordam berish. Ishonchli shifoxonalar, shaffof xarajatlar va uzluksiz sayohat yordami.",

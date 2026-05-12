@@ -3,7 +3,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Phone, ChevronRight } from "lucide-react";
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 /**
  * Animated Counter Component - Original Logic Restored
@@ -29,6 +29,7 @@ const Counter = ({ end, duration = 3000, shouldStart }: { end: number; duration?
 
 export default function BeyondBoundaries() {
   const t = useTranslations('BeyondBoundaries');
+  const locale = useLocale();
   const [hasStarted, setHasStarted] = useState(false);
   const sectionRef = useRef(null);
 
@@ -127,10 +128,17 @@ export default function BeyondBoundaries() {
       <div className="hidden lg:flex relative z-10 w-full max-w-[1320px] px-6 flex-col">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between text-center lg:text-left">
           <header className="flex-1 text-white lg:pt-10 mb-10 lg:mb-0">
-            <p className="text-lg lg:text-xl font-medium mb-4 lg:mb-6 opacity-90">{t('title')}</p>
-            <h2 className="text-[32px] sm:text-4xl lg:text-[42px] xl:text-[54px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[480px] xl:max-w-[620px] mb-8 lg:mb-10">
+            <div className="inline-flex items-center justify-center border-2 border-white rounded-full mb-8 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto lg:mx-0 backdrop-blur-sm">
+              <h2 className={`text-white font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                  ? "text-2xl md:text-3xl lg:text-[42px]"
+                  : "text-[20px] md:text-[28px] lg:text-[38px]"
+                }`}>
+                {t('title')}
+              </h2>
+            </div>
+            <h3 className="text-[28px] sm:text-3xl lg:text-[42px] xl:text-[48px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[480px] xl:max-w-[620px] mb-8 lg:mb-10">
               {t('heading')}
-            </h2>
+            </h3>
             <button className="group flex items-center justify-center lg:justify-start gap-2 text-white font-bold text-lg no-underline mx-auto lg:mx-0">
               {t('know_more')} <ChevronRight size={22} className="transition-transform duration-300 group-hover:translate-x-3" />
             </button>

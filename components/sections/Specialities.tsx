@@ -52,10 +52,10 @@ export default function Specialities() {
       />
       <div className="relative z-10 flex flex-col items-center px-6 py-16 lg:py-24">
 
-        <header className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-20 px-6 md:px-12 py-4 w-fit mx-auto max-w-[90vw]">
-          <h2 className={`text-[#58595B] font-bold font-montserrat text-center whitespace-nowrap ${locale === 'en'
-              ? 'text-2xl lg:text-[42px]'
-              : 'text-lg md:text-xl lg:text-[24px]'
+        <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
+          <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+              ? "text-2xl md:text-3xl lg:text-[42px]"
+              : "text-[20px] md:text-[28px] lg:text-[38px]"
             }`}>
             {t('title')}
           </h2>

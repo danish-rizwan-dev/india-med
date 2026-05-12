@@ -129,6 +129,7 @@
     "ella_loc": "Germany"
   },
   "ProcessFlow": {
+    "title": "How it Works",
     "step_1": "Online Consultation",
     "step_2": "Treatment plan",
     "step_3": "Visa Support",
@@ -184,8 +185,13 @@
     "read_more": "Read More",
     "view_all": "View all blogs",
     "blog1_title": "4D-Phaco Cataract Surgery in India: Technology, Results and Costs",
-    "blog2_title": "Liver Detox: Best Foods and Fruits for Nat...",
-    "blog3_title": "White Spots on Skin: Causes, Symptom..."
+    "blog1_date": "Feb 01, 2020",
+    "blog2_title": "Liver Detox: Best Foods and Fruits for Natural Liver Cleansing",
+    "blog2_date": "Jan 27, 2020",
+    "blog3_title": "White Spots on Skin: Causes, Symptoms, and Treatments",
+    "blog3_date": "Jan 22, 2020",
+    "blog4_title": "Yoga in Cancer Patients: Expectations, Benefits and Risks",
+    "blog4_date": "Jan 22, 2020"
   },
   "Footer": {
     "desc": "Empowering international patients with world-class healthcare in India. Trusted hospitals, transparent costs, and seamless travel support.",

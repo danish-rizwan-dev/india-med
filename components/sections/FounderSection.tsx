@@ -13,6 +13,7 @@ import { useTranslations, useLocale } from 'next-intl';
  */
 export default function FounderSection() {
   const t = useTranslations('Leadership');
+  const locale = useLocale();
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
@@ -102,8 +103,11 @@ export default function FounderSection() {
 
         {/* ================= LEADERSHIP HEADER ================= */}
         <header className="mb-12 lg:mb-16">
-          <div className="inline-flex items-center justify-center border-2 border-white rounded-full w-[240px] lg:w-[324px] h-[54px] lg:h-[73px] backdrop-blur-sm">
-            <h2 className="text-white font-bold text-2xl lg:text-[42px] tracking-tight m-0">
+          <div className="flex items-center justify-center border-2 border-white rounded-full px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto backdrop-blur-sm">
+            <h2 className={`text-white font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                ? "text-2xl md:text-3xl lg:text-[42px]"
+                : "text-[20px] md:text-[28px] lg:text-[38px]"
+              }`}>
               {t('title')}
             </h2>
           </div>

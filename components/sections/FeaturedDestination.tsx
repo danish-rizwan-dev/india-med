@@ -75,10 +75,11 @@ export default function FeaturedDestination() {
 
         {/* Header Block */}
         <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full mt-[-20px] lg:mt-[-140px] px-6">
-          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full px-8 lg:px-10 h-[60px] lg:h-[73px] w-fit bg-white/50 backdrop-blur-sm shadow-sm max-w-[90vw]">
-            <h2 className={`text-[#58595B] font-bold font-montserrat leading-none whitespace-nowrap ${
-              locale === 'en' ? 'text-2xl lg:text-[42px]' : 'text-xl lg:text-[28px]'
-            }`}>
+          <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto bg-white/50 backdrop-blur-sm shadow-sm">
+            <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                ? "text-2xl md:text-4xl lg:text-[42px]"
+                : "text-[20px] md:text-[28px] lg:text-[38px]"
+              }`}>
               {t('title')}
             </h2>
           </div>

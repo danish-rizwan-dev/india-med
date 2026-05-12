@@ -89,13 +89,14 @@ export default function FAQSection() {
         {/* LEFT COLUMN */}
         <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[320px] xl:w-[427px] text-center lg:text-left">
           {/* FAQs Heading */}
-          <div
-            className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] px-8 lg:px-10 py-4 w-fit min-w-[193px] min-h-[73px] mx-auto lg:mx-0"
-          >
-            <span className={`text-[#58595B] font-bold uppercase whitespace-nowrap ${isLongLocale ? 'text-[18px] lg:text-[20px] xl:text-[24px]' : 'text-[22px] lg:text-[24px] xl:text-[28px]'}`}>
-              {t('title')}
-            </span>
-          </div>
+          <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto bg-white shadow-sm">
+        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+            ? "text-2xl md:text-3xl lg:text-[42px]"
+            : "text-[20px] md:text-[28px] lg:text-[38px]"
+          }`}>
+          {t('title')}
+        </h2>
+      </header>
 
           {/* Frequently asked together / Questions below */}
           <h2 className="text-[#58595B] font-montserrat font-bold text-[42px] leading-[100%] tracking-[0px]">

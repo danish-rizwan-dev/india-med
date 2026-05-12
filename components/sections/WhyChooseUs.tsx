@@ -52,10 +52,11 @@ export default function WhyChooseUs() {
 
           {/* ================= MOBILE/TABLET HEADER ================= */}
           <header className="flex flex-col items-center lg:hidden mb-12 px-6">
-            <div 
-              className="flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-6 px-8 py-4 w-fit min-w-[280px] mx-auto"
-            >
-              <h2 aria-hidden="true" className={`text-[#58595B] font-bold leading-none whitespace-nowrap ${locale === 'en' ? 'text-2xl md:text-3xl' : 'text-lg md:text-xl'}`}>
+            <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 px-10 py-4 w-fit mx-auto">
+              <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                  ? "text-2xl md:text-3xl"
+                  : "text-[20px] md:text-[28px]"
+                }`}>
                 {t('title')}
               </h2>
             </div>
@@ -66,8 +67,11 @@ export default function WhyChooseUs() {
 
           {/* ================= DESKTOP RIGHT SECTION ================= */}
           <div className="hidden lg:flex flex-col items-start text-left max-w-[420px] xl:max-w-[530px] order-2 lg:pt-[100px] xl:pt-[150px] px-6 lg:px-0">
-            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-10 h-[73px] w-fit">
-              <h2 className={`text-[#58595B] font-bold whitespace-nowrap leading-none ${locale === 'en' ? 'text-[32px] xl:text-[42px]' : 'text-[24px] xl:text-[28px]'}`}>
+            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-10 lg:px-14 py-4 lg:py-5 w-fit">
+              <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                  ? "text-2xl md:text-4xl lg:text-[42px]"
+                  : "text-[20px] md:text-[28px] lg:text-[38px]"
+                }`}>
                 {t('title')}
               </h2>
             </header>

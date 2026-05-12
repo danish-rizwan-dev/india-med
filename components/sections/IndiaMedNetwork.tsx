@@ -105,17 +105,14 @@ export default function IndiaMedNetwork() {
     <section className="relative w-full bg-transparent flex flex-col items-center mt-24 lg:mt-32 mb-16 overflow-hidden">
 
       {/* HEADING */}
-      <div
-        className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-[50px] mb-12 lg:mb-16 px-6 lg:px-10"
-        style={{ width: "min(489px, 92vw)", height: "73px" }}
-      >
-        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center ${locale === 'en'
-            ? "text-xl md:text-2xl lg:text-[38px]"
-            : "text-[16px] md:text-[20px] lg:text-[28px]"
+      <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
+        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+            ? "text-2xl md:text-3xl lg:text-[42px]"
+            : "text-[20px] md:text-[28px] lg:text-[38px]"
           }`}>
           {t('title')}
         </h2>
-      </div>
+      </header>
 
       <div className="relative w-full">
         {/* ================= NAVIGATION BUTTONS ================= */}

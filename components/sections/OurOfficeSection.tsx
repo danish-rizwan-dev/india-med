@@ -2,10 +2,11 @@
 
 import React from "react";
 import Image from "next/image";
-import {useTranslations} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function OurOfficeSection() {
   const t = useTranslations('OurOffices');
+  const locale = useLocale();
 
   const officeSchema = {
     "@context": "https://schema.org",
@@ -66,21 +67,14 @@ export default function OurOfficeSection() {
       >
 
         {/* ================= OUR OFFICE HEADING ================= */}
-        <div
-          className="inline-flex items-center justify-center border-2 border-[#58595B] bg-white shadow-sm min-w-[240px] lg:min-w-[329px] w-fit h-[54px] lg:h-[73px] rounded-full px-8 lg:px-[60px]"
-        >
-          <h2
-            className="text-[#58595B] font-bold text-2xl lg:text-[42px] whitespace-nowrap"
-            style={{
-              fontFamily: "'Montserrat', sans-serif",
-              fontWeight: 700,
-              lineHeight: "1",
-              textAlign: "center"
-            }}
-          >
+        <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto bg-white shadow-sm">
+          <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+              ? "text-2xl md:text-3xl lg:text-[42px]"
+              : "text-[20px] md:text-[28px] lg:text-[38px]"
+            }`}>
             {t('title')}
           </h2>
-        </div>
+        </header>
 
         {/* ================= CONTENT DIV ================= */}
         <div
@@ -228,7 +222,7 @@ export default function OurOfficeSection() {
               className="object-contain"
             />
           </div>
-          
+
           <style jsx>{`
             @keyframes float {
               0%, 100% { transform: translateY(0); }
