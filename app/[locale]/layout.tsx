@@ -91,7 +91,7 @@ export async function generateMetadata({
       siteName: title,
       images: [
         {
-          url: "/images/og-image.jpg",
+          url: "/images/og-image.png",
           width: 1200,
           height: 630,
           alt: `${title} - Premium Medical Tourism & Treatment in India`,
@@ -106,7 +106,7 @@ export async function generateMetadata({
       creator: "@indiamedservice",
       title: title,
       description: description,
-      images: ["/images/og-image.jpg"],
+      images: ["/images/og-image.png"],
     },
     robots: {
       index: true,

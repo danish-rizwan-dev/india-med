@@ -230,5 +230,134 @@
       "feedback": "Fikr-mulohaza",
       "contact": "Biz bilan bog'lanish"
     }
+  },
+  "PrivacyPolicy": {
+    "title": "Maxfiylik siyosati",
+    "last_updated": "Kuchga kirish sanasi: 14-may, 2026-yil",
+    "legal_info_label": "HUQUQIY MA'LUMOT",
+    "sections_label": "Bo'limlar",
+    "intro": "India Med Service-ga xush kelibsiz. Sizning maxfiyligingiz biz uchun muhim va biz veb-saytimiz, xizmatlarimiz, maslahatlarimiz va aloqa kanallarimiz orqali baham ko'radigan shaxsiy ma'lumotlaringizni himoya qilishga sodiqmiz. Ushbu Maxfiylik siyosati veb-saytimizga tashrif buyurganingizda yoki tibbiy yordam xizmatlarimizdan foydalanganingizda ma'lumotlaringizni qanday yig'ishimiz, foydalanishimiz, saqlashimiz va himoya qilishimizni tushuntiradi. Veb-saytimizga kirish yoki undan foydalanish orqali siz ushbu Maxfiylik siyosatida ko'rsatilgan shartlarga rozilik bildirasiz.",
+    "sections": {
+      "who_we_are": {
+        "title": "Biz kimmiz",
+        "content": "India Med Service — butun Hindiston bo'ylab bemorlarga shifoxonalar, shifokorlar, sog'liqni saqlash provayderlari va tibbiy xizmatlar bilan bog'lanishga yordam berishga bag'ishlangan sog'liqni saqlash yordami va tibbiy turizm platformasidir. Biz mahalliy va xalqaro bemorlarga mos tibbiy muolajalar, maslahatlar va sog'liqni saqlashni qo'llab-quvvatlashni topishda yordam beramiz."
+      },
+      "info_collect": {
+        "title": "Biz yig'adigan ma'lumotlar",
+        "content": "Veb-saytimiz va xizmatlarimiz bilan qanday munosabatda bo'lishingizga qarab, biz shaxsiy va shaxsiylashtirilmagan ma'lumotlarning turli turlarini yig'ishimiz mumkin.",
+        "subsections": [
+          {
+            "title": "Shaxsiy ma'lumotlar",
+            "content": "Biz bilan bog'langaningizda, so'rov yuborganingizda, maslahat so'raganingizda yoki veb-saytimizdagi har qanday shaklni to'ldirganingizda, biz quyidagilarni yig'ishimiz mumkin:",
+            "items": [
+              "To'liq ism",
+              "Elektron pochta manzili",
+              "Telefon raqami",
+              "Mamlakat va shahar",
+              "Siz ixtiyoriy ravishda baham ko'rgan tibbiy tarix yoki sog'liq haqidagi ma'lumotlar",
+              "Afzal ko'rilgan davolanish yoki shifoxona",
+              "Pasport ma'lumotlari (agar xalqaro bemorlarga yordam ko'rsatish uchun talab qilinsa)",
+              "Sayohatga oid ma'lumotlar"
+            ]
+          },
+          {
+            "title": "Shaxsiylashtirilmagan ma'lumotlar",
+            "content": "Biz texnik va foydalanish ma'lumotlarini avtomatik ravishda yig'ishimiz mumkin, jumladan:",
+            "items": [
+              "IP manzili",
+              "Brauzer turi",
+              "Qurilma haqidagi ma'lumotlar",
+              "Operatsion tizim",
+              "Yo'naltiruvchi manba",
+              "Tashrif buyurilgan sahifalar",
+              "Veb-saytda o'tkazilgan vaqt",
+              "Cookie fayllari va kuzatuv ma'lumotlari"
+            ]
+          }
+        ]
+      },
+      "usage": {
+        "title": "Ma'lumotlaringizdan qanday foydalanamiz",
+        "content": "Yig'ilgan ma'lumotlar quyidagi maqsadlarda foydalanilishi mumkin:",
+        "items": [
+          "So'rovlar va maslahat so'rovlariga javob berish uchun",
+          "Bemorlarni shifoxonalar, shifokorlar yoki sog'liqni saqlash provayderlari bilan bog'lash uchun",
+          "Tibbiy uchrashuvlarni tashkil qilish va davolanishni muvofiqlashtirish uchun",
+          "Veb-saytimiz faoliyati va foydanuvchi tajribasini yaxshilash uchun",
+          "Mijozlarni qo'llab-quvvatlash va yordam berish uchun",
+          "Muhim yangilanishlar yoki xizmatga oid xabarlarni yuborish uchun",
+          "Xalqaro bemorlarni qo'llab-quvvatlash va sayohatni muvofiqlashtirish uchun",
+          "Xavfsizlikni ta'minlash va firibgarlikning oldini uchun",
+          "Huquqiy majburiyatlarni bajarish uchun"
+        ],
+        "footer": "Biz sizning ma'lumotlaringizdan faqat qonuniy sog'liqni saqlash yordami va xizmatga oid maqsadlarda foydalanamiz."
+      },
+      "disclaimer": {
+        "title": "Tibbiy ma'lumotlardan voz kechish",
+        "content": "Veb-saytimiz orqali baham ko'rilgan har qanday tibbiy ma'lumot maxfiy tarzda ko'rib chiqiladi. Biroq, India Med Service shifoxona, diagnostika markazi yoki litsenziyaga ega tibbiy xodim emas. Veb-saytimizda taqdim etilgan ma'lumotlar faqat umumiy ma'lumot berish maqsadida mo'ljallangan va tibbiy maslahat sifatida qaralmasligi kerak. Tibbiy qarorlar har doim malakali tibbiyot xodimlari bilan maslahatlashgan holda qabul qilinishi kerak."
+      },
+      "sharing": {
+        "title": "Ma'lumotlarni almashish",
+        "content": "Biz sizning shaxsiy ma'lumotlaringizni uchinchi shaxslarga sotmaymiz, ijaraga bermaymiz yoki savdo qilmaymiz. Biroq, biz tegishli ma'lumotlarni quyidagilar bilan baham ko'rishimiz mumkin:",
+        "items": [
+          "Shifoxonalar va sog'liqni saqlash provayderlari",
+          "Sizning davolanishingizni muvofiqlashtirishda ishtirok etadigan shifokorlar yoki mutaxassislar",
+          "Zarur bo'lganda viza yoki sayohatni qo'llab-quvvatlash bo'yicha hamkorlar",
+          "Agar qonuniy ravishda talab qilinsa, davlat organlari",
+          "Bizning faoliyatimizni qo'llab-quvvatlovchi texnologiya va xosting xizmatlari provayderlari"
+        ],
+        "footer": "Har qanday almashilgan ma'lumot sog'liqni saqlash yordami xizmatlarini ko'rsatish uchun zarur bo'lgan narsalar bilan cheklangan."
+      },
+      "cookies": {
+        "title": "Cookie-fayllar siyosati",
+        "content": "Veb-saytimiz foydalanuvchi tajribasini yaxshilash va veb-sayt trafigini tahlil qilish uchun cookie-fayllar va shunga o'xshash texnologiyalardan foydalanishi mumkin. Cookie-fayllar bizga yordam beradi:",
+        "items": [
+          "Foydalanuvchi xatti-harakatlarini tushunish",
+          "Veb-sayt funksionalligini yaxshilash",
+          "Afzalliklarni eslab qolish",
+          "Veb-sayt faoliyatini kuzatish"
+        ],
+        "footer": "Siz brauzer sozlamalari orqali cookie-fayllarni o'chirib qo'yishingiz mumkin. Biroq, cookie-fayllar o'chirib qo'yilgan bo'lsa, veb-saytning ba'zi funksiyalari to'g'ri ishlamasligi mumkin."
+      },
+      "security": {
+        "title": "Ma'lumotlar xavfsizligi",
+        "content": "Biz sizning ma'lumotlaringizni ruxsatsiz kirish, noto'g'ri foydalanish, oshkor qilish yoki yo'qotishdan himoya qilish uchun tegishli texnik va tashkiliy choralarni qo'llaymiz. Biz tijorat nuqtai nazaridan maqbul bo'lgan xavfsizlik choralarini qo'llashga harakat qilsak-da, internet orqali uzatish yoki elektron saqlashning hech qanday usuli 100% xavfsiz emas. Shuning uchun biz mutlaq xavfsizlikni kafolatlay olmaymiz."
+      },
+      "links": {
+        "title": "Uchinchi tomon havolalari",
+        "content": "Veb-saytimizda uchinchi tomon veb-saytlari, shifoxonalar yoki sog'liqni saqlash provayderlariga havolalar bo'lishi mumkin. Biz tashqi veb-saytlarning maxfiylik amaliyoti, mazmuni yoki siyosati uchun javobgar emasmiz. Foydalanuvchilarga har qanday shaxsiy ma'lumotlarni baham ko'rishdan oldin uchinchi tomon veb-saytlarining maxfiylik siyosati bilan tanishib chiqishni tavsiya qilamiz."
+      },
+      "international": {
+        "title": "Xalqaro bemorlar",
+        "content": "Agar siz bizning xizmatlarimizdan Hindistondan tashqarida foydalanayotgan bo'lsangiz, ma'lumotlaringiz Hindistonda qayta ishlanishi va saqlanishi mumkinligini tushunasiz va bunga rozilik bildirasiz. Bizning xizmatlarimizdan foydalanish orqali siz ushbu Maxfiylik siyosatiga muvofiq ma'lumotlaringizni uzatish va qayta ishlashga rozilik bildirasiz."
+      },
+      "rights": {
+        "title": "Sizning huquqlaringiz",
+        "content": "Amaldagi qonunlarga qarab, siz quyidagi huquqlarga ega bo'lishingiz mumkin:",
+        "items": [
+          "Shaxsiy ma'lumotlaringizga kirish",
+          "Noto'g'ri ma'lumotlarni tuzatishni talab qilish",
+          "Ma'lumotlaringizni o'chirishni talab qilish",
+          "Ma'lumotlarni qayta ishlashga rozilikni qaytarib olish",
+          "Ma'lumotlardan foydalanishni cheklashni talab qilish",
+          "Maxfiylik masalalari bo'yicha biz bilan bog'lanish"
+        ],
+        "footer": "Ushbu huquqlardan foydalanish uchun quyida keltirilgan ma'lumotlardan foydalanib biz bilan bog'laning."
+      },
+      "children": {
+        "title": "Bolalar maxfiyligi",
+        "content": "Bizning xizmatlarimiz 13 yoshga to'lmagan bolalarga qaratilmagan. Biz ota-onalar yoki vasiylarning roziligisiz bolalardan bila turib shaxsiy ma'lumotlarni yig'maymiz. Agar bola bizga shaxsiy ma'lumotlarni taqdim etgan deb hisoblasangiz, darhol biz bilan bog'laning."
+      },
+      "changes": {
+        "title": "Ushbu Maxfiylik siyosatiga kiritilgan o'zgarishlar",
+        "content": "India Med Service ushbu Maxfiylik siyosatini istalgan vaqtda oldindan ogohlantirmasdan yangilash yoki o'zgartirish huquqini o'zida saqlab qoladi. Har qanday o'zgarishlar ushbu sahifada yangilangan kuchga kirish sanasi bilan birga e'lon qilinadi. O'zgarishlardan keyin veb-saytimizdan foydalanishni davom ettirish qayta ko'rib chiqilgan siyosatni qabul qilishni anglatadi."
+      },
+      "contact": {
+        "title": "Biz bilan bog'lanish",
+        "content": "Agar sizda ushbu Maxfiylik siyosati yoki shaxsiy ma'lumotlaringiz bo'yicha savollaringiz, xavotirlaringiz yoki so'rovlaringiz bo'lsa, iltimos biz bilan bog'laning:",
+        "footer": "India Med Service\nElektron pochta: info@indiamedservice.com\nVeb-sayt: https://indiamedservice.com\n\nBiz sizning maxfiyligingizni himoya qilishga va ma'lumotlaringiz maxfiyligini saqlashga sodiqmiz."
+      }
+    }
   }
+
 }
