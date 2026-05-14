@@ -66,7 +66,7 @@ export default async function PrivacyPolicyPage({
   return (
     <div className="bg-white min-h-screen">
       <main className="pt-32 pb-20">
-        <div className="max-w-[800px] mx-auto px-6">
+        <div className="max-w-[900px] mx-auto px-6 md:px-12 lg:px-24">
           
           {/* Simple Header */}
           <header className="mb-16 border-b border-gray-100 pb-12">
