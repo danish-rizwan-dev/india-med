@@ -46,7 +46,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* DESKTOP & IPAD PRO NAV */}
           <div className="hidden min-[1000px]:flex items-center flex-grow">
             {/* LINKS - Locale-aware positioning & Pixel-Perfect Dimensions */}
             <ul

@@ -150,11 +150,26 @@
     "daniyar_title": "Regional Director – Kazakhstan",
     "daniyar_bio": "Daniyar Aydimirov oversees patient coordination in Kazakhstan, providing dedicated support to international patients. He has assisted over 1,000 patients and ensures smooth communication in Russian, Kazakh, and Uzbek, with a strong focus on patient care and trust.",
     "expertise_title": "Core Expertise",
-    "expertise_list": ["International Patient Coordination", "Hospital & Doctor Network Management", "Medical Treatment Planning & Assistance", "End-to-End Patient Support Services"],
+    "expertise_list": [
+      "International Patient Coordination",
+      "Hospital & Doctor Network Management",
+      "Medical Treatment Planning & Assistance",
+      "End-to-End Patient Support Services"
+    ],
     "achievements_title": "Key Achievements",
-    "achievements_list": ["6+ years of experience in medical facilitation", "2500+ international patients successfully served", "Strong network with top hospitals across India"],
+    "achievements_list": [
+      "6+ years of experience in medical facilitation",
+      "2500+ international patients successfully served",
+      "Strong network with top hospitals across India"
+    ],
     "services_title": "Services Offered",
-    "services_list": ["Medical visa assistance", "Flight & accommodation arrangements", "Appointment scheduling with top doctors", "Treatment coordination and monitoring", "Post-treatment follow-up and care"]
+    "services_list": [
+      "Medical visa assistance",
+      "Flight & accommodation arrangements",
+      "Appointment scheduling with top doctors",
+      "Treatment coordination and monitoring",
+      "Post-treatment follow-up and care"
+    ]
   },
   "OurOffices": {
     "title": "Our Offices",
@@ -211,6 +226,7 @@
       "testimonials": "Patient Testimonials",
       "disclaimer": "Disclaimer",
       "privacy": "Privacy Policy",
+      "terms": "Terms & Conditions",
       "cardiac": "Cardiac Care",
       "cancer": "Cancer Care",
       "neuro": "Neurosciences",
@@ -358,5 +374,109 @@
         "footer": "India Med Service\nEmail: info@indiamedservice.com\nWebsite: https://indiamedservice.com\n\nWe are committed to protecting your privacy and maintaining the confidentiality of your information."
       }
     }
+  },
+  "TermsConditions": {
+    "title": "Terms & Conditions",
+    "last_updated": "Effective Date: May 14, 2026",
+    "legal_info_label": "LEGAL INFORMATION",
+    "intro": "Welcome to India Med Service. These Terms & Conditions govern your use of our website and services. By accessing or using our website and services, you agree to be bound by these terms. If you do not agree with any part of these terms, please do not use our services.",
+    "sections": {
+      "acceptance": {
+        "title": "Acceptance of Terms",
+        "content": "By accessing the website at https://indiamedservice.com, you are agreeing to be bound by these terms of service, all applicable laws and regulations, and agree that you are responsible for compliance with any applicable local laws."
+      },
+      "services": {
+        "title": "Scope of Services",
+        "content": "India Med Service provides medical facilitation and assistance services, including but not limited to:",
+        "items": [
+          "Connecting patients with hospitals and doctors in India",
+          "Providing treatment cost estimates and comparisons",
+          "Assisting with medical visa documentation",
+          "Arranging airport transfers and local logistics",
+          "Providing language interpretation and patient support"
+        ]
+      },
+      "disclaimer": {
+        "title": "Not a Medical Provider",
+        "content": "India Med Service is a medical facilitator and NOT a hospital, medical clinic, or healthcare provider. We do not provide medical advice, diagnosis, or treatment. All medical information provided is for informational purposes only. Always seek the advice of a qualified healthcare provider regarding a medical condition."
+      },
+      "responsibilities": {
+        "title": "User Responsibilities",
+        "content": "As a user of our services, you agree to:",
+        "items": [
+          "Provide accurate and complete medical information",
+          "Ensure you have valid travel documents and insurance",
+          "Comply with the rules and regulations of the treating hospital",
+          "Maintain confidentiality of your account details",
+          "Pay for the medical services directly to the hospital as per their policy"
+        ]
+      },
+      "payments": {
+        "title": "Payments and Fees",
+        "content": "Patients are responsible for paying the hospital directly for all medical treatments, tests, and procedures. India Med Service may charge facilitation fees for specific concierge services, which will be communicated transparently in advance."
+      },
+      "accuracy": {
+        "title": "Accuracy of Information",
+        "content": "While we strive to provide accurate information regarding hospitals, doctors, and costs, we do not guarantee the completeness or accuracy of such information. Costs are estimates and may vary based on actual clinical findings."
+      },
+      "liability": {
+        "title": "Limitation of Liability",
+        "content": "India Med Service shall not be liable for any medical complications, malpractice, or unsatisfactory outcomes resulting from the treatment provided by the hospitals or doctors. The contract for medical treatment is strictly between the patient and the healthcare provider."
+      },
+      "intellectual": {
+        "title": "Intellectual Property",
+        "content": "The content, logo, and design of this website are the property of India Med Service and are protected by copyright and intellectual property laws. Unauthorized use of our content is prohibited."
+      },
+      "governing": {
+        "title": "Governing Law",
+        "content": "These terms and conditions are governed by and construed in accordance with the laws of India. Any disputes arising from these terms shall be subject to the exclusive jurisdiction of the courts in India."
+      },
+      "contact": {
+        "title": "Contact Information",
+        "content": "If you have any questions about these Terms & Conditions, please contact us at:",
+        "footer": "India Med Service\nEmail: info@indiamedservice.com\nWebsite: https://indiamedservice.com"
+      }
+    }
+  },
+  "SpecialityShared": {
+    "enquire_now": "Enquire Now",
+    "top_hospitals": "Top Hospitals",
+    "for_treatment": "for {badge} treatment",
+    "explore_hospitals": "Explore Hospitals",
+    "get_free_quote": "Get Free Quote",
+    "quote_desc": "Fill out the form below and we'll get back to you with a personalized quote.",
+    "quote_request": "Quote Request",
+    "top_doctors": "Top Doctors",
+    "for_badge": "for {badge}",
+    "find_doctors": "Find Doctors",
+    "introduction": "Introduction",
+    "key_conditions": "Key Conditions Treated",
+    "techniques": "Techniques",
+    "description": "Description",
+    "affordable_excellence": "Affordable Excellence",
+    "costs_in_india": "Treatment Costs in India",
+    "why_choose": "Why Choose India Med Service?",
+    "patient_stories": "Patient Success Stories",
+    "procedures_directory": "All Procedures",
+    "related_doctors": "Related Doctors",
+    "related_hospitals": "Related Hospitals",
+    "faqs": "Frequently Asked Questions",
+    "trust_footer": "Trust India Med Services to navigate your path to health with precision and care.",
+    "techniques_used": "Techniques Used in Treatment in India",
+    "hospitals_equipped": "Indian hospitals are equipped with the latest advancements that are used in treatment, which include:",
+    "affordable_costs": "Affordable Treatment Costs in India",
+    "affordable_desc": "The cost of care in India is highly competitive, offering significant savings without compromising on clinical quality.",
+    "search_procedures": "Search for procedures",
+    "no_procedures_found": "No procedures found matching",
+    "years_experience": "Years of Experience",
+    "location": "Location",
+    "beds": "Beds",
+    "au": "Australia",
+    "ca": "Canada",
+    "kz": "Kazakhstan",
+    "ru": "Russia",
+    "uk": "United Kingdom",
+    "us": "United States",
+    "uz": "Uzbekistan"
   }
 }

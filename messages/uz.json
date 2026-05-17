@@ -150,11 +150,26 @@
     "daniyar_title": "Mintaqaviy direktor – Qozog'iston",
     "daniyar_bio": "Daniyar Aydimirov Qozog'istonda bemorlarni muvofiqlashtirishni nazorat qiladi va xalqaro bemorlarga maxsus yordam ko'rsatadi. U 1000 dan ortiq bemorga yordam bergan va bemorlarga g'amxo'rlik hamda ishonchga asoslangan holda rus, qozoq va o'zbek tillarida uzluksiz muloqotni ta'minlaydi.",
     "expertise_title": "Asosiy ekspertiza",
-    "expertise_list": ["Xalqaro bemorlarni muvofiqlashtirish", "Shifoxonalar va shifokorlar tarmog'ini boshqarish", "Tibbiy davolanishni rejalashtirish va yordam", "Bemorlarni qo'llab-quvvatlashning kompleks xizmatlari"],
+    "expertise_list": [
+      "Xalqaro bemorlarni muvofiqlashtirish",
+      "Shifoxonalar va shifokorlar tarmog'ini boshqarish",
+      "Tibbiy davolanishni rejalashtirish va yordam",
+      "Bemorlarni qo'llab-quvvatlashning kompleks xizmatlari"
+    ],
     "achievements_title": "Asosiy yutuqlar",
-    "achievements_list": ["Tibbiy fasilitatsiyada 6 yildan ortiq tajriba", "2500 dan ortiq xalqaro bemorga muvaffaqiyatli xizmat ko'rsatildi", "Hindistondagi eng yaxshi shifoxonalar bilan mustahkam tarmoq"],
+    "achievements_list": [
+      "Tibbiy fasilitatsiyada 6 yildan ortiq tajriba",
+      "2500 dan ortiq xalqaro bemorga muvaffaqiyatli xizmat ko'rsatildi",
+      "Hindistondagi eng yaxshi shifoxonalar bilan mustahkam tarmoq"
+    ],
     "services_title": "Taklif etilayotgan xizmatlar",
-    "services_list": ["Tibbiy viza olishda yordam", "Parvoz va joylashishni tashkil etish", "Eng yaxshi shifokorlar bilan uchrashuvlarni rejalashtirish", "Davolanishni muvofiqlashtirish va nazorat qilish", "Davolanishdan keyingi nazorat va parvarish"]
+    "services_list": [
+      "Tibbiy viza olishda yordam",
+      "Parvoz va joylashishni tashkil etish",
+      "Eng yaxshi shifokorlar bilan uchrashuvlarni rejalashtirish",
+      "Davolanishni muvofiqlashtirish va nazorat qilish",
+      "Davolanishdan keyingi nazorat va parvarish"
+    ]
   },
   "OurOffices": {
     "title": "Bizning ofislarimiz",
@@ -211,6 +226,7 @@
       "testimonials": "Bemorlar fikrlari",
       "disclaimer": "Mas'uliyatdan voz kechish",
       "privacy": "Maxfiylik siyosati",
+      "terms": "Foydalanish shartlari",
       "cardiac": "Kardiologiya",
       "cancer": "Onkologiya",
       "neuro": "Nevrologiya",
@@ -358,6 +374,109 @@
         "footer": "India Med Service\nElektron pochta: info@indiamedservice.com\nVeb-sayt: https://indiamedservice.com\n\nBiz sizning maxfiyligingizni himoya qilishga va ma'lumotlaringiz maxfiyligini saqlashga sodiqmiz."
       }
     }
+  },
+  "TermsConditions": {
+    "title": "Foydalanish shartlari",
+    "last_updated": "Kuchga kirish sanasi: 14-may, 2026-yil",
+    "legal_info_label": "HUQUQIY MA'LUMOT",
+    "intro": "India Med Service-ga xush kelibsiz. Ushbu Foydalanish shartlari veb-saytimiz va xizmatlarimizdan foydalanishingizni tartibga soladi. Veb-saytimizga kirish yoki xizmatlarimizdan foydalanish orqali siz ushbu shartlarga rioya qilishga rozilik bildirasiz. Agar siz ushbu shartlarning biron bir qismiga rozi bo'lmasangiz, iltimos xizmatlarimizdan foydalanmang.",
+    "sections": {
+      "acceptance": {
+        "title": "Shartlarni qabul qilish",
+        "content": "https://indiamedservice.com veb-saytiga kirish orqali siz ushbu xizmat ko'rsatish shartlariga, barcha amaldagi qonun va qoidalarga rioya qilishga rozilik bildirasiz va har qanday amaldagi mahalliy qonunlarga rioya qilish uchun javobgar ekanligingizni tasdiqlaysiz."
+      },
+      "services": {
+        "title": "Xizmatlar ko'lami",
+        "content": "India Med Service tibbiy fasilitatsiya va yordam xizmatlings taqdim etadi, jumladan:",
+        "items": [
+          "Bemorlarni Hindistondagi shifoxonalar va shifokorlar bilan bog'lash",
+          "Davolanish narxi smetalarini taqdim etish va solishtirish",
+          "Tibbiy viza hujjatlarini rasmiylashtirishda yordam berish",
+          "Aeroportdan transferlarni tashkil etish va mahalliy logistika",
+          "Tarjimon xizmatlarini taqdim etish va bemorlarni qo'llab-quvvatlash"
+        ]
+      },
+      "disclaimer": {
+        "title": "Tibbiy muassasa emas",
+        "content": "India Med Service tibbiy fasilitator hisoblanadi va shifoxona, tibbiy klinika yoki sog'liqni saqlash provayderi EMAS. Biz tibbiy maslahat, tashxis yoki davolashni taqdim etmaymiz. Taqdim etilgan barcha tibbiy ma'lumotlar faqat ma'lumot berish maqsadida mo'ljallangan. Sog'liq holati bo'yicha har doim malakali tibbiyot xodimidan maslahat oling."
+      },
+      "responsibilities": {
+        "title": "Foydalanuvchi majburiyatlari",
+        "content": "Xizmatlarimiz foydalanuvchisi sifatida siz quyidagilarga rozilik bildirasiz:",
+        "items": [
+          "Aniq va to'liq tibbiy ma'lumotlarni taqdim etish",
+          "Amaldagi sayohat hujjatlari va sug'urtangiz borligini ta'minlash",
+          "Davolovchi shifoxonaning qoida va talablariga rioya qilish",
+          "Hisob ma'lumotlaringiz maxfiyligini saqlash",
+          "Tibbiy xizmatlar uchun to'lovni shifoxona siyosatiga muvofiq bevosita shifoxonaga amalga oshirish"
+        ]
+      },
+      "payments": {
+        "title": "To'lovlar va yig'imlar",
+        "content": "Bemorlar barcha tibbiy muolajalar, tahlillar va davolanish uchun to'lovni bevosita shifoxona kassasiga amalga oshirish uchun javobgardirlar. India Med Service muayyan konsyerj xizmatlarini ko'rsatishda yordam bergani uchun haq olishi mumkin, bu haqda oldindan ochiq-oydin ma'lum qilinadi."
+      },
+      "accuracy": {
+        "title": "Ma'lumotlarning aniqligi",
+        "content": "Biz shifoxonalar, shifokorlar va xarajatlar haqida aniq ma'lumot berishga harakat qilsak-da, bunday ma'lumotlarning to'liqligi yoki aniqligiga kafolat bermaymiz. Xarajatlar taxminiy hisoblanadi va haqiqiy klinik natijalarga qarab o'zgarishi mumkin."
+      },
+      "liability": {
+        "title": "Mas'uliyatni cheklash",
+        "content": "India Med Service shifoxonalar yoki shifokorlar tomonidan ko'rsatilgan davolanish natijasida yuzaga kelgan har qanday tibbiy asoratlar, shifokor xatolari yoki qoniqarsiz natijalar uchun javobgar emas. Tibbiy davolanish bo'yicha shartnoma bevosita bemor va sog'liqni saqlash provayderi o'rtasida tuziladi."
+      },
+      "intellectual": {
+        "title": "Intellektual mulk",
+        "content": "Ushbu veb-sayt mazmuni, logotipi va dizayni India Med Service mulki hisoblanadi va mualliflik huquqi hamda intellektual mulk qonunlari bilan himoyalangan. Mazmunimizdan ruxsatsiz foydalanish taqiqlanadi."
+      },
+      "governing": {
+        "title": "Amaldagi qonunchilik",
+        "content": "Ushbu foydalanish shartlari Hindiston qonunchiligiga muvofiq tartibga solinadi va talqin qilinadi. Ushbu shartlardan kelib chiqadigan har qanday nizolar Hindiston sudlarining mutlaq yurisdiksiyasiga bo'ysunadi."
+      },
+      "contact": {
+        "title": "Bog'lanish ma'lumotlari",
+        "content": "Agar sizda ushbu Foydalanish shartlari bo'yicha savollaringiz bo'lsa, iltimos biz bilan bog'laning:",
+        "footer": "India Med Service\nElektron pochta: info@indiamedservice.com\nVeb-sayt: https://indiamedservice.com"
+      }
+    }
+  },
+  "SpecialityShared": {
+    "enquire_now": "So'rov qoldirish",
+    "top_hospitals": "Eng yaxshi shifoxonalar",
+    "for_treatment": "{badge} bo'yicha davolanish uchun",
+    "explore_hospitals": "Shifoxonalarni ko'rish",
+    "get_free_quote": "Bepul narx olish",
+    "quote_desc": "Quyidagi shaklni to'ldiring va biz sizga shaxsiy narx bilan aloqaga chiqamiz.",
+    "quote_request": "Narx so'rash",
+    "top_doctors": "Eng yaxshi shifokorlar",
+    "for_badge": "{badge} bo'yicha",
+    "find_doctors": "Shifokorlarni topish",
+    "introduction": "Kirish",
+    "key_conditions": "Davolanadigan asosiy kasalliklar",
+    "techniques": "Texnologiyalar",
+    "description": "Tavsif",
+    "affordable_excellence": "Hamyonbop sifat",
+    "costs_in_india": "Hindistonda davolanish narxlari",
+    "why_choose": "Nima uchun India Med Service?",
+    "patient_stories": "Bemorlarning muvaffaqiyat hikoyalari",
+    "procedures_directory": "Muolajalar katalogi",
+    "related_doctors": "Tegishli shifokorlar",
+    "related_hospitals": "Tegishli shifoxonalar",
+    "faqs": "Ko'p so'raladigan savollar",
+    "trust_footer": "Sog'liq sari yo'lingizda aniqlik va g'amxo'rlik bilan harakatlanish uchun India Med Services-ga ishoning.",
+    "techniques_used": "Hindistonda davolashda qo'llaniladigan texnologiyalar",
+    "hospitals_equipped": "Hindiston shifoxonalari davolashda qo'llaniladigan so'nggi yutuqlar bilan jihozlangan, shu jumladan:",
+    "affordable_costs": "Hindistonda hamyonbop davolanish narxlari",
+    "affordable_desc": "Hindistonda tibbiy xizmat narxi juda raqobatbardosh bo'lib, klinik sifatni pasaytirmasdan sezilarli darajada tejash imkonini beradi.",
+    "search_procedures": "Muolajalarni qidirish",
+    "no_procedures_found": "So'rov bo'yicha muolajalar topilmadi",
+    "years_experience": "Yillik tajriba",
+    "location": "Joylashuv",
+    "beds": "O'rinlar",
+    "au": "Avstraliya",
+    "ca": "Kanada",
+    "kz": "Qozog'iston",
+    "ru": "Rossiya",
+    "uk": "Buyuk Britaniya",
+    "us": "AQSh",
+    "uz": "O'zbekiston"
   }
-
 }

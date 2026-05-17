@@ -59,7 +59,7 @@ export default function BeyondBoundaries() {
       {/* 1. Background Image Layer (Desktop Only) */}
       <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block" aria-hidden="true">
         <Image
-          src="/images/sections/common/beyond-boundaries-lines.png"
+          src="/images/sections/common/beyond-boundaries-lines.jpg"
           alt="Topographical background lines"
           fill
           className="object-cover opacity-100"
@@ -130,8 +130,8 @@ export default function BeyondBoundaries() {
           <header className="flex-1 text-white lg:pt-10 mb-10 lg:mb-0">
             <div className="inline-flex items-center justify-center border-2 border-white rounded-full mb-8 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto lg:mx-0 backdrop-blur-sm">
               <h2 className={`text-white font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-                  ? "text-2xl md:text-3xl lg:text-[42px]"
-                  : "text-[20px] md:text-[28px] lg:text-[38px]"
+                ? "text-2xl md:text-3xl lg:text-[42px]"
+                : "text-[20px] md:text-[28px] lg:text-[38px]"
                 }`}>
                 {t('title')}
               </h2>

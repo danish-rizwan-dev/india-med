@@ -11,7 +11,7 @@ export default function BlogSection() {
   const locale = useLocale();
   const scrollRef = useRef<HTMLDivElement>(null);
   
-  const blogs = [
+  const blogs: Array<{ title: string; date: string; image: string; slug: string }> = [
     {
       title: t('blog1_title'),
       date: t('blog1_date'),

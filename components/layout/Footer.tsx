@@ -26,7 +26,8 @@ export default function Footer() {
         { label: t('links.technology'), href: "/technology" },
         { label: t('links.testimonials'), href: "/patient-testimonials" },
         { label: t('links.disclaimer'), href: "/disclaimer" },
-        { label: t('links.privacy'), href: "/privacy-policy" }
+        { label: t('links.privacy'), href: "/privacy-policy" },
+        { label: t('links.terms'), href: "/terms-and-conditions" }
       ],
     },
     {

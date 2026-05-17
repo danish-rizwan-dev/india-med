@@ -1,21 +1,21 @@
 import dynamic from "next/dynamic";
-import Hero from "@/components/sections/Hero";
-import ServiceBar from "@/components/sections/ServicesBar";
+import Hero from "@/components/homepage/Hero";
+import ServiceBar from "@/components/homepage/ServicesBar";
 import {setRequestLocale} from 'next-intl/server';
 
 // Dynamically import below-the-fold components for better performance
-const IndiaMedNetwork = dynamic(() => import("@/components/sections/IndiaMedNetwork"));
-const Specialities = dynamic(() => import("@/components/sections/Specialities"));
-const WhyChooseUs = dynamic(() => import("@/components/sections/WhyChooseUs"));
-const FeaturedDestination = dynamic(() => import("@/components/sections/FeaturedDestination"));
-const ModelOfCare = dynamic(() => import("@/components/sections/ModelOfCare"));
-const PatientStories = dynamic(() => import("@/components/sections/PatientStories"));
-const BeyondBoundaries = dynamic(() => import("@/components/sections/BeyondBoundaries"));
-const BlogSection = dynamic(() => import("@/components/sections/BlogSection"));
-const FAQSection = dynamic(() => import("@/components/sections/FAQSection"));
-const OurOfficeSection = dynamic(() => import("@/components/sections/OurOfficeSection"));
-const FounderSection = dynamic(() => import("@/components/sections/FounderSection"));
-const ProcessFlow = dynamic(() => import("@/components/sections/ProcessFlow"));
+const IndiaMedNetwork = dynamic(() => import("@/components/homepage/IndiaMedNetwork"));
+const Specialities = dynamic(() => import("@/components/homepage/Specialities"));
+const WhyChooseUs = dynamic(() => import("@/components/homepage/WhyChooseUs"));
+const FeaturedDestination = dynamic(() => import("@/components/homepage/FeaturedDestination"));
+const ModelOfCare = dynamic(() => import("@/components/homepage/ModelOfCare"));
+const PatientStories = dynamic(() => import("@/components/homepage/PatientStories"));
+const BeyondBoundaries = dynamic(() => import("@/components/homepage/BeyondBoundaries"));
+const BlogSection = dynamic(() => import("@/components/homepage/BlogSection"));
+const FAQSection = dynamic(() => import("@/components/homepage/FAQSection"));
+const OurOfficeSection = dynamic(() => import("@/components/homepage/OurOfficeSection"));
+const FounderSection = dynamic(() => import("@/components/homepage/FounderSection"));
+const ProcessFlow = dynamic(() => import("@/components/homepage/ProcessFlow"));
 const SharedGradientBg = dynamic(() => import("@/components/layout/SharedGradientBg"));
 const Footer = dynamic(() => import("@/components/layout/Footer"));
 
