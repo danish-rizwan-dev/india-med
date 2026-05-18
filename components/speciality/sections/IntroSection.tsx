@@ -55,7 +55,7 @@ export default function IntroSection({
           {/* RIGHT SIDE: Image */}
           <div className="relative w-full h-[671px] rounded-tr-[80px] rounded-bl-[80px] overflow-hidden shadow-2xl">
             <Image 
-              src={`/images/specialities/${data.slug || 'cardiological-assistance'}/heartIntroSection.jpg`}
+              src="/images/specialities/cardiological-assistance/heartIntroSection.jpg"
               alt="Heart Introduction"
               fill
               className="object-cover"

@@ -57,9 +57,17 @@ export default function PatientStories() {
 
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect(emblaApi);
+    const initialSelect = () => {
+      onSelect(emblaApi);
+    };
+    const timeoutId = setTimeout(initialSelect, 0);
     emblaApi.on("reInit", onSelect);
     emblaApi.on("select", onSelect);
+    return () => {
+      clearTimeout(timeoutId);
+      emblaApi.off("reInit", onSelect);
+      emblaApi.off("select", onSelect);
+    };
   }, [emblaApi, onSelect]);
 
   return (

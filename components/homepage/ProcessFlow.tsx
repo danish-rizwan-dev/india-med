@@ -7,7 +7,6 @@ import {useTranslations, useLocale} from 'next-intl';
 export default function ProcessFlow() {
   const t = useTranslations('ProcessFlow');
   const locale = useLocale();
-  const [isMounted, setIsMounted] = useState(false);
   const [activeStep, setActiveStep] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
   const scrollRef = useRef<HTMLDivElement>(null);
@@ -28,13 +27,9 @@ export default function ProcessFlow() {
   const row1 = processSteps.slice(0, 4);
   const row2 = processSteps.slice(4, 8).reverse(); 
 
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   // Auto-slide logic for mobile
   useEffect(() => {
-    if (!isMounted || isPaused) return;
+    if (isPaused) return;
     const timer = setInterval(() => {
       const nextStep = (activeStep + 1) % processSteps.length;
       setActiveStep(nextStep);
@@ -47,7 +42,7 @@ export default function ProcessFlow() {
       }
     }, 3000);
     return () => clearInterval(timer);
-  }, [isMounted, isPaused, activeStep, processSteps.length]);
+  }, [isPaused, activeStep, processSteps.length]);
 
   // Handle manual scroll to update activeStep
   const handleScroll = () => {

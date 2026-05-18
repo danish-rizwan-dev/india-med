@@ -101,7 +101,7 @@ export default function ProceduresDirectoryCustom({ procedures: propProcedures }
               ))
             ) : (
               <div className="col-span-full text-center text-gray-400 py-10 font-montserrat">
-                {tShared('no_procedures_found')} "{searchQuery}"
+                {tShared('no_procedures_found')} &quot;{searchQuery}&quot;
               </div>
             )}
           </div>

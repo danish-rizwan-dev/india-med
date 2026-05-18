@@ -13,15 +13,31 @@ const Counter = ({ end, duration = 3000, shouldStart }: { end: number; duration?
 
   useEffect(() => {
     if (!shouldStart) return;
-    setCount(0); // Reset to 0 only on client after hydration
-    let startTime: number | null = null;
-    const step = (timestamp: number) => {
-      if (!startTime) startTime = timestamp;
-      const progress = Math.min((timestamp - startTime) / duration, 1);
-      setCount(Math.floor(progress * end));
-      if (progress < 1) window.requestAnimationFrame(step);
+    let cancelled = false;
+    let animationFrameId: number;
+
+    // Defer resetting to 0 to next frame to avoid synchronous state calls inside useEffect
+    animationFrameId = window.requestAnimationFrame(() => {
+      if (cancelled) return;
+      setCount(0);
+      let startTime: number | null = null;
+      const step = (timestamp: number) => {
+        if (!startTime) startTime = timestamp;
+        const progress = Math.min((timestamp - startTime) / duration, 1);
+        if (!cancelled) {
+          setCount(Math.floor(progress * end));
+          if (progress < 1) {
+            animationFrameId = window.requestAnimationFrame(step);
+          }
+        }
+      };
+      animationFrameId = window.requestAnimationFrame(step);
+    });
+
+    return () => {
+      cancelled = true;
+      window.cancelAnimationFrame(animationFrameId);
     };
-    window.requestAnimationFrame(step);
   }, [end, duration, shouldStart]);
 
   return <span>{count.toLocaleString()}+</span>;

@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useCallback, useState, useEffect } from "react";
+import React from "react";
 import Image from "next/image";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import useEmblaCarousel from "embla-carousel-react";
+import { Star } from "lucide-react";
+import { useTranslations } from "next-intl";
 import { SpecialityPatientStory } from "../types";
 
 interface PatientStoriesCustomProps {
@@ -11,28 +11,30 @@ interface PatientStoriesCustomProps {
 }
 
 export default function PatientStoriesCustom({ stories }: PatientStoriesCustomProps) {
+  const tShared = useTranslations('SpecialityShared');
+
   const defaultStories = [
     {
       name: "Richard K.",
-      location: "Austria",
+      locKey: "uk" as const,
       image: "/images/sections/patient-stories/img1.jpg",
       rating: 5,
     },
     {
       name: "Sophie M.",
-      location: "Australia",
+      locKey: "kz" as const,
       image: "/images/sections/patient-stories/img2.jpg",
       rating: 5,
     },
     {
       name: "Dylan G.",
-      location: "United States",
+      locKey: "uz" as const,
       image: "/images/sections/patient-stories/img3.jpg",
       rating: 5,
     },
     {
       name: "Ella H.",
-      location: "Germany",
+      locKey: "ru" as const,
       image: "/images/sections/patient-stories/img.jpg",
       rating: 5,
     },
@@ -40,37 +42,13 @@ export default function PatientStoriesCustom({ stories }: PatientStoriesCustomPr
 
   const patientStories = stories && stories.length > 0 ? stories : defaultStories;
 
-  const [emblaRef, emblaApi] = useEmblaCarousel({
-    loop: false,
-    align: "start",
-    containScroll: "trimSnaps",
-  });
-
-  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true);
-  const [nextBtnDisabled, setNextBtnDisabled] = useState(true);
-
-  const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
-  const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
-
-  const onSelect = useCallback((emblaApi: any) => {
-    setPrevBtnDisabled(!emblaApi.canScrollPrev());
-    setNextBtnDisabled(!emblaApi.canScrollNext());
-  }, []);
-
-  useEffect(() => {
-    if (!emblaApi) return;
-    onSelect(emblaApi);
-    emblaApi.on("reInit", onSelect);
-    emblaApi.on("select", onSelect);
-  }, [emblaApi, onSelect]);
-
   return (
     <section className="relative flex w-full flex-col items-center bg-white py-20 overflow-hidden font-sans">
 
       {/* Heading Box */}
       <div className="border border-[#58595B] rounded-full mb-16 px-10 py-5 w-fit mx-auto bg-white">
         <h2 className="text-[#58595B] font-bold font-montserrat text-[32px] leading-none text-center">
-          Patient Stories
+          {tShared('patient_stories')}
         </h2>
       </div>
 
@@ -120,7 +98,9 @@ export default function PatientStoriesCustom({ stories }: PatientStoriesCustomPr
                   ))}
                 </div>
                 <h3 className="text-[#414042] font-bold text-xl font-montserrat">{patient.name}</h3>
-                <p className="text-[#58595B] text-sm font-semibold mt-1 font-montserrat opacity-60">{patient.location}</p>
+                <p className="text-[#58595B] text-sm font-semibold mt-1 font-montserrat opacity-60">
+                  {patient.locKey ? tShared(patient.locKey) : patient.location}
+                </p>
               </div>
             </article>
           ))}

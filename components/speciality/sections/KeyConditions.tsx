@@ -53,7 +53,7 @@ export default function KeyConditions({
                 
                 <div className="w-[60px] h-[60px] flex items-center justify-center mb-6">
                   <Image 
-                    src={`/images/specialities/${slug || 'cardiological-assistance'}/keyConstionTreatedIcon.svg`}
+                    src="/images/specialities/cardiological-assistance/keyConstionTreatedIcon.svg"
                     alt="Condition Icon"
                     width={60}
                     height={60}

@@ -4,23 +4,23 @@ import Image from "next/image";
 import { Link } from "@/i18n/routing";
 import { useTranslations, useLocale } from 'next-intl';
 
+const CalendarIcon = () => (
+  <div className="relative w-[16px] h-[16px] lg:w-[26px] lg:h-[24px] flex items-center justify-center flex-shrink-0">
+    <Image
+      src="/images/sections/common/appointment-calendar.svg"
+      alt="Book appointment calendar icon"
+      fill
+      sizes="(max-width: 1024px) 16px, 26px"
+      className="object-contain brightness-0 invert"
+    />
+  </div>
+);
+
 export default function Hero() {
   const t = useTranslations('Hero');
   const locale = useLocale();
   const isEn = locale === 'en';
   const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
-
-  const CalendarIcon = () => (
-    <div className="relative w-[16px] h-[16px] lg:w-[26px] lg:h-[24px] flex items-center justify-center flex-shrink-0">
-      <Image
-        src="/images/sections/common/appointment-calendar.svg"
-        alt="Book appointment calendar icon"
-        fill
-        sizes="(max-width: 1024px) 16px, 26px"
-        className="object-contain brightness-0 invert"
-      />
-    </div>
-  );
 
   return (
     <section

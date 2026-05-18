@@ -48,7 +48,7 @@ export default function SpecialityHero({
           {/* Card 1: Dynamic Image */}
           <div className="relative w-[256.37px] h-[256.37px] rounded-[25.26px] overflow-hidden shadow-sm">
             <Image 
-              src={`/images/specialities/${data.slug || 'cardiological-assistance'}/HeartimageHeroSection.jpg`} 
+              src="/images/specialities/cardiological-assistance/HeartimageHeroSection.jpg" 
               alt={specLang.hero_title}
               fill
               className="object-cover"
@@ -59,7 +59,7 @@ export default function SpecialityHero({
           <div className="bg-[#F5F5F5] w-[256.37px] h-[256.37px] rounded-[25.26px] pt-[34px] pr-[19px] pb-[33px] pl-[19px] flex flex-col justify-between shadow-sm">
             <div className="flex flex-col items-center text-center">
               <Image 
-                src={`/images/specialities/${data.slug || 'cardiological-assistance'}/hospital-buildingHeroSection.svg`}
+                src="/images/specialities/cardiological-assistance/hospital-buildingHeroSection.svg"
                 alt="Hospital Icon"
                 width={40}
                 height={40}
@@ -93,7 +93,7 @@ export default function SpecialityHero({
           <div className="bg-[#EE4423] w-[256.37px] h-[256.37px] rounded-[25.26px] pt-[34px] pr-[19px] pb-[33px] pl-[19px] flex flex-col justify-between text-white shadow-md">
             <div className="flex flex-col items-center text-center">
               <Image 
-                src={`/images/specialities/${data.slug || 'cardiological-assistance'}/doctorHeroSection.svg`}
+                src="/images/specialities/cardiological-assistance/doctorHeroSection.svg"
                 alt="Doctor Icon"
                 width={40}
                 height={40}

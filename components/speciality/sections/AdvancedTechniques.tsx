@@ -61,7 +61,7 @@ export default function AdvancedTechniques({
         {/* Background Image with Dark Overlay */}
         <div className="absolute inset-0">
           <Image 
-            src={`/images/specialities/${slug || 'cardiological-assistance'}/techniquesUsedInCardioSectionBg.jpg`}
+            src="/images/specialities/cardiological-assistance/techniquesUsedInCardioSectionBg.jpg"
             alt="Techniques Background"
             fill
             className="object-cover"
