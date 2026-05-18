@@ -37,7 +37,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[160px] xl:w-[202.52px] h-[33px] lg:h-[44px] xl:h-[56px]">
               <Image
-                src="/images/logo.svg"
+                src="/images/indiaMedServiceLogo.svg"
                 alt="India Med Service"
                 fill
                 className="object-contain opacity-100"
