@@ -1,12 +1,21 @@
 import type { Metadata } from "next";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
+import { setRequestLocale } from "next-intl/server";
 
-export const metadata: Metadata = {
-  title: "Contact India Med Service | Medical Tourism Assistance",
-  description:
-    "Contact India Med Service for affordable medical treatment in India. Get a free consultation, treatment cost estimate, and complete visa & travel support.",
-  alternates: { canonical: "https://indiamedservice.com/contact" },
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+
+  return {
+    title: "Contact India Med Service | Medical Tourism Assistance",
+    description:
+      "Contact India Med Service for affordable medical treatment in India. Get a free consultation, treatment cost estimate, and complete visa & travel support.",
+    alternates: { canonical: `https://indiamedservice.com/${locale}/contact` },
+  };
+}
 
 const contactDetails = [
   {
@@ -29,12 +38,19 @@ const contactDetails = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const contactSchema = {
     "@context": "https://schema.org",
     "@type": "ContactPage",
     name: "Contact India Med Service",
-    url: "https://indiamedservice.com/contact",
+    url: `https://indiamedservice.com/${locale}/contact`,
     description:
       "Get in touch with India Med Service for affordable medical treatment in India.",
     mainEntity: {

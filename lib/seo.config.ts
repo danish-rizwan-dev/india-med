@@ -6,7 +6,7 @@ export const SEO_CONFIG = {
   url: "https://indiamedservice.com",
   canonical: "https://indiamedservice.com",
   twitterHandle: "@indiamedservice",
-  ogImage: "/images/og-image.jpg",
+  ogImage: "/images/og-image.png",
   keywords: [
     "India Med Service",
     "India Med",
@@ -24,4 +24,3 @@ export const SEO_CONFIG = {
   ],
   authors: [{ name: "India Med Service", url: "https://indiamedservice.com" }],
 };
-

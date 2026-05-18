@@ -46,7 +46,7 @@ export default function BlogSection() {
   };
 
   return (
-    <section className="relative w-full flex flex-col items-center py-12 lg:py-24 bg-[#F5F5F5] font-montserrat">
+    <section id="blogs" className="relative w-full flex flex-col items-center py-12 lg:py-24 bg-[#F5F5F5] font-montserrat">
       
       {/* HEADER */}
       <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">

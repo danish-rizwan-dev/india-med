@@ -73,16 +73,17 @@ export async function generateMetadata({
   const englishTitle = metaTitleMap[slug] || "Medical Speciality";
   
   const title = locale === "ru"
-    ? `${englishTitle} в Индии | India Med Services`
+    ? `${englishTitle} в Индии`
     : locale === "uz"
-    ? `${englishTitle} Hindistonda | India Med Services`
+    ? `${englishTitle} Hindistonda`
     : locale === "kk"
-    ? `${englishTitle} Үндістанда | India Med Services`
-    : `${englishTitle} in India | India Med Services`;
+    ? `${englishTitle} Үндістанда`
+    : `${englishTitle} in India`;
 
   return {
     title,
     description: `Get world-class treatment for ${englishTitle} in India. Access JCI accredited hospitals, top-tier clinical teams and premium surgical suites at highly affordable packages.`,
+    alternates: { canonical: `https://indiamedservice.com/${locale}/speciality/${slug}` },
   };
 }
 

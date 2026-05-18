@@ -37,7 +37,7 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[160px] xl:w-[202.52px] h-[33px] lg:h-[44px] xl:h-[56px]">
               <Image
-                src="/images/Logo.svg"
+                src="/images/logo.svg"
                 alt="India Med Service"
                 fill
                 className="object-contain opacity-100"
@@ -77,7 +77,7 @@ export default function Navbar() {
             <div className="flex items-center gap-[8px] xl:gap-[16px] ml-4 xl:ml-12">
               {/* SEARCH BAR */}
               <form
-                action="/search"
+                action={`/${locale}/speciality`}
                 method="GET"
                 role="search"
                 className="relative flex items-center bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] border border-[#F8F8F8] rounded-full group w-[120px] xl:w-[182px] h-[45px] xl:h-[49px] transition-all"

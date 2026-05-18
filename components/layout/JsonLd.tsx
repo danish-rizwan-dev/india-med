@@ -20,14 +20,6 @@ export default function JsonLd() {
         "url": `https://indiamedservice.com/${locale}`,
         "description": description,
         "inLanguage": locale === 'en' ? 'en-US' : locale === 'ru' ? 'ru-RU' : locale === 'kk' ? 'kk-KZ' : 'uz-UZ',
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": {
-            "@type": "EntryPoint",
-            "urlTemplate": `https://indiamedservice.com/${locale}/search?q={search_term_string}`
-          },
-          "query-input": "required name=search_term_string"
-        }
       },
 
       // ── 2. MedicalOrganization ─────────────────
@@ -40,11 +32,11 @@ export default function JsonLd() {
         "url": `https://indiamedservice.com/${locale}`,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://indiamedservice.com/images/Logo.svg",
+          "url": "https://indiamedservice.com/images/logo.svg",
           "width": 193,
           "height": 65
         },
-        "image": "https://indiamedservice.com/images/og-image.jpg",
+        "image": "https://indiamedservice.com/images/og-image.png",
         "description": description,
         "medicalSpecialty": [
           t('Footer.links.cardiac'), 
@@ -103,13 +95,13 @@ export default function JsonLd() {
             "@type": "ListItem",
             "position": 2,
             "name": t('Navbar.speciality'),
-            "item": `https://indiamedservice.com/${locale}/#specialities`
+            "item": `https://indiamedservice.com/${locale}/speciality`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": t('Navbar.contact'),
-            "item": `https://indiamedservice.com/${locale}/#contact`
+            "item": `https://indiamedservice.com/${locale}/contact`
           }
         ]
       },

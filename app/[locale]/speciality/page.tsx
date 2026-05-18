@@ -12,14 +12,15 @@ export async function generateMetadata({
   const { locale } = await params;
   return {
     title: locale === 'ru' 
-      ? 'Медицинские направления в Индии | India Med Services' 
+      ? 'Медицинские направления в Индии' 
       : locale === 'uz'
-      ? 'Tibbiy Yo\'nalishlar Hindistonda | India Med Services'
+      ? 'Tibbiy Yo\'nalishlar Hindistonda'
       : locale === 'kk'
-      ? 'Үндістандағы Медициналық Бағыттар | India Med Services'
-      : 'Our Medical Specialities | India Med Services',
+      ? 'Үндістандағы Медициналық Бағыттар'
+      : 'Our Medical Specialities',
     description: "Explore our range of medical specialities in India including Cardiac Care, Neurosciences, Oncology, and Orthopaedics with affordable world-class treatment.",
     keywords: ["Medical Specialities India", "Best Cardiology India", "Cancer Treatment India", "Neuroscience Hospitals India"],
+    alternates: { canonical: `https://indiamedservice.com/${locale}/speciality` },
   };
 }
 

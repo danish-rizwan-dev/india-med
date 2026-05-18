@@ -14,6 +14,7 @@ export async function generateMetadata({
   return {
     title: t('title'),
     description: t('intro'),
+    alternates: { canonical: `https://indiamedservice.com/${locale}/privacy-policy` },
   };
 }
 

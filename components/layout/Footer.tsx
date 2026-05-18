@@ -48,13 +48,13 @@ export default function Footer() {
     {
       title: t('col_1_title'),
       data: [
-        { label: t('links.find_doctor'), href: "/find-doctor" },
-        { label: t('links.book_apt'), href: "/book-appointment" },
-        { label: t('links.treatments'), href: "/treatments" },
-        { label: t('links.emergency'), href: "/emergency-24x7" },
-        { label: t('links.technology'), href: "/technology" },
-        { label: t('links.testimonials'), href: "/patient-testimonials" },
-        { label: t('links.disclaimer'), href: "/disclaimer" },
+        { label: t('links.find_doctor'), href: "/contact" },
+        { label: t('links.book_apt'), href: "/contact" },
+        { label: t('links.treatments'), href: "/speciality" },
+        { label: t('links.emergency'), href: "/contact" },
+        { label: t('links.technology'), href: "/speciality" },
+        { label: t('links.testimonials'), href: "/#patient-stories" },
+        { label: t('links.disclaimer'), href: "/terms-and-conditions" },
         { label: t('links.privacy'), href: "/privacy-policy" },
         { label: t('links.terms'), href: "/terms-and-conditions" }
       ],
@@ -62,34 +62,34 @@ export default function Footer() {
     {
       title: t('col_2_title'),
       data: [
-        { label: t('links.cardiac'), href: "/cardiac-care" },
-        { label: t('links.cancer'), href: "/cancer-care" },
-        { label: t('links.neuro'), href: "/neurosciences" },
-        { label: t('links.ortho'), href: "/orthopaedics" },
-        { label: t('links.renal'), href: "/renal-care" },
-        { label: t('links.liver'), href: "/liver-transplant" },
-        { label: t('links.bone'), href: "/bone-marrow" },
-        { label: t('links.lung'), href: "/lung-transplant" }
+        { label: t('links.cardiac'), href: "/speciality/cardiological-assistance" },
+        { label: t('links.cancer'), href: "/speciality/cancer-treatment" },
+        { label: t('links.neuro'), href: "/speciality/neuroscience" },
+        { label: t('links.ortho'), href: "/speciality/orthopedics" },
+        { label: t('links.renal'), href: "/speciality/kidney-transplant" },
+        { label: t('links.liver'), href: "/speciality/liver-transplant" },
+        { label: t('links.bone'), href: "/speciality/bone-marrow-transplant" },
+        { label: t('links.lung'), href: "/speciality/lung-transplantation" }
       ],
     },
     {
       title: t('col_3_title'),
       data: [
-        { label: t('links.gurugram'), href: "/india-med-gurugram" },
-        { label: t('links.patna'), href: "/india-med-patna" },
-        { label: t('links.lucknow'), href: "/india-med-lucknow" },
-        { label: t('links.indore'), href: "/india-med-indore" },
-        { label: t('links.noida'), href: "/india-med-noida" }
+        { label: t('links.gurugram'), href: "/#destinations" },
+        { label: t('links.patna'), href: "/#destinations" },
+        { label: t('links.lucknow'), href: "/#destinations" },
+        { label: t('links.indore'), href: "/#destinations" },
+        { label: t('links.noida'), href: "/#destinations" }
       ],
     },
     {
       title: t('col_4_title'),
       data: [
-        { label: t('links.help'), href: "/help-desk" },
-        { label: t('links.about'), href: "/about-us" },
-        { label: t('links.blogs'), href: "/blogs" },
-        { label: t('links.feedback'), href: "/feedback" },
-        { label: t('links.contact'), href: "/contact-us" }
+        { label: t('links.help'), href: "/contact" },
+        { label: t('links.about'), href: "/#beyond-boundaries" },
+        { label: t('links.blogs'), href: "/#blogs" },
+        { label: t('links.feedback'), href: "/contact" },
+        { label: t('links.contact'), href: "/contact" }
       ],
     },
   ];
@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="flex flex-col gap-10 w-full lg:w-[280px] xl:w-[380px] px-6 lg:px-0 py-10 lg:py-0 items-start text-left">
           <Link href="/" className="relative w-[212px] h-[76px] block">
             <Image
-              src="/images/Logo.svg"
+              src="/images/logo.svg"
               alt="India Med Service Logo"
               fill
               className="object-contain"
@@ -195,7 +195,7 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center gap-6 mb-10">
           <Link href="/" className="relative w-[180px] h-[64px] block">
             <Image
-              src="/images/Logo.svg"
+              src="/images/logo.svg"
               alt="India Med Service Logo"
               fill
               className="object-contain"
