@@ -105,7 +105,7 @@ export default function Footer() {
         <div className="flex flex-col gap-10 w-full lg:w-[280px] xl:w-[380px] px-6 lg:px-0 py-10 lg:py-0 items-start text-left">
           <Link href="/" className="relative w-[212px] h-[76px] block">
             <Image
-              src="/images/logo.svg"
+              src="/images/indiaMedServiceLogo.svg"
               alt="India Med Service Logo"
               fill
               className="object-contain"
@@ -195,7 +195,7 @@ export default function Footer() {
         <div className="flex flex-col items-center text-center gap-6 mb-10">
           <Link href="/" className="relative w-[180px] h-[64px] block">
             <Image
-              src="/images/logo.svg"
+              src="/images/indiaMedServiceLogo.svg"
               alt="India Med Service Logo"
               fill
               className="object-contain"

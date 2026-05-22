@@ -76,7 +76,8 @@ export default function IndiaMedNetwork() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
-      align: (viewSize) => viewSize * 0.08,
+      // Fixed: Replaced dynamic dynamic window calculations with 'center' to scale safely under heavy zoom-out factors
+      align: "start",
       skipSnaps: false,
       duration: 35,
     },
@@ -102,10 +103,10 @@ export default function IndiaMedNetwork() {
   }, [emblaApi]);
 
   return (
-    <section className="relative w-full bg-transparent flex flex-col items-center mt-24 lg:mt-32 mb-16 overflow-hidden">
+    <section className="relative w-full bg-transparent flex flex-col items-center mt-12 lg:mt-16 mb-16 ">
 
       {/* HEADING */}
-      <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
+      <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto bg-white">
         <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
             ? "text-2xl md:text-3xl lg:text-[42px]"
             : "text-[20px] md:text-[28px] lg:text-[38px]"
@@ -114,9 +115,11 @@ export default function IndiaMedNetwork() {
         </h2>
       </header>
 
-      <div className="relative w-full">
+      {/* Fixed: Wrapped structural framework inside a max-width utility bounds layer to stop track displacement on zoom out */}
+      <div className="relative w-full max-w-[1280px] xl:max-w-[1440px] mx-auto px-4 lg:px-8">
+        
         {/* ================= NAVIGATION BUTTONS ================= */}
-        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 lg:-translate-y-[65%] lg:-mt-[3px] left-0 right-0 z-50 pointer-events-none flex justify-between px-4 lg:px-20">
+        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 lg:-translate-y-[65%] lg:-mt-[3px] left-[-20px] right-[-20px] z-50 pointer-events-none justify-between">
           <button
             onClick={scrollPrev}
             className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
@@ -137,6 +140,7 @@ export default function IndiaMedNetwork() {
               </defs>
             </svg>
           </button>
+          
           <button
             onClick={scrollNext}
             className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
@@ -160,8 +164,8 @@ export default function IndiaMedNetwork() {
         </div>
 
         {/* CAROUSEL */}
-        <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
-          <div className="flex">
+        <div className="o cursor-grab active:cursor-grabbing w-full" ref={emblaRef}>
+          <div className="flex -ml-4">
             {hospitalData.map((hospital, index) => {
               const total = hospitalData.length;
               const diff = (index - selectedIndex + total) % total;
@@ -170,8 +174,9 @@ export default function IndiaMedNetwork() {
               return (
                 <article
                   key={index}
-                  className="relative flex-[0_0_88%] md:flex-[0_0_60%] lg:flex-[0_0_42%] px-3 min-w-0 transition-opacity duration-700"
-                  style={{ opacity: isInFront ? 1 : 0.4 }}
+                  // Balanced exact flex bases to work cleanly alongside centered slide boundaries
+                  className="relative flex-[0_0_88%] md:flex-[0_0_50%] lg:flex-[0_0_50%] pl-4 min-w-0 transition-opacity duration-700"
+                  style={{ opacity: isInFront ? 1 : 0.3 }}
                 >
                   <div
                     className="relative overflow-hidden bg-[#EE4423]"
@@ -208,7 +213,7 @@ export default function IndiaMedNetwork() {
                         src={hospital.image}
                         alt={hospital.name}
                         fill
-                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 60vw, 42vw"
+                        sizes="(max-width: 640px) 90vw, (max-width: 1024px) 50vw, 42vw"
                         priority={index < 2}
                         className="object-cover transition-transform duration-700 hover:scale-105"
                       />
@@ -259,6 +264,7 @@ export default function IndiaMedNetwork() {
           </div>
         </div>
 
+        {/* PAGINATION DOTS */}
         <nav className="flex justify-center gap-2 mt-8" aria-label="Carousel Pagination">
           {hospitalData.map((_, i) => (
             <button

@@ -21,6 +21,21 @@ export default function Hero() {
   const locale = useLocale();
   const isEn = locale === 'en';
   const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
+  const brandSizeClass = isLongLocale
+    ? locale === 'kk'
+      ? 'text-[20px] md:text-[25px] lg:text-[26px] leading-tight'
+      : 'text-[22px] lg:text-[26px] leading-tight'
+    : 'text-[20px] lg:text-[24px] leading-[39.19px]';
+  const headingSizeClass =
+    locale === 'kk' ? 'text-[25px] md:text-[38px] lg:text-[46px] leading-[1.0]' :
+      locale === 'uz' ? 'text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]' :
+        locale === 'ru' ? 'text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]' :
+          'text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight';
+  const descriptionSizeClass =
+    locale === 'kk' ? 'text-[14px] md:text-[14px] lg:text-[17px] leading-relaxed' :
+      locale === 'uz' ? 'text-[14px] lg:text-[17px] leading-relaxed' :
+        locale === 'ru' ? 'text-[15px] lg:text-[19px] leading-relaxed' :
+          'text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal';
 
   return (
     <section
@@ -86,7 +101,7 @@ export default function Hero() {
           {/* Brand & Heading Group */}
           <div className={`flex flex-col w-full ${isLongLocale ? 'gap-[10px] lg:gap-[16px]' : 'gap-[20px]'} text-center md:text-left`}>
             <span
-              className={`font-montserrat font-bold text-[#EE4423] block ${isLongLocale ? 'text-[22px] lg:text-[26px] leading-tight' : 'text-[20px] lg:text-[24px] leading-[39.19px]'}`}
+              className={`font-montserrat font-bold text-[#EE4423] block ${brandSizeClass}`}
             >
               {t('brand')}
             </span>
@@ -94,9 +109,7 @@ export default function Hero() {
             <h1
               className={`
                 text-[#444444] font-montserrat font-bold
-                ${locale === 'kk' || locale === 'uz' ? 'text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]' :
-                  locale === 'ru' ? 'text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]' :
-                    'text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight'}
+                ${headingSizeClass}
               `}
             >
               {t('heading_main')}
@@ -106,9 +119,7 @@ export default function Hero() {
             <p
               className={`
                 font-montserrat font-medium text-[#58595B]
-                ${locale === 'kk' || locale === 'uz' ? 'text-[14px] lg:text-[17px] leading-relaxed' :
-                  locale === 'ru' ? 'text-[15px] lg:text-[19px] leading-relaxed' :
-                    'text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal'}
+                ${descriptionSizeClass}
                 w-[203px] md:w-full 
                 text-left
                 mx-0

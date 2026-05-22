@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
@@ -14,7 +16,7 @@ export default function AdvancedTechniques({
   slug
 }: AdvancedTechniquesProps) {
   const tShared = useTranslations('SpecialityShared');
-  // Hardcoded techniques from the image to match high-fidelity design
+  
   const displayTechniques = [
     {
       title: "3D Printing",
@@ -43,57 +45,63 @@ export default function AdvancedTechniques({
   ];
 
   return (
-    <div className="w-full font-montserrat">
+    <div className="w-full font-montserrat overflow-x-hidden">
       
       {/* ─── TOP SECTION: HEADERS ─── */}
-      <div className="bg-white py-16 text-center px-4">
-        <h2 className="text-[#58595B] font-bold text-[47px] leading-none mb-4 max-w-[765px] mx-auto">
+      <div className="bg-white py-12 md:py-16 text-center px-4">
+        <h2 className="text-[#58595B] font-bold text-2xl sm:text-4xl lg:text-[47px] leading-tight mb-4 max-w-[765px] mx-auto">
           {specLang.techniques_title_full || tShared('techniques_used')}
         </h2>
-        <p className="text-[#58595B] font-semibold text-[18px] leading-none max-w-[573px] mx-auto">
+        <p className="text-[#58595B] font-semibold text-sm sm:text-[18px] leading-relaxed max-w-[573px] mx-auto opacity-90">
           {specLang.techniques_subtitle_full || tShared('hospitals_equipped')}
         </p>
       </div>
 
-      {/* ─── MIDDLE SECTION: THE BLURRED TABLE ON BG IMAGE ─── */}
-      <div className="relative w-full min-h-[1016px] flex flex-col items-center justify-start">
+      {/* ─── MIDDLE SECTION: THE BLURRED WALL ─── */}
+      <div className="relative w-full min-h-fit lg:min-h-[1016px] flex flex-col items-center justify-start px-4 lg:px-0">
         
         {/* Background Image with Dark Overlay */}
-        <div className="absolute inset-0">
+        <div className="absolute inset-0 z-0">
           <Image 
             src="/images/specialities/cardiological-assistance/techniquesUsedInCardioSectionBg.jpg"
             alt="Techniques Background"
             fill
+            priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/20" />
-          {/* Inner Shadow simulated with gradient */}
-          <div className="absolute inset-0 shadow-[inset_0px_150px_200px_0px_rgba(39,8,2,1)]" />
+          <div className="absolute inset-0 bg-black/30 lg:bg-black/20" />
+          <div className="absolute inset-0 shadow-[inset_0px_100px_150px_0px_rgba(39,8,2,0.85)] lg:shadow-[inset_0px_150px_200px_0px_rgba(39,8,2,1)]" />
         </div>
 
         {/* The Blurred Wall / Card */}
-        <div className="relative z-20 w-full max-w-[1319px] min-h-[900px] bg-[rgba(80,18,5,0.07)] backdrop-blur-md rounded-[40px] border border-white/10 p-12 lg:p-16 lg:pb-32 flex flex-col gap-8 mx-4 mt-[30px]">
+        <div className="relative z-20 w-full max-w-[1319px] bg-black/20 lg:bg-[rgba(80,18,5,0.07)] backdrop-blur-xl rounded-[24px] sm:rounded-[40px] border border-white/10 p-6 sm:p-10 lg:p-16 lg:pb-32 flex flex-col gap-2 sm:gap-4 my-8 lg:mt-[30px]">
           
-          {/* Table Headers */}
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 border-b border-white/20 pb-4">
-            <div className="lg:col-span-1">
-              <span className="text-[#EE4423] font-bold text-[42px] leading-none">{specLang.techniques_label || tShared('techniques')}</span>
+          {/* Table Headers - Hidden on mobile for cleaner card UI stack */}
+          <div className="hidden lg:grid grid-cols-5 gap-8 border-b border-white/20 pb-4">
+            <div className="col-span-2">
+              <span className="text-[#EE4423] font-bold text-[32px] xl:text-[42px] leading-none">{specLang.techniques_label || tShared('techniques')}</span>
             </div>
-            <div className="lg:col-span-3 lg:col-start-3">
-              <span className="text-[#EE4423] font-bold text-[42px] leading-none">{specLang.description_label || tShared('description')}</span>
+            <div className="col-span-3">
+              <span className="text-[#EE4423] font-bold text-[32px] xl:text-[42px] leading-none">{specLang.description_label || tShared('description')}</span>
             </div>
           </div>
 
           {/* Table Rows */}
           {(specLang.techniques_list_custom || displayTechniques).map((item: any, idx: number) => (
-            <div key={idx} className="grid grid-cols-1 lg:grid-cols-5 gap-8 border-b border-white/10 py-6 last:border-b-0 items-center">
-              <div className="lg:col-span-1">
-                <span className="text-white font-bold text-[20px] leading-none">
+            <div 
+              key={idx} 
+              className="flex flex-col lg:grid lg:grid-cols-5 gap-2 sm:gap-3 lg:gap-8 border-b border-white/10 py-5 lg:py-6 last:border-b-0 text-left"
+            >
+              {/* Title Block */}
+              <div className="lg:col-span-2">
+                <span className="text-white font-bold text-[18px] sm:text-[20px] leading-snug">
                   {item.title}
                 </span>
               </div>
-              <div className="lg:col-span-3 lg:col-start-3">
-                <p className="text-white font-semibold text-[16px] leading-normal opacity-90">
+              
+              {/* Description Block */}
+              <div className="lg:col-span-3">
+                <p className="text-white/90 font-medium sm:font-semibold text-[14px] sm:text-[16px] leading-relaxed opacity-95">
                   {item.desc}
                 </p>
               </div>
@@ -104,13 +112,13 @@ export default function AdvancedTechniques({
       </div>
 
       {/* ─── BOTTOM SECTION: ORANGE COSTS DIV ─── */}
-      <div className="bg-[#EE4423] text-white py-32 text-center px-4 relative z-10 pt-40 -mt-24">
-        <div className="max-w-[909px] mx-auto flex flex-col gap-6">
-          <h2 className="font-bold text-[47px] leading-none flex flex-col gap-2">
+      <div className="bg-[#EE4423] text-white py-16 sm:py-24 lg:py-32 text-center px-4 relative z-10 pt-20 lg:pt-40 -mt-12 lg:-mt-24">
+        <div className="max-w-[909px] mx-auto flex flex-col gap-4 sm:gap-6">
+          <h2 className="font-bold text-2xl sm:text-4xl lg:text-[47px] leading-tight flex flex-col gap-1 sm:gap-2">
             <span>{specLang.costs_title_custom || tShared('affordable_excellence')}</span>
             <span>{specLang.costs_subtitle_custom || tShared('costs_in_india')}</span>
           </h2>
-          <p className="font-semibold text-[18px] leading-relaxed max-w-[863px] mx-auto opacity-95">
+          <p className="font-medium sm:font-semibold text-sm sm:text-[18px] leading-relaxed max-w-[863px] mx-auto opacity-95">
             {specLang.costs_desc_custom || tShared('affordable_desc')}
           </p>
         </div>

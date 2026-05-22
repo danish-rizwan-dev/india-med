@@ -37,13 +37,10 @@ export default function FeaturedDestination() {
       <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
         <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
 
+        {/* FIXED: Replaced static pixel dimensions with center-anchored full-bleed sizing to match FAQ layout */}
         <div 
-          className="absolute z-0 pointer-events-none"
+          className="absolute left-1/2 -translate-x-1/2 w-full max-w-[1600px] h-[650px] lg:h-[850px] top-[-150px] lg:top-[-300px] z-0"
           style={{
-            width: "1562.78px",
-            height: "1000px",
-            left: "-10px",
-            top: "-550px",
             maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
             WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
           }}
@@ -52,8 +49,8 @@ export default function FeaturedDestination() {
             src="/images/sections/featured-destinations/featureddestinanotincolorbg.png"
             alt="Colored background texture"
             fill
-            sizes="1562.78px"
-            className="object-cover"
+            priority
+            className="object-cover object-center"
           />
         </div>
 

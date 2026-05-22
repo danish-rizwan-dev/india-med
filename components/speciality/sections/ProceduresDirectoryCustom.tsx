@@ -12,7 +12,6 @@ export default function ProceduresDirectoryCustom({ procedures: propProcedures }
   const tShared = useTranslations('SpecialityShared');
   const [searchQuery, setSearchQuery] = useState('');
 
-  // Default procedures from the image if none provided
   const defaultProcedures = [
     "Heart Valve Replacement",
     "Tetralogy of Fallot (TOF)",
@@ -49,17 +48,17 @@ export default function ProceduresDirectoryCustom({ procedures: propProcedures }
   );
 
   return (
-    <section className="py-16 bg-white">
-      {/* Header with Search (Centered) */}
-      <div className="max-w-[1320px] mx-auto px-4 mb-2">
+    <section className="py-12 md:py-16 bg-white">
+      {/* Header Container with Input Field */}
+      <div className="max-w-[1320px] mx-auto px-4 mb-6 md:mb-8">
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
-          <h2 className="text-[36px] font-bold text-[#EE4423] font-montserrat">
+          <h2 className="text-2xl sm:text-3xl md:text-[36px] font-bold text-[#EE4423] font-montserrat leading-tight">
             {tShared('procedures_directory')}
           </h2>
 
-          {/* Search Bar */}
-          <div className="relative w-full md:w-[376px] h-[49px] rounded-full border border-[#EE4423] bg-white">
-            <div className="absolute left-0 top-0 w-[49px] h-[49px] bg-[#EE4423] rounded-full flex items-center justify-center text-white">
+          {/* Search Field Box */}
+          <div className="relative w-full md:w-[376px] h-[49px] rounded-full border border-[#EE4423] bg-white flex-shrink-0 shadow-sm">
+            <div className="absolute right-0 top-0 w-[49px] h-[49px] bg-[#EE4423] rounded-full flex items-center justify-center text-white z-10">
               <Search size={18} strokeWidth={2.5} />
             </div>
             <input
@@ -67,78 +66,53 @@ export default function ProceduresDirectoryCustom({ procedures: propProcedures }
               placeholder={tShared('search_procedures')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full h-full pl-[60px] pr-[40px] rounded-full focus:outline-none font-montserrat text-[14px] font-semibold text-[#58595B] placeholder:text-gray-400"
+              className="w-full h-full pl-5 pr-[60px] rounded-full focus:outline-none font-montserrat text-[14px] font-semibold text-[#58595B] placeholder:text-gray-400"
             />
           </div>
         </div>
       </div>
 
-      {/* Scrollable Container (Styled Card Aligned with Heading) */}
-      <div className="max-w-[1320px] mx-auto px-4 sm:px-6 md:px-0">
+      {/* Main Content Wrapper */}
+      <div className="max-w-[1320px] mx-auto px-4">
         <div
-          className="pl-4 pr-6 md:pr-10 py-10 flex flex-col"
+          className="pl-4 pr-3 sm:pl-6 sm:pr-6 py-6 sm:py-10 flex flex-col h-[400px] md:h-[462px] rounded-[32px] sm:rounded-[50px] shadow-[0px_15px_25px_0px_rgba(67,41,57,0.02)]"
           style={{
-            width: '100%',
-            height: '462px',
-            borderRadius: '50px',
             background: 'linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(238, 68, 35, 0.08) 100%)',
-            boxShadow: '0px 15px 25px 0px rgba(67,41,57,0.02)'
           }}
         >
+          {/* UNIVERSAL SCROLLABLE GRID CONTAINER:
+            - "h-[400px] md:h-[462px]" sets the physical height limits
+            - "overflow-y-auto" ensures the vertical scrollbar appears dynamically as text scales or items increase
+            - Simple inline webkit styles color the track beautifully across devices
+          */}
           <div
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pr-4 custom-scrollbar flex-1 overflow-y-scroll"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 pr-2 flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100
+              [&::-webkit-scrollbar]:w-1.5
+              [&::-webkit-scrollbar-track]:bg-gray-100
+              [&::-webkit-scrollbar-track]:rounded-full
+              [&::-webkit-scrollbar-thumb]:bg-gray-300
+              [&::-webkit-scrollbar-thumb]:rounded-full
+              hover:[&::-webkit-scrollbar-thumb]:bg-gray-400"
           >
             {filteredProcedures.length > 0 ? (
               filteredProcedures.map((proc, index) => (
                 <div
                   key={index}
-                  className="procedure-pill px-6 py-4 flex items-center justify-center text-center transition-all cursor-pointer h-[60px] whitespace-pre-wrap"
+                  className="bg-white border border-[#FFE4E0] rounded-full px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-center text-center shadow-[0px_4px_10px_0px_rgba(104,33,19,0.04)] h-[60px] whitespace-pre-wrap hover:-translate-y-0.5 hover:shadow-[0px_6px_15px_0px_rgba(104,33,19,0.09)] active:scale-98 transition-all duration-200 cursor-pointer"
                 >
-                  <span className="text-[#58595B] font-semibold text-[20px] font-montserrat line-clamp-2 leading-none">
+                  <span className="text-[#58595B] font-semibold text-[15px] sm:text-[17px] lg:text-[20px] font-montserrat line-clamp-2 leading-tight">
                     {proc}
                   </span>
                 </div>
               ))
             ) : (
-              <div className="col-span-full text-center text-gray-400 py-10 font-montserrat">
+              <div className="col-span-full text-center text-gray-400 py-16 font-montserrat text-sm sm:text-base">
                 {tShared('no_procedures_found')} &quot;{searchQuery}&quot;
               </div>
             )}
           </div>
         </div>
       </div>
-
-      {/* Custom Styles */}
-      <style jsx>{`
-        .procedure-pill {
-          background: #FFFFFF;
-          border: 1px solid #FFE4E0;
-          border-radius: 50px;
-          box-shadow: 0px 4px 10px 0px rgba(104, 33, 19, 0.05);
-        }
-        .procedure-pill:hover {
-          transform: translateY(-2px);
-          box-shadow: 0px 6px 15px 0px rgba(104, 33, 19, 0.1);
-        }
-        .custom-scrollbar {
-          scrollbar-width: thin;
-          scrollbar-color: #B3B3B3 #F3F4F6;
-        }
-        .custom-scrollbar::-webkit-scrollbar {
-          width: 10px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-track {
-          background: #F3F4F6;
-          border-radius: 40px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb {
-          background: #B3B3B3;
-          border-radius: 40px;
-        }
-        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-          background: #999999;
-        }
-      `}</style>
     </section>
   );
 }

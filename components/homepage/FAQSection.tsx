@@ -11,26 +11,11 @@ export default function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqData = [
-    {
-      question: t('q1'),
-      answer: t('a1'),
-    },
-    {
-      question: t('q2'),
-      answer: t('a2'),
-    },
-    {
-      question: t('q3'),
-      answer: t('a3'),
-    },
-    {
-      question: t('q4'),
-      answer: t('a4'),
-    },
-    {
-      question: t('q5'),
-      answer: t('a5'),
-    },
+    { question: t('q1'), answer: t('a1') },
+    { question: t('q2'), answer: t('a2') },
+    { question: t('q3'), answer: t('a3') },
+    { question: t('q4'), answer: t('a4') },
+    { question: t('q5'), answer: t('a5') },
   ];
 
   const faqSchema = {
@@ -47,56 +32,41 @@ export default function FAQSection() {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center overflow-hidden py-24 min-h-[539px]">
+    <section 
+      className="relative w-full flex items-center justify-center py-24 min-h-[539px] bg-cover bg-center bg-no-repeat"
+      style={{
+        // 1. Injects the background image directly onto the section node.
+        // 2. Applies the white color mask overlay and bottom page fade layout simultaneously.
+        backgroundImage: `
+          linear-gradient(to bottom, rgba(255,255,255,0.7) 0%, rgba(255,255,255,0.7) 80%, rgba(255,255,255,1) 100%), 
+          url('/images/sections/faq/background.png')
+        `,
+      }}
+      aria-label="Frequently Asked Questions"
+    >
       {/* FAQ Schema */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      {/* ================= BACKGROUND LAYER ================= */}
-      <div
-        className="absolute z-0 pointer-events-none"
-        style={{
-          width: "1562.78px",
-          height: "538.92px",
-          left: "-25px",
-          top: "0",
-        }}
-      >
-        <div className="relative w-full h-full">
-          <Image
-            src="/images/sections/faq/background.png"
-            alt="background"
-            fill
-            className="object-cover"
-          />
-          {/* Blur Overlay */}
-          <div className="absolute inset-0 bg-white/70 backdrop-blur-[50px]" />
-          {/* Fade out applied ONLY to background layer */}
-          <div
-            className="absolute inset-0 bg-white"
-            style={{
-              maskImage:
-                "linear-gradient(to bottom, transparent 80%, white 100%)",
-              WebkitMaskImage:
-                "linear-gradient(to bottom, transparent 80%, white 100%)",
-            }}
-          />
-        </div>
-      </div>
+      
+      {/* ================= BLUR LAYER OVERLAY ================= */}
+      {/* Handled natively at the root layout boundary to emulate your 50px backdrop blur safely */}
+      <div className="absolute inset-0 backdrop-blur-[50px] z-0 pointer-events-none" />
 
+      {/* ================= MAIN CONTENT CONTAINER ================= */}
       <div className="relative z-10 flex flex-col lg:flex-row w-full max-w-[1000px] xl:max-w-[1320px] gap-8 xl:gap-12 px-6">
         {/* LEFT COLUMN */}
         <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[320px] xl:w-[427px] text-center lg:text-left">
           {/* FAQs Heading */}
           <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto bg-white shadow-sm">
-        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-            ? "text-2xl md:text-3xl lg:text-[42px]"
-            : "text-[20px] md:text-[28px] lg:text-[38px]"
-          }`}>
-          {t('title')}
-        </h2>
-      </header>
+            <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                ? "text-2xl md:text-3xl lg:text-[42px]"
+                : "text-[20px] md:text-[28px] lg:text-[38px]"
+              }`}>
+              {t('title')}
+            </h2>
+          </header>
 
           {/* Frequently asked together / Questions below */}
           <h2 className="text-[#58595B] font-montserrat font-bold text-[42px] leading-[100%] tracking-[0px]">
@@ -179,7 +149,7 @@ export default function FAQSection() {
                     {faq.question}
                   </span>
 
-                  {/* Plus/Cross Button - Bold and Smaller */}
+                  {/* Plus/Cross Button */}
                   <div className="shrink-0 w-4 h-4 flex items-center justify-center relative scale-90">
                     <div
                       className={`absolute w-full h-[3px] bg-[#58595B] rounded-full transition-transform duration-300 ${isOpen ? "rotate-[135deg]" : "rotate-0"}`}
