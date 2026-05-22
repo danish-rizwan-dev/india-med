@@ -85,6 +85,7 @@ export default function RelatedHospitalsCustom({ hospitals }: RelatedHospitalsCu
                           width={14}
                           height={11}
                           alt="bed icon"
+                          className="w-auto h-auto"
                         />
                         <span>250 {tShared('beds')}</span>
                       </div>
@@ -141,6 +142,7 @@ export default function RelatedHospitalsCustom({ hospitals }: RelatedHospitalsCu
                       width={16}
                       height={12}
                       alt="bed icon"
+                      className="w-auto h-auto"
                     />
                     <span>250 {tShared('beds')}</span>
                   </div>
