@@ -1,6 +1,8 @@
 import React from "react";
 import {useTranslations, useLocale} from 'next-intl';
 
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://indiamedservice.com";
+
 export default function JsonLd() {
   const t = useTranslations();
   const locale = useLocale();
@@ -25,18 +27,18 @@ export default function JsonLd() {
       // ── 2. MedicalOrganization ─────────────────
       {
         "@type": "MedicalOrganization",
-        "@id": `https://indiamedservice.com/${locale}/#organization`,
+        "@id": `${SITE_URL}/${locale}/#organization`,
         "name": title,
         "alternateName": ["India Med", "India Med Services"],
         "legalName": "India Med Service",
-        "url": `https://indiamedservice.com/${locale}`,
+        "url": `${SITE_URL}/${locale}`,
         "logo": {
           "@type": "ImageObject",
-          "url": "https://indiamedservice.com/images/logo.svg",
+          "url": `${SITE_URL}/images/indiaMedServiceLogo.svg`,
           "width": 193,
           "height": 65
         },
-        "image": "https://indiamedservice.com/images/og-image.png",
+        "image": `${SITE_URL}/images/sections/hero/doctor.png`,
         "description": description,
         "medicalSpecialty": [
           t('Footer.links.cardiac'), 
@@ -89,19 +91,19 @@ export default function JsonLd() {
             "@type": "ListItem",
             "position": 1,
             "name": t('Navbar.home'),
-            "item": `https://indiamedservice.com/${locale}`
+            "item": `${SITE_URL}/${locale}`
           },
           {
             "@type": "ListItem",
             "position": 2,
             "name": t('Navbar.speciality'),
-            "item": `https://indiamedservice.com/${locale}/speciality`
+            "item": `${SITE_URL}/${locale}/speciality`
           },
           {
             "@type": "ListItem",
             "position": 3,
             "name": t('Navbar.contact'),
-            "item": `https://indiamedservice.com/${locale}/contact`
+            "item": `${SITE_URL}/${locale}/contact`
           }
         ]
       },

@@ -8,6 +8,7 @@ import {NextIntlClientProvider} from 'next-intl';
 import {getMessages, setRequestLocale} from 'next-intl/server';
 import {notFound} from 'next/navigation';
 import {routing} from '@/i18n/routing';
+import ConsultationModal from "@/components/homepage/ConsultationModal";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -64,12 +65,12 @@ export async function generateMetadata({
     description: description,
     keywords: keywords,
     alternates: {
-      canonical: `https://indiamedservice.com/${locale}`,
+      canonical: `${SITE_URL}/${locale}`,
       languages: {
-        'en': 'https://indiamedservice.com/en',
-        'ru': 'https://indiamedservice.com/ru',
-        'kk': 'https://indiamedservice.com/kk',
-        'uz': 'https://indiamedservice.com/uz',
+        'en': `${SITE_URL}/en`,
+        'ru': `${SITE_URL}/ru`,
+        'kk': `${SITE_URL}/kk`,
+        'uz': `${SITE_URL}/uz`,
       },
     },
     authors: [{ name: "India Med Service" }],
@@ -83,15 +84,15 @@ export async function generateMetadata({
       address: false,
       telephone: false,
     },
-    metadataBase: new URL("https://indiamedservice.com"),
+    metadataBase: new URL(SITE_URL),
     openGraph: {
       title: title,
       description: description,
-      url: `https://indiamedservice.com/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       siteName: title,
       images: [
         {
-          url: "/images/og-image.png",
+          url: `${SITE_URL}/images/sections/hero/doctor.png`,
           width: 1200,
           height: 630,
           alt: `${title} - Premium Medical Tourism & Treatment in India`,
@@ -106,7 +107,7 @@ export async function generateMetadata({
       creator: "@indiamedservice",
       title: title,
       description: description,
-      images: ["/images/og-image.png"],
+      images: [`${SITE_URL}/images/sections/hero/doctor.png`],
     },
     robots: {
       index: true,
@@ -125,7 +126,8 @@ export async function generateMetadata({
 }
 
 // ─── Replace with your actual GA4 Measurement ID from analytics.google.com ──
-const GA_ID = "G-XXXXXXXXXX";
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://indiamedservice.com";
+const GA_ID = process.env.NEXT_PUBLIC_GA_ID || "";
 
 export default async function RootLayout({
   children,
@@ -149,7 +151,7 @@ export default async function RootLayout({
   const messages = await getMessages();
 
   return (
-    <html lang={locale} className="scroll-smooth">
+    <html lang={locale} className="scroll-smooth" data-scroll-behavior="smooth">
       <head>
         {/* ── RENDER-BLOCKING FIX: Preconnect resource hints ──────── */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -166,20 +168,25 @@ export default async function RootLayout({
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           <main className="flex-1 w-full flex flex-col">{children}</main>
+          <ConsultationModal />
 
           {/* ── GOOGLE ANALYTICS 4: afterInteractive = NON-render-blocking */}
-          <Script
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
-            strategy="afterInteractive"
-          />
-          <Script id="ga4-init" strategy="afterInteractive">
-            {`
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${GA_ID}', { page_path: window.location.pathname });
-            `}
-          </Script>
+          {GA_ID && (
+            <>
+              <Script
+                src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}
+                strategy="afterInteractive"
+              />
+              <Script id="ga4-init" strategy="afterInteractive">
+                {`
+                  window.dataLayer = window.dataLayer || [];
+                  function gtag(){dataLayer.push(arguments);}
+                  gtag('js', new Date());
+                  gtag('config', '${GA_ID}', { page_path: window.location.pathname });
+                `}
+              </Script>
+            </>
+          )}
         </NextIntlClientProvider>
       </body>
     </html>

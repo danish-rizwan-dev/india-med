@@ -55,9 +55,9 @@ export default function ServiceBar() {
               ))}
             </div>
 
-            <Link
-              href="/free-consultation"
-              className="flex items-center justify-center gap-2 bg-[#EE4423] w-full h-[90px] active:scale-[0.98] px-4"
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+              className="flex items-center justify-center gap-2 bg-[#EE4423] w-full h-[90px] active:scale-[0.98] px-4 cursor-pointer"
               style={{ borderBottomLeftRadius: "21.6px", borderBottomRightRadius: "21.6px" }}
             >
               <div className="relative w-8 h-8 shrink-0">
@@ -71,7 +71,7 @@ export default function ServiceBar() {
               <span className={`text-white font-bold font-montserrat leading-tight text-center ${mobileCTA.label.length > 20 ? 'text-[14px]' : 'text-[18px]'}`}>
                 {mobileCTA.label}
               </span>
-            </Link>
+            </button>
           </div>
         </div>
       </div>
@@ -115,25 +115,42 @@ export default function ServiceBar() {
           }}
         >
           <div className="relative z-10 flex flex-row items-stretch justify-center w-full h-full rounded-[25px] lg:rounded-[40px] overflow-hidden">
-            {services.map((service, index) => (
-              <Link
-                href={`/${service.slug}`}
-                key={index}
-                className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4"
-              >
-                <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
-                  <Image
-                    src={service.icon}
-                    alt={`${service.label} service icon`}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[15px] xl:text-[18px] leading-tight max-w-[120px] lg:max-w-[130px] xl:max-w-[160px]">
-                  {service.label}
-                </span>
-              </Link>
-            ))}
+            {services.map((service, index) => {
+              const isConsult = service.slug === "free-consultation";
+              const content = (
+                <>
+                  <div className="relative w-[30px] h-[30px] lg:w-[40px] lg:h-[40px] transition-all group-hover:scale-110 group-hover:brightness-0 group-hover:invert flex-shrink-0">
+                    <Image
+                      src={service.icon}
+                      alt={`${service.label} service icon`}
+                      fill
+                      className="object-contain"
+                    />
+                  </div>
+                  <span className="text-center lg:text-left group-hover:text-white text-[#58595B] font-montserrat font-bold text-[12px] lg:text-[15px] xl:text-[18px] leading-tight max-w-[120px] lg:max-w-[130px] xl:max-w-[160px]">
+                    {service.label}
+                  </span>
+                </>
+              );
+
+              return isConsult ? (
+                <button
+                  key={index}
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+                  className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4 cursor-pointer outline-none border-none"
+                >
+                  {content}
+                </button>
+              ) : (
+                <Link
+                  href={`/${service.slug}`}
+                  key={index}
+                  className="relative flex flex-col lg:flex-row items-center justify-center bg-white/90 group transition-all hover:bg-[#EE4423] flex-1 h-full px-2 lg:px-4 gap-2 lg:gap-4"
+                >
+                  {content}
+                </Link>
+              );
+            })}
           </div>
         </div>
 

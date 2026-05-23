@@ -130,24 +130,24 @@ export default function Hero() {
           </div>
 
           {/* Consult Button */}
-          <Link
-            href="/appointment"
+          <button
+            onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
             aria-label="Book a medical consultation with India Med experts"
             title="Book a medical consultation"
             className={`
               flex items-center justify-center
-              bg-[#EE4423] text-white
+              bg-[#EE4423] text-white cursor-pointer
               transition-transform active:scale-95
               shadow-[0px_10px_20px_rgba(238,68,35,0.2)]
               rounded-full mr-auto lg:mr-0
-              ${isLongLocale ? 'w-fit px-[25px] h-[48px] lg:h-[49px] gap-[10px]' : 'w-[158.9px] lg:w-[252px] h-[48px] lg:h-[49px] gap-[10px] px-[20px]'}
+              ${isLongLocale ? 'w-fit px-[20px] md:px-[25px] h-[40px] md:h-[48px] lg:h-[49px] gap-[8px] md:gap-[10px]' : 'w-[140px] md:w-[158.9px] lg:w-[252px] h-[40px] md:h-[48px] lg:h-[49px] gap-[8px] md:gap-[10px] px-[15px] md:px-[20px]'}
             `}
           >
             <CalendarIcon />
-            <span className={`font-montserrat font-bold whitespace-nowrap ${isLongLocale ? 'text-[15px] lg:text-[18px]' : 'text-[14px] lg:text-[17px]'}`}>
+            <span className={`font-montserrat font-bold whitespace-nowrap ${isLongLocale ? 'text-[13px] md:text-[15px] lg:text-[18px]' : 'text-[13px] md:text-[14px] lg:text-[17px]'}`}>
               {t('button')}
             </span>
-          </Link>
+          </button>
         </div>
       </div>
     </section>

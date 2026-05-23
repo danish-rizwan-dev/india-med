@@ -95,9 +95,9 @@ export default function Navbar() {
               </form>
 
               {/* REQUEST CALL BACK BUTTON */}
-              <Link
-                href="/contact"
-                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] min-w-[150px] xl:min-w-[237px] w-fit px-3 xl:px-6 h-[45px] xl:h-[49px] gap-[4px] xl:gap-[10px] flex-shrink-0"
+              <button
+                onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] min-w-[150px] xl:min-w-[237px] w-fit px-3 xl:px-6 h-[45px] xl:h-[49px] gap-[4px] xl:gap-[10px] flex-shrink-0 cursor-pointer border-none outline-none"
                 style={{
                   fontFamily: "'Montserrat', sans-serif",
                   fontWeight: "600",
@@ -110,7 +110,7 @@ export default function Navbar() {
                   stroke="none"
                 />
                 <span className="whitespace-nowrap">{t('request_call')}</span>
-              </Link>
+              </button>
 
               {/* COMPACT LANGUAGE SWITCHER */}
               <div className="ml-[12px] xl:ml-[17px]">
@@ -119,16 +119,19 @@ export default function Navbar() {
             </div>
           </div>
 
-          {/* MOBILE MENU TOGGLE */}
-          <button
-            className="min-[1000px]:hidden flex items-center justify-center text-[#EE4423]"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle Menu"
-            aria-expanded={isMenuOpen}
-            aria-controls="mobile-menu"
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+          {/* MOBILE RIGHT SIDE - LANG SWITCHER & HAMBURGER */}
+          <div className="min-[1000px]:hidden flex items-center gap-4">
+            <LanguageSwitcher />
+            <button
+              className="flex items-center justify-center text-[#EE4423]"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Toggle Menu"
+              aria-expanded={isMenuOpen}
+              aria-controls="mobile-menu"
+            >
+              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+            </button>
+          </div>
         </div>
       </nav>
 
@@ -140,9 +143,6 @@ export default function Navbar() {
             onClick={() => setIsMenuOpen(false)}
           />
           <div id="mobile-menu" className="fixed inset-0 top-[60px] bg-white z-[60] min-[1000px]:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
-            <div className="mb-6 pb-6 border-b border-gray-100 flex justify-center">
-              <LanguageSwitcher />
-            </div>
             <ul
               className="flex flex-col gap-6 text-[18px] font-semibold text-[#555555] mb-8"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
@@ -159,14 +159,16 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/contact"
-              className="flex items-center justify-center py-4 rounded-full bg-[#EE4423] text-white font-bold gap-3"
-              onClick={() => setIsMenuOpen(false)}
+            <button
+              className="flex items-center justify-center py-4 rounded-full bg-[#EE4423] text-white font-bold gap-3 cursor-pointer border-none outline-none"
+              onClick={() => {
+                setIsMenuOpen(false);
+                window.dispatchEvent(new CustomEvent("open-consultation-modal"));
+              }}
             >
               <Phone size={20} fill="currentColor" stroke="none" />
               {t('request_call')}
-            </Link>
+            </button>
           </div>
         </>
       )}

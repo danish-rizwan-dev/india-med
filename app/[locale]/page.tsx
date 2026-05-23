@@ -17,6 +17,7 @@ const OurOfficeSection = dynamic(() => import("@/components/homepage/OurOfficeSe
 const FounderSection = dynamic(() => import("@/components/homepage/FounderSection"));
 const ProcessFlow = dynamic(() => import("@/components/homepage/ProcessFlow"));
 const SharedGradientBg = dynamic(() => import("@/components/layout/SharedGradientBg"));
+const EnquirySection = dynamic(() => import("@/components/homepage/EnquirySection"));
 const Footer = dynamic(() => import("@/components/layout/Footer"));
 
 export default async function HomePage({params}: {params: Promise<{locale: string}>}) {
@@ -43,6 +44,7 @@ export default async function HomePage({params}: {params: Promise<{locale: strin
       <FAQSection />
       <OurOfficeSection />
       <FounderSection />
+      <EnquirySection />
       <Footer />
     </main>
   );
