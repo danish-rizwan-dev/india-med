@@ -440,6 +440,29 @@
       }
     }
   },
+  "SpecialityWhyChoose": {
+    "title_line_1": "Nima uchun",
+    "title_line_2": "India Med Services'ni tanlash kerak",
+    "title_line_3_prefix": "Sizning",
+    "intro": "Hindiston {care} sohasida global yetakchiga aylandi va India Med Services ushbu jahon darajasidagi tizimda to'g'ri yo'l topishingizga yordam beradi.",
+    "contact_now": "Hozir bog'lanish",
+    "point_1": {
+      "title": "3D bosib chiqarish",
+      "desc": "Bemorlar G'arb mamlakatlariga nisbatan davolanish xarajatlaridan 50% dan 60% gacha tejashlari mumkin. Biz byudjetingizga mos, yuqori standartdagi yordamni ta'minlaymiz."
+    },
+    "point_2": {
+      "title": "Jahon darajasidagi tajriba",
+      "desc": "Hindistonning yetakchi mutaxassislari ko'pincha xalqaro tayyorgarlikka ega bo'lib, ko'p yillik tajriba va global tibbiyot markazlariga mos natijalarni taqdim etadi."
+    },
+    "point_3": {
+      "title": "Tezkor kirish va kompleks yordam",
+      "desc": "Biz maslahatlar va diagnostikaga tezkor kirishni ta'minlaymiz. Tibbiy turizm jamoamiz viza, aeroport transferi, tarjimonlar va davolanishdan keyingi kuzatuvgacha bo'lgan jarayonni boshqaradi."
+    },
+    "point_4": {
+      "title": "Ilg'or texnologiyalar",
+      "desc": "Hamkor shifoxonalarimiz eng so'nggi texnologiyalar bilan jihozlangan, jumladan:\n• Murakkab aralashuvlar uchun gibrid kateter laboratoriyalari.\n• Yuqori aniqlik uchun robotik jarrohlik tizimlari.\n• Tezroq tiklanish uchun minimal invaziv usullar."
+    }
+  },
   "SpecialityShared": {
     "enquire_now": "So'rov qoldirish",
     "top_hospitals": "Eng yaxshi shifoxonalar",

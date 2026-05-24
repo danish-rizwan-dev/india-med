@@ -21,22 +21,21 @@ export default function Specialities() {
   ];
 
   const [search, setSearch] = useState("");
-  const [isExpanded, setIsExpanded] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
-    if (search || isExpanded) return;
+    if (search) return;
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 4) % specialities.length);
     }, 3000);
     return () => clearInterval(interval);
-  }, [search, isExpanded, specialities.length]);
+  }, [search, specialities.length]);
 
   const filtered = specialities.filter((s) =>
     s.title.toLowerCase().includes(search.toLowerCase())
   );
 
-  const showScrolling = !search && !isExpanded;
+  const showScrolling = !search;
 
   return (
     <section id="specialities" className="relative w-full overflow-hidden">
@@ -137,13 +136,13 @@ export default function Specialities() {
           </div>
 
           {!search && (
-            <button
-              onClick={() => setIsExpanded(!isExpanded)}
+            <Link
+              href="/speciality"
               className="flex items-center w-full h-[49px] bg-[#EE4423] rounded-full text-white font-bold pl-[40px] pr-[30px] active:scale-95 transition-all hover:bg-[#d63a1b] whitespace-nowrap"
             >
-              <span className="mr-3">{isExpanded ? t('show_less') : t('view_all')}</span>
-              <span className={`text-xl transition-transform ${isExpanded ? "-rotate-90" : "rotate-0"}`}>›</span>
-            </button>
+              <span className="mr-3">{t('view_all')}</span>
+              <span className="text-xl">›</span>
+            </Link>
           )}
         </div>
 

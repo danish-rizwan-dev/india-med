@@ -5,7 +5,7 @@ import SpecialityFAQCustom from "./sections/SpecialityFAQCustom";
 import RelatedDoctorsCustom from "./sections/RelatedDoctorsCustom";
 import RelatedHospitalsCustom from "./sections/RelatedHospitalsCustom";
 import PatientStoriesCustom from "./sections/PatientStoriesCustom";
-import WhyChooseCustom from "./sections/WhyChooseCustom";
+import WhyChooseIndiaMedSection from "./sections/WhyChooseIndiaMedSection";
 import ProceduresDirectoryCustom from "./sections/ProceduresDirectoryCustom";
 import Footer from "@/components/layout/Footer";
 
@@ -14,6 +14,7 @@ import SpecialityHero from "./sections/SpecialityHero";
 import IntroSection from "./sections/IntroSection";
 import KeyConditions from "./sections/KeyConditions";
 import AdvancedTechniques from "./sections/AdvancedTechniques";
+import WhyChooseUs from "../homepage/WhyChooseUs";
 
 interface SpecialityTemplateProps {
   specialityKey: keyof typeof specialitiesData;
@@ -56,6 +57,8 @@ export default function SpecialityTemplate({
       {/* ─── 5. ADVANCED TECHNIQUES SECTION ─── */}
       <AdvancedTechniques techniques={data.techniques} specLang={specLang} slug={data.slug || ""} />
 
+      <WhyChooseIndiaMedSection specLang={specLang} />
+
       {/* ─── 5.6 FAQ ACCORDION (Custom Layout) ─── */}
       <SpecialityFAQCustom
         faqItems={faqItems}
@@ -71,12 +74,9 @@ export default function SpecialityTemplate({
       <PatientStoriesCustom stories={data.patientStories} />
       
       {/* ─── 5.5 WHY CHOOSE SECTION (Custom Layout) ─── */}
-      <WhyChooseCustom />
-
+      <WhyChooseUs />
       {/* ─── 5.10 PROCEDURES DIRECTORY (Custom Layout) ─── */}
       <ProceduresDirectoryCustom procedures={proceduresToUse} />
-
-
 
       {/* Footer */}
       <Footer />

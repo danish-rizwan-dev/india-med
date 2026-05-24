@@ -22,16 +22,16 @@ export default function SpecialityFAQCustom({ faqItems }: SpecialityFAQCustomPro
   const rightItems = faqItems.slice(5, 10);
 
   return (
-    <div className="relative w-full min-h-[607px] py-20 flex flex-col items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[607px] py-20 flex flex-col items-center justify-center overflow-hidden">
       {/* ================= BACKGROUND LAYER ================= */}
       <div className="absolute inset-0 z-0">
         <Image 
-          src="/images/sections/faq/background.png"
-          alt="Background"
+          src="/images/sections/common/FAQSBG.jpg"
+          alt=""
           fill
           className="object-cover"
+          sizes="100vw"
         />
-        {/* Blur Overlay from Homepage */}
         <div className="absolute inset-0 bg-white/70 backdrop-blur-[50px]" />
         
         {/* Top Fade */}
@@ -97,8 +97,8 @@ export default function SpecialityFAQCustom({ faqItems }: SpecialityFAQCustomPro
                   </button>
 
                   <div
-                    className={`relative z-10 px-6 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[200px] pb-6 opacity-100" : "max-h-0 opacity-0"}`}
-                  >
+                  className={`relative z-10 px-6 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[200px] pb-6 opacity-100" : "max-h-0 opacity-0"}`}
+                >
                     <p className="text-[#58595B] text-[15px] leading-relaxed border-t border-gray-100/50 pt-4">
                       {item.answer}
                     </p>
@@ -167,6 +167,6 @@ export default function SpecialityFAQCustom({ faqItems }: SpecialityFAQCustomPro
 
         </div>
       </div>
-    </div>
+    </section>
   );
 }

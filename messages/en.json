@@ -440,6 +440,29 @@
       }
     }
   },
+  "SpecialityWhyChoose": {
+    "title_line_1": "Why Choose",
+    "title_line_2": "India Med Services for",
+    "title_line_3_prefix": "Your",
+    "intro": "India has emerged as a global leader in {care}, and India Med Services is here to help you navigate this world-class ecosystem.",
+    "contact_now": "Contact Now",
+    "point_1": {
+      "title": "3D Printing",
+      "desc": "Patients can save 50% to 60% on treatment costs compared to Western countries. We ensure you receive high-standard care that fits your budget, making life-saving procedures more accessible."
+    },
+    "point_2": {
+      "title": "World-Class Expertise",
+      "desc": "India's top specialists are often internationally trained, bringing decades of experience and success rates that rival leading global medical centers."
+    },
+    "point_3": {
+      "title": "Rapid Access & Comprehensive Support",
+      "desc": "We prioritize your health by providing quick access to consultations and diagnostics, significantly reducing wait times. Our dedicated medical tourism team handles everything - from visa facilitation and airport transfers to interpreters and post-treatment follow-ups - ensuring a seamless journey to recovery."
+    },
+    "point_4": {
+      "title": "Cutting-Edge Technology",
+      "desc": "The hospitals we partner with are equipped with the latest advancements, including:\n• Hybrid Catheter Labs for complex interventions.\n• Robotic Surgery Systems for enhanced precision.\n• Minimally Invasive Options to ensure faster recovery and less scarring."
+    }
+  },
   "SpecialityShared": {
     "enquire_now": "Enquire Now",
     "top_hospitals": "Top Hospitals",
