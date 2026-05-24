@@ -119,7 +119,7 @@ export default function IndiaMedNetwork() {
       <div className="relative w-full max-w-[1280px] xl:max-w-[1440px] mx-auto px-4 lg:px-8">
         
         {/* ================= NAVIGATION BUTTONS ================= */}
-        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 lg:-translate-y-[65%] lg:-mt-[3px] left-[-20px] right-[-20px] z-50 pointer-events-none justify-between">
+        <div className="hidden lg:flex absolute top-1/2 -translate-y-1/2 lg:-translate-y-[65%] lg:-mt-[3px] left-[90px] right-[100px] z-50 pointer-events-none justify-between">
           <button
             onClick={scrollPrev}
             className="pointer-events-auto w-20 h-20 flex items-center justify-center transition-all hover:scale-110 active:scale-95 group"
@@ -164,7 +164,7 @@ export default function IndiaMedNetwork() {
         </div>
 
         {/* CAROUSEL */}
-        <div className="o cursor-grab active:cursor-grabbing w-full" ref={emblaRef}>
+        <div className="o cursor-grab active:cursor-grabbing w-full lg:ml-27" ref={emblaRef}>
           <div className="flex -ml-4">
             {hospitalData.map((hospital, index) => {
               const total = hospitalData.length;
@@ -175,7 +175,7 @@ export default function IndiaMedNetwork() {
                 <article
                   key={index}
                   // Balanced exact flex bases to work cleanly alongside centered slide boundaries
-                  className="relative flex-[0_0_88%] md:flex-[0_0_50%] lg:flex-[0_0_50%] pl-4 min-w-0 transition-opacity duration-700"
+                  className="relative flex-[0_0_88%] md:flex-[0_0_45%] lg:flex-[0_0_42%] pl-4 min-w-0 transition-opacity duration-700"
                   style={{ opacity: isInFront ? 1 : 0.3 }}
                 >
                   <div

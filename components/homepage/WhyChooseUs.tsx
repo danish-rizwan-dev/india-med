@@ -42,13 +42,13 @@ export default function WhyChooseUs() {
   ]);
 
   return (
-    <section className="relative z-10 w-full lg:mt-0 overflow-hidden py-12 lg:py-0">
+    <section className="relative z-10 w-full lg:mt-0 overflow-hidden py-12 lg:py-6">
 
       <div
-        className="relative flex flex-col items-center justify-center mx-auto lg:pt-[120px] lg:pb-32 px-0 lg:px-0"
+        className="relative flex flex-col items-center justify-center mx-auto lg:pt-[80px] lg:pb-20 px-0 lg:px-0"
         style={{ maxWidth: "1319px", fontFamily: "Montserrat, sans-serif" }}
       >
-        <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:flex-row lg:justify-center lg:gap-[40px] xl:gap-[100px]">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left w-full lg:flex-row lg:justify-center lg:gap-[30px] xl:gap-[80px]">
 
           {/* ================= MOBILE/TABLET HEADER ================= */}
           <header className="flex flex-col items-center lg:hidden mb-12 px-6">
@@ -66,16 +66,16 @@ export default function WhyChooseUs() {
           </header>
 
           {/* ================= DESKTOP RIGHT SECTION ================= */}
-          <div className="hidden lg:flex flex-col items-start text-left max-w-[420px] xl:max-w-[530px] order-2 lg:pt-[100px] xl:pt-[150px] px-6 lg:px-0">
-            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-8 px-10 lg:px-14 py-4 lg:py-5 w-fit">
+          <div className="hidden lg:flex flex-col items-start text-left  max-w-[340px] xl:max-w-[440px] order-2 lg:pt-[50px] xl:pt-[70px] px-6 lg:px-0">
+            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 px-10 lg:px-12 py-4 lg:py-4 w-fit">
               <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-                  ? "text-2xl md:text-4xl lg:text-[42px]"
-                  : "text-[20px] md:text-[28px] lg:text-[38px]"
+                  ? "text-2xl md:text-4xl lg:text-[38px]"
+                  : "text-[20px] md:text-[28px] lg:text-[34px]"
                 }`}>
                 {t('title')}
               </h2>
             </header>
-            <p className="text-[#58595B] text-lg xl:text-[19px] font-medium leading-relaxed mb-10">
+            <p className="text-[#58595B] text-lg xl:text-[18px] font-medium leading-relaxed mb-8">
               {t('header_desc')}
             </p>
             <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg hover:bg-[#d63a1b] transition-all active:scale-95">
@@ -114,19 +114,19 @@ export default function WhyChooseUs() {
           </div>
 
           {/* ================= DESKTOP/TABLET GRID ================= */}
-          <div className="hidden lg:grid grid-cols-2 w-full max-w-[540px] xl:max-w-[680px] gap-4 xl:gap-8 order-1 px-6 lg:px-0">
+          <div className="hidden lg:grid grid-cols-2 w-full max-w-[500px] xl:max-w-[620px] gap-4 xl:gap-6 order-1 px-6 lg:px-0 ">
             {reasons.map((item, index) => (
               <article
                 key={index}
                 className={`
                   relative flex flex-col items-start text-left transition-all duration-500 hover:-translate-y-2 w-full mx-auto bg-white/40 backdrop-blur-md
-                  ${index % 2 !== 0 ? "lg:mt-12" : ""}
+                  ${index % 2 !== 0 ? "lg:mt-8" : ""}
                 `}
                 style={{
-                  maxWidth: "320px",
-                  minHeight: "300px",
-                  borderRadius: "40px",
-                  padding: "var(--card-padding, 40px)",
+                  maxWidth: "280px",
+                  minHeight: "240px",
+                  borderRadius: "36px",
+                  padding: "var(--card-padding, 30px)",
                 }}
               >
                 <style jsx>{`
@@ -138,7 +138,7 @@ export default function WhyChooseUs() {
                   }
                 `}</style>
                 <div
-                  className="absolute inset-0 rounded-[40px] pointer-events-none"
+                  className="absolute inset-0 rounded-[36px] pointer-events-none"
                   aria-hidden="true"
                   style={{
                     padding: '3px',
@@ -148,7 +148,7 @@ export default function WhyChooseUs() {
                     maskComposite: 'exclude',
                   }}
                 />
-                <div className="flex items-center justify-center mb-6 w-12 h-12 xl:w-[60px] xl:h-[60px] shrink-0">
+                <div className="flex items-center justify-center mb-5 w-11 h-11 xl:w-[56px] xl:h-[56px] shrink-0">
                   <Image
                     src={item.icon}
                     alt={item.title}
@@ -158,8 +158,8 @@ export default function WhyChooseUs() {
                     className="w-full h-full object-contain"
                   />
                 </div>
-                <h3 className="text-[#58595B] font-bold text-xl xl:text-[22px] mb-3 leading-tight">{item.title}</h3>
-                <p className="text-[#58595B] text-sm xl:text-[15px] font-medium leading-relaxed opacity-90">{item.description}</p>
+                <h3 className="text-[#58595B] font-bold text-lg xl:text-[20px] mb-3 leading-tight">{item.title}</h3>
+                <p className="text-[#58595B] text-sm xl:text-[14px] font-medium leading-relaxed opacity-90">{item.description}</p>
               </article>
             ))}
           </div>

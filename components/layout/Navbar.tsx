@@ -62,7 +62,7 @@ export default function Navbar() {
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="hover:text-[#EE4423] transition-all whitespace-nowrap"
+                    className="transition-all whitespace-nowrap"
                   >
                     {link.name}
                   </Link>
@@ -152,7 +152,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 border-b border-gray-50 hover:text-[#EE4423]"
+                    className="block py-2 border-b border-gray-50"
                   >
                     {link.name}
                   </Link>
