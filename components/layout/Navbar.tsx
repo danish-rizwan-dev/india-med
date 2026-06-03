@@ -10,141 +10,129 @@ import { useTranslations, useLocale } from 'next-intl';
 export default function Navbar() {
   const t = useTranslations('Navbar');
   const locale = useLocale();
-  const isEn = locale === 'en';
+  const isCompactSearch = locale === 'uz' || locale === 'kk';
+  const isShiftRight = locale === 'en' || locale === 'ru';
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const navLinks = [
     { name: t('home'), href: "/" },
     { name: t('speciality'), href: "/speciality" },
+    { name: t('doctors'), href: "/doctors" },
     { name: t('services'), href: "/services" },
     { name: t('contact'), href: "/contact" },
   ];
 
   return (
     <header
-      className="w-full sticky top-0 z-50 bg-[#FFFFFF] flex items-center"
+      className="w-full sticky top-0 z-50 bg-[#FFFFFF]"
       style={{ boxShadow: "0px 15px 20px 0px #68211314" }}
     >
       <nav
-        className="mx-auto flex items-center justify-between w-full h-[60px] lg:h-[95px]"
+        className="mx-auto flex items-center justify-between w-full h-[70px] lg:h-[95px] px-4 md:px-8 xl:px-12"
         style={{ maxWidth: "1512px" }}
         aria-label="Main Medical Navigation"
       >
-        {/* MAIN WRAPPER */}
-        <div className="flex items-center justify-between w-full px-[25px] md:px-[50px] lg:pl-[96px] lg:pr-[60px]">
+        {/* LOGO */}
+        <div className="flex-shrink-0">
+          <Link href="/" aria-label="India Med Service Home" className="relative block w-[130px] lg:w-[170px] xl:w-[202px] h-[35px] lg:h-[46px] xl:h-[56px]">
+            <Image
+              src="/images/indiaMedServiceLogo.svg"
+              alt="India Med Service"
+              fill
+              className="object-contain"
+              priority
+            />
+          </Link>
+        </div>
 
-          {/* LOGO */}
-          <div className="flex-shrink-0">
-            <Link href="/" aria-label="India Med Service Home" className="relative block w-[120px] lg:w-[160px] xl:w-[202.52px] h-[33px] lg:h-[44px] xl:h-[56px]">
-              <Image
-                src="/images/indiaMedServiceLogo.svg"
-                alt="India Med Service"
-                fill
-                className="object-contain opacity-100"
-                priority
+        {/* DESKTOP CONTAINER (Hidden on Mobile/Tablet screens dynamically) */}
+        <div className={`hidden lg:flex items-center flex-grow justify-between ${isShiftRight ? 'ml-15 xl:ml-35' : 'ml-6 xl:ml-12'}`}>
+          
+          {/* NAVIGATION LINKS -  Fluid and non-wrapping */}
+          <ul
+            className="flex items-center gap-4 xl:gap-8 font-medium text-[14px] xl:text-[16px] text-[#555555]"
+            style={{ fontFamily: "'Montserrat', sans-serif" }}
+          >
+            {navLinks.map((link) => (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  className="transition-all hover:text-[#EE4423] whitespace-nowrap"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+
+          {/* RIGHT ACTION ITEMS CONTAINER */}
+          <div className="flex items-center gap-3 xl:gap-4 ml-4">
+            
+            {/* SEARCH BAR - Uses min-width limits instead of breaking widths */}
+            <form
+              action={`/${locale}/speciality`}
+              method="GET"
+              role="search"
+              className={`relative flex items-center bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] border border-[#F8F8F8] rounded-full group h-[45px] xl:h-[49px] ${isCompactSearch ? 'w-[120px] xl:w-[170px]' : 'w-[140px] xl:w-[200px]'}`}
+            >
+              <div className={`absolute left-0 top-0 bg-[#EE4423] rounded-full flex items-center justify-center text-white h-full transition-all duration-300 group-hover:scale-105 cursor-pointer ${isCompactSearch ? 'w-[40px] xl:w-[45px]' : 'w-[45px] xl:w-[49px]'}`}>
+                <Search size={isCompactSearch ? 16 : 18} strokeWidth={2.5} />
+              </div>
+              <input
+                type="search"
+                name="q"
+                placeholder={t('search_placeholder')}
+                className={`w-full pl-[52px] pr-3 h-full font-medium ${isCompactSearch ? 'text-[12px] xl:text-[14px]' : 'text-[13px] xl:text-[15px]'} outline-none bg-transparent placeholder:text-[#A0A0A0] text-[#555555]`}
+                style={{ fontFamily: "'Montserrat', sans-serif" }}
               />
-            </Link>
-          </div>
+            </form>
 
-          <div className="hidden min-[1000px]:flex items-center flex-grow">
-            {/* LINKS - Locale-aware positioning & Pixel-Perfect Dimensions */}
-            <ul
-              className={`flex items-center gap-[20px] xl:gap-[35px] ${isEn ? "ml-6 xl:ml-[191px] w-auto xl:w-[400px] h-[21px]" : "ml-4 xl:ml-[60px]"}`}
+            {/* REQUEST CALL BACK BUTTON - Flexible widths based on active languages */}
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+              className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] px-4 xl:px-6 h-[45px] xl:h-[49px] gap-2 flex-shrink-0 cursor-pointer border-none outline-none"
               style={{
                 fontFamily: "'Montserrat', sans-serif",
-                fontWeight: "500",
-                fontSize: isEn ? "min(17px, 1.2vw)" : "min(15px, 1.1vw)",
-                lineHeight: "100%",
-                color: "#555555",
+                fontWeight: "600",
+                fontSize: "14px",
               }}
             >
-              {navLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="transition-all whitespace-nowrap"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+              <Phone className="w-4 h-4 xl:w-5 xl:h-5" fill="currentColor" stroke="none" />
+              <span className="whitespace-nowrap">{t('request_call')}</span>
+            </button>
 
-            {/* SPACER TO CREATE THE LARGE GAP SHOWN IN SCREENSHOT */}
-            <div className="flex-grow" />
-
-            {/* SEARCH + CALL + LANG - RIGHT END */}
-            <div className="flex items-center gap-[8px] xl:gap-[16px] ml-4 xl:ml-12">
-              {/* SEARCH BAR */}
-              <form
-                action={`/${locale}/speciality`}
-                method="GET"
-                role="search"
-                className="relative flex items-center bg-white shadow-[0px_4px_20px_rgba(0,0,0,0.08)] border border-[#F8F8F8] rounded-full group w-[120px] xl:w-[182px] h-[45px] xl:h-[49px] transition-all"
-              >
-                <div className="absolute left-0 top-0 bg-[#EE4423] rounded-full flex items-center justify-center text-white w-[49px] h-[49px] transition-all duration-300 group-hover:scale-105 cursor-pointer">
-                  <Search size={20} strokeWidth={2.5} />
-                </div>
-                <input
-                  type="search"
-                  name="q"
-                  placeholder={t('search_placeholder')}
-                  className="w-full pl-[50px] pr-2 h-full font-medium text-[13px] xl:text-[17px] outline-none bg-transparent placeholder:text-[#A0A0A0] text-[#555555]"
-                  style={{ fontFamily: "'Montserrat', sans-serif" }}
-                />
-              </form>
-
-              {/* REQUEST CALL BACK BUTTON */}
-              <button
-                onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
-                className="flex items-center justify-center transition-transform hover:scale-[1.02] active:scale-[0.98] text-white rounded-full bg-[#EE4423] min-w-[150px] xl:min-w-[237px] w-fit px-3 xl:px-6 h-[45px] xl:h-[49px] gap-[4px] xl:gap-[10px] flex-shrink-0 cursor-pointer border-none outline-none"
-                style={{
-                  fontFamily: "'Montserrat', sans-serif",
-                  fontWeight: "600",
-                  fontSize: isEn ? "min(17px, 1.1vw)" : "min(13px, 0.9vw)",
-                }}
-              >
-                <Phone
-                  className="w-[18px] h-[18px] xl:w-[24px] xl:h-[24px]"
-                  fill="currentColor"
-                  stroke="none"
-                />
-                <span className="whitespace-nowrap">{t('request_call')}</span>
-              </button>
-
-              {/* COMPACT LANGUAGE SWITCHER */}
-              <div className="ml-[12px] xl:ml-[17px]">
-                <LanguageSwitcher />
-              </div>
+            {/* LANGUAGE SWITCHER */}
+            <div className="flex-shrink-0">
+              <LanguageSwitcher />
             </div>
           </div>
+        </div>
 
-          {/* MOBILE RIGHT SIDE - LANG SWITCHER & HAMBURGER */}
-          <div className="min-[1000px]:hidden flex items-center gap-4">
-            <LanguageSwitcher />
-            <button
-              className="flex items-center justify-center text-[#EE4423]"
-              onClick={() => setIsMenuOpen(!isMenuOpen)}
-              aria-label="Toggle Menu"
-              aria-expanded={isMenuOpen}
-              aria-controls="mobile-menu"
-            >
-              {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-            </button>
-          </div>
+        {/* MOBILE & TABLET INTERFACE ACTIONS */}
+        <div className="lg:hidden flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            className="flex items-center justify-center text-[#EE4423] p-1"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            aria-label="Toggle Menu"
+            aria-expanded={isMenuOpen}
+            aria-controls="mobile-menu"
+          >
+            {isMenuOpen ? <X size={26} /> : <Menu size={26} />}
+          </button>
         </div>
       </nav>
 
-      {/* MOBILE OVERLAY MENU */}
+      {/* MOBILE OVERLAY DRAWER */}
       {isMenuOpen && (
         <>
           <div
-            className="fixed inset-0 top-[60px] bg-black/20 z-[55] min-[1000px]:hidden"
+            className="fixed inset-0 top-[70px] bg-black/20 z-[55] lg:hidden"
             onClick={() => setIsMenuOpen(false)}
           />
-          <div id="mobile-menu" className="fixed inset-0 top-[60px] bg-white z-[60] min-[1000px]:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-top duration-300">
+          <div id="mobile-menu" className="fixed inset-y-0 right-0 top-[70px] w-full max-w-[320px] bg-white z-[60] lg:hidden flex flex-col p-6 shadow-xl animate-in slide-in-from-right duration-300">
             <ul
-              className="flex flex-col gap-6 text-[18px] font-semibold text-[#555555] mb-8"
+              className="flex flex-col gap-5 text-[16px] font-semibold text-[#555555] mb-6"
               style={{ fontFamily: "'Montserrat', sans-serif" }}
             >
               {navLinks.map((link) => (
@@ -152,7 +140,7 @@ export default function Navbar() {
                   <Link
                     href={link.href}
                     onClick={() => setIsMenuOpen(false)}
-                    className="block py-2 border-b border-gray-50"
+                    className="block py-2.5 border-b border-gray-100 transition-colors hover:text-[#EE4423]"
                   >
                     {link.name}
                   </Link>
@@ -160,13 +148,13 @@ export default function Navbar() {
               ))}
             </ul>
             <button
-              className="flex items-center justify-center py-4 rounded-full bg-[#EE4423] text-white font-bold gap-3 cursor-pointer border-none outline-none"
+              className="flex items-center justify-center py-3.5 rounded-full bg-[#EE4423] text-white font-bold gap-3 cursor-pointer border-none outline-none mt-auto"
               onClick={() => {
                 setIsMenuOpen(false);
                 window.dispatchEvent(new CustomEvent("open-consultation-modal"));
               }}
             >
-              <Phone size={20} fill="currentColor" stroke="none" />
+              <Phone size={18} fill="currentColor" stroke="none" />
               {t('request_call')}
             </button>
           </div>

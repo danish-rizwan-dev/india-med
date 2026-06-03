@@ -1,5 +1,6 @@
 import { MetadataRoute } from "next";
 import { SEO_CONFIG } from "@/lib/seo.config";
+import { doctors } from "@/components/doctors/data";
 
 // Map of URL slugs
 const slugs = [
@@ -33,6 +34,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes = [
     { path: "", priority: 1.0, changeFrequency: "daily" as const },
     { path: "/speciality", priority: 0.9, changeFrequency: "weekly" as const },
+    { path: "/doctors", priority: 0.9, changeFrequency: "weekly" as const },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
     { path: "/privacy-policy", priority: 0.5, changeFrequency: "monthly" as const },
     { path: "/terms-and-conditions", priority: 0.5, changeFrequency: "monthly" as const },
@@ -57,6 +59,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
         lastModified: currentDate,
         changeFrequency: "weekly" as const,
         priority: 0.8,
+      });
+    }
+  }
+
+  // 3. Doctor profile pages across all locales
+  for (const locale of locales) {
+    for (const doctor of doctors) {
+      entries.push({
+        url: `${SEO_CONFIG.url}/${locale}/doctors/${doctor.slug}`,
+        lastModified: currentDate,
+        changeFrequency: "weekly" as const,
+        priority: 0.75,
       });
     }
   }

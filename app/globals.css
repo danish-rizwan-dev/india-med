@@ -15,6 +15,29 @@
 }
 
 @layer components {
+  .navbar-desktop-row {
+    display: none;
+  }
+
+  .navbar-mobile-row {
+    display: flex;
+  }
+
+  .navbar-mobile-layer {
+    display: flex;
+  }
+
+  @media (min-width: 1280px) {
+    .navbar-desktop-row {
+      display: flex;
+    }
+
+    .navbar-mobile-row,
+    .navbar-mobile-layer {
+      display: none;
+    }
+  }
+
   /* Exact Spec for the Brand Label (23px Bold) */
   .brand-label {
     font-family: var(--font-montserrat);

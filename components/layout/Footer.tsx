@@ -142,7 +142,7 @@ export default function Footer() {
     {
       title: t('col_1_title'),
       data: [
-        { label: t('links.find_doctor'), href: "/contact" },
+        { label: t('links.find_doctor'), href: "/doctors" },
         { label: t('links.book_apt'), href: "/contact" },
         { label: t('links.treatments'), href: "/speciality" },
         { label: t('links.emergency'), href: "/contact" },
