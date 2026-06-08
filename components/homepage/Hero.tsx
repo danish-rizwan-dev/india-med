@@ -34,7 +34,7 @@ export default function Hero() {
       : locale === "uz"
         ? "text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]"
         : locale === "ru"
-          ? "text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]"
+          ? "text-[25px] md:text-[42px] lg:text-[52px] leading-[1.0]"
           : "text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight";
   const descriptionSizeClass =
     locale === "kk"
@@ -70,10 +70,10 @@ export default function Hero() {
           title={`Open ${doctorName} profile`}
           className="
               absolute z-10
-              w-[270px] h-[360px]
-              top-[220px] left-auto right-[-72px]
+              w-[375px] h-[480px]
+              top-[80px] left-auto right-[-45px]
 
-              sm:w-[360px] sm:h-[460px]
+              sm:w-[380px] sm:h-[480px]
               sm:top-[145px] sm:right-[-52px]
 
               md:z-20 md:w-[400px] md:h-[520px] md:top-[110px]
@@ -95,8 +95,8 @@ export default function Hero() {
           <span
             className="
               absolute z-10 flex items-center gap-3
-              left-[12px] top-[214px]
-              sm:left-[10px] sm:top-[276px]
+              left-[55px] top-[350px]
+              sm:left-[20px] sm:top-[296px]
               md:left-[24px] md:top-[310px]
               lg:left-[86px] lg:top-[380px]
               max-w-max rounded-full bg-white/90 px-3 py-1.5

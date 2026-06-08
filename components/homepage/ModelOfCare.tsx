@@ -46,8 +46,8 @@ export default function ModelOfCare() {
       {/* DESKTOP HEADER */}
       <header className="hidden lg:flex items-center justify-center border-2 border-[#58595B] rounded-full mb-20 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
         <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-            ? "text-2xl md:text-3xl lg:text-[42px]"
-            : "text-[20px] md:text-[28px] lg:text-[38px]"
+          ? "text-2xl md:text-3xl lg:text-[42px]"
+          : "text-[20px] md:text-[28px] lg:text-[38px]"
           }`}>
           {t('title')}
         </h2>
@@ -56,8 +56,8 @@ export default function ModelOfCare() {
       {/* MOBILE/TABLET HEADER */}
       <header className="lg:hidden relative z-10 flex items-center justify-center border-2 border-white rounded-full mb-12 px-8 py-3 w-fit mx-auto">
         <h2 className={`text-white font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-            ? "text-xl md:text-2xl"
-            : "text-[18px] md:text-[24px]"
+          ? "text-xl md:text-2xl"
+          : "text-[18px] md:text-[24px]"
           }`}>
           {t('title')}
         </h2>

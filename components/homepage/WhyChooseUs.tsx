@@ -4,7 +4,7 @@ import Image from "next/image";
 import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import {useTranslations, useLocale} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function WhyChooseUs() {
   const t = useTranslations('WhyChooseUs');
@@ -54,8 +54,8 @@ export default function WhyChooseUs() {
           <header className="flex flex-col items-center lg:hidden mb-12 px-6">
             <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 px-10 py-4 w-fit mx-auto">
               <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-                  ? "text-2xl md:text-3xl"
-                  : "text-[20px] md:text-[28px]"
+                ? "text-2xl md:text-3xl"
+                : "text-[20px] md:text-[28px]"
                 }`}>
                 {t('title')}
               </h2>
@@ -69,8 +69,8 @@ export default function WhyChooseUs() {
           <div className="hidden lg:flex flex-col items-start text-left  max-w-[340px] xl:max-w-[440px] order-2 lg:pt-[50px] xl:pt-[70px] px-6 lg:px-0">
             <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 px-10 lg:px-12 py-4 lg:py-4 w-fit">
               <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-                  ? "text-2xl md:text-4xl lg:text-[38px]"
-                  : "text-[20px] md:text-[28px] lg:text-[34px]"
+                ? "text-2xl md:text-4xl lg:text-[38px]"
+                : "text-[20px] md:text-[28px] lg:text-[34px]"
                 }`}>
                 {t('title')}
               </h2>

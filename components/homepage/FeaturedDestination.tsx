@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
-import {useTranslations, useLocale} from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function FeaturedDestination() {
   const t = useTranslations('FeaturedDestination');
@@ -38,7 +38,7 @@ export default function FeaturedDestination() {
         <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
 
         {/* FIXED: Replaced static pixel dimensions with center-anchored full-bleed sizing to match FAQ layout */}
-        <div 
+        <div
           className="absolute left-1/2 -translate-x-1/2 w-full max-w-[1600px] h-[650px] lg:h-[850px] top-[-150px] lg:top-[-300px] z-0"
           style={{
             maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
@@ -74,8 +74,8 @@ export default function FeaturedDestination() {
         <header className="flex flex-col items-center mb-10 lg:mb-[60px] gap-6 lg:gap-[30px] text-center w-full mt-[-20px] lg:mt-[-140px] px-6">
           <div className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-6 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto bg-white/50 backdrop-blur-sm shadow-sm">
             <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-                ? "text-2xl md:text-4xl lg:text-[42px]"
-                : "text-[20px] md:text-[28px] lg:text-[38px]"
+              ? "text-2xl md:text-4xl lg:text-[42px]"
+              : "text-[20px] md:text-[28px] lg:text-[38px]"
               }`}>
               {t('title')}
             </h2>
@@ -154,12 +154,12 @@ export default function FeaturedDestination() {
                 <foreignObject x="0" y="0" width="80" height="80">
                   <div style={{ backdropFilter: "blur(5px)", clipPath: "url(#bgblur_dest_left_clip_hf)", height: "100%", width: "100%" }}></div>
                 </foreignObject>
-                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3"/>
-                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423"/>
+                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423" />
               </g>
               <defs>
                 <clipPath id="bgblur_dest_left_clip_hf">
-                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5"/>
+                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" />
                 </clipPath>
               </defs>
             </svg>
@@ -174,12 +174,12 @@ export default function FeaturedDestination() {
                 <foreignObject x="0" y="0" width="80" height="80">
                   <div style={{ backdropFilter: "blur(5px)", clipPath: "url(#bgblur_dest_right_clip_hf)", height: "100%", width: "100%" }}></div>
                 </foreignObject>
-                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3"/>
-                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423"/>
+                <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" fill="white" fillOpacity="0.5" stroke="white" strokeWidth="3" />
+                <path fillRule="evenodd" clipRule="evenodd" d="M34.7071 37.7071L41.3417 31.0726L43 32.731L37.1946 38.5363L43 44.3417L41.3417 46L34.7071 39.3655C34.4873 39.1456 34.3638 38.8473 34.3638 38.5363C34.3638 38.2253 34.4873 37.9271 34.7071 37.7071Z" fill="#EE4423" />
               </g>
               <defs>
                 <clipPath id="bgblur_dest_right_clip_hf">
-                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5"/>
+                  <rect x="11.5" y="11.5" width="57" height="57" rx="28.5" />
                 </clipPath>
               </defs>
             </svg>
