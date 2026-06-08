@@ -68,6 +68,11 @@ export default function DoctorProfile({ doctor, relatedDoctors }: Props) {
       translateOrFallback(`doctor_${section}_${doctorKey}_${index + 1}`, item)
     );
 
+  const getDoctorLabel = (related: Doctor, field: "name" | "title") => {
+    const relatedDoctorKey = related.slug.replace(/-/g, "_");
+    return translateOrFallback(`doctor_${field}_${relatedDoctorKey}`, related[field]);
+  };
+
   const qualifications = translateListItems("qualification", doctor.profile.qualifications);
   const professionalExperience = translateListItems("experience", doctor.profile.professionalExperience);
   const specialInterests = translateListItems("interests", doctor.profile.specialInterests);
@@ -180,8 +185,8 @@ export default function DoctorProfile({ doctor, relatedDoctors }: Props) {
                         <Image src={related.image} alt={related.name} fill sizes="78px" className="object-contain object-bottom" />
                       </span>
                       <span className="min-w-0 self-center">
-                        <span className="block text-[16px] font-bold text-[#414042]">{related.name}</span>
-                        <span className="mt-1 block truncate text-[13px] font-bold text-[#EE4423]">{related.title}</span>
+                        <span className="block text-[16px] font-bold text-[#414042]">{getDoctorLabel(related, "name")}</span>
+                        <span className="mt-1 block truncate text-[13px] font-bold text-[#EE4423]">{getDoctorLabel(related, "title")}</span>
                       </span>
                     </Link>
                   ))}

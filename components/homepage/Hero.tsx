@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations, useLocale } from "next-intl";
 
 const CalendarIcon = () => (
   <div className="relative w-[16px] h-[16px] lg:w-[26px] lg:h-[24px] flex items-center justify-center flex-shrink-0">
@@ -17,25 +17,33 @@ const CalendarIcon = () => (
 );
 
 export default function Hero() {
-  const t = useTranslations('Hero');
+  const t = useTranslations("Hero");
+  const doctorProfileT = useTranslations("DoctorProfile");
   const locale = useLocale();
-  const isEn = locale === 'en';
-  const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
+  const doctorName = doctorProfileT("doctor_name_rajender_kumar");
+  const isEn = locale === "en";
+  const isLongLocale = locale === "kk" || locale === "uz" || locale === "ru";
   const brandSizeClass = isLongLocale
-    ? locale === 'kk'
-      ? 'text-[20px] md:text-[25px] lg:text-[26px] leading-tight'
-      : 'text-[22px] lg:text-[26px] leading-tight'
-    : 'text-[20px] lg:text-[24px] leading-[39.19px]';
+    ? locale === "kk"
+      ? "text-[20px] md:text-[25px] lg:text-[26px] leading-tight"
+      : "text-[22px] lg:text-[26px] leading-tight"
+    : "text-[20px] lg:text-[24px] leading-[39.19px]";
   const headingSizeClass =
-    locale === 'kk' ? 'text-[25px] md:text-[38px] lg:text-[46px] leading-[1.0]' :
-      locale === 'uz' ? 'text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]' :
-        locale === 'ru' ? 'text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]' :
-          'text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight';
+    locale === "kk"
+      ? "text-[25px] md:text-[38px] lg:text-[46px] leading-[1.0]"
+      : locale === "uz"
+        ? "text-[30px] md:text-[38px] lg:text-[46px] leading-[1.0]"
+        : locale === "ru"
+          ? "text-[32px] md:text-[42px] lg:text-[52px] leading-[1.0]"
+          : "text-[28px] md:text-[36px] lg:text-[47px] leading-[1.1] lg:leading-tight";
   const descriptionSizeClass =
-    locale === 'kk' ? 'text-[14px] md:text-[14px] lg:text-[17px] leading-relaxed' :
-      locale === 'uz' ? 'text-[14px] lg:text-[17px] leading-relaxed' :
-        locale === 'ru' ? 'text-[15px] lg:text-[19px] leading-relaxed' :
-          'text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal';
+    locale === "kk"
+      ? "text-[14px] md:text-[14px] lg:text-[17px] leading-relaxed"
+      : locale === "uz"
+        ? "text-[14px] lg:text-[17px] leading-relaxed"
+        : locale === "ru"
+          ? "text-[15px] lg:text-[19px] leading-relaxed"
+          : "text-[14px] lg:text-[17px] leading-relaxed lg:leading-normal";
 
   return (
     <section
@@ -54,34 +62,55 @@ export default function Hero() {
         />
       </div>
 
-
       {/* ================= MAIN CONTAINER ================= */}
       <div className="relative w-full max-w-[1512px] mx-auto h-full">
-
-        {/* ================= DOCTOR IMAGE ================= */}
-        <div
+        <Link
+          href="/doctors/rajender-kumar"
+          aria-label={`Open ${doctorName} profile`}
+          title={`Open ${doctorName} profile`}
           className="
-            absolute z-10
-            /* Mobile Spec: 170px left */
-            w-[215px] h-[287px] 
-            top-[202px] left-[170px] 
-            /* iPad Air & Pro Fix: Start Desktop-style layout at 'md' */
-            md:z-20 md:w-[350px] md:h-[460px] md:top-[50px]
-            md:left-[calc(100%-380px)] /* Keeps doctor on right for iPad Air */
-            /* Desktop Spec: Matches your 853px left position exactly */
-            lg:w-[426.39px] lg:h-[569.47px]
-            lg:top-[22px] lg:left-[calc(max(600px,min(853px,58vw)))]
-          "
+              absolute z-10
+              w-[270px] h-[360px]
+              top-[220px] left-auto right-[-72px]
+
+              sm:w-[360px] sm:h-[460px]
+              sm:top-[145px] sm:right-[-52px]
+
+              md:z-20 md:w-[400px] md:h-[520px] md:top-[110px]
+              md:right-[-60px]
+
+              lg:w-[700px] lg:h-[700px]
+              lg:top-[0px] lg:left-[calc(max(550px,min(700px,56vw)))] lg:right-auto
+              group cursor-pointer
+            "
         >
           <Image
-            src="/images/sections/hero/doctor.png"
+            src="/images/sections/hero/rajender-kumar.png"
             alt="Expert healthcare professional in India providing world-class medical assistance"
             fill
-            sizes="(max-width: 768px) 215px, (max-width: 1024px) 350px, 426px"
+            sizes="(max-width: 768px) 960px, (max-width: 1024px) 650px, 930px"
             priority
             className="object-contain"
           />
-        </div>
+          <span
+            className="
+              absolute z-10 flex items-center gap-3
+              left-[12px] top-[214px]
+              sm:left-[10px] sm:top-[276px]
+              md:left-[24px] md:top-[310px]
+              lg:left-[86px] lg:top-[380px]
+              max-w-max rounded-full bg-white/90 px-3 py-1.5
+              shadow-[0px_12px_30px_rgba(65,64,66,0.12)]
+              backdrop-blur-sm transition
+              group-hover:-translate-y-0.5 group-hover:bg-white
+            "
+          >
+            <span className="whitespace-nowrap font-montserrat text-[11px] font-bold text-[#414042] sm:text-[12px] md:text-[14px] lg:text-[15px]">
+              {doctorName}
+            </span>
+            <span className="h-px w-7 shrink-0 bg-[#EE4423] sm:w-9 lg:w-10" aria-hidden="true" />
+          </span>
+        </Link>
 
         {/* ================= CONTENT BOX ================= */}
         <div
@@ -89,21 +118,23 @@ export default function Hero() {
             absolute flex flex-col items-center md:items-start
             /* Mobile Spec: 19px left */
             w-[357px] h-auto
-            ${isLongLocale ? 'top-[10px]' : 'top-[32px]'} left-[19px]
-            ${isLongLocale ? 'gap-[20px] lg:gap-[40px]' : 'gap-[40px] lg:gap-[45px]'} z-20
+            ${isLongLocale ? "top-[10px]" : "top-[32px]"} left-[19px]
+            ${isLongLocale ? "gap-[20px] lg:gap-[40px]" : "gap-[40px] lg:gap-[45px]"} z-20
             /* iPad Air & Pro: Adjust left position to be fluid */
-            md:max-w-[450px] md:top-[80px] md:left-[5vw]
+            md:max-w-[410px] md:top-[80px] md:left-[5vw]
             /* Desktop Spec: Matches your exact 75px top / 208px left specs from baseline */
             lg:w-full lg:max-w-[584px]
             lg:top-[75px] lg:left-[calc(max(40px,min(208px,14vw)))]
           `}
         >
           {/* Brand & Heading Group */}
-          <div className={`flex flex-col w-full ${isLongLocale ? 'gap-[10px] lg:gap-[16px]' : 'gap-[20px]'} text-center md:text-left`}>
+          <div
+            className={`flex flex-col w-full ${isLongLocale ? "gap-[10px] lg:gap-[16px]" : "gap-[20px]"} text-center md:text-left`}
+          >
             <span
               className={`font-montserrat font-bold text-[#EE4423] block ${brandSizeClass}`}
             >
-              {t('brand')}
+              {t("brand")}
             </span>
 
             <h1
@@ -112,8 +143,8 @@ export default function Hero() {
                 ${headingSizeClass}
               `}
             >
-              {t('heading_main')}
-              <span className="text-[#EE4423]"> {t('heading_highlight')}</span>
+              {t("heading_main")}
+              <span className="text-[#EE4423]"> {t("heading_highlight")}</span>
             </h1>
 
             <p
@@ -125,13 +156,15 @@ export default function Hero() {
                 mx-0
               `}
             >
-              {t('description')}
+              {t("description")}
             </p>
           </div>
 
           {/* Consult Button */}
           <button
-            onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("open-consultation-modal"))
+            }
             aria-label="Book a medical consultation with India Med experts"
             title="Book a medical consultation"
             className={`
@@ -140,12 +173,14 @@ export default function Hero() {
               transition-transform active:scale-95
               shadow-[0px_10px_20px_rgba(238,68,35,0.2)]
               rounded-full mr-auto lg:mr-0
-              ${isLongLocale ? 'w-fit px-[20px] md:px-[25px] h-[40px] md:h-[48px] lg:h-[49px] gap-[8px] md:gap-[10px]' : 'w-[140px] md:w-[158.9px] lg:w-[252px] h-[40px] md:h-[48px] lg:h-[49px] gap-[8px] md:gap-[10px] px-[15px] md:px-[20px]'}
+              ${isLongLocale ? "w-fit px-[20px] md:px-[25px] h-[40px] md:h-[48px] lg:h-[49px] gap-[8px] md:gap-[10px]" : "w-[140px] md:w-[158.9px] lg:w-[252px] h-[40px] md:h-[48px] lg:h-[49px] gap-[8px] md:gap-[10px] px-[15px] md:px-[20px]"}
             `}
           >
             <CalendarIcon />
-            <span className={`font-montserrat font-bold whitespace-nowrap ${isLongLocale ? 'text-[13px] md:text-[15px] lg:text-[18px]' : 'text-[13px] md:text-[14px] lg:text-[17px]'}`}>
-              {t('button')}
+            <span
+              className={`font-montserrat font-bold whitespace-nowrap ${isLongLocale ? "text-[13px] md:text-[15px] lg:text-[18px]" : "text-[13px] md:text-[14px] lg:text-[17px]"}`}
+            >
+              {t("button")}
             </span>
           </button>
         </div>

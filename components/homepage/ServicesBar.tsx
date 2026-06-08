@@ -82,12 +82,12 @@ export default function ServiceBar() {
         style={{ zIndex: -1 }}
       />
 
-      <div className="relative flex items-center justify-center w-full max-w-[1400px] -translate-y-1/2 mt-[-100px] lg:mt-[-160px]">
+      <div className="relative flex items-center justify-center w-full max-w-[1400px] -translate-y-1/2 mt-[-40px] lg:mt-[-100px]">
 
         {/* Glassmorphic Left Arrow */}
         <button
           onClick={() => { }}
-          className="hidden md:flex absolute left-[-15px] lg:left-[5px] xl:left-[15px] top-1/2 -translate-y-[38%] z-50 w-20 h-20 items-center justify-center transition-all hover:scale-110 active:scale-95 group pointer-events-auto"
+          className="hidden md:flex absolute left-[10px] lg:left-[20px] xl:left-[30px] top-1/2 -translate-y-[38%] z-50 w-20 h-20 items-center justify-center transition-all hover:scale-110 active:scale-95 group pointer-events-auto"
           aria-label="Previous service"
         >
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -107,7 +107,7 @@ export default function ServiceBar() {
         </button>
 
         <div
-          className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1000px] xl:max-w-[1317px] h-[160px] lg:h-[226px] rounded-[30px] lg:rounded-[50px] p-[10px] lg:p-[23px]"
+          className="hidden md:flex relative flex-row items-center justify-center w-full max-w-[95%] lg:max-w-[1000px] xl:max-w-[1317px] h-[160px] lg:h-[226px] rounded-[30px] lg:rounded-[50px] py-[10px] px-[70px] lg:py-[23px] lg:px-[80px]"
           style={{
             background: "rgba(255, 255, 255, 0.1)",
             backdropFilter: "blur(50px)",
@@ -157,7 +157,7 @@ export default function ServiceBar() {
         {/* Glassmorphic Right Arrow */}
         <button
           onClick={() => { }}
-          className="hidden md:flex absolute right-[-15px] lg:right-[5px] xl:right-[15px] top-1/2 -translate-y-[62%] z-50 w-20 h-20 items-center justify-center transition-all hover:scale-110 active:scale-95 group pointer-events-auto"
+          className="hidden md:flex absolute right-[10px] lg:right-[20px] xl:right-[30px] top-1/2 -translate-y-[62%] z-50 w-20 h-20 items-center justify-center transition-all hover:scale-110 active:scale-95 group pointer-events-auto"
           aria-label="Next service"
         >
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" className="rotate-180">

@@ -65,7 +65,15 @@ export default async function DoctorPage({ params }: PageProps) {
   }
 
   const relatedDoctors = doctors
-    .filter((item) => item.slug !== doctor.slug && (item.department === doctor.department || item.location === doctor.location))
+    .filter((item) => item.slug !== doctor.slug)
+    .sort((a, b) => {
+      const score = (item: typeof doctors[number]) =>
+        Number(item.department === doctor.department) * 4 +
+        Number(item.location === doctor.location) * 2 +
+        Number(item.hospital === doctor.hospital);
+
+      return score(b) - score(a);
+    })
     .slice(0, 4);
 
   const medicalSchema = {

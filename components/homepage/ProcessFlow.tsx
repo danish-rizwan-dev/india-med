@@ -56,7 +56,7 @@ export default function ProcessFlow() {
   };
 
   return (
-    <section className="relative w-full -mt-[130px] lg:mt-0 py-12 lg:py-20 flex flex-col items-center overflow-hidden bg-white font-montserrat">
+    <section className="relative w-full -mt-[130px] md:mt-0 lg:mt-0 py-12 lg:py-20 flex flex-col items-center overflow-hidden bg-white font-montserrat">
       
       <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
         <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
