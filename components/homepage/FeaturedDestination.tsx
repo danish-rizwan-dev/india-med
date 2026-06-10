@@ -31,18 +31,23 @@ export default function FeaturedDestination() {
   const scrollNext = React.useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   return (
-    <section id="destinations" className="relative w-full bg-transparent flex flex-col items-center py-12 lg:py-0 lg:min-h-[750px] lg:justify-center">
+    <nav id="destinations" className="relative w-full bg-transparent flex flex-col items-center py-12 lg:py-0 lg:min-h-[750px] lg:justify-center md:mt-[150px]">
 
       {/* ================= BACKGROUND ILLUSTRATION LAYERS ================= */}
-      <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
-        <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
+      {/* Removed overflow-hidden from the immediate mobile layout shell to let the graphic span into the preceding section */}
+      <div className="absolute inset-0 pointer-events-none z-0 overflow-visible md:overflow-hidden" aria-hidden="true">
+        <div className="absolute top-0 left-0 right-0 h-[250px] bg-gradient-to-b from-white via-white/80 to-transparent z-10 hidden md:block" />
 
-        {/* FIXED: Replaced static pixel dimensions with center-anchored full-bleed sizing to match FAQ layout */}
+        {/* FIXED FOR MOBILE:
+          - Changed mobile positioning from `top-[-150px]` to `top-[-580px]` so it stretches up behind "Why Choose Us".
+          - Height expanded on mobile to `h-[1100px]` to seamlessly cover both blocks.
+          - On desktop (`md:`), it reverts precisely to your original specifications (`md:top-[-300px] md:h-[850px]`).
+        */}
         <div
-          className="absolute left-1/2 -translate-x-1/2 w-full max-w-[1600px] h-[650px] lg:h-[850px] top-[-150px] lg:top-[-300px] z-0"
+          className="absolute left-1/2 -translate-x-1/2 w-full max-w-[1600px] h-[1100px] md:h-[650px] lg:h-[850px] top-[-580px] md:top-[-150px] lg:top-[-300px] z-0"
           style={{
-            maskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)',
-            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 15%, black 85%, transparent)'
+            maskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)',
+            WebkitMaskImage: 'linear-gradient(to bottom, transparent, black 10%, black 90%, transparent)'
           }}
         >
           <Image
@@ -187,6 +192,6 @@ export default function FeaturedDestination() {
         </div>
 
       </div>
-    </section>
+    </nav>
   );
 }

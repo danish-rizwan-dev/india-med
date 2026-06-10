@@ -56,17 +56,9 @@ export default function ProcessFlow() {
   };
 
   return (
-    <section className="relative w-full -mt-[130px] md:mt-0 lg:mt-0 py-12 lg:py-20 flex flex-col items-center overflow-hidden bg-white font-montserrat">
+    <section className="relative w-full  mt-15 md:mt- lg:mt-0 py-12 lg:py-20 flex flex-col  items-center overflow-hidden bg-white font-montserrat">
       
-      <header className="relative z-10 flex items-center justify-center border-2 border-[#58595B] rounded-full mb-12 lg:mb-16 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
-        <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-            ? "text-2xl md:text-3xl lg:text-[42px]"
-            : "text-[20px] md:text-[28px] lg:text-[38px]"
-          }`}>
-          {t('title')}
-        </h2>
-      </header>
-
+    
       {/* BACKGROUND STROKES (Moved below cards) */}
       <div className="absolute inset-0 z-0 lg:hidden pointer-events-none flex items-center justify-center -translate-y-[40px]">
         <Image 

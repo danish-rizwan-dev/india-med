@@ -192,12 +192,12 @@ export default function Footer() {
     <footer className="relative bg-white pt-16 lg:pt-24 pb-10 w-full overflow-hidden" aria-labelledby="footer-heading">
       <h2 id="footer-heading" className="sr-only">Footer</h2>
 
-      {/* ================= DESKTOP VIEW ================= */}
-      <div className="hidden lg:block max-w-[1320px] mx-auto">
+      {/* ================= DESKTOP & TABLET VIEW ================= */}
+      <div className="hidden lg:block max-w-[1320px] mx-auto px-6">
         <div className="flex flex-col lg:flex-row lg:gap-8 xl:gap-20">
 
           {/* Brand & Contact Section */}
-          <div className="flex flex-col gap-10 w-full lg:w-[280px] xl:w-[380px] px-6 lg:px-0 py-10 lg:py-0 items-start text-left">
+          <div className="flex flex-col gap-8 w-full lg:w-[250px] xl:w-[350px] lg:px-0 py-10 lg:py-0 items-start text-left flex-shrink-0">
             <Link href="/" className="relative w-[212px] h-[76px] block">
               <Image
                 src="/images/indiaMedServiceLogo.svg"
@@ -212,7 +212,7 @@ export default function Footer() {
               {t('desc')}
             </p>
 
-            <nav className="flex gap-8 text-[#58595B]" aria-label="Social Media Links">
+            <nav className="flex gap-6 text-[#58595B]" aria-label="Social Media Links">
               {[
                 { Icon: FacebookIcon, label: "Facebook", href: "https://facebook.com/indiamed" },
                 { Icon: TwitterIcon, label: "Twitter", href: "https://twitter.com/indiamed" },
@@ -233,11 +233,11 @@ export default function Footer() {
             </nav>
           </div>
 
-          {/* Navigation Grid */}
-          <div className="flex-1 grid grid-cols-4 gap-4 xl:gap-10">
+          {/* Responsive Navigation Grid */}
+          <div className="flex-1 grid grid-cols-2 xl:grid-cols-4 gap-x-6 gap-y-10 xl:gap-10">
             {footerSections.map((col, idx) => (
               <nav key={idx} aria-labelledby={`footer-col-${idx}`}>
-                <h4 id={`footer-col-${idx}`} className="text-[#EE4423] font-montserrat font-bold text-[18px] xl:text-[24px] mb-6 xl:mb-10">
+                <h4 id={`footer-col-${idx}`} className="text-[#EE4423] font-montserrat font-bold text-[18px] xl:text-[24px] mb-4 xl:mb-10">
                   {col.title}
                 </h4>
                 <ul className="flex flex-col gap-3">
@@ -245,7 +245,7 @@ export default function Footer() {
                     <li key={i}>
                       <Link
                         href={item.href}
-                        className="text-[#58595B] font-montserrat font-semibold text-[14px] xl:text-[17px] hover:text-[#EE4423] transition-colors opacity-90 hover:opacity-100"
+                        className="text-[#58595B] font-montserrat font-semibold text-[14px] xl:text-[17px] hover:text-[#EE4423] transition-colors opacity-90 hover:opacity-100 block break-words"
                       >
                         {item.label}
                       </Link>
@@ -259,7 +259,7 @@ export default function Footer() {
         </div>
 
         {/* Desktop Payments Section */}
-        <div className="mt-16 pt-10 border-t border-gray-100 w-full px-6 lg:px-0">
+        <div className="mt-16 pt-10 border-t border-gray-100 w-full">
           <div className="flex flex-col xl:flex-row justify-between items-start xl:items-center gap-8">
             {/* Info */}
             <div className="flex gap-4 max-w-xl text-left">
@@ -299,7 +299,7 @@ export default function Footer() {
 
       </div>
 
-      {/* ================= MOBILE VIEW (NEW DESIGN) ================= */}
+      {/* ================= MOBILE VIEW ================= */}
       <div className="lg:hidden flex flex-col items-center px-6">
         
         {/* Navigation List */}

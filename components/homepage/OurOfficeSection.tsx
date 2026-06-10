@@ -37,7 +37,7 @@ export default function OurOfficeSection() {
   };
 
   return (
-    <section className="relative w-full flex items-center justify-center py-8 lg:py-32 mb-[40px] md:mb-0 mt-0 lg:mt-[-20px] min-h-0 lg:min-h-[853px] overflow-hidden bg-white" id="our-office">
+    <section className="relative w-full flex items-center justify-center py-8 md:py-16 lg:py-32 mb-[40px] md:mb-0 mt-0 lg:mt-[-20px] min-h-0 lg:min-h-[853px] overflow-hidden bg-white" id="our-office">
       {/* Schema for SEO */}
       <script
         type="application/ld+json"
@@ -62,15 +62,15 @@ export default function OurOfficeSection() {
 
       {/* ================= MAIN CONTENT DIV ================= */}
       <div
-        className="relative z-10 w-full max-w-[1330px] mx-auto px-6 flex flex-col items-center"
+        className="relative z-10 w-full max-w-[1330px] mx-auto px-6 md:px-12 flex flex-col items-center"
         style={{ gap: "32px" }}
       >
 
         {/* ================= OUR OFFICE HEADING ================= */}
         <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-4 lg:mb-16 px-10 lg:px-14 py-3 lg:py-5 w-fit mx-auto bg-white shadow-sm">
           <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-              ? "text-2xl md:text-3xl lg:text-[42px]"
-              : "text-[20px] md:text-[28px] lg:text-[38px]"
+            ? "text-2xl md:text-3xl lg:text-[42px]"
+            : "text-[20px] md:text-[28px] lg:text-[38px]"
             }`}>
             {t('title')}
           </h2>
@@ -78,21 +78,22 @@ export default function OurOfficeSection() {
 
         {/* ================= CONTENT DIV ================= */}
         <div
-          className="w-full flex flex-col lg:flex-row items-center justify-center gap-[26px] lg:gap-[110px] lg:h-[462px]"
+          className="w-full flex flex-col lg:flex-row items-center justify-center gap-[26px] lg:gap-8 xl:gap-[110px] lg:h-auto xl:h-[462px]"
         >
-          {/* Left: Details and QR Div */}
+          {/* Left: Details and QR Div -> max-w expanded on md: viewports to eliminate huge left/right gutters */}
           <div
-            className="flex flex-col w-full max-w-[380px] lg:max-w-[758px] gap-8 lg:gap-[40px]"
+            className="flex flex-col w-full max-w-[380px] md:max-w-[680px] lg:max-w-none lg:flex-1 gap-8 md:gap-10 lg:gap-[40px]"
           >
             {/* Toshkent Section */}
-            <div className="flex flex-col gap-3">
-              <h3 className="text-[#E84E36] font-bold text-2xl lg:text-[32px] leading-tight text-center lg:text-left">
+            <div className="flex flex-col gap-3 md:gap-4">
+              {/* Increased font size for tablet view (md:text-3xl) */}
+              <h3 className="text-[#E84E36] font-bold text-2xl md:text-3xl lg:text-[32px] leading-tight text-center lg:text-left">
                 {t('uzbekistan')}
               </h3>
-              <div className="flex flex-row items-start justify-between lg:justify-start gap-4 lg:gap-8">
+              <div className="flex flex-row items-start justify-between lg:justify-start gap-4 md:gap-8">
                 {/* QR Code */}
                 <div
-                  className="relative order-2 lg:order-1 bg-white rounded-[10px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[132px] h-[132px] lg:w-[140px] lg:h-[140px]"
+                  className="relative order-2 lg:order-1 bg-white rounded-[10px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[132px] h-[132px] md:w-[140px] md:h-[140px]"
                 >
                   <Image
                     src="/images/sections/our-offices/qr-toshkent.svg"
@@ -102,18 +103,19 @@ export default function OurOfficeSection() {
                   />
                 </div>
 
-                {/* Info Div */}
+                {/* Info Div -> md:w-auto lets content fully utilize space on iPad layout */}
                 <div
-                  className="order-1 lg:order-2 flex flex-col items-start lg:pt-4 w-[178px] lg:w-[536px] justify-start gap-3 lg:gap-12"
+                  className="order-1 lg:order-2 flex flex-col items-start lg:pt-4 w-[178px] md:w-auto lg:w-auto lg:flex-1 justify-start gap-3 md:gap-6 lg:gap-12"
                 >
                   {/* Phones */}
-                  <div className="flex flex-col lg:flex-row lg:flex-nowrap items-start gap-2 lg:gap-x-12">
+                  <div className="flex flex-col xl:flex-row xl:flex-nowrap items-start gap-2 md:gap-3 xl:gap-x-12">
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
                       <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
                         <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
+                      {/* Increased font size for tablet view (md:text-[19px]) */}
                       <span
-                        className="text-[15px] lg:text-[23px] whitespace-nowrap"
+                        className="text-[15px] md:text-[19px] lg:text-[23px] whitespace-nowrap"
                         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "100%" }}
                       >
                         +998 78 555 11 71
@@ -123,8 +125,9 @@ export default function OurOfficeSection() {
                       <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
                         <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
+                      {/* Increased font size for tablet view (md:text-[19px]) */}
                       <span
-                        className="text-[15px] lg:text-[23px] whitespace-nowrap"
+                        className="text-[15px] md:text-[19px] lg:text-[23px] whitespace-nowrap"
                         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "100%" }}
                       >
                         +998 99 929 11 66
@@ -136,9 +139,10 @@ export default function OurOfficeSection() {
                     <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative mt-0.5 lg:mt-0">
                       <Image src="/images/sections/our-offices/location-icon.svg" alt="location" fill className="object-contain orange-icon" />
                     </div>
+                    {/* Increased font size for tablet view (md:text-[18px]) and removed narrow max-w text constraints */}
                     <span
-                      className="text-[15px] lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[150px] lg:max-w-none"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.2" }}
+                      className="text-[15px] md:text-[18px] lg:text-[23px] text-left break-words lg:whitespace-normal max-w-[150px] md:max-w-none lg:max-w-none"
+                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.3" }}
                     >
                       {t('tashkent_addr')}
                     </span>
@@ -148,14 +152,15 @@ export default function OurOfficeSection() {
             </div>
 
             {/* Qozog’iston Section */}
-            <div className="flex flex-col gap-3">
-              <h3 className="text-[#E84E36] font-bold text-2xl lg:text-[32px] leading-tight text-center lg:text-left">
+            <div className="flex flex-col gap-3 md:gap-4">
+              {/* Increased font size for tablet view (md:text-3xl) */}
+              <h3 className="text-[#E84E36] font-bold text-2xl md:text-3xl lg:text-[32px] leading-tight text-center lg:text-left">
                 {t('kazakhstan')}
               </h3>
-              <div className="flex flex-row items-start justify-between lg:justify-start gap-4 lg:gap-8">
+              <div className="flex flex-row items-start justify-between lg:justify-start gap-4 md:gap-8">
                 {/* QR Code */}
                 <div
-                  className="relative order-2 lg:order-1 bg-white rounded-[10px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[132px] h-[132px] lg:w-[140px] lg:h-[140px]"
+                  className="relative order-2 lg:order-1 bg-white rounded-[10px] lg:rounded-[20px] p-1 lg:p-2 shadow-sm border border-gray-100 flex-shrink-0 w-[132px] h-[132px] md:w-[140px] md:h-[140px]"
                 >
                   <Image
                     src="/images/sections/our-offices/qr-qozogiston.png"
@@ -165,18 +170,19 @@ export default function OurOfficeSection() {
                   />
                 </div>
 
-                {/* Info Div */}
+                {/* Info Div -> md:w-auto lets content fully utilize space on iPad layout */}
                 <div
-                  className="order-1 lg:order-2 flex flex-col items-start lg:pt-4 w-[178px] lg:w-[536px] justify-start gap-3 lg:gap-12"
+                  className="order-1 lg:order-2 flex flex-col items-start lg:pt-4 w-[178px] md:w-auto lg:w-auto lg:flex-1 justify-start gap-3 md:gap-6 lg:gap-12"
                 >
                   {/* Phones */}
-                  <div className="flex flex-col lg:flex-row lg:flex-nowrap items-start gap-2 lg:gap-x-12">
+                  <div className="flex flex-col xl:flex-row xl:flex-nowrap items-start gap-2 md:gap-3 xl:gap-x-12">
                     <div className="flex items-center gap-2 lg:gap-4 text-[#58595B]">
                       <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
                         <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
+                      {/* Increased font size for tablet view (md:text-[19px]) */}
                       <span
-                        className="text-[15px] lg:text-[23px] whitespace-nowrap"
+                        className="text-[15px] md:text-[19px] lg:text-[23px] whitespace-nowrap"
                         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "100%" }}
                       >
                         +777 688 414 93
@@ -186,8 +192,9 @@ export default function OurOfficeSection() {
                       <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative">
                         <Image src="/images/sections/our-offices/phone-icon.svg" alt="phone" fill className="object-contain orange-icon" />
                       </div>
+                      {/* Increased font size for tablet view (md:text-[19px]) */}
                       <span
-                        className="text-[15px] lg:text-[23px] whitespace-nowrap"
+                        className="text-[15px] md:text-[19px] lg:text-[23px] whitespace-nowrap"
                         style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "100%" }}
                       >
                         +7777 884 14 93
@@ -199,9 +206,10 @@ export default function OurOfficeSection() {
                     <div className="flex-shrink-0 w-5 h-5 lg:w-6 lg:h-6 relative mt-0.5 lg:mt-0">
                       <Image src="/images/sections/our-offices/location-icon.svg" alt="location" fill className="object-contain orange-icon" />
                     </div>
+                    {/* Increased font size for tablet view (md:text-[18px]) and removed narrow max-w text constraints */}
                     <span
-                      className="text-[15px] lg:text-[23px] text-left break-words lg:whitespace-nowrap max-w-[150px] lg:max-w-none"
-                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.2" }}
+                      className="text-[15px] md:text-[18px] lg:text-[23px] text-left break-words lg:whitespace-normal max-w-[150px] md:max-w-none lg:max-w-none"
+                      style={{ fontFamily: "'Montserrat', sans-serif", fontWeight: 500, lineHeight: "1.3" }}
                     >
                       {t('shymkent_addr')}
                     </span>
@@ -213,7 +221,7 @@ export default function OurOfficeSection() {
 
           {/* Right: Icon of location (Desktop Only) */}
           <div
-            className="hidden lg:block relative flex-shrink-0 w-[250px] h-[250px] lg:w-[462px] lg:h-[462px] animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
+            className="hidden lg:block relative flex-shrink-0 w-[280px] h-[280px] xl:w-[462px] xl:h-[462px] animate-float drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]"
           >
             <Image
               src="/images/sections/our-offices/3d-map-icon.svg"

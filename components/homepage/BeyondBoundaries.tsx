@@ -16,7 +16,6 @@ const Counter = ({ end, duration = 3000, shouldStart }: { end: number; duration?
     let cancelled = false;
     let animationFrameId: number;
 
-    // Defer resetting to 0 to next frame to avoid synchronous state calls inside useEffect
     animationFrameId = window.requestAnimationFrame(() => {
       if (cancelled) return;
       setCount(0);
@@ -70,10 +69,11 @@ export default function BeyondBoundaries() {
     <section
       ref={sectionRef}
       id="beyond-boundaries"
-      className="relative w-full bg-white lg:bg-[#EE4423] overflow-hidden flex flex-col items-center justify-center lg:min-h-[682px]"
+      // RESPONSIVE FIX: Switched background activation and min-height to md: to fully cover tablet screens
+      className="relative w-full bg-white md:bg-[#EE4423] overflow-hidden flex flex-col items-center justify-center py-12 md:py-16 lg:py-0 lg:min-h-[682px]"
     >
-      {/* 1. Background Image Layer (Desktop Only) */}
-      <div className="absolute inset-0 z-0 pointer-events-none hidden lg:block" aria-hidden="true">
+      {/* 1. Background Image Layer (Active on Tablet & Desktop) */}
+      <div className="absolute inset-0 z-0 pointer-events-none hidden md:block" aria-hidden="true">
         <Image
           src="/images/sections/common/beyond-boundaries-lines.jpg"
           alt="Topographical background lines"
@@ -82,8 +82,9 @@ export default function BeyondBoundaries() {
         />
       </div>
 
+      {/* --- MOBILE VIEW ONLY --- */}
       <div
-        className="relative z-10 w-full max-w-[376px] h-[682px] px-[30px] py-[35px] flex lg:hidden flex-col items-start overflow-hidden rounded-[40px]"
+        className="relative z-10 w-full max-w-[376px] h-[682px] px-[30px] py-[35px] flex md:hidden flex-col items-start overflow-hidden rounded-[40px]"
         style={{ background: 'linear-gradient(180deg, #EE4423 0%, #D63A1B 100%)' }}
       >
         {/* Background Lines for Mobile Card */}
@@ -92,11 +93,9 @@ export default function BeyondBoundaries() {
         </div>
 
         {/* Category Header */}
-        <p className="text-[17px] font-semibold text-white leading-[100%] font-montserrat mb-[16px] w-[153px] h-[42px] flex items-center">
-          {t('title').split(' ').join('<br/>')}
-          {/* Note: I'll use a safer approach for the line break if needed, but simple split is fine for current content */}
+        <p className="text-[17px] font-semibold text-white leading-[100%] font-montserrat mb-[16px] w-[153px] h-[42px] flex items-center whitespace-pre-line">
+          {t('title').split(' ').join('\n')}
         </p>
-
         {/* Main Title */}
         <h2 className="text-[23px] font-bold text-white leading-[100%] font-montserrat w-[313px] mb-[30px]">
           {t('heading')}
@@ -112,7 +111,7 @@ export default function BeyondBoundaries() {
           />
         </div>
 
-        {/* Number Line (Stats) - Balanced for 376px */}
+        {/* Number Line (Stats) */}
         <div className="flex items-start justify-between w-full mb-[40px]">
           {stats.map((stat, idx) => (
             <div key={idx} className="flex flex-col items-start text-white">
@@ -140,11 +139,12 @@ export default function BeyondBoundaries() {
         </div>
       </div>
 
-      {/* --- DESKTOP VIEW: RESTORED ORIGINAL --- */}
-      <div className="hidden lg:flex relative z-10 w-full max-w-[1320px] px-6 flex-col">
+      {/* --- TABLET & DESKTOP VIEW --- */}
+      <div className="hidden md:flex relative z-10 w-full max-w-[1320px] px-6 flex-col gap-10 lg:gap-0">
         <div className="flex flex-col lg:flex-row items-center lg:items-start justify-between text-center lg:text-left">
-          <header className="flex-1 text-white lg:pt-10 mb-10 lg:mb-0">
-            <div className="inline-flex items-center justify-center border-2 border-white rounded-full mb-8 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto lg:mx-0 backdrop-blur-sm">
+
+          <header className="flex-1 text-white lg:pt-10 mb-6 lg:mb-0 flex flex-col items-center lg:items-start">
+            <div className="inline-flex items-center justify-center border-2 border-white rounded-full mb-6 lg:mb-8 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto lg:mx-0 backdrop-blur-sm">
               <h2 className={`text-white font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
                 ? "text-2xl md:text-3xl lg:text-[42px]"
                 : "text-[20px] md:text-[28px] lg:text-[38px]"
@@ -152,33 +152,36 @@ export default function BeyondBoundaries() {
                 {t('title')}
               </h2>
             </div>
-            <h3 className="text-[28px] sm:text-3xl lg:text-[42px] xl:text-[48px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[480px] xl:max-w-[620px] mb-8 lg:mb-10">
+            <h3 className="text-[32px] sm:text-4xl lg:text-[42px] xl:text-[48px] font-bold leading-[1.2] lg:leading-[1.1] max-w-[550px] xl:max-w-[620px] mb-6 lg:mb-10 mx-auto lg:mx-0">
               {t('heading')}
             </h3>
             <button className="group flex items-center justify-center lg:justify-start gap-2 text-white font-bold text-lg no-underline mx-auto lg:mx-0">
               {t('know_more')} <ChevronRight size={22} className="transition-transform duration-300 group-hover:translate-x-3" />
             </button>
           </header>
+
           <div className="relative flex justify-center w-full lg:w-auto">
-            <div className="relative w-[400px] h-[360px] xl:w-[524px] xl:h-[480px]">
+            <div className="relative w-[380px] h-[340px] sm:w-[420px] sm:h-[380px] xl:w-[524px] xl:h-[480px]">
               <Image src="/images/sections/common/globe.svg" alt="World Medical Network Globe" fill className="object-contain" />
             </div>
           </div>
         </div>
-        <footer className="mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full gap-12 lg:gap-0">
+
+        <footer className="mt-4 lg:mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full gap-10 lg:gap-0">
           <div className="w-full lg:w-auto flex justify-center lg:block">
             <button className="bg-white text-[#58595B] px-8 py-3.5 rounded-full font-bold flex items-center gap-3 shadow-2xl transition-all hover:scale-105">
               <Phone size={20} fill="#58595B" />
               <span>{t('contact_now')}</span>
             </button>
           </div>
-          <div className="flex flex-row justify-center lg:justify-start gap-[40px] xl:gap-[112px] w-full lg:w-auto">
+
+          <div className="flex flex-row justify-center lg:justify-start gap-[48px] xl:gap-[112px] w-full lg:w-auto">
             {stats.map((stat, idx) => (
-              <article key={idx} className="flex flex-col items-start text-white">
-                <p className="text-[36px] xl:text-[48px] font-bold leading-tight">
+              <article key={idx} className="flex flex-col items-center lg:items-start text-white text-center lg:text-left">
+                <p className="text-[36px] sm:text-[42px] xl:text-[48px] font-bold leading-tight">
                   <Counter end={stat.value} shouldStart={hasStarted} />
                 </p>
-                <p className="text-[14px] font-medium opacity-90 max-w-[155px]">{stat.label}</p>
+                <p className="text-[13px] sm:text-[14px] font-medium opacity-90 max-w-[155px]">{stat.label}</p>
               </article>
             ))}
           </div>

@@ -7,7 +7,6 @@ import { useTranslations, useLocale } from 'next-intl';
 export default function FAQSection() {
   const t = useTranslations('FAQ');
   const locale = useLocale();
-  const isLongLocale = locale === 'kk' || locale === 'uz' || locale === 'ru';
   const [openIndex, setOpenIndex] = useState<number | null>(0);
 
   const faqData = [
@@ -33,7 +32,7 @@ export default function FAQSection() {
 
   return (
     <section
-      className="relative w-full flex items-center justify-center min-h-[539px] lg:h-[539px] overflow-hidden py-10 lg:py-0"
+      className="relative w-full flex items-center justify-center min-h-[539px] lg:h-[539px] overflow-hidden py-12 md:py-16 lg:py-0"
       aria-label="Frequently Asked Questions"
     >
       {/* FAQ Schema */}
@@ -52,7 +51,7 @@ export default function FAQSection() {
       />
       <div className="absolute inset-0 bg-white/10 backdrop-blur-[60px] z-0 pointer-events-none" />
       <div
-        className="absolute inset-x-0 bottom-0 h-[360px] md:h-[300px] lg:h-[210px] z-0 pointer-events-none"
+        className="absolute inset-x-0 bottom-0 h-[360px] md:h-[280px] lg:h-[210px] z-0 pointer-events-none"
         style={{
           background:
             "linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0.86) 42%, rgba(255,255,255,1) 78%, rgba(255,255,255,1) 100%)",
@@ -60,34 +59,40 @@ export default function FAQSection() {
       />
 
       {/* ================= MAIN CONTENT CONTAINER ================= */}
-      <div className="relative z-10 flex flex-col lg:flex-row w-full max-w-[1000px] xl:max-w-[1320px] gap-8 xl:gap-12 px-6 py-4 lg:py-0">
-        {/* LEFT COLUMN */}
-        <div className="flex flex-col items-center lg:items-start gap-5 w-full lg:w-[320px] xl:w-[427px] text-center lg:text-left">
-          {/* FAQs Heading */}
-          <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full mb-1 px-8 lg:px-9 py-3 w-fit mx-auto lg:mx-0 bg-white/10">
-            <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
-                ? "text-2xl md:text-3xl lg:text-[36px]"
-                : "text-[20px] md:text-[28px] lg:text-[32px]"
-              }`}>
-              {t('title')}
-            </h2>
-          </header>
+      {/* TABLET FIX: Added clean padding steps and container spacing */}
+      <div className="relative z-10 flex flex-col lg:flex-row w-full max-w-[1000px] xl:max-w-[1320px] gap-10 lg:gap-8 xl:gap-12 px-6 md:px-10 py-4 lg:py-0">
+        
+        {/* LEFT COLUMN: Stacked on mobile, premium split-row on iPad, side column on desktop */}
+        <div className="flex flex-col md:flex-row lg:flex-col items-center md:justify-between lg:justify-start gap-6 w-full lg:w-[320px] xl:w-[427px] text-center md:text-left">
+          
+          {/* Header Title + Subtitle Wrapper */}
+          <div className="flex flex-col items-center md:items-start gap-4 md:gap-3 w-full md:max-w-[380px] lg:max-w-none">
+            {/* FAQs Badge Heading */}
+            <header className="flex items-center justify-center border-2 border-[#58595B] rounded-full px-8 lg:px-9 py-3 w-fit bg-white/10">
+              <h2 className={`text-[#58595B] font-bold font-montserrat leading-none text-center tracking-[0px] capitalize ${locale === 'en'
+                  ? "text-2xl md:text-2xl lg:text-[36px]"
+                  : "text-[20px] md:text-[24px] lg:text-[32px]"
+                }`}>
+                {t('title')}
+              </h2>
+            </header>
 
-          {/* Frequently asked together / Questions below */}
-          <h2 className="text-[#58595B] font-montserrat font-bold text-[30px] md:text-[36px] lg:text-[38px] leading-[110%] tracking-[0px] max-w-[360px]">
-            {t('subtitle')}
-          </h2>
+            {/* Main Subtitle */}
+            <h3 className="text-[#58595B] font-montserrat font-bold text-[30px] md:text-[34px] lg:text-[38px] leading-[115%] tracking-[0px]">
+              {t('subtitle')}
+            </h3>
+          </div>
 
-          {/* Book Call Card with Shadow */}
+          {/* Book Call Card with Balanced Shading */}
           <div
-            className="relative mt-5 p-8 flex flex-col items-center text-center bg-white/25 backdrop-blur-[20px] rounded-[34px] h-[236px] w-full max-w-[356px] justify-center"
+            className="relative p-8 flex flex-col items-center text-center bg-white/25 backdrop-blur-[20px] rounded-[34px] h-[236px] w-full max-w-[356px] justify-center shrink-0 md:mt-2 lg:mt-5"
             style={{ boxShadow: "13px 10px 25px 0px rgba(104, 33, 19, 0.08)" }}
           >
             {/* Gradient Border Mask */}
             <div
-              className="absolute inset-0 rounded-[40px] pointer-events-none"
+              className="absolute inset-0 rounded-[34px] pointer-events-none"
               style={{
-                padding: "3px",
+                padding: "2px",
                 background:
                   "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
                 WebkitMask:
@@ -104,7 +109,7 @@ export default function FAQSection() {
               {t('book_desc')}
             </p>
 
-            <button className="bg-[#EE4423] text-white px-5 py-3 rounded-full flex items-center gap-3 font-bold shadow-lg transition-all hover:scale-105">
+            <button className="bg-[#EE4423] text-white px-5 py-3 rounded-full flex items-center gap-3 font-bold shadow-lg transition-all hover:scale-105 active:scale-95">
               <Image
                 src="/images/sections/common/appointment-calendar.svg"
                 width={20}
@@ -118,25 +123,21 @@ export default function FAQSection() {
           </div>
         </div>
 
-        {/* RIGHT COLUMN */}
-        <div className="flex-1 flex flex-col gap-3">
+        {/* RIGHT COLUMN: Expands fully across tablet screen layout */}
+        <div className="w-full lg:flex-1 flex flex-col gap-3.5 md:items-center lg:items-start">
           {faqData.map((faq, index) => {
             const isOpen = openIndex === index;
             return (
               <div
                 key={index}
-                className="relative transition-all duration-500 bg-white/30 backdrop-blur-[20px]"
-                style={{
-                  borderRadius: "30px",
-                  width: "100%",
-                  maxWidth: "762px",
-                }}
+                className="relative transition-all duration-500 bg-white/30 backdrop-blur-[20px] w-full max-w-full lg:max-w-[762px]"
+                style={{ borderRadius: "30px" }}
               >
                 {/* Gradient Border Mask */}
                 <div
                   className="absolute inset-0 rounded-[30px] pointer-events-none"
                   style={{
-                    padding: "3px",
+                    padding: "2px",
                     background:
                       "linear-gradient(135deg, rgba(255,173,157,0.6) 0%, rgba(255,255,255,0.05) 50%, rgba(227,227,227,0.8) 100%)",
                     WebkitMask:
@@ -148,27 +149,27 @@ export default function FAQSection() {
 
                 <button
                   onClick={() => setOpenIndex(isOpen ? null : index)}
-                  className="relative w-full flex items-center justify-between px-7 py-4 text-left z-10"
+                  className="relative w-full flex items-center justify-between px-6 md:px-8 py-5 text-left z-10 select-none"
                 >
-                  <span className="text-[#414042] font-bold text-[18px] lg:text-[20px] leading-tight">
+                  <span className="text-[#414042] font-bold text-[17px] md:text-[19px] lg:text-[20px] leading-tight pr-4">
                     {faq.question}
                   </span>
 
                   {/* Plus/Cross Button */}
                   <div className="shrink-0 w-4 h-4 flex items-center justify-center relative scale-90">
                     <div
-                      className={`absolute w-full h-[3px] bg-[#58595B] rounded-full transition-transform duration-300 ${isOpen ? "rotate-[135deg]" : "rotate-0"}`}
+                      className={`absolute w-full h-[2.5px] bg-[#58595B] rounded-full transition-transform duration-300 ${isOpen ? "rotate-[135deg]" : "rotate-0"}`}
                     />
                     <div
-                      className={`absolute h-full w-[3px] bg-[#58595B] rounded-full transition-transform duration-300 ${isOpen ? "rotate-[135deg]" : "rotate-0"}`}
+                      className={`absolute h-full w-[2.5px] bg-[#58595B] rounded-full transition-transform duration-300 ${isOpen ? "rotate-[135deg]" : "rotate-0"}`}
                     />
                   </div>
                 </button>
 
                 <div
-                  className={`relative z-10 px-7 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[140px] pb-4 opacity-100" : "max-h-0 opacity-0"}`}
+                  className={`relative z-10 px-6 md:px-8 overflow-hidden transition-all duration-500 ease-in-out ${isOpen ? "max-h-[220px] pb-5 opacity-100" : "max-h-0 opacity-0"}`}
                 >
-                  <p className="text-[#58595B] text-[15px] font-semibold leading-tight max-w-[95%]">
+                  <p className="text-[#58595B] text-[14px] md:text-[15px] font-semibold leading-relaxed max-w-[96%]">
                     {faq.answer}
                   </p>
                 </div>

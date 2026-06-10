@@ -25,10 +25,20 @@ export default function ServiceBar() {
       {/* --- MOBILE VIEW --- */}
       <div className="md:hidden absolute top-0 left-1/2 -translate-x-1/2 -translate-y-[55%] w-[300px] h-[300px] bg-[#EE4423]/15 blur-[100px] rounded-full pointer-events-none" style={{ zIndex: -1 }} />
 
-      <div className="flex md:hidden justify-center translate-y-[-55%] mb-[10px]">
+      {/* FIXED CONTAINER:
+        - Added `absolute left-1/2 -translate-x-1/2` alongside `-translate-y-1/2`.
+        - Combining both translations into a single string (`-translate-x-1/2 -translate-y-1/2`) guarantees perfect, pixel-accurate geometric centering on high-density displays (Pro Max, Ultra).
+      */}
+      <div className="absolute left-1/2 -translate-x-1/2 -translate-y-1/2 flex md:hidden flex-col items-center justify-center w-full max-w-[351.11px] mb-[10px]">
         <div
           className="relative flex items-center justify-center bg-white/10 backdrop-blur-md"
-          style={{ width: "351.11px", height: "328px", borderRadius: "33.76px", padding: "25px", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)" }}
+          style={{ 
+            width: "351.11px", 
+            height: "328px", 
+            borderRadius: "33.76px", 
+            padding: "25px", 
+            boxShadow: "0 10px 40px rgba(0, 0, 0, 0.08)" 
+          }}
         >
           <div className="relative z-10 flex flex-col gap-[4px] w-[301.11px] h-[278px]">
             <div className="grid grid-cols-2 gap-[2px] w-full bg-[#EE4423]/20 overflow-hidden" style={{ borderRadius: "21.6px 21.6px 0 0" }}>
@@ -75,6 +85,10 @@ export default function ServiceBar() {
           </div>
         </div>
       </div>
+
+      {/* --- SPACER FOR ABSOLUTE POSITIONING BELOW --- */}
+      {/* Since the mobile layout container is now absolute to prevent sub-pixel offset distortions on large screens, we use a structural mobile-only placeholder spacer underneath to reserve height context in the layout flow seamlessly. */}
+      <div className="md:hidden w-full h-[164px]" aria-hidden="true" />
 
       {/* --- TABLET & DESKTOP VIEW --- */}
       <div

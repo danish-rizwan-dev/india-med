@@ -71,13 +71,13 @@ export default function Hero() {
           className="
               absolute z-10
               w-[375px] h-[480px]
-              top-[80px] left-auto right-[-45px]
+              top-[80px] left-auto right-[-60px]
 
               sm:w-[380px] sm:h-[480px]
               sm:top-[145px] sm:right-[-52px]
 
-              md:z-20 md:w-[400px] md:h-[520px] md:top-[110px]
-              md:right-[-60px]
+              md:z-20 md:w-[600px] md:h-[1080px] md:top-[-220px]
+              md:right-[-100px]
 
               lg:w-[700px] lg:h-[700px]
               lg:top-[0px] lg:left-[calc(max(550px,min(700px,56vw)))] lg:right-auto

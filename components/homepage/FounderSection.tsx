@@ -8,8 +8,8 @@ import { useTranslations, useLocale } from 'next-intl';
 
 /**
  * FounderSection Component
- * 
- * A high-fidelity section highlighting the leadership of India Med Service.
+ * * A high-fidelity section highlighting the leadership of India Med Service.
+ * Features a carousel for the expertise cards on mobile and tablet devices.
  */
 export default function FounderSection() {
   const t = useTranslations('Leadership');
@@ -17,6 +17,7 @@ export default function FounderSection() {
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
+    // Carousel remains active for both mobile and tablet viewports (under 1024px)
     const handleResize = () => setIsMobile(window.innerWidth < 1024);
     handleResize();
     window.addEventListener("resize", handleResize);
@@ -132,7 +133,7 @@ export default function FounderSection() {
             </div>
 
             {/* Text Content */}
-            <div className="flex-grow max-w-[635px] text-white order-2 lg:order-1 text-left lg:text-left">
+            <div className="flex-grow max-w-[635px] text-white order-2 lg:order-1 text-left">
               <h3 className="text-3xl lg:text-[34px] xl:text-[42px] font-bold leading-tight mb-2">
                 {leaders[0].name}
               </h3>
@@ -148,14 +149,15 @@ export default function FounderSection() {
           </article>
         </div>
 
-        {/* ================= EXPERTISE CARDS (Clipped Carousel on Mobile) ================= */}
+        {/* ================= EXPERTISE CARDS (Carousel on Mobile & Tablet) ================= */}
         <div className="w-full mb-20 lg:mb-[180px]">
           {isMobile ? (
-            <div className="w-full pr-[15px]"> {/* 15px Orange gap on the right edge */}
-              <div className="w-full " ref={emblaRef}>
+            <div className="w-full pr-[15px]"> {/* Gives the elegant crop look on the right edge */}
+              <div className="w-full" ref={emblaRef}>
                 <div className="flex items-stretch">
                   {expertiseCards.map((card, i) => (
-                    <div key={i} className="flex-[0_0_85%] pr-4 min-w-0">
+                    /* Carousel widths balanced dynamically across custom break-points */
+                    <div key={i} className="flex-[0_0_85%] md:flex-[0_0_45%] pr-4 min-w-0">
                       <ExpertiseCard card={card} />
                     </div>
                   ))}

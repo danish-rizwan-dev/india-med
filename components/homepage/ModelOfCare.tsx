@@ -40,8 +40,8 @@ export default function ModelOfCare() {
   return (
     <section className="relative flex flex-col items-center bg-white md:bg-white mx-auto py-10 md:py-16 w-full max-w-[1355px] px-0 md:px-0">
 
-      {/* MOBILE BACKGROUND */}
-      <div className="absolute inset-x-0 bg-[#EE4423] md:hidden -top-12 h-[450px]" />
+      {/* ORANGE BACKGROUND: Kept original 450px height for mobile, expanded for tablets */}
+      <div className="absolute inset-x-0 bg-[#EE4423] lg:hidden -top-12 h-[450px] md:h-[520px]" />
 
       {/* DESKTOP HEADER */}
       <header className="hidden lg:flex items-center justify-center border-2 border-[#58595B] rounded-full mb-20 px-10 lg:px-14 py-4 lg:py-5 w-fit mx-auto">
@@ -115,9 +115,9 @@ export default function ModelOfCare() {
 
       {/* MOBILE/TABLET VIEW */}
       <div
-        className={`lg:hidden relative z-10 bg-white flex flex-col items-center pt-[56px] gap-[24px] mb-8 transition-all duration-500 overflow-hidden px-4`}
+        // RESPONSIVE FIX: w-[92vw] max-w-[352px] handles original mobile. md:max-w-[550px] handles tablets.
+        className="lg:hidden relative z-10 bg-white flex flex-col items-center pt-[56px] gap-[24px] mb-8 transition-all duration-500 overflow-hidden px-4 md:px-6 w-[92vw] max-w-[352px] md:max-w-[550px]"
         style={{
-          width: "min(352px, 92vw)",
           minHeight: "428px",
           borderRadius: "34px",
           boxShadow: "0px 15px 25px 0px rgba(67, 41, 57, 0.1)"
@@ -133,12 +133,13 @@ export default function ModelOfCare() {
                 key={index}
                 role="button"
                 aria-expanded={isActive}
-                className="flex flex-col gap-[10px] cursor-pointer w-full max-w-[272px]"
+                // RESPONSIVE FIX: Keeps original max-w-[272px] for mobile, scales up to 460px on tablets
+                className="flex flex-col gap-[10px] cursor-pointer w-full max-w-[272px] md:max-w-[460px]"
                 onClick={() => setActiveIndex(isActive ? null : index)}
               >
                 <div className="flex items-center justify-between">
                   <span
-                    className={`font-montserrat font-bold text-[16px] leading-tight flex-1 transition-colors duration-300 ${isHighlighted ? 'text-[#EE4423]' : 'text-[#58595B]'}`}
+                    className={`font-montserrat font-bold text-[16px] md:text-[18px] leading-tight flex-1 transition-colors duration-300 ${isHighlighted ? 'text-[#EE4423]' : 'text-[#58595B]'}`}
                   >
                     {step.title}
                   </span>
@@ -154,7 +155,7 @@ export default function ModelOfCare() {
                 </div>
 
                 <div className={`overflow-hidden transition-all duration-500 ${isActive ? 'max-h-[200px] opacity-100 mt-2' : 'max-h-0 opacity-0'}`}>
-                  <p className="text-[#58595B] font-montserrat font-medium text-[14px] leading-[1.3] text-center">
+                  <p className="text-[#58595B] font-montserrat font-medium text-[14px] md:text-[15px] leading-[1.3] text-center">
                     {step.desc}
                   </p>
                 </div>

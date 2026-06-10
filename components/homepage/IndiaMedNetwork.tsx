@@ -1,4 +1,5 @@
 "use client";
+
 import { Link } from "@/i18n/routing";
 import { useCallback, useEffect, useState } from "react";
 import Image from "next/image";
@@ -76,7 +77,6 @@ export default function IndiaMedNetwork() {
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
-      // Fixed: Replaced dynamic dynamic window calculations with 'center' to scale safely under heavy zoom-out factors
       align: "start",
       skipSnaps: false,
       duration: 35,
@@ -88,7 +88,7 @@ export default function IndiaMedNetwork() {
   const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 1024);
+    const handleResize = () => setIsMobile(window.innerWidth < 768); // Adjusted breakpoint to accurately check for phones
     handleResize();
     window.addEventListener("resize", handleResize, { passive: true });
     return () => window.removeEventListener("resize", handleResize);
@@ -115,7 +115,6 @@ export default function IndiaMedNetwork() {
         </h2>
       </header>
 
-      {/* Fixed: Wrapped structural framework inside a max-width utility bounds layer to stop track displacement on zoom out */}
       <div className="relative w-full max-w-[1280px] xl:max-w-[1440px] mx-auto px-4 lg:px-8">
         
         {/* ================= NAVIGATION BUTTONS ================= */}
@@ -164,18 +163,19 @@ export default function IndiaMedNetwork() {
         </div>
 
         {/* CAROUSEL */}
-        <div className="o cursor-grab active:cursor-grabbing w-full lg:ml-27" ref={emblaRef}>
+        <div className="w-full lg:ml-27 cursor-grab active:cursor-grabbing" ref={emblaRef}>
           <div className="flex -ml-4">
             {hospitalData.map((hospital, index) => {
               const total = hospitalData.length;
               const diff = (index - selectedIndex + total) % total;
-              const isInFront = isMobile ? diff === 0 : diff === 0 || diff === 1;
+              
+              // FIX: If it is mobile, only highlight the 1st card. If it is MD/iPad, highlight both visible cards (0 and 1).
+              const isInFront = isMobile ? diff === 0 : (diff === 0 || diff === 1);
 
               return (
                 <article
                   key={index}
-                  // Balanced exact flex bases to work cleanly alongside centered slide boundaries
-                  className="relative flex-[0_0_88%] md:flex-[0_0_45%] lg:flex-[0_0_42%] pl-4 min-w-0 transition-opacity duration-700"
+                  className="relative flex-[0_0_88%] md:flex-[0_0_46%] lg:flex-[0_0_42%] pl-4 min-w-0 transition-opacity duration-500"
                   style={{ opacity: isInFront ? 1 : 0.3 }}
                 >
                   <div
@@ -196,13 +196,15 @@ export default function IndiaMedNetwork() {
                           {hospital.location}
                         </span>
                       </address>
-                      <h3 className="text-white font-bold text-[23px] lg:text-[28px] leading-[100%] lg:leading-tight max-w-[45%] lg:max-w-[320px]">
+                      
+                      {/* Fixed header constraint width to avoid single-character wrapping columns */}
+                      <h3 className="text-white font-bold text-[23px] lg:text-[28px] leading-[110%] lg:leading-tight max-w-[65%] md:max-w-[55%] lg:max-w-[320px]">
                         {hospital.name}
                       </h3>
                     </div>
 
                     <div
-                      className="absolute top-0 right-0 w-3/5 h-[65%] lg:h-[70%] z-10 overflow-hidden"
+                      className="absolute top-0 right-0 w-3/5 md:w-1/2 lg:w-3/5 h-[65%] lg:h-[70%] z-10 overflow-hidden"
                       style={{
                         borderRadius: "0 40px 0 80px",
                         WebkitMaskImage: "linear-gradient(to left, black 70%, transparent 100%)",
@@ -229,7 +231,7 @@ export default function IndiaMedNetwork() {
                         border: "1px solid rgba(255, 255, 255, 0.4)",
                       }}
                     >
-                      <div className="max-w-[55%] lg:max-w-[60%]">
+                      <div className="max-w-[52%] md:max-w-[55%] lg:max-w-[60%]">
                         <p className="text-white text-[12px] lg:text-[15px] font-medium leading-snug lg:leading-relaxed line-clamp-5 lg:line-clamp-none">
                           {hospital.description}
                         </p>
@@ -250,9 +252,9 @@ export default function IndiaMedNetwork() {
 
                         <a
                           href="tel:+91XXXXXXXXXX"
-                          className="bg-white text-[#58595B] px-4 py-2.5 lg:px-6 lg:py-3 rounded-full font-bold text-[12px] lg:text-[15px] flex items-center gap-2 shadow-lg transition-transform hover:scale-105"
+                          className="bg-white text-[#58595B] px-3 md:px-3.5 py-2.5 lg:px-6 lg:py-3 rounded-full font-bold text-[11px] md:text-[12px] lg:text-[15px] flex items-center gap-1.5 md:gap-2 shadow-lg transition-transform hover:scale-105"
                         >
-                          <Phone size={16} className="lg:w-[18px]" fill="#58595B" />
+                          <Phone size={14} className="md:w-[16px]" fill="#58595B" />
                           <span className="whitespace-nowrap">{t('contact_now')}</span>
                         </a>
                       </div>
