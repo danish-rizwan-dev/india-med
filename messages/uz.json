@@ -542,15 +542,16 @@
     "stat_hospitals": "Hindistondagi shifoxonalar"
   },
   "PatientStories": {
-    "title": "Bemorlarning hikoyalari",
-    "richard_name": "Richard Gruber",
-    "richard_loc": "Avstriya",
-    "sophie_name": "Sofi Vershuren",
-    "sophie_loc": "Avstraliya",
-    "dylan_name": "Dylan Walters",
-    "dylan_loc": "AQSH",
-    "ella_name": "Ella Huber",
-    "ella_loc": "Germaniya"
+    "title": "Bemorlarning fikrlari",
+    "patient_fallback": "Tasdiqlangan bemor",
+    "location_fallback": "O'zbekiston",
+    "stories": [
+      { "id": "Jvjsx4SYpAc", "rating": 5 },
+      { "id": "A1w5rJ2X-oU", "rating": 5 },
+      { "id": "YG_XPZTdcV4", "rating": 5 },
+      { "id": "ZjH2mOC3BTY", "rating": 5 },
+      { "id": "AHVdW1SZLuI", "rating": 5 }
+    ]
   },
   "ProcessFlow": {
     "title": "Bu qanday ishlaydi",

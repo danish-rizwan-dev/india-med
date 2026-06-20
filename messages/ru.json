@@ -118,16 +118,17 @@
     "stat_countries": "Стран",
     "stat_hospitals": "Больниц в Индии"
   },
-  "PatientStories": {
-    "title": "Истории пациентов",
-    "richard_name": "Ричард Грубер",
-    "richard_loc": "Австрия",
-    "sophie_name": "Софи Вершурен",
-    "sophie_loc": "Австралия",
-    "dylan_name": "Дилан Уолтерс",
-    "dylan_loc": "США",
-    "ella_name": "Элла Хубер",
-    "ella_loc": "Германия"
+ "PatientStories": {
+    "title": "Отзывы пациентов",
+    "patient_fallback": "Проверенный пациент",
+    "location_fallback": "Узбекистан",
+    "stories": [
+      { "id": "Jvjsx4SYpAc", "rating": 5 },
+      { "id": "A1w5rJ2X-oU", "rating": 5 },
+      { "id": "YG_XPZTdcV4", "rating": 5 },
+      { "id": "ZjH2mOC3BTY", "rating": 5 },
+      { "id": "AHVdW1SZLuI", "rating": 5 }
+    ]
   },
   "ProcessFlow": {
     "title": "Как это работает",

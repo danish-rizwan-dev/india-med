@@ -118,16 +118,17 @@
     "stat_countries": "Елдер",
     "stat_hospitals": "Үндістандағы ауруханалар"
   },
-  "PatientStories": {
-    "title": "Пациенттердің хикаялары",
-    "richard_name": "Ричард Грубер",
-    "richard_loc": "Австрия",
-    "sophie_name": "Софи Вершурен",
-    "sophie_loc": "Австралия",
-    "dylan_name": "Дилан Уолтерс",
-    "dylan_loc": "АҚШ",
-    "ella_name": "Элла Хубер",
-    "ella_loc": "Германия"
+ "PatientStories": {
+    "title": "Пациенттердің пікірлері",
+    "patient_fallback": "Тексерілген пациент",
+    "location_fallback": "Өзбекстан",
+    "stories": [
+      { "id": "Jvjsx4SYpAc", "rating": 5 },
+      { "id": "A1w5rJ2X-oU", "rating": 5 },
+      { "id": "YG_XPZTdcV4", "rating": 5 },
+      { "id": "ZjH2mOC3BTY", "rating": 5 },
+      { "id": "AHVdW1SZLuI", "rating": 5 }
+    ]
   },
   "ProcessFlow": {
     "title": "Бұл қалай жұмыс істейді",
