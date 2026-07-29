@@ -12,7 +12,7 @@ export const orthoData: SpecialityData = {
       "hospital": "Medanta - The Medicity, Gurugram",
       "initials": "AR",
       "gradient": "from-indigo-500 to-teal-500",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/983-Dr.-Rajagopalan-Krishnan.jpg"
     },
     {
       "name": "Dr. IPS Oberoi",
@@ -21,7 +21,7 @@ export const orthoData: SpecialityData = {
       "hospital": "Artemis Hospital, Gurugram",
       "initials": "IO",
       "gradient": "from-blue-500 to-indigo-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/729-Dr.-Rajendra-Prasad.jpg"
     },
     {
       "name": "Dr. Harshavardhan Hegde",
@@ -30,7 +30,7 @@ export const orthoData: SpecialityData = {
       "hospital": "Max Super Speciality Hospital, New Delhi",
       "initials": "HH",
       "gradient": "from-blue-600 to-cyan-500",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/919-Dr.-Ashok-Rajgopal.jpg"
     },
     {
       "name": "Dr. Vikram Mhaskar",
@@ -39,7 +39,7 @@ export const orthoData: SpecialityData = {
       "hospital": "Max Super Speciality Hospital, New Delhi",
       "initials": "VM",
       "gradient": "from-teal-500 to-blue-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/685-Dr.-Vineesh-Mathur.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const orthoData: SpecialityData = {
       "name": "Artemis Hospital",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "State-of-the-art center for navigation-guided joint replacement, arthroscopic repairs, and spine surgeries."
+      "desc": "State-of-the-art center for navigation-guided joint replacement, arthroscopic repairs, and spine surgeries.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "World-class institute for bone, joint, and complex spine reconstruction using cutting-edge robotic systems."
+      "desc": "World-class institute for bone, joint, and complex spine reconstruction using cutting-edge robotic systems.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Comprehensive center featuring specialized sports injury management, computer-navigated systems, and minimally invasive options."
+      "desc": "Comprehensive center featuring specialized sports injury management, computer-navigated systems, and minimally invasive options.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Highly equipped orthopedic hub specialized in bone tumors, pediatric orthopedics, and revision joint replacements."
+      "desc": "Highly equipped orthopedic hub specialized in bone tumors, pediatric orthopedics, and revision joint replacements.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     }
   ],
   "procedures": [
@@ -365,7 +369,76 @@ export const orthoData: SpecialityData = {
           "q": "Насколько стоимость лечения сравнима с западными медицинскими вариантами?",
           "a": "Пациенты экономят в среднем до 75-90% по сравнению с западными ценами на лечение без каких-либо компромиссов в отношении безопасности или качества лечения."
         }
-      ]
+      ],
+      heroBadge: "Ортопедия и совместное мастерство",
+      doctors: [
+        {
+          name: "Dr. Ashok Rajgopal",
+          exp: "40+ Years",
+          role: "Председатель - Институт заболеваний опорно-двигательного аппарата Меданта",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AR",
+          gradient: "from-indigo-500 to-teal-500",
+          image: "/images/doctors/983-Dr.-Rajagopalan-Krishnan.jpg",
+        },
+        {
+          name: "Dr. IPS Oberoi",
+          exp: "28+ Years",
+          role: "Председатель - ортопедия и замена суставов",
+          hospital: "Artemis Hospital, Gurugram",
+          initials: "IO",
+          gradient: "from-blue-500 to-indigo-600",
+          image: "/images/doctors/729-Dr.-Rajendra-Prasad.jpg",
+        },
+        {
+          name: "Dr. Harshavardhan Hegde",
+          exp: "30+ Years",
+          role: "Старший консультант - хирургия позвоночника и замена суставов",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "HH",
+          gradient: "from-blue-600 to-cyan-500",
+          image: "/images/doctors/919-Dr.-Ashok-Rajgopal.jpg",
+        },
+        {
+          name: "Dr. Vikram Mhaskar",
+          exp: "18+ Years",
+          role: "Директор - Центр хирургии колена и плеча",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "VM",
+          gradient: "from-teal-500 to-blue-600",
+          image: "/images/doctors/685-Dr.-Vineesh-Mathur.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Artemis Hospital",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Современный центр замены суставов под навигационным контролем, артроскопического ремонта и операций на позвоночнике.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Институт мирового класса по реконструкции костей, суставов и сложного позвоночника с использованием новейших роботизированных систем.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Комплексный центр, предлагающий специализированное лечение спортивных травм, системы с компьютерной навигацией и минимально инвазивные методы.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Высокооснащенный ортопедический центр, специализирующийся на опухолях костей, детской ортопедии и ревизионной замене суставов.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Ortopediya va umurtqa pog'onasi",
@@ -493,7 +566,76 @@ export const orthoData: SpecialityData = {
           "q": "Davolash narxi G'arb tibbiyoti variantlari bilan solishtirganda qanday?",
           "a": "Bemorlar xavfsizlik yoki parvarish sifati bo'yicha hech qanday murosaga kelmasdan, G'arb davolash narxiga nisbatan o'rtacha 75-90% gacha tejashadi."
         }
-      ]
+      ],
+      heroBadge: "Ortopediya va qo'shma mukammallik",
+      doctors: [
+        {
+          name: "Dr. Ashok Rajgopal",
+          exp: "40+ Years",
+          role: "Rais - Medanta tayanch-harakat tizimi kasalliklari instituti",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AR",
+          gradient: "from-indigo-500 to-teal-500",
+          image: "/images/doctors/983-Dr.-Rajagopalan-Krishnan.jpg",
+        },
+        {
+          name: "Dr. IPS Oberoi",
+          exp: "28+ Years",
+          role: "Rais - Ortopediya va bo'g'imlarni almashtirish",
+          hospital: "Artemis Hospital, Gurugram",
+          initials: "IO",
+          gradient: "from-blue-500 to-indigo-600",
+          image: "/images/doctors/729-Dr.-Rajendra-Prasad.jpg",
+        },
+        {
+          name: "Dr. Harshavardhan Hegde",
+          exp: "30+ Years",
+          role: "Katta maslahatchi - umurtqa pog'onasi jarrohligi va bo'g'imlarni almashtirish",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "HH",
+          gradient: "from-blue-600 to-cyan-500",
+          image: "/images/doctors/919-Dr.-Ashok-Rajgopal.jpg",
+        },
+        {
+          name: "Dr. Vikram Mhaskar",
+          exp: "18+ Years",
+          role: "Direktor - tizza va elka jarrohlik markazi",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "VM",
+          gradient: "from-teal-500 to-blue-600",
+          image: "/images/doctors/685-Dr.-Vineesh-Mathur.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Artemis Hospital",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Navigatsiya bo'yicha bo'g'inlarni almashtirish, artroskopik tuzatish va umurtqa pog'onasi operatsiyalari uchun zamonaviy markaz.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Eng zamonaviy robot tizimlaridan foydalangan holda suyak, bo'g'im va umurtqa pog'onasini murakkab rekonstruksiya qilish bo'yicha jahon darajasidagi institut.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ixtisoslashgan sport jarohatlarini boshqarish, kompyuter navigatsiya tizimlari va minimal invaziv variantlarni o'z ichiga olgan kompleks markaz.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Suyak o'smalari, bolalar ortopediyasi va revizion bo'g'inlarni almashtirishga ixtisoslashgan yuqori jihozlangan ortopedik markaz.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Ортопедия және омыртқа хирургиясы",
@@ -621,7 +763,76 @@ export const orthoData: SpecialityData = {
           "q": "Емдеу құны батыстық медицина нұсқаларымен салыстырғанда қалай?",
           "a": "Пациенттер қауіпсіздік немесе күтім сапасына ешқандай ымырасыз батыстық емдеу бағасымен салыстырғанда орташа есеппен 75-90%-ға дейін үнемдейді."
         }
-      ]
+      ],
+      heroBadge: "Ортопедия және бірлескен шеберлік",
+      doctors: [
+        {
+          name: "Dr. Ashok Rajgopal",
+          exp: "40+ Years",
+          role: "Төрағасы – Меданта тірек-қимыл аппараты аурулары институты",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AR",
+          gradient: "from-indigo-500 to-teal-500",
+          image: "/images/doctors/983-Dr.-Rajagopalan-Krishnan.jpg",
+        },
+        {
+          name: "Dr. IPS Oberoi",
+          exp: "28+ Years",
+          role: "Төраға – Ортопедия және буындарды ауыстыру",
+          hospital: "Artemis Hospital, Gurugram",
+          initials: "IO",
+          gradient: "from-blue-500 to-indigo-600",
+          image: "/images/doctors/729-Dr.-Rajendra-Prasad.jpg",
+        },
+        {
+          name: "Dr. Harshavardhan Hegde",
+          exp: "30+ Years",
+          role: "Аға кеңесші – омыртқа хирургиясы және буындарды ауыстыру",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "HH",
+          gradient: "from-blue-600 to-cyan-500",
+          image: "/images/doctors/919-Dr.-Ashok-Rajgopal.jpg",
+        },
+        {
+          name: "Dr. Vikram Mhaskar",
+          exp: "18+ Years",
+          role: "Директор – тізе және иық хирургиясы орталығы",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "VM",
+          gradient: "from-teal-500 to-blue-600",
+          image: "/images/doctors/685-Dr.-Vineesh-Mathur.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Artemis Hospital",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Навигациялық бағыттағы буындарды ауыстыруға, артроскопиялық жөндеуге және омыртқаға ота жасауға арналған заманауи орталық.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Ең озық роботтық жүйелерді қолдана отырып, сүйек, буын және омыртқаны күрделі реконструкциялауға арналған әлемдік деңгейдегі институт.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Арнайы спорттық жарақаттарды басқару, компьютерлік навигациялық жүйелер және аз инвазивті опцияларды қамтитын кешенді орталық.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Сүйек ісіктеріне, балалар ортопедиясына және ревизиялық буындарды ауыстыруға мамандандырылған жоғары жабдықталған ортопедиялық орталық.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -702,7 +913,14 @@ export const orthoData: SpecialityData = {
       "rating": 5,
       "outcome": "Spinal Cord Fusion Rehabilitation"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "How long does a robotic knee replacement last?",

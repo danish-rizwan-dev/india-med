@@ -12,7 +12,7 @@ export const neuroData: SpecialityData = {
       "hospital": "Fortis Memorial Research Institute, Gurugram",
       "initials": "SV",
       "gradient": "from-purple-500 to-indigo-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/616-Dr.-Pranav-Kumar.jpg"
     },
     {
       "name": "Dr. Aditya Gupta",
@@ -21,7 +21,7 @@ export const neuroData: SpecialityData = {
       "hospital": "Artemis Hospital, Gurugram",
       "initials": "AG",
       "gradient": "from-indigo-600 to-violet-500",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/221-Dr.-Ravi-Bhatia.jpg"
     },
     {
       "name": "Dr. Bipin S. Walia",
@@ -30,7 +30,7 @@ export const neuroData: SpecialityData = {
       "hospital": "Max Super Speciality Hospital, New Delhi",
       "initials": "BW",
       "gradient": "from-violet-500 to-purple-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/817-Dr.-Sudhir-Tyagi.jpg"
     },
     {
       "name": "Dr. Rana Patir",
@@ -39,7 +39,7 @@ export const neuroData: SpecialityData = {
       "hospital": "Fortis Hospital, Okhla, New Delhi",
       "initials": "RP",
       "gradient": "from-purple-600 to-rose-500",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/193-Dr.-Sogani-Shani-Kumar.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const neuroData: SpecialityData = {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Top-tier neurosurgical hub featuring intraoperative MRI, robotic navigation, and advanced pediatric neurosurgery."
+      "desc": "Top-tier neurosurgical hub featuring intraoperative MRI, robotic navigation, and advanced pediatric neurosurgery.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Artemis Hospital",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Premier institute offering specialized CyberKnife radiosurgery and innovative endovascular stroke therapies."
+      "desc": "Premier institute offering specialized CyberKnife radiosurgery and innovative endovascular stroke therapies.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "State-of-the-art neurology setups offering high-success spinal decompression, scoliosis correction, and deep brain stimulation."
+      "desc": "State-of-the-art neurology setups offering high-success spinal decompression, scoliosis correction, and deep brain stimulation.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Comprehensive center featuring specialized stroke clinics, robotic neuro-navigation systems, and advanced neuro-rehabilitation."
+      "desc": "Comprehensive center featuring specialized stroke clinics, robotic neuro-navigation systems, and advanced neuro-rehabilitation.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     }
   ],
   "procedures": [
@@ -365,7 +369,76 @@ export const neuroData: SpecialityData = {
           "q": "Насколько стоимость лечения сравнима с западными медицинскими вариантами?",
           "a": "Пациенты экономят в среднем до 75-90% по сравнению с западными ценами на лечение без каких-либо компромиссов в отношении безопасности или качества лечения."
         }
-      ]
+      ],
+      heroBadge: "Превосходство в области неврологии и нейрохирургии",
+      doctors: [
+        {
+          name: "Dr. Sandeep Vaishya",
+          exp: "33+ Years",
+          role: "Исполнительный директор - Нейрохирургия",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "SV",
+          gradient: "from-purple-500 to-indigo-600",
+          image: "/images/doctors/616-Dr.-Pranav-Kumar.jpg",
+        },
+        {
+          name: "Dr. Aditya Gupta",
+          exp: "25+ Years",
+          role: "Начальник отдела нейрохирургии и киберножа",
+          hospital: "Artemis Hospital, Gurugram",
+          initials: "AG",
+          gradient: "from-indigo-600 to-violet-500",
+          image: "/images/doctors/221-Dr.-Ravi-Bhatia.jpg",
+        },
+        {
+          name: "Dr. Bipin S. Walia",
+          exp: "30+ Years",
+          role: "Председатель - нейрохирургия и хирургия позвоночника",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "BW",
+          gradient: "from-violet-500 to-purple-600",
+          image: "/images/doctors/817-Dr.-Sudhir-Tyagi.jpg",
+        },
+        {
+          name: "Dr. Rana Patir",
+          exp: "32+ Years",
+          role: "Председатель - кафедра нейрохирургии",
+          hospital: "Fortis Hospital, Okhla, New Delhi",
+          initials: "RP",
+          gradient: "from-purple-600 to-rose-500",
+          image: "/images/doctors/193-Dr.-Sogani-Shani-Kumar.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Первоклассный нейрохирургический центр с интраоперационной МРТ, роботизированной навигацией и передовой детской нейрохирургией.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Artemis Hospital",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Ведущий институт, предлагающий специализированную радиохирургию CyberKnife и инновационные эндоваскулярные методы лечения инсульта.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Современные неврологические установки, предлагающие успешную декомпрессию позвоночника, коррекцию сколиоза и глубокую стимуляцию мозга.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Комплексный центр со специализированными клиниками, специализирующимися на инсульте, роботизированными нейронавигационными системами и передовой нейрореабилитацией.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Neyroxirurgiya va Umurtqa Kasalliklari",
@@ -493,7 +566,76 @@ export const neuroData: SpecialityData = {
           "q": "Davolash narxi G'arb tibbiyoti variantlari bilan solishtirganda qanday?",
           "a": "Bemorlar xavfsizlik yoki parvarish sifati bo'yicha hech qanday murosaga kelmasdan, G'arb davolash narxiga nisbatan o'rtacha 75-90% gacha tejashadi."
         }
-      ]
+      ],
+      heroBadge: "Neyrologiya va neyroxirurgiya mukammalligi",
+      doctors: [
+        {
+          name: "Dr. Sandeep Vaishya",
+          exp: "33+ Years",
+          role: "Ijrochi direktor - Neyroxirurgiya",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "SV",
+          gradient: "from-purple-500 to-indigo-600",
+          image: "/images/doctors/616-Dr.-Pranav-Kumar.jpg",
+        },
+        {
+          name: "Dr. Aditya Gupta",
+          exp: "25+ Years",
+          role: "Bosh - Neyroxirurgiya va Kiberpichoq",
+          hospital: "Artemis Hospital, Gurugram",
+          initials: "AG",
+          gradient: "from-indigo-600 to-violet-500",
+          image: "/images/doctors/221-Dr.-Ravi-Bhatia.jpg",
+        },
+        {
+          name: "Dr. Bipin S. Walia",
+          exp: "30+ Years",
+          role: "Rais - Neyroxirurgiya va orqa miya jarrohligi",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "BW",
+          gradient: "from-violet-500 to-purple-600",
+          image: "/images/doctors/817-Dr.-Sudhir-Tyagi.jpg",
+        },
+        {
+          name: "Dr. Rana Patir",
+          exp: "32+ Years",
+          role: "Rais - Neyroxirurgiya kafedrasi",
+          hospital: "Fortis Hospital, Okhla, New Delhi",
+          initials: "RP",
+          gradient: "from-purple-600 to-rose-500",
+          image: "/images/doctors/193-Dr.-Sogani-Shani-Kumar.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Intraoperativ MRI, robotli navigatsiya va ilg'or bolalar neyroxirurgiyasini o'z ichiga olgan yuqori darajadagi neyroxirurgiya markazi.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Artemis Hospital",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ixtisoslashgan CyberKnife radiojarrohligi va innovatsion endovaskulyar insult terapiyasini taklif qiluvchi eng yaxshi institut.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Yuqori muvaffaqiyatli orqa miya dekompressiyasi, skoliozni tuzatish va miyaning chuqur stimulyatsiyasini taklif qiluvchi zamonaviy nevrologiya qurilmalari.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ixtisoslashgan insult klinikalari, robotlashtirilgan neyro-navigatsiya tizimlari va ilg'or neyro-reabilitatsiyani o'z ichiga olgan kompleks markaz.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Нейрохирургия және Неврология",
@@ -621,7 +763,76 @@ export const neuroData: SpecialityData = {
           "q": "Емдеу құны батыстық медицина нұсқаларымен салыстырғанда қалай?",
           "a": "Пациенттер қауіпсіздік немесе күтім сапасына ешқандай ымырасыз батыстық емдеу бағасымен салыстырғанда орташа есеппен 75-90%-ға дейін үнемдейді."
         }
-      ]
+      ],
+      heroBadge: "Нейрология және нейрохирургия саласындағы үздіктер",
+      doctors: [
+        {
+          name: "Dr. Sandeep Vaishya",
+          exp: "33+ Years",
+          role: "Атқарушы директор – нейрохирургия",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "SV",
+          gradient: "from-purple-500 to-indigo-600",
+          image: "/images/doctors/616-Dr.-Pranav-Kumar.jpg",
+        },
+        {
+          name: "Dr. Aditya Gupta",
+          exp: "25+ Years",
+          role: "Бастысы – нейрохирургия және киберпышақ",
+          hospital: "Artemis Hospital, Gurugram",
+          initials: "AG",
+          gradient: "from-indigo-600 to-violet-500",
+          image: "/images/doctors/221-Dr.-Ravi-Bhatia.jpg",
+        },
+        {
+          name: "Dr. Bipin S. Walia",
+          exp: "30+ Years",
+          role: "Төраға – нейрохирургия және омыртқа хирургиясы",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "BW",
+          gradient: "from-violet-500 to-purple-600",
+          image: "/images/doctors/817-Dr.-Sudhir-Tyagi.jpg",
+        },
+        {
+          name: "Dr. Rana Patir",
+          exp: "32+ Years",
+          role: "Төраға – нейрохирургия кафедрасы",
+          hospital: "Fortis Hospital, Okhla, New Delhi",
+          initials: "RP",
+          gradient: "from-purple-600 to-rose-500",
+          image: "/images/doctors/193-Dr.-Sogani-Shani-Kumar.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Операция ішілік МРТ, роботты навигация және жетілдірілген балалар нейрохирургиясы бар жоғары деңгейлі нейрохирургиялық орталық.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Artemis Hospital",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Мамандандырылған CyberKnife радиохирургиясы мен инновациялық эндоваскулярлық инсульт терапиясын ұсынатын бірінші институт.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Омыртқаның декомпрессиясын, сколиозды түзетуді және миды терең ынталандыруды ұсынатын заманауи неврологиялық қондырғылар.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Арнайы инсульт клиникалары, роботтандырылған нейронавигациялық жүйелер және жетілдірілген нейрореабилитация бар кешенді орталық.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -702,7 +913,14 @@ export const neuroData: SpecialityData = {
       "rating": 5,
       "outcome": "CyberKnife Radiosurgery Staging Care"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is Deep Brain Stimulation (DBS) and who is a candidate?",

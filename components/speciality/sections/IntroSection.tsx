@@ -6,14 +6,39 @@ interface IntroSectionProps {
   data: any;
   specLang: any;
   locale: string;
+  specialityKey?: string;
 }
 
 export default function IntroSection({
   data,
   specLang,
-  locale
+  locale,
+  specialityKey
 }: IntroSectionProps) {
   const tShared = useTranslations('SpecialityShared');
+
+  const specialitySlugs: Record<string, string> = {
+    cardio: "cardiological-assistance",
+    ortho: "orthopedics",
+    cancer: "cancer-treatment",
+    neuro: "neuroscience",
+    gastro: "gastrosciences",
+    liver: "liver-transplant",
+    lungs: "lung-transplantation",
+    gyno: "obstetrics-and-gynecology",
+    plastic: "plastic-aesthetic-and-reconstructive-surgery",
+    gynoOnco: "gynecology-and-gynecological-oncology",
+    rheuma: "rheumatology-and-immunology",
+    vascular: "peripheral-vascular-and-endovascular-sciences",
+    ophthalmology: "ophthalmology",
+    bmt: "bone-marrow-transplant",
+    endo: "endocrinology-and-diabetology",
+    kidney: "kidney-transplant",
+    respiratory: "respiratory-medicine-and-sleep-medicine",
+    ent: "ent-head-and-neck-surgery",
+  };
+
+  const urlSlug = specialityKey ? specialitySlugs[specialityKey] || "cardiological-assistance" : "cardiological-assistance";
   
   return (
     <section className="w-full max-w-[1442px] mx-auto px-4 py-6 md:py-12">
@@ -59,7 +84,7 @@ export default function IntroSection({
           {/* RIGHT SIDE: Image - Responsive height scales safely based on container limits */}
           <div className="relative w-full h-[260px] sm:h-[450px] lg:h-[671px] rounded-tr-[50px] sm:rounded-tr-[80px] rounded-bl-[50px] sm:rounded-bl-[80px] overflow-hidden shadow-2xl order-1 lg:order-2 flex-shrink-0">
             <Image 
-              src="/images/specialities/cardiological-assistance/heartIntroSection.jpg"
+              src={`/images/specialities/${urlSlug}/heartIntroSection.jpg`}
               alt="Heart Introduction"
               fill
               priority

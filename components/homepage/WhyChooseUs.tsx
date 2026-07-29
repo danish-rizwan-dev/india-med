@@ -5,6 +5,7 @@ import React from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Autoplay from "embla-carousel-autoplay";
 import { useTranslations, useLocale } from 'next-intl';
+import { Link } from "@/i18n/routing";
 
 export default function WhyChooseUs() {
   const t = useTranslations('WhyChooseUs');
@@ -86,9 +87,9 @@ export default function WhyChooseUs() {
             <p className="text-[#58595B] text-lg xl:text-[18px] font-medium leading-relaxed mb-8">
               {t('header_desc')}
             </p>
-            <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg hover:bg-[#d63a1b] transition-all active:scale-95">
+            <Link href="/contact" className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg hover:bg-[#d63a1b] transition-all active:scale-95">
               {t('contact_button')} <span className="text-xl" aria-hidden="true">›</span>
-            </button>
+            </Link>
           </div>
 
           {/* ================= CAROUSEL LAYOUTS (Mobile Only) ================= */}
@@ -214,9 +215,9 @@ export default function WhyChooseUs() {
 
         {/* ORIGINAL MOBILE CTA BUTTON (Hidden on Desktop, Visible on Mobile & iPad View) */}
         <div className="lg:hidden w-full flex justify-center mt-8 px-6">
-          <button className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg active:scale-95 transition-all">
+          <Link href="/contact" className="flex items-center gap-3 px-10 py-4 rounded-full bg-[#EE4423] text-white font-bold text-lg active:scale-95 transition-all">
             {t('contact_button')} <span className="text-xl" aria-hidden="true">›</span>
-          </button>
+          </Link>
         </div>
 
       </div>

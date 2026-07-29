@@ -13,6 +13,7 @@ export interface Hospital {
   city: string;
   accreditation: string;
   desc: string;
+  image?: string;
 }
 
 export interface CostItem {
@@ -81,6 +82,15 @@ export interface SpecialityTranslations {
   costs_title_custom?: string;
   costs_subtitle_custom?: string;
   costs_desc_custom?: string;
+  videos_sec_title?: string;
+  heroBadge?: string;
+  doctors?: Doctor[];
+  hospitals?: Hospital[];
+}
+
+export interface VideoItem {
+  id: string;
+  rating?: number;
 }
 
 export interface SpecialityData {
@@ -96,4 +106,5 @@ export interface SpecialityData {
   techniques: SpecialityTechnique[];
   patientStories: SpecialityPatientStory[];
   faqItems: SpecialityFAQItem[];
+  videos?: VideoItem[];
 }

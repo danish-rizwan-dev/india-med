@@ -12,7 +12,7 @@ export const ophthalmologyData: SpecialityData = {
       "hospital": "Centre for Sight, New Delhi",
       "initials": "MS",
       "gradient": "from-sky-500 to-indigo-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/137-Dr.-Aniel-Malhotra.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -21,7 +21,7 @@ export const ophthalmologyData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/955-Dr.-Ranjana-Mithal.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -30,7 +30,7 @@ export const ophthalmologyData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/680-Dr.-Uma-Mallaiah.jpg"
     },
     {
       "name": "Dr. Specialist 3",
@@ -39,7 +39,7 @@ export const ophthalmologyData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/755-Dr.-L.-R.-Seth.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const ophthalmologyData: SpecialityData = {
       "name": "Centre for Sight",
       "city": "New Delhi",
       "accreditation": "NABH Accredited",
-      "desc": "Advanced laser vision corrections, premium robotic cataract systems and specialized retinal surgery suites."
+      "desc": "Advanced laser vision corrections, premium robotic cataract systems and specialized retinal surgery suites.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care."
+      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     }
   ],
   "procedures": [
@@ -355,7 +359,76 @@ export const ophthalmologyData: SpecialityData = {
           "q": "Какая послеоперационная поддержка или физиотерапия координируется?",
           "a": "Мы организуем полную послеоперационную физическую реабилитацию, рекомендации по питанию и посещения медсестры в вашем месте восстановления."
         }
-      ]
+      ],
+      heroBadge: "Офтальмологические услуги",
+      doctors: [
+        {
+          name: "Dr. Mahipal S. Sachdev",
+          exp: "30+ Years",
+          role: "Председатель и медицинский директор - офтальмология",
+          hospital: "Centre for Sight, New Delhi",
+          initials: "MS",
+          gradient: "from-sky-500 to-indigo-600",
+          image: "/images/doctors/137-Dr.-Aniel-Malhotra.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/955-Dr.-Ranjana-Mithal.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/680-Dr.-Uma-Mallaiah.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/755-Dr.-L.-R.-Seth.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Centre for Sight",
+          city: "Нью-Дели",
+          accreditation: "Аккредитован NABH",
+          desc: "Передовая лазерная коррекция зрения, роботизированные системы премиум-класса по удалению катаракты и специализированные комплексы для хирургии сетчатки.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Ведущий многопрофильный центр Индии с передовыми хирургическими технологиями.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI",
+          desc: "Комплексный уход за пациентами, современное оборудование и специалисты с мировым именем.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация NABH и JCI",
+          desc: "Передовая диагностика, роботизированные хирургические комплексы и специализированная интенсивная терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Hindistonda Jahon Darajasidagi Oftalmologiya",
@@ -483,7 +556,76 @@ export const ophthalmologyData: SpecialityData = {
           "q": "Operatsiyadan keyingi qanday yordam yoki jismoniy terapiya muvofiqlashtiriladi?",
           "a": "Operatsiyadan keyingi to'liq jismoniy reabilitatsiya, ovqatlanish bo'yicha qo'llanmalar va tiklanish joyingizga hamshira tashrifini tashkil qilamiz."
         }
-      ]
+      ],
+      heroBadge: "Oftalmologiya xizmatlari",
+      doctors: [
+        {
+          name: "Dr. Mahipal S. Sachdev",
+          exp: "30+ Years",
+          role: "Rais va tibbiy direktor - Oftalmologiya",
+          hospital: "Centre for Sight, New Delhi",
+          initials: "MS",
+          gradient: "from-sky-500 to-indigo-600",
+          image: "/images/doctors/137-Dr.-Aniel-Malhotra.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/955-Dr.-Ranjana-Mithal.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/680-Dr.-Uma-Mallaiah.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/755-Dr.-L.-R.-Seth.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Centre for Sight",
+          city: "Yangi Dehli",
+          accreditation: "NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ilg'or lazerli ko'rish tuzatishlari, yuqori darajadagi robotli katarakt tizimlari va ixtisoslashtirilgan retinal jarrohlik to'plamlari.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Hindistonning ilg'or jarrohlik texnologiyasiga ega yetakchi ko'p ixtisoslik markazi.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "Bemorlarga har tomonlama yordam ko'rsatish, zamonaviy jihozlar va dunyoga mashhur mutaxassislar.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "NABH & JCI akkreditatsiyadan o'tgan",
+          desc: "Kengaytirilgan diagnostika, robotlashtirilgan jarrohlik to'plamlari va maxsus intensiv terapiya.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Үндістандағы озық офтальмологиялық қызметтер",
@@ -611,7 +753,76 @@ export const ophthalmologyData: SpecialityData = {
           "q": "Қандай операциядан кейінгі қолдау немесе физиотерапия үйлестіріледі?",
           "a": "Операциядан кейінгі толық физикалық оңалтуды, тамақтану бойынша нұсқаулықтарды және қалпына келтіру орнында медбикеге баруды ұйымдастырамыз."
         }
-      ]
+      ],
+      heroBadge: "Офтальмологиялық қызметтер",
+      doctors: [
+        {
+          name: "Dr. Mahipal S. Sachdev",
+          exp: "30+ Years",
+          role: "Төраға және медициналық директор – офтальмология",
+          hospital: "Centre for Sight, New Delhi",
+          initials: "MS",
+          gradient: "from-sky-500 to-indigo-600",
+          image: "/images/doctors/137-Dr.-Aniel-Malhotra.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/955-Dr.-Ranjana-Mithal.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/680-Dr.-Uma-Mallaiah.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/755-Dr.-L.-R.-Seth.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Centre for Sight",
+          city: "Жаңа Дели",
+          accreditation: "NABH аккредиттелген",
+          desc: "Жетілдірілген лазерлік көру түзетулері, премиум роботты катаракта жүйелері және мамандандырылған ретинальды хирургиялық люкс.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістанның озық хирургиялық технологиясы бар жетекші көп салалы орталығы.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI аккредиттелген",
+          desc: "Пациенттерге жан-жақты күтім көрсету, заманауи қондырғылар және әлемге әйгілі мамандар.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Жетілдірілген диагностика, роботты хирургиялық люкс және арнайы қарқынды терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -692,7 +903,14 @@ export const ophthalmologyData: SpecialityData = {
       "rating": 5,
       "outcome": "Retinal Detachment Repair Staging"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is the SMILE laser technique and how does it compare to LASIK?",

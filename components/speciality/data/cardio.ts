@@ -5,40 +5,40 @@ export const cardioData: SpecialityData = {
   icon: "/images/sections/specialities/cardiac.svg",
   doctors: [
     {
-      name: "Dr. Naresh Trehan",
+      name: "Dr. Praveer Agarwal",
       exp: "42+ Years",
       role: "Chairman & Chief Cardiac Surgeon",
       hospital: "Medanta - The Medicity, Gurugram",
-      initials: "NT",
+      initials: "PA",
       gradient: "from-rose-500 to-red-600",
-      image: "/images/specialities/cardiological-assistance/realtedDoctor1.jpg",
+      image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
     },
     {
-      name: "Dr. Ashok Seth",
+      name: "Dr. Suman Bhandari",
       exp: "40+ Years",
       role: "Chairman - Fortis Escorts Heart Institute",
       hospital: "Fortis Escorts, New Delhi",
-      initials: "AS",
+      initials: "SB",
       gradient: "from-red-600 to-amber-600",
-      image: "/images/specialities/cardiological-assistance/realtedDoctor2.jpg",
+      image: "/images/doctors/565-Dr.-Suman-Bhandari.jpg",
     },
     {
-      name: "Dr. S.N. Gupta",
+      name: "Dr. Vijay Kumar",
       exp: "38+ Years",
       role: "Senior Director - Interventional Cardiology",
       hospital: "Max Super Speciality Hospital, New Delhi",
-      initials: "SG",
+      initials: "VK",
       gradient: "from-red-600 to-orange-500",
-      image: "/images/specialities/cardiological-assistance/realtedDoctor3.jpg",
+      image: "/images/doctors/600-Dr.-Vijay-Kumar.jpg",
     },
     {
-      name: "Dr. Purushottam Lal",
+      name: "Dr. Vivudh Pratap Singh",
       exp: "35+ Years",
       role: "Chairman - Metro Group of Hospitals",
       hospital: "Metro Hospital, Noida",
-      initials: "PL",
+      initials: "VS",
       gradient: "from-rose-600 to-red-700",
-      image: "/images/specialities/cardiological-assistance/realtedDoctor4.jpg",
+      image: "/images/doctors/870-Dr.-Vivudh-Pratap-Singh.jpg",
     }
   ],
   hospitals: [
@@ -47,24 +47,28 @@ export const cardioData: SpecialityData = {
       city: "Gurugram, Delhi NCR",
       accreditation: "JCI & NABH Accredited",
       desc: "India's largest multi-speciality cardiac center with advanced hybrid cath labs.",
+      image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       name: "Fortis Escorts Heart Institute",
       city: "Okhla, New Delhi",
       accreditation: "JCI Accredited",
       desc: "Pioneer in cardiac care with over 30 years of clinical and surgical excellence.",
+      image: "/images/hospitals/848-Fortis-Escorts-Heart-Institute.jpg",
     },
     {
       name: "Max Super Speciality Hospital",
       city: "Saket, New Delhi",
       accreditation: "NABH & JCI Accredited",
       desc: "Advanced imaging and robotic surgical suites for complex cardiac cases.",
+      image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     },
     {
       name: "Artemis Hospital",
       city: "Gurugram, Delhi NCR",
       accreditation: "JCI & NABH Accredited",
       desc: "State-of-the-art cardiovascular ICU and post-operative care units.",
+      image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     }
   ],
   procedures: [
@@ -312,7 +316,76 @@ export const cardioData: SpecialityData = {
           q: "Кто является кардиологом №1 в Индии?",
           a: "В Индии много всемирно известных кардиологов. Доктор Нареш Трехан и доктор Ашок Сет являются одними из лучших пионеров в этой области."
         }
-      ]
+      ],
+      heroBadge: "Кардиология Превосходство",
+      doctors: [
+        {
+          name: "Dr. Naresh Trehan",
+          exp: "42+ Years",
+          role: "Председатель и главный кардиохирург",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "NT",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
+        },
+        {
+          name: "Dr. Ashok Seth",
+          exp: "40+ Years",
+          role: "Председатель - Институт сердца Fortis Escorts",
+          hospital: "Fortis Escorts, New Delhi",
+          initials: "AS",
+          gradient: "from-red-600 to-amber-600",
+          image: "/images/doctors/565-Dr.-Suman-Bhandari.jpg",
+        },
+        {
+          name: "Dr. S.N. Gupta",
+          exp: "38+ Years",
+          role: "Старший директор отделения интервенционной кардиологии",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "SG",
+          gradient: "from-red-600 to-orange-500",
+          image: "/images/doctors/600-Dr.-Vijay-Kumar.jpg",
+        },
+        {
+          name: "Dr. Purushottam Lal",
+          exp: "35+ Years",
+          role: "Председатель - Группа больниц Метро",
+          hospital: "Metro Hospital, Noida",
+          initials: "PL",
+          gradient: "from-rose-600 to-red-700",
+          image: "/images/doctors/870-Dr.-Vivudh-Pratap-Singh.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Крупнейший в Индии многопрофильный кардиологический центр с передовыми лабораториями гибридной катетеризации.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Escorts Heart Institute",
+          city: "Охла, Нью-Дели",
+          accreditation: "Аккредитация JCI",
+          desc: "Пионер в области кардиологической помощи с более чем 30-летним клиническим и хирургическим опытом.",
+          image: "/images/hospitals/848-Fortis-Escorts-Heart-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация NABH и JCI",
+          desc: "Передовые методы визуализации и роботизированные хирургические комплексы для сложных кардиологических случаев.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Artemis Hospital",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Современные сердечно-сосудистые отделения интенсивной терапии и послеоперационного ухода.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     uz: {
       hero_title: "Jahon darajasidagi kardiologiya",
@@ -422,7 +495,76 @@ export const cardioData: SpecialityData = {
           q: "Hindistonning 1-raqamli kardiologi kim?",
           a: "Hindistonda dunyoga mashhur kardiologlar ko'p. Doktor Naresh Trehan va doktor Ashok Seth ushbu sohadagi eng yaxshi kashshoflar qatoriga kiradi."
         }
-      ]
+      ],
+      heroBadge: "Kardiologiya mukammalligi",
+      doctors: [
+        {
+          name: "Dr. Naresh Trehan",
+          exp: "42+ Years",
+          role: "Rais va bosh kardiojarroh",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "NT",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
+        },
+        {
+          name: "Dr. Ashok Seth",
+          exp: "40+ Years",
+          role: "Rais - Fortis Escorts Heart Institute",
+          hospital: "Fortis Escorts, New Delhi",
+          initials: "AS",
+          gradient: "from-red-600 to-amber-600",
+          image: "/images/doctors/565-Dr.-Suman-Bhandari.jpg",
+        },
+        {
+          name: "Dr. S.N. Gupta",
+          exp: "38+ Years",
+          role: "Katta direktor - Interventsion kardiologiya",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "SG",
+          gradient: "from-red-600 to-orange-500",
+          image: "/images/doctors/600-Dr.-Vijay-Kumar.jpg",
+        },
+        {
+          name: "Dr. Purushottam Lal",
+          exp: "35+ Years",
+          role: "Rais - Metro kasalxonalar guruhi",
+          hospital: "Metro Hospital, Noida",
+          initials: "PL",
+          gradient: "from-rose-600 to-red-700",
+          image: "/images/doctors/870-Dr.-Vivudh-Pratap-Singh.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ilg'or gibrid kateter laboratoriyalariga ega Hindistonning eng yirik ko'p ixtisoslashgan yurak markazi.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Escorts Heart Institute",
+          city: "Okhla, Yangi Dehli",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "30 yildan ortiq klinik va jarrohlik mukammallikka ega bo'lgan yurak kasalliklari bo'yicha kashshof.",
+          image: "/images/hospitals/848-Fortis-Escorts-Heart-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "NABH & JCI akkreditatsiyadan o'tgan",
+          desc: "Murakkab yurak kasalliklari uchun ilg'or tasvirlash va robotli jarrohlik to'plamlari.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Artemis Hospital",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Zamonaviy yurak-qon tomir ICU va operatsiyadan keyingi yordam bo'limlari.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     kk: {
       hero_title: "Кардиологиялық Көмек",
@@ -532,7 +674,76 @@ export const cardioData: SpecialityData = {
           q: "Үндістанның №1 кардиологы кім?",
           a: "Үндістанда әлемге әйгілі кардиологтар өте көп. Доктор Нареш Трехан мен доктор Ашок Сет осы саладағы ең үздік ізашарлардың қатарында."
         }
-      ]
+      ],
+      heroBadge: "Кардиология үздігі",
+      doctors: [
+        {
+          name: "Dr. Naresh Trehan",
+          exp: "42+ Years",
+          role: "Төраға және бас кардиохирург",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "NT",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
+        },
+        {
+          name: "Dr. Ashok Seth",
+          exp: "40+ Years",
+          role: "Төраға - Fortis Escorts жүрек институты",
+          hospital: "Fortis Escorts, New Delhi",
+          initials: "AS",
+          gradient: "from-red-600 to-amber-600",
+          image: "/images/doctors/565-Dr.-Suman-Bhandari.jpg",
+        },
+        {
+          name: "Dr. S.N. Gupta",
+          exp: "38+ Years",
+          role: "Аға директор – интервенциялық кардиология",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "SG",
+          gradient: "from-red-600 to-orange-500",
+          image: "/images/doctors/600-Dr.-Vijay-Kumar.jpg",
+        },
+        {
+          name: "Dr. Purushottam Lal",
+          exp: "35+ Years",
+          role: "Төраға – Метро ауруханалар тобы",
+          hospital: "Metro Hospital, Noida",
+          initials: "PL",
+          gradient: "from-rose-600 to-red-700",
+          image: "/images/doctors/870-Dr.-Vivudh-Pratap-Singh.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістандағы гибридті катокологиялық зертханалары бар ең ірі көп мамандандырылған кардиологиялық орталық.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Escorts Heart Institute",
+          city: "Окла, Нью-Дели",
+          accreditation: "JCI аккредиттелген",
+          desc: "30 жылдан астам клиникалық және хирургиялық жетістіктері бар кардиологиялық көмек көрсету саласындағы пионер.",
+          image: "/images/hospitals/848-Fortis-Escorts-Heart-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Күрделі кардиологиялық жағдайларға арналған кеңейтілген бейнелеу және роботты хирургиялық люкс.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Artemis Hospital",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Соңғы үлгідегі жүрек-қантамырлық реанимация және операциядан кейінгі күтім бөлімшелері.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     }
   },
   conditions: [

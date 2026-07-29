@@ -12,7 +12,7 @@ export const vascularData: SpecialityData = {
       "hospital": "Medanta - The Medicity, Gurugram",
       "initials": "RP",
       "gradient": "from-red-500 to-rose-700",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/758-Dr.-Rakesh-Mahajan.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -21,7 +21,7 @@ export const vascularData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/359-Dr.-Mukesh-Goel.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -30,7 +30,7 @@ export const vascularData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/532-Dr.-Pradeep-Chowbey.jpg"
     },
     {
       "name": "Dr. Specialist 3",
@@ -39,7 +39,7 @@ export const vascularData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/979-Dr.-Manish-Baijal.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const vascularData: SpecialityData = {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Advanced hybrid operating theaters, laser vein resections, endovascular aneurysm repair units."
+      "desc": "Advanced hybrid operating theaters, laser vein resections, endovascular aneurysm repair units.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care."
+      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     }
   ],
   "procedures": [
@@ -692,7 +696,14 @@ export const vascularData: SpecialityData = {
       "rating": 5,
       "outcome": "Peripheral Bypass Mobility Restoration"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is a hybrid operating room and why is it important?",

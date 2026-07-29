@@ -12,7 +12,7 @@ export const gynoOncoData: SpecialityData = {
       "hospital": "Fortis Memorial Research Institute, Gurugram",
       "initials": "RJ",
       "gradient": "from-pink-500 to-rose-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -21,7 +21,7 @@ export const gynoOncoData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -30,7 +30,7 @@ export const gynoOncoData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/587-Dr.-Harit-Chaturvedi.jpg"
     },
     {
       "name": "Dr. Specialist 3",
@@ -39,7 +39,7 @@ export const gynoOncoData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/111-Dr.-Geeta-Chadha.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const gynoOncoData: SpecialityData = {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Advanced robotic gynecological cancer staging, radical hysterectomies and chemotherapy units."
+      "desc": "Advanced robotic gynecological cancer staging, radical hysterectomies and chemotherapy units.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care."
+      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     }
   ],
   "procedures": [
@@ -355,7 +359,76 @@ export const gynoOncoData: SpecialityData = {
           "q": "Какая послеоперационная поддержка или физиотерапия координируется?",
           "a": "Мы организуем полную послеоперационную физическую реабилитацию, рекомендации по питанию и посещения медсестры в вашем месте восстановления."
         }
-      ]
+      ],
+      heroBadge: "Гинекологическая онкология",
+      doctors: [
+        {
+          name: "Dr. Rama Joshi",
+          exp: "26+ Years",
+          role: "Директор - гинекология онкология",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "RJ",
+          gradient: "from-pink-500 to-rose-600",
+          image: "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/587-Dr.-Harit-Chaturvedi.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/111-Dr.-Geeta-Chadha.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Передовая роботизированная гинекологическая стадия рака, радикальная гистерэктомия и отделения химиотерапии.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Ведущий многопрофильный центр Индии с передовыми хирургическими технологиями.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI",
+          desc: "Комплексный уход за пациентами, современное оборудование и специалисты с мировым именем.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация NABH и JCI",
+          desc: "Передовая диагностика, роботизированные хирургические комплексы и специализированная интенсивная терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Hindistonda Ginekologik Onkologiya Xizmatlari",
@@ -483,7 +556,76 @@ export const gynoOncoData: SpecialityData = {
           "q": "Operatsiyadan keyingi qanday yordam yoki jismoniy terapiya muvofiqlashtiriladi?",
           "a": "Operatsiyadan keyingi to'liq jismoniy reabilitatsiya, ovqatlanish bo'yicha qo'llanmalar va tiklanish joyingizga hamshira tashrifini tashkil qilamiz."
         }
-      ]
+      ],
+      heroBadge: "Ginekologik onkologiya",
+      doctors: [
+        {
+          name: "Dr. Rama Joshi",
+          exp: "26+ Years",
+          role: "Direktor - Ginekologiya Onkologiyasi",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "RJ",
+          gradient: "from-pink-500 to-rose-600",
+          image: "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/587-Dr.-Harit-Chaturvedi.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/111-Dr.-Geeta-Chadha.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ilg'or robotli ginekologik saraton bosqichi, radikal histerektomiyalar va kimyoterapiya bo'limlari.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Hindistonning ilg'or jarrohlik texnologiyasiga ega yetakchi ko'p ixtisoslik markazi.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "Bemorlarga har tomonlama yordam ko'rsatish, zamonaviy jihozlar va dunyoga mashhur mutaxassislar.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "NABH & JCI akkreditatsiyadan o'tgan",
+          desc: "Kengaytirilgan diagnostika, robotlashtirilgan jarrohlik to'plamlari va maxsus intensiv terapiya.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Үндістандағы онкогинекологиялық қызметтер",
@@ -611,7 +753,76 @@ export const gynoOncoData: SpecialityData = {
           "q": "Қандай операциядан кейінгі қолдау немесе физиотерапия үйлестіріледі?",
           "a": "Операциядан кейінгі толық физикалық оңалтуды, тамақтану бойынша нұсқаулықтарды және қалпына келтіру орнында медбикеге баруды ұйымдастырамыз."
         }
-      ]
+      ],
+      heroBadge: "Гинекологиялық онкология",
+      doctors: [
+        {
+          name: "Dr. Rama Joshi",
+          exp: "26+ Years",
+          role: "Директор – гинекология онкологиясы",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "RJ",
+          gradient: "from-pink-500 to-rose-600",
+          image: "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/587-Dr.-Harit-Chaturvedi.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/111-Dr.-Geeta-Chadha.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Жетілдірілген роботталған гинекологиялық қатерлі ісік сатысы, радикалды гистерэктомия және химиотерапия бөлімшелері.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістанның озық хирургиялық технологиясы бар жетекші көп салалы орталығы.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI аккредиттелген",
+          desc: "Пациенттерге жан-жақты күтім көрсету, заманауи қондырғылар және әлемге әйгілі мамандар.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Жетілдірілген диагностика, роботты хирургиялық люкс және арнайы қарқынды терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -692,7 +903,14 @@ export const gynoOncoData: SpecialityData = {
       "rating": 5,
       "outcome": "Successful Pelvic Floor Restoration"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is HIPEC and how does it help?",

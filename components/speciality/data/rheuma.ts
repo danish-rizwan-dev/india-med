@@ -12,7 +12,7 @@ export const rheumaData: SpecialityData = {
       "hospital": "Jaypee Hospital, Noida",
       "initials": "SM",
       "gradient": "from-purple-500 to-indigo-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/145-Dr.-Sandeep-Guleria.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -21,7 +21,7 @@ export const rheumaData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/938-Dr.-Kailash-Nath-Singh.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -30,7 +30,7 @@ export const rheumaData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/461-Dr.-Gagan-Deep-Chhabra.jpg"
     },
     {
       "name": "Dr. Specialist 3",
@@ -39,7 +39,7 @@ export const rheumaData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/261-Dr.-Akhil-Mishra.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const rheumaData: SpecialityData = {
       "name": "Jaypee Hospital",
       "city": "Noida, Delhi NCR",
       "accreditation": "NABH Accredited",
-      "desc": "Comprehensive diagnostic autoimmune profile matching, biological infusion therapies, and rehabilitation."
+      "desc": "Comprehensive diagnostic autoimmune profile matching, biological infusion therapies, and rehabilitation.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care."
+      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     }
   ],
   "procedures": [
@@ -692,7 +696,14 @@ export const rheumaData: SpecialityData = {
       "rating": 5,
       "outcome": "Joint Injection Mobility Restoration"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What are biological therapies and are they better than standard pills?",

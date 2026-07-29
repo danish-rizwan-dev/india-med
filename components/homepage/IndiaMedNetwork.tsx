@@ -250,13 +250,13 @@ export default function IndiaMedNetwork() {
                           </div>
                         </Link>
 
-                        <a
-                          href="tel:+91XXXXXXXXXX"
+                        <Link
+                          href="/contact"
                           className="bg-white text-[#58595B] px-3 md:px-3.5 py-2.5 lg:px-6 lg:py-3 rounded-full font-bold text-[11px] md:text-[12px] lg:text-[15px] flex items-center gap-1.5 md:gap-2 shadow-lg transition-transform hover:scale-105"
                         >
                           <Phone size={14} className="md:w-[16px]" fill="#58595B" />
                           <span className="whitespace-nowrap">{t('contact_now')}</span>
-                        </a>
+                        </Link>
                       </div>
                     </div>
                   </div>

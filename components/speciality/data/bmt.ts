@@ -12,7 +12,7 @@ export const bmtData: SpecialityData = {
       "hospital": "BLK-Max Super Speciality Hospital, New Delhi",
       "initials": "DC",
       "gradient": "from-blue-600 to-indigo-700",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/208-Dr.-Rahul-Naithani.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -21,7 +21,7 @@ export const bmtData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -30,7 +30,7 @@ export const bmtData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/340-Dr.-Hari-Goyal.jpg"
     },
     {
       "name": "Dr. Specialist 3",
@@ -39,7 +39,7 @@ export const bmtData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const bmtData: SpecialityData = {
       "name": "BLK-Max Super Speciality Hospital",
       "city": "New Delhi",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "One of the largest bone marrow transplant centers in Asia with dedicated HEPA-filtered intensive care suites."
+      "desc": "One of the largest bone marrow transplant centers in Asia with dedicated HEPA-filtered intensive care suites.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care."
+      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     }
   ],
   "procedures": [
@@ -355,7 +359,76 @@ export const bmtData: SpecialityData = {
           "q": "Какая послеоперационная поддержка или физиотерапия координируется?",
           "a": "Мы организуем полную послеоперационную физическую реабилитацию, рекомендации по питанию и посещения медсестры в вашем месте восстановления."
         }
-      ]
+      ],
+      heroBadge: "Трансплантация костного мозга",
+      doctors: [
+        {
+          name: "Dr. Dharma Choudhary",
+          exp: "26+ Years",
+          role: "Старший директор по трансплантации костного мозга",
+          hospital: "BLK-Max Super Speciality Hospital, New Delhi",
+          initials: "DC",
+          gradient: "from-blue-600 to-indigo-700",
+          image: "/images/doctors/208-Dr.-Rahul-Naithani.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/340-Dr.-Hari-Goyal.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "BLK-Max Super Speciality Hospital",
+          city: "Нью-Дели",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Один из крупнейших центров трансплантации костного мозга в Азии со специальными палатами интенсивной терапии с HEPA-фильтрами.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Ведущий многопрофильный центр Индии с передовыми хирургическими технологиями.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI",
+          desc: "Комплексный уход за пациентами, современное оборудование и специалисты с мировым именем.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация NABH и JCI",
+          desc: "Передовая диагностика, роботизированные хирургические комплексы и специализированная интенсивная терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Hindistonda Suyak Ko'migi Transplantatsiyasi",
@@ -483,7 +556,76 @@ export const bmtData: SpecialityData = {
           "q": "Operatsiyadan keyingi qanday yordam yoki jismoniy terapiya muvofiqlashtiriladi?",
           "a": "Operatsiyadan keyingi to'liq jismoniy reabilitatsiya, ovqatlanish bo'yicha qo'llanmalar va tiklanish joyingizga hamshira tashrifini tashkil qilamiz."
         }
-      ]
+      ],
+      heroBadge: "Suyak iligi transplantatsiyasi",
+      doctors: [
+        {
+          name: "Dr. Dharma Choudhary",
+          exp: "26+ Years",
+          role: "Katta direktor - suyak iligi transplantatsiyasi",
+          hospital: "BLK-Max Super Speciality Hospital, New Delhi",
+          initials: "DC",
+          gradient: "from-blue-600 to-indigo-700",
+          image: "/images/doctors/208-Dr.-Rahul-Naithani.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/340-Dr.-Hari-Goyal.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "BLK-Max Super Speciality Hospital",
+          city: "Yangi Dehli",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Osiyodagi eng yirik suyak iligi transplantatsiyasi markazlaridan biri, HEPA filtrli intensiv terapiya xonalari.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Hindistonning ilg'or jarrohlik texnologiyasiga ega yetakchi ko'p ixtisoslik markazi.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "Bemorlarga har tomonlama yordam ko'rsatish, zamonaviy jihozlar va dunyoga mashhur mutaxassislar.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "NABH & JCI akkreditatsiyadan o'tgan",
+          desc: "Kengaytirilgan diagnostika, robotlashtirilgan jarrohlik to'plamlari va maxsus intensiv terapiya.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Үндістанда сүйек кемігін трансплантациялау",
@@ -611,7 +753,76 @@ export const bmtData: SpecialityData = {
           "q": "Қандай операциядан кейінгі қолдау немесе физиотерапия үйлестіріледі?",
           "a": "Операциядан кейінгі толық физикалық оңалтуды, тамақтану бойынша нұсқаулықтарды және қалпына келтіру орнында медбикеге баруды ұйымдастырамыз."
         }
-      ]
+      ],
+      heroBadge: "Сүйек кемігін трансплантациялау",
+      doctors: [
+        {
+          name: "Dr. Dharma Choudhary",
+          exp: "26+ Years",
+          role: "Аға директор – сүйек кемігін трансплантациялау",
+          hospital: "BLK-Max Super Speciality Hospital, New Delhi",
+          initials: "DC",
+          gradient: "from-blue-600 to-indigo-700",
+          image: "/images/doctors/208-Dr.-Rahul-Naithani.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/336-Dr.-Jyoti-Wadhwa.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/340-Dr.-Hari-Goyal.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/609-Dr.-(Prof)-Shefali-Agrawal.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "BLK-Max Super Speciality Hospital",
+          city: "Жаңа Дели",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Арнайы HEPA сүзгіленген қарқынды терапия люкстері бар Азиядағы ең ірі сүйек кемігін трансплантациялау орталықтарының бірі.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістанның озық хирургиялық технологиясы бар жетекші көп салалы орталығы.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI аккредиттелген",
+          desc: "Пациенттерге жан-жақты күтім көрсету, заманауи қондырғылар және әлемге әйгілі мамандар.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Жетілдірілген диагностика, роботты хирургиялық люкс және арнайы қарқынды терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -692,7 +903,14 @@ export const bmtData: SpecialityData = {
       "rating": 5,
       "outcome": "Pediatric BMT Rehabilitation Success"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "How long is the hospital stay for a Bone Marrow Transplant?",

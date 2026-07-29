@@ -2,7 +2,7 @@ import { SpecialityData } from "../types";
 
 export const entData: SpecialityData = {
   "heroBadge": "ENT, Head & Neck",
-  "icon": "/images/sections/specialities/ENT.svg",
+  "icon": "/images/sections/specialities/ENTHeadNeckSurgery.svg",
   "slug": "ent",
   "doctors": [
     {
@@ -12,7 +12,7 @@ export const entData: SpecialityData = {
       "hospital": "Indraprastha Apollo Hospitals, New Delhi",
       "initials": "AK",
       "gradient": "from-sky-500 to-teal-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/590-Dr.-Ameet-Kishore.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -21,7 +21,7 @@ export const entData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/717-Dr.-P.-L.-Dhingra.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -30,7 +30,7 @@ export const entData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/644-Dr.-Sabir-Husain-Ansari.jpg"
     },
     {
       "name": "Dr. Specialist 3",
@@ -39,7 +39,7 @@ export const entData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/590-Dr.-Ameet-Kishore.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const entData: SpecialityData = {
       "name": "Indraprastha Apollo Hospitals",
       "city": "New Delhi",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Comprehensive hearing implant clinics, micro-laryngeal voice surgery centers, advanced skull-base navigation suites."
+      "desc": "Comprehensive hearing implant clinics, micro-laryngeal voice surgery centers, advanced skull-base navigation suites.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care."
+      "desc": "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     }
   ],
   "procedures": [
@@ -355,7 +359,76 @@ export const entData: SpecialityData = {
           "q": "Какая послеоперационная поддержка или физиотерапия координируется?",
           "a": "Мы организуем полную послеоперационную физическую реабилитацию, рекомендации по питанию и посещения медсестры в вашем месте восстановления."
         }
-      ]
+      ],
+      heroBadge: "ENT, Head & Neck",
+      doctors: [
+        {
+          name: "Dr. Ameet Kishore",
+          exp: "28+ Years",
+          role: "Director - ENT & Cochlear Transplant",
+          hospital: "Indraprastha Apollo Hospitals, New Delhi",
+          initials: "AK",
+          gradient: "from-sky-500 to-teal-600",
+          image: "/images/doctors/590-Dr.-Ameet-Kishore.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Senior Consultant Specialist",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/717-Dr.-P.-L.-Dhingra.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Senior Consultant Specialist",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/644-Dr.-Sabir-Husain-Ansari.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Senior Consultant Specialist",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/590-Dr.-Ameet-Kishore.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Indraprastha Apollo Hospitals",
+          city: "New Delhi",
+          accreditation: "JCI & NABH Accredited",
+          desc: "Comprehensive hearing implant clinics, micro-laryngeal voice surgery centers, advanced skull-base navigation suites.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Delhi NCR",
+          accreditation: "JCI & NABH Accredited",
+          desc: "India's leading multi-speciality center with advanced surgical technology.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Delhi NCR",
+          accreditation: "JCI Accredited",
+          desc: "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, New Delhi",
+          accreditation: "NABH & JCI Accredited",
+          desc: "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Hindistonda LOR va Bosh-Bo'yin Jarrohligi",
@@ -483,7 +556,76 @@ export const entData: SpecialityData = {
           "q": "Operatsiyadan keyingi qanday yordam yoki jismoniy terapiya muvofiqlashtiriladi?",
           "a": "Operatsiyadan keyingi to'liq jismoniy reabilitatsiya, ovqatlanish bo'yicha qo'llanmalar va tiklanish joyingizga hamshira tashrifini tashkil qilamiz."
         }
-      ]
+      ],
+      heroBadge: "KBB, bosh va bo'yin",
+      doctors: [
+        {
+          name: "Dr. Ameet Kishore",
+          exp: "28+ Years",
+          role: "Direktor - LOR va koxlear transplantatsiya",
+          hospital: "Indraprastha Apollo Hospitals, New Delhi",
+          initials: "AK",
+          gradient: "from-sky-500 to-teal-600",
+          image: "/images/doctors/590-Dr.-Ameet-Kishore.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/717-Dr.-P.-L.-Dhingra.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/644-Dr.-Sabir-Husain-Ansari.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/590-Dr.-Ameet-Kishore.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Indraprastha Apollo Hospitals",
+          city: "Yangi Dehli",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Comprehensive hearing implant clinics, micro-laryngeal voice surgery centers, advanced skull-base navigation suites.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Delhi NCR",
+          accreditation: "JCI & NABH Accredited",
+          desc: "India's leading multi-speciality center with advanced surgical technology.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Delhi NCR",
+          accreditation: "JCI Accredited",
+          desc: "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, New Delhi",
+          accreditation: "NABH & JCI Accredited",
+          desc: "Advanced diagnostics, robotic surgical suites, and dedicated intensive care.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Үндістандағы ЛОР және бас-мойын хирургиясы",
@@ -611,7 +753,76 @@ export const entData: SpecialityData = {
           "q": "Қандай операциядан кейінгі қолдау немесе физиотерапия үйлестіріледі?",
           "a": "Операциядан кейінгі толық физикалық оңалтуды, тамақтану бойынша нұсқаулықтарды және қалпына келтіру орнында медбикеге баруды ұйымдастырамыз."
         }
-      ]
+      ],
+      heroBadge: "ЛОР, бас және мойын",
+      doctors: [
+        {
+          name: "Dr. Ameet Kishore",
+          exp: "28+ Years",
+          role: "Директоры – ЛОР және кохлеарлы трансплант",
+          hospital: "Indraprastha Apollo Hospitals, New Delhi",
+          initials: "AK",
+          gradient: "from-sky-500 to-teal-600",
+          image: "/images/doctors/590-Dr.-Ameet-Kishore.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/717-Dr.-P.-L.-Dhingra.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/644-Dr.-Sabir-Husain-Ansari.jpg",
+        },
+        {
+          name: "Dr. Specialist 3",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/590-Dr.-Ameet-Kishore.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Indraprastha Apollo Hospitals",
+          city: "Жаңа Дели",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Кешенді есту имплантаты клиникалары, микро-ларингальды дауыс хирургиясы орталықтары, бас сүйегінің негізіне арналған жетілдірілген навигациялық люкс.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістанның озық хирургиялық технологиясы бар жетекші көп салалы орталығы.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI аккредиттелген",
+          desc: "Пациенттерге жан-жақты күтім көрсету, заманауи қондырғылар және әлемге әйгілі мамандар.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Жетілдірілген диагностика, роботты хирургиялық люкс және арнайы қарқынды терапия.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -692,7 +903,14 @@ export const entData: SpecialityData = {
       "rating": 5,
       "outcome": "Head and Neck Tissue Reconstruction"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "Are cochlear implants successful for children born deaf?",

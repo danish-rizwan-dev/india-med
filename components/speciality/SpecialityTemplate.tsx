@@ -4,7 +4,7 @@ import { specialitiesData } from "./data";
 import SpecialityFAQCustom from "./sections/SpecialityFAQCustom";
 import RelatedDoctorsCustom from "./sections/RelatedDoctorsCustom";
 import RelatedHospitalsCustom from "./sections/RelatedHospitalsCustom";
-import PatientStoriesCustom from "./sections/PatientStoriesCustom";
+import PatientVideos from "./sections/PatientVideos";
 import WhyChooseIndiaMedSection from "./sections/WhyChooseIndiaMedSection";
 import ProceduresDirectoryCustom from "./sections/ProceduresDirectoryCustom";
 import Footer from "@/components/layout/Footer";
@@ -40,15 +40,17 @@ export default function SpecialityTemplate({
 
   const conditionsToUse = specLang.conditions && specLang.conditions.length > 0 ? specLang.conditions : data.conditions;
   const proceduresToUse = specLang.procedures_list && specLang.procedures_list.length > 0 ? specLang.procedures_list : data.procedures;
+  const doctorsToUse = specLang.doctors && specLang.doctors.length > 0 ? specLang.doctors : data.doctors;
+  const hospitalsToUse = specLang.hospitals && specLang.hospitals.length > 0 ? specLang.hospitals : data.hospitals;
 
   return (
     <div className="bg-white min-h-screen font-sans antialiased text-[#414042]">
 
       {/* ─── 1. HERO SECTION ─── */}
-      <SpecialityHero data={data} specLang={specLang} locale={locale} />
+      <SpecialityHero data={data} specLang={specLang} locale={locale} specialityKey={specialityKey} />
 
       {/* ─── 2. INTRO SECTION ─── */}
-      <IntroSection data={data} specLang={specLang} locale={locale} />
+      <IntroSection data={data} specLang={specLang} locale={locale} specialityKey={specialityKey} />
 
       {/* ─── 3. KEY CONDITIONS MANAGED ─── */}
       <KeyConditions conditions={conditionsToUse} specLang={specLang} slug={data.slug || ""} />
@@ -65,14 +67,14 @@ export default function SpecialityTemplate({
       />
 
       {/* ─── 5.7 RELATED DOCTORS (Custom Layout) ─── */}
-      <RelatedDoctorsCustom doctors={data.doctors} />
+      <RelatedDoctorsCustom doctors={doctorsToUse} />
 
       {/* ─── 5.8 RELATED HOSPITALS (Custom Layout) ─── */}
-      <RelatedHospitalsCustom hospitals={data.hospitals} />
+      <RelatedHospitalsCustom hospitals={hospitalsToUse} />
 
-      {/* ─── 5.9 PATIENT STORIES (Custom Layout) ─── */}
-      <PatientStoriesCustom stories={data.patientStories} />
-      
+      {/* ─── PATIENT VIDEOS ─── */}
+      <PatientVideos videos={data.videos} />
+
       {/* ─── 5.5 WHY CHOOSE SECTION (Custom Layout) ─── */}
       <WhyChooseUs />
       {/* ─── 5.10 PROCEDURES DIRECTORY (Custom Layout) ─── */}

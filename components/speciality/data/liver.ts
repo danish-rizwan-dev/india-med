@@ -12,7 +12,7 @@ export const liverData: SpecialityData = {
       "hospital": "Medanta - The Medicity, Gurugram",
       "initials": "AS",
       "gradient": "from-amber-600 to-orange-700",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/351-Dr.-Neerav-Goyal.jpg"
     },
     {
       "name": "Dr. Subhash Gupta",
@@ -21,7 +21,7 @@ export const liverData: SpecialityData = {
       "hospital": "Max Hospital, Saket",
       "initials": "SG",
       "gradient": "from-orange-600 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -30,7 +30,7 @@ export const liverData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/359-Dr.-Mukesh-Goel.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -39,7 +39,7 @@ export const liverData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/216-Dr.-Deepak-Govil.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const liverData: SpecialityData = {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "World's most active living donor liver transplant institute with over 4,000 successful transplants."
+      "desc": "World's most active living donor liver transplant institute with over 4,000 successful transplants.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Pioneer in pediatric and complex adult liver transplants with state-of-the-art HPB ICUs."
+      "desc": "Pioneer in pediatric and complex adult liver transplants with state-of-the-art HPB ICUs.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     }
   ],
   "procedures": [
@@ -365,7 +369,76 @@ export const liverData: SpecialityData = {
           "q": "Доступна ли роботизированная хирургия при моем заболевании?",
           "a": "Да, наши передовые центры оснащены новейшими роботизированными установками, такими как DaVinci, и навигационными системами для максимальной точности."
         }
-      ]
+      ],
+      heroBadge: "Трансплантация печени",
+      doctors: [
+        {
+          name: "Dr. Arvinder Singh Soin",
+          exp: "34+ Years",
+          role: "Председатель и главный хирург отделения трансплантации печени",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AS",
+          gradient: "from-amber-600 to-orange-700",
+          image: "/images/doctors/351-Dr.-Neerav-Goyal.jpg",
+        },
+        {
+          name: "Dr. Subhash Gupta",
+          exp: "32+ Years",
+          role: "Председатель - Центр Макса по изучению печени и желчевыводящих путей",
+          hospital: "Max Hospital, Saket",
+          initials: "SG",
+          gradient: "from-orange-600 to-red-600",
+          image: "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/359-Dr.-Mukesh-Goel.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/216-Dr.-Deepak-Govil.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Самый активный в мире институт трансплантации печени от живых доноров, осуществивший более 4000 успешных трансплантаций.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация NABH и JCI",
+          desc: "Пионер в области педиатрической и сложной трансплантации печени у взрослых с использованием современных отделений интенсивной терапии HPB.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Ведущий многопрофильный центр Индии с передовыми хирургическими технологиями.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI",
+          desc: "Комплексный уход за пациентами, современное оборудование и специалисты с мировым именем.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Hindistonda Jigar Transplantatsiyasi",
@@ -493,7 +566,76 @@ export const liverData: SpecialityData = {
           "q": "Mening ahvolim uchun robot yordamida operatsiya qilish mumkinmi?",
           "a": "Ha, ilg'or markazlarimizda maksimal aniqlik uchun DaVinci va navigatsiya tizimlari kabi eng so'nggi robot qurilmalari mavjud."
         }
-      ]
+      ],
+      heroBadge: "Jigar transplantatsiyasi",
+      doctors: [
+        {
+          name: "Dr. Arvinder Singh Soin",
+          exp: "34+ Years",
+          role: "Rais va bosh jarroh - jigar transplantatsiyasi",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AS",
+          gradient: "from-amber-600 to-orange-700",
+          image: "/images/doctors/351-Dr.-Neerav-Goyal.jpg",
+        },
+        {
+          name: "Dr. Subhash Gupta",
+          exp: "32+ Years",
+          role: "Rais - Maks jigar va o't yo'llari fanlari markazi",
+          hospital: "Max Hospital, Saket",
+          initials: "SG",
+          gradient: "from-orange-600 to-red-600",
+          image: "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/359-Dr.-Mukesh-Goel.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/216-Dr.-Deepak-Govil.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "4000 dan ortiq muvaffaqiyatli transplantatsiya qilingan dunyodagi eng faol tirik donor jigar transplantatsiyasi instituti.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "NABH & JCI akkreditatsiyadan o'tgan",
+          desc: "Zamonaviy HPB ICUlari bilan bolalar va murakkab kattalar jigar transplantatsiyasi bo'yicha kashshof.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Hindistonning ilg'or jarrohlik texnologiyasiga ega yetakchi ko'p ixtisoslik markazi.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "Bemorlarga har tomonlama yordam ko'rsatish, zamonaviy jihozlar va dunyoga mashhur mutaxassislar.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Бауыр трансплантациясы және гепатология",
@@ -621,7 +763,76 @@ export const liverData: SpecialityData = {
           "q": "Менің жағдайым үшін роботтың көмегімен операция жасауға болады ма?",
           "a": "Иә, біздің жетілдірілген орталықтарымызда DaVinci сияқты ең соңғы робот қондырғылары және максималды дәлдік үшін навигациялық жүйелер бар."
         }
-      ]
+      ],
+      heroBadge: "Бауыр трансплантаты",
+      doctors: [
+        {
+          name: "Dr. Arvinder Singh Soin",
+          exp: "34+ Years",
+          role: "Төраға және бас хирург – бауыр трансплантаты",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AS",
+          gradient: "from-amber-600 to-orange-700",
+          image: "/images/doctors/351-Dr.-Neerav-Goyal.jpg",
+        },
+        {
+          name: "Dr. Subhash Gupta",
+          exp: "32+ Years",
+          role: "Төраға – Макс бауыр және өт шығару ғылымдары орталығы",
+          hospital: "Max Hospital, Saket",
+          initials: "SG",
+          gradient: "from-orange-600 to-red-600",
+          image: "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/359-Dr.-Mukesh-Goel.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/216-Dr.-Deepak-Govil.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "4000-нан астам сәтті трансплантациялары бар әлемдегі ең белсенді тірі донорлық бауыр трансплантациялау институты.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Қазіргі заманғы HPB ICU бар балалар және күрделі ересек бауыр трансплантациясы бойынша пионер.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістанның озық хирургиялық технологиясы бар жетекші көп салалы орталығы.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI аккредиттелген",
+          desc: "Пациенттерге жан-жақты күтім көрсету, заманауи қондырғылар және әлемге әйгілі мамандар.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -702,7 +913,14 @@ export const liverData: SpecialityData = {
       "rating": 5,
       "outcome": "Pediatric Liver Implant Success"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is the CyberKnife system and is it invasive?",

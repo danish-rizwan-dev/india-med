@@ -169,11 +169,11 @@ export default function Footer() {
     {
       title: t('col_3_title'),
       data: [
-        { label: t('links.gurugram'), href: "/#destinations" },
-        { label: t('links.patna'), href: "/#destinations" },
-        { label: t('links.lucknow'), href: "/#destinations" },
-        { label: t('links.indore'), href: "/#destinations" },
-        { label: t('links.noida'), href: "/#destinations" }
+        { label: t('links.max_saket'), href: "/hospitals/max-saket" },
+        { label: t('links.apollo_delhi'), href: "/hospitals/apollo-delhi" },
+        { label: t('links.fortis_memorial'), href: "/hospitals/fortis-memorial" },
+        { label: t('links.manipal_dwarka'), href: "/hospitals/manipal-dwarka" },
+        { label: t('links.medanta_gurugram'), href: "/hospitals/medanta-gurugram" }
       ],
     },
     {
@@ -217,7 +217,7 @@ export default function Footer() {
                 { Icon: FacebookIcon, label: "Facebook", href: "https://facebook.com/indiamed" },
                 { Icon: TwitterIcon, label: "Twitter", href: "https://twitter.com/indiamed" },
                 { Icon: InstagramIcon, label: "Instagram", href: "https://instagram.com/indiamed" },
-                { Icon: YoutubeIcon, label: "Youtube", href: "https://youtube.com/indiamed" }
+                { Icon: YoutubeIcon, label: "Youtube", href: "https://www.youtube.com/@india_med_service/shorts" }
               ].map(({ Icon, label, href }) => (
                 <a
                   key={label}
@@ -307,7 +307,7 @@ export default function Footer() {
           {[
             { title: t('col_2_title'), href: "/#specialities" },
             { title: t('col_1_title'), href: "/#services" },
-            { title: t('links.contact'), href: "/#contact" }
+            { title: t('links.contact'), href: "/contact" }
           ].map((item, idx) => (
             <Link 
               key={idx} 

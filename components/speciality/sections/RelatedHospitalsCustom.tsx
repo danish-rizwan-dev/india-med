@@ -91,7 +91,10 @@ export default function RelatedHospitalsCustom({ hospitals }: RelatedHospitalsCu
                       </div>
                     </div>
 
-                    <button className="font-bold text-[13px] text-[#EE4423] font-montserrat flex items-center gap-1 justify-center active:scale-95 transition-transform">
+                    <button
+                      onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+                      className="font-bold text-[13px] text-[#EE4423] font-montserrat flex items-center gap-1 justify-center active:scale-95 transition-transform cursor-pointer"
+                    >
                       {tShared('enquire_now')} 
                       <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-0.5">
                         <path d="M1 9L5 5L1 1" stroke="#EE4423" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
@@ -148,7 +151,10 @@ export default function RelatedHospitalsCustom({ hospitals }: RelatedHospitalsCu
                   </div>
                 </div>
 
-                <button className="font-bold text-[13px] text-[#EE4423] font-montserrat flex items-center gap-1 justify-center hover:translate-x-0.5 transition-transform duration-200">
+                <button
+                  onClick={() => window.dispatchEvent(new CustomEvent("open-consultation-modal"))}
+                  className="font-bold text-[13px] text-[#EE4423] font-montserrat flex items-center gap-1 justify-center hover:translate-x-0.5 transition-transform duration-200 cursor-pointer"
+                >
                   {tShared('enquire_now')} 
                   <svg width="6" height="10" viewBox="0 0 6 10" fill="none" xmlns="http://www.w3.org/2000/svg" className="ml-1">
                     <path d="M1 9L5 5L1 1" stroke="#EE4423" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

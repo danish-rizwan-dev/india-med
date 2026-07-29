@@ -4,6 +4,7 @@ import { useMemo, useState } from "react";
 import type { ReactNode } from "react";
 import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { useSearchParams } from "next/navigation";
 import { Award, Building2, ChevronLeft, ChevronRight, Filter, MapPin, Search, Stethoscope, X } from "lucide-react";
 import { Link } from "@/i18n/routing";
 import type { Doctor } from "./data";
@@ -18,8 +19,9 @@ const DOCTORS_PER_PAGE = 10;
 export default function DoctorsDirectory({ doctors }: Props) {
   const t = useTranslations("DoctorsPage");
   const td = useTranslations("DoctorProfile");
+  const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
-  const [department, setDepartment] = useState("");
+  const [department, setDepartment] = useState(searchParams.get("department") || "");
   const [hospital, setHospital] = useState("");
   const [location, setLocation] = useState("");
   const [currentPage, setCurrentPage] = useState(1);

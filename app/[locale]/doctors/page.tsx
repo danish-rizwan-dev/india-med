@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { setRequestLocale } from "next-intl/server";
 import DoctorsDirectory from "@/components/doctors/DoctorsDirectory";
 import { doctors } from "@/components/doctors/data";
@@ -112,7 +113,9 @@ export default async function DoctorsPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalSchema) }}
       />
-      <DoctorsDirectory doctors={doctors} />
+      <Suspense fallback={<div className="min-h-screen flex items-center justify-center"><div className="w-8 h-8 border-4 border-[#EE4423] border-t-transparent rounded-full animate-spin" /></div>}>
+        <DoctorsDirectory doctors={doctors} />
+      </Suspense>
       <Footer />
     </>
   );

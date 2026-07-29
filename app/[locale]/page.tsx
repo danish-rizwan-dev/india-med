@@ -16,7 +16,6 @@ const FAQSection = dynamic(() => import("@/components/homepage/FAQSection"));
 const OurOfficeSection = dynamic(() => import("@/components/homepage/OurOfficeSection"));
 const FounderSection = dynamic(() => import("@/components/homepage/FounderSection"));
 const ProcessFlow = dynamic(() => import("@/components/homepage/ProcessFlow"));
-const SharedGradientBg = dynamic(() => import("@/components/layout/SharedGradientBg"));
 const EnquirySection = dynamic(() => import("@/components/homepage/EnquirySection"));
 const Footer = dynamic(() => import("@/components/layout/Footer"));
 

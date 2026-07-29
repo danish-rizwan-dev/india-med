@@ -12,7 +12,7 @@ export const cancerData: SpecialityData = {
       "hospital": "Jaslok Hospital & Sushrut Clinic, Mumbai",
       "initials": "SA",
       "gradient": "from-pink-500 to-rose-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/365-Dr.-Dipanjan-Panda.jpg"
     },
     {
       "name": "Dr. Vinod Raina",
@@ -21,7 +21,7 @@ export const cancerData: SpecialityData = {
       "hospital": "Fortis Memorial Research Institute, Gurugram",
       "initials": "VR",
       "gradient": "from-rose-600 to-purple-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/438-Dr.-Feroz-Pasha.jpg"
     },
     {
       "name": "Dr. Ashok Vaid",
@@ -30,7 +30,7 @@ export const cancerData: SpecialityData = {
       "hospital": "Medanta - The Medicity, Gurugram",
       "initials": "AV",
       "gradient": "from-purple-600 to-indigo-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/822-Dr.-Ganesh--Jadhav.jpg"
     },
     {
       "name": "Dr. Harit Chaturvedi",
@@ -39,7 +39,7 @@ export const cancerData: SpecialityData = {
       "hospital": "Max Super Speciality Hospital, New Delhi",
       "initials": "HC",
       "gradient": "from-pink-600 to-indigo-500",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/295-Dr.-Sameer-Kaul.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const cancerData: SpecialityData = {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Comprehensive center for advanced bone marrow transplantation, CAR-T therapies, and precision oncology."
+      "desc": "Comprehensive center for advanced bone marrow transplantation, CAR-T therapies, and precision oncology.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "Cutting-edge robotic cancer surgeries, CyberKnife stereotactic radiosurgery, and personalized immunotherapy units."
+      "desc": "Cutting-edge robotic cancer surgeries, CyberKnife stereotactic radiosurgery, and personalized immunotherapy units.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Max Super Speciality Hospital",
       "city": "Saket, New Delhi",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "State-of-the-art oncology center offering advanced surgical resections, chemotherapy, and intraoperative radiotherapy."
+      "desc": "State-of-the-art oncology center offering advanced surgical resections, chemotherapy, and intraoperative radiotherapy.",
+      "image": "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
     },
     {
       "name": "Apollo Cancer Centre",
       "city": "Chennai, Tamil Nadu",
       "accreditation": "JCI Accredited",
-      "desc": "India's premier oncology hub featuring proton beam therapy, robust molecular diagnostics, and dedicated organ-specific cancer management."
+      "desc": "India's premier oncology hub featuring proton beam therapy, robust molecular diagnostics, and dedicated organ-specific cancer management.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     }
   ],
   "procedures": [
@@ -365,7 +369,76 @@ export const cancerData: SpecialityData = {
           "q": "Насколько стоимость лечения сравнима с западными медицинскими вариантами?",
           "a": "Пациенты экономят в среднем до 75-90% по сравнению с западными ценами на лечение без каких-либо компромиссов в отношении безопасности или качества лечения."
         }
-      ]
+      ],
+      heroBadge: "Превосходство в области рака и онкологии",
+      doctors: [
+        {
+          name: "Dr. Suresh H. Advani",
+          exp: "48+ Years",
+          role: "Председатель - Медицинская и детская онкология",
+          hospital: "Jaslok Hospital & Sushrut Clinic, Mumbai",
+          initials: "SA",
+          gradient: "from-pink-500 to-rose-600",
+          image: "/images/doctors/365-Dr.-Dipanjan-Panda.jpg",
+        },
+        {
+          name: "Dr. Vinod Raina",
+          exp: "38+ Years",
+          role: "Исполнительный директор - Медицинская онкология",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "VR",
+          gradient: "from-rose-600 to-purple-600",
+          image: "/images/doctors/438-Dr.-Feroz-Pasha.jpg",
+        },
+        {
+          name: "Dr. Ashok Vaid",
+          exp: "35+ Years",
+          role: "Председатель - Медицинская и детская онкология",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AV",
+          gradient: "from-purple-600 to-indigo-600",
+          image: "/images/doctors/822-Dr.-Ganesh--Jadhav.jpg",
+        },
+        {
+          name: "Dr. Harit Chaturvedi",
+          exp: "30+ Years",
+          role: "Председатель - Институт онкологии Макса",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "HC",
+          gradient: "from-pink-600 to-indigo-500",
+          image: "/images/doctors/295-Dr.-Sameer-Kaul.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Комплексный центр передовой трансплантации костного мозга, терапии CAR-T и прецизионной онкологии.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Передовые роботизированные онкологические операции, стереотаксическая радиохирургия КиберНож и персонализированные отделения иммунотерапии.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Современный онкологический центр, предлагающий современные хирургические резекции, химиотерапию и интраоперационную лучевую терапию.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Apollo Cancer Centre",
+          city: "Ченнаи, Тамил Наду",
+          accreditation: "Аккредитация JCI",
+          desc: "Ведущий онкологический центр Индии, предлагающий протонно-лучевую терапию, надежную молекулярную диагностику и специализированное лечение рака отдельных органов.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "Onkologiya va BMT Yordami",
@@ -493,7 +566,76 @@ export const cancerData: SpecialityData = {
           "q": "Davolash narxi G'arb tibbiyoti variantlari bilan solishtirganda qanday?",
           "a": "Bemorlar xavfsizlik yoki parvarish sifati bo'yicha hech qanday murosaga kelmasdan, G'arb davolash narxiga nisbatan o'rtacha 75-90% gacha tejashadi."
         }
-      ]
+      ],
+      heroBadge: "Saraton va onkologiya mukammalligi",
+      doctors: [
+        {
+          name: "Dr. Suresh H. Advani",
+          exp: "48+ Years",
+          role: "Rais - Tibbiyot va bolalar onkologiyasi",
+          hospital: "Jaslok Hospital & Sushrut Clinic, Mumbai",
+          initials: "SA",
+          gradient: "from-pink-500 to-rose-600",
+          image: "/images/doctors/365-Dr.-Dipanjan-Panda.jpg",
+        },
+        {
+          name: "Dr. Vinod Raina",
+          exp: "38+ Years",
+          role: "Ijrochi direktor - Tibbiy onkologiya",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "VR",
+          gradient: "from-rose-600 to-purple-600",
+          image: "/images/doctors/438-Dr.-Feroz-Pasha.jpg",
+        },
+        {
+          name: "Dr. Ashok Vaid",
+          exp: "35+ Years",
+          role: "Rais - Tibbiyot va bolalar onkologiyasi",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AV",
+          gradient: "from-purple-600 to-indigo-600",
+          image: "/images/doctors/822-Dr.-Ganesh--Jadhav.jpg",
+        },
+        {
+          name: "Dr. Harit Chaturvedi",
+          exp: "30+ Years",
+          role: "Rais - Maks saraton kasalligini davolash instituti",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "HC",
+          gradient: "from-pink-600 to-indigo-500",
+          image: "/images/doctors/295-Dr.-Sameer-Kaul.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ilg'or suyak iligi transplantatsiyasi, CAR-T terapiyasi va aniq onkologiya bo'yicha kompleks markaz.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Zamonaviy robotli saraton operatsiyalari, CyberKnife stereotaktik radiojarrohligi va shaxsiy immunoterapiya bo'linmalari.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Saket, Nyu-Dehli",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Ilg'or jarrohlik rezektsiyalari, kimyoterapiya va intraoperativ radiatsiya terapiyasini taklif qiluvchi zamonaviy onkologiya markazi.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Apollo Cancer Centre",
+          city: "Chennai, Tamil Nadu",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "Hindistonning proton nurlari terapiyasi, kuchli molekulyar diagnostika va maxsus organlarga xos saraton davolashni o'z ichiga olgan birinchi onkologiya markazi.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Онкология және Сүйек кемігін трансплантациялау",
@@ -621,7 +763,76 @@ export const cancerData: SpecialityData = {
           "q": "Емдеу құны батыстық медицина нұсқаларымен салыстырғанда қалай?",
           "a": "Пациенттер қауіпсіздік немесе күтім сапасына ешқандай ымырасыз батыстық емдеу бағасымен салыстырғанда орташа есеппен 75-90%-ға дейін үнемдейді."
         }
-      ]
+      ],
+      heroBadge: "Қатерлі ісік және онкология саласындағы үздіктер",
+      doctors: [
+        {
+          name: "Dr. Suresh H. Advani",
+          exp: "48+ Years",
+          role: "Төраға – Медициналық және балалар онкологиясы",
+          hospital: "Jaslok Hospital & Sushrut Clinic, Mumbai",
+          initials: "SA",
+          gradient: "from-pink-500 to-rose-600",
+          image: "/images/doctors/365-Dr.-Dipanjan-Panda.jpg",
+        },
+        {
+          name: "Dr. Vinod Raina",
+          exp: "38+ Years",
+          role: "Атқарушы директор – Медициналық онкология",
+          hospital: "Fortis Memorial Research Institute, Gurugram",
+          initials: "VR",
+          gradient: "from-rose-600 to-purple-600",
+          image: "/images/doctors/438-Dr.-Feroz-Pasha.jpg",
+        },
+        {
+          name: "Dr. Ashok Vaid",
+          exp: "35+ Years",
+          role: "Төраға – Медициналық және балалар онкологиясы",
+          hospital: "Medanta - The Medicity, Gurugram",
+          initials: "AV",
+          gradient: "from-purple-600 to-indigo-600",
+          image: "/images/doctors/822-Dr.-Ganesh--Jadhav.jpg",
+        },
+        {
+          name: "Dr. Harit Chaturvedi",
+          exp: "30+ Years",
+          role: "Төраға – Макс онкологиялық көмек көрсету институты",
+          hospital: "Max Super Speciality Hospital, New Delhi",
+          initials: "HC",
+          gradient: "from-pink-600 to-indigo-500",
+          image: "/images/doctors/295-Dr.-Sameer-Kaul.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Жетілдірілген сүйек кемігін трансплантациялау, CAR-T терапиясы және дәл онкологияға арналған кешенді орталық.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Қатерлі ісікке арналған роботтық оталар, CyberKnife стереотактикалық радиохирургиясы және жеке иммунотерапия бөлімшелері.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Max Super Speciality Hospital",
+          city: "Сакет, Нью-Дели",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Жетілдірілген хирургиялық резекцияларды, химиотерапияны және интраоперациялық сәулелік терапияны ұсынатын заманауи онкологиялық орталық.",
+          image: "/images/hospitals/262-Max-Super-Speciality-Hospital-Saket.jpg",
+        },
+        {
+          name: "Apollo Cancer Centre",
+          city: "Ченнай, Тамилнад",
+          accreditation: "JCI аккредиттелген",
+          desc: "Үндістанның протонды сәулелік терапиясы, сенімді молекулалық диагностикасы және арнайы органға тән қатерлі ісікпен күресу мүмкіндігі бар онкологиялық орталық.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -702,7 +913,14 @@ export const cancerData: SpecialityData = {
       "rating": 5,
       "outcome": "Complete Breast Reconstruction Rehabilitation"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is the CyberKnife system and is it invasive?",

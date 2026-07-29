@@ -2,7 +2,7 @@ import { SpecialityData } from "../types";
 
 export const lungsData: SpecialityData = {
   "heroBadge": "Lung Transplantation",
-  "icon": "/images/sections/specialities/lung.svg",
+  "icon": "/images/sections/specialities/lungs.svg",
   "slug": "lungs",
   "doctors": [
     {
@@ -12,7 +12,7 @@ export const lungsData: SpecialityData = {
       "hospital": "KIMS Hospital, Hyderabad",
       "initials": "SA",
       "gradient": "from-cyan-500 to-blue-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor1.jpg"
+      "image": "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg"
     },
     {
       "name": "Dr. Jnanesh Thacker",
@@ -21,7 +21,7 @@ export const lungsData: SpecialityData = {
       "hospital": "Yashoda Hospitals, Hyderabad",
       "initials": "JT",
       "gradient": "from-blue-600 to-teal-500",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor2.jpg"
+      "image": "/images/doctors/359-Dr.-Mukesh-Goel.jpg"
     },
     {
       "name": "Dr. Specialist 1",
@@ -30,7 +30,7 @@ export const lungsData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor3.jpg"
+      "image": "/images/doctors/821-Dr.-Neeraj-Awasthy.jpg"
     },
     {
       "name": "Dr. Specialist 2",
@@ -39,7 +39,7 @@ export const lungsData: SpecialityData = {
       "hospital": "Network Associated Hospital",
       "initials": "DS",
       "gradient": "from-rose-500 to-red-600",
-      "image": "/images/specialities/cardiological-assistance/realtedDoctor4.jpg"
+      "image": "/images/doctors/228-Dr.-Praveer-Agarwal.jpg"
     }
   ],
   "hospitals": [
@@ -47,25 +47,29 @@ export const lungsData: SpecialityData = {
       "name": "KIMS Hospital",
       "city": "Hyderabad, Telangana",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "One of India's leading centers for complex cardiopulmonary transplant and ECMO care."
+      "desc": "One of India's leading centers for complex cardiopulmonary transplant and ECMO care.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     },
     {
       "name": "MGM Healthcare",
       "city": "Chennai, Tamil Nadu",
       "accreditation": "NABH & JCI Accredited",
-      "desc": "Pioneer in mechanical circulatory support and ex-vivo lung perfusion techniques."
+      "desc": "Pioneer in mechanical circulatory support and ex-vivo lung perfusion techniques.",
+      "image": "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
     },
     {
       "name": "Medanta - The Medicity",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI & NABH Accredited",
-      "desc": "India's leading multi-speciality center with advanced surgical technology."
+      "desc": "India's leading multi-speciality center with advanced surgical technology.",
+      "image": "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
     },
     {
       "name": "Fortis Memorial Research Institute",
       "city": "Gurugram, Delhi NCR",
       "accreditation": "JCI Accredited",
-      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists."
+      "desc": "Comprehensive patient care, cutting-edge facilities, and world-renowned specialists.",
+      "image": "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
     }
   ],
   "procedures": [
@@ -365,7 +369,76 @@ export const lungsData: SpecialityData = {
           "q": "Доступна ли роботизированная хирургия при моем заболевании?",
           "a": "Да, наши передовые центры оснащены новейшими роботизированными установками, такими как DaVinci, и навигационными системами для максимальной точности."
         }
-      ]
+      ],
+      heroBadge: "Трансплантация легких",
+      doctors: [
+        {
+          name: "Dr. Sandeep Attawar",
+          exp: "28+ Years",
+          role: "Директор и председатель отделения трансплантации сердца и легких",
+          hospital: "KIMS Hospital, Hyderabad",
+          initials: "SA",
+          gradient: "from-cyan-500 to-blue-600",
+          image: "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg",
+        },
+        {
+          name: "Dr. Jnanesh Thacker",
+          exp: "30+ Years",
+          role: "Директор программы - Сердечно-легочная трансплантация",
+          hospital: "Yashoda Hospitals, Hyderabad",
+          initials: "JT",
+          gradient: "from-blue-600 to-teal-500",
+          image: "/images/doctors/359-Dr.-Mukesh-Goel.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/821-Dr.-Neeraj-Awasthy.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Старший специалист-консультант",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "KIMS Hospital",
+          city: "Хайдарабад, Телангана",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Один из ведущих центров Индии по комплексной сердечно-легочной трансплантации и лечению ЭКМО.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "MGM Healthcare",
+          city: "Ченнаи, Тамил Наду",
+          accreditation: "Аккредитация NABH и JCI",
+          desc: "Пионер в области механической поддержки кровообращения и методов перфузии легких ex-vivo.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI и NABH",
+          desc: "Ведущий многопрофильный центр Индии с передовыми хирургическими технологиями.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели, НКР",
+          accreditation: "Аккредитация JCI",
+          desc: "Комплексный уход за пациентами, современное оборудование и специалисты с мировым именем.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     "uz": {
       "hero_title": "O'pka Transplantatsiyasi",
@@ -493,7 +566,76 @@ export const lungsData: SpecialityData = {
           "q": "Mening ahvolim uchun robot yordamida operatsiya qilish mumkinmi?",
           "a": "Ha, ilg'or markazlarimizda maksimal aniqlik uchun DaVinci va navigatsiya tizimlari kabi eng so'nggi robot qurilmalari mavjud."
         }
-      ]
+      ],
+      heroBadge: "O'pka transplantatsiyasi",
+      doctors: [
+        {
+          name: "Dr. Sandeep Attawar",
+          exp: "28+ Years",
+          role: "Direktor va kafedra - yurak va o'pka transplantatsiyasi",
+          hospital: "KIMS Hospital, Hyderabad",
+          initials: "SA",
+          gradient: "from-cyan-500 to-blue-600",
+          image: "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg",
+        },
+        {
+          name: "Dr. Jnanesh Thacker",
+          exp: "30+ Years",
+          role: "Dastur direktori - kardiopulmoner transplantatsiya",
+          hospital: "Yashoda Hospitals, Hyderabad",
+          initials: "JT",
+          gradient: "from-blue-600 to-teal-500",
+          image: "/images/doctors/359-Dr.-Mukesh-Goel.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/821-Dr.-Neeraj-Awasthy.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Katta maslahatchi mutaxassis",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "KIMS Hospital",
+          city: "Haydarobod, Telangana",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Murakkab kardiopulmoner transplantatsiya va ECMO parvarishi bo'yicha Hindistonning yetakchi markazlaridan biri.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "MGM Healthcare",
+          city: "Chennai, Tamil Nadu",
+          accreditation: "NABH & JCI akkreditatsiyadan o'tgan",
+          desc: "Mexanik qon aylanishini qo'llab-quvvatlash va ex-vivo o'pka perfuziyasi texnikasi bo'yicha kashshof.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI & NABH tomonidan akkreditatsiya qilingan",
+          desc: "Hindistonning ilg'or jarrohlik texnologiyasiga ega yetakchi ko'p ixtisoslik markazi.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Gurugram, Dehli NCR",
+          accreditation: "JCI akkreditatsiyasi",
+          desc: "Bemorlarga har tomonlama yordam ko'rsatish, zamonaviy jihozlar va dunyoga mashhur mutaxassislar.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     },
     "kk": {
       "hero_title": "Өкпе трансплантациясы және кеуде хирургиясы",
@@ -621,7 +763,76 @@ export const lungsData: SpecialityData = {
           "q": "Менің жағдайым үшін роботтың көмегімен операция жасауға болады ма?",
           "a": "Иә, біздің жетілдірілген орталықтарымызда DaVinci сияқты ең соңғы робот қондырғылары және максималды дәлдік үшін навигациялық жүйелер бар."
         }
-      ]
+      ],
+      heroBadge: "Өкпе трансплантациясы",
+      doctors: [
+        {
+          name: "Dr. Sandeep Attawar",
+          exp: "28+ Years",
+          role: "Директор және кафедра – жүрек және өкпе трансплантаты",
+          hospital: "KIMS Hospital, Hyderabad",
+          initials: "SA",
+          gradient: "from-cyan-500 to-blue-600",
+          image: "/images/doctors/114-Dr.-Surendra-Nath-Khanna.jpg",
+        },
+        {
+          name: "Dr. Jnanesh Thacker",
+          exp: "30+ Years",
+          role: "Бағдарлама директоры – Жүрек-өкпе трансплантаты",
+          hospital: "Yashoda Hospitals, Hyderabad",
+          initials: "JT",
+          gradient: "from-blue-600 to-teal-500",
+          image: "/images/doctors/359-Dr.-Mukesh-Goel.jpg",
+        },
+        {
+          name: "Dr. Specialist 1",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/821-Dr.-Neeraj-Awasthy.jpg",
+        },
+        {
+          name: "Dr. Specialist 2",
+          exp: "20+ Years",
+          role: "Аға кеңесші маман",
+          hospital: "Network Associated Hospital",
+          initials: "DS",
+          gradient: "from-rose-500 to-red-600",
+          image: "/images/doctors/228-Dr.-Praveer-Agarwal.jpg",
+        }
+      ],
+      hospitals: [
+        {
+          name: "KIMS Hospital",
+          city: "Хайдарабад, Телангана",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Күрделі жүрек-өкпе трансплантациясы және ECMO күтімі бойынша Үндістанның жетекші орталықтарының бірі.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "MGM Healthcare",
+          city: "Ченнай, Тамилнад",
+          accreditation: "NABH & JCI аккредиттелген",
+          desc: "Механикалық қан айналымын қолдау және экс-виво өкпе перфузиясы әдістерінің пионері.",
+          image: "/images/hospitals/502-Indraprastha-Apollo-Hospital.jpg",
+        },
+        {
+          name: "Medanta - The Medicity",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI & NABH аккредиттелген",
+          desc: "Үндістанның озық хирургиялық технологиясы бар жетекші көп салалы орталығы.",
+          image: "/images/hospitals/621-Medanta-The-Medicity-Hospital.jpg",
+        },
+        {
+          name: "Fortis Memorial Research Institute",
+          city: "Гуруграм, Дели NCR",
+          accreditation: "JCI аккредиттелген",
+          desc: "Пациенттерге жан-жақты күтім көрсету, заманауи қондырғылар және әлемге әйгілі мамандар.",
+          image: "/images/hospitals/500-Fortis-Memorial-Research-Institute.jpg",
+        }
+      ],
     }
   },
   "conditions": [
@@ -702,7 +913,14 @@ export const lungsData: SpecialityData = {
       "rating": 5,
       "outcome": "Tracheal Stenosis Dilation Staging"
     }
+  ],  videos: [
+    { id: "Jvjsx4SYpAc", rating: 5 },
+    { id: "A1w5rJ2X-oU", rating: 5 },
+    { id: "YG_XPZTdcV4", rating: 5 },
+    { id: "ZjH2mOC3BTY", rating: 5 },
+    { id: "AHVdW1SZLuI", rating: 5 },
   ],
+
   "faqItems": [
     {
       "question": "What is the CyberKnife system and is it invasive?",

@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Phone, ChevronRight } from "lucide-react";
 import { useTranslations, useLocale } from 'next-intl';
+import { Link } from "@/i18n/routing";
 
 /**
  * Animated Counter Component - Original Logic Restored
@@ -132,10 +133,10 @@ export default function BeyondBoundaries() {
             <ChevronRight size={18} className="transition-transform group-hover:translate-x-1" />
           </button>
 
-          <button className="bg-white text-[#58595B] px-[20px] py-[10px] rounded-full font-bold flex items-center gap-2 shadow-xl text-[14px]">
+          <Link href="/contact" className="bg-white text-[#58595B] px-[20px] py-[10px] rounded-full font-bold flex items-center gap-2 shadow-xl text-[14px]">
             <Phone size={16} fill="#58595B" />
             {t('contact_now')}
-          </button>
+          </Link>
         </div>
       </div>
 
@@ -169,10 +170,10 @@ export default function BeyondBoundaries() {
 
         <footer className="mt-4 lg:mt-[-20px] flex flex-col lg:flex-row items-center justify-between w-full gap-10 lg:gap-0">
           <div className="w-full lg:w-auto flex justify-center lg:block">
-            <button className="bg-white text-[#58595B] px-8 py-3.5 rounded-full font-bold flex items-center gap-3 shadow-2xl transition-all hover:scale-105">
+            <Link href="/contact" className="bg-white text-[#58595B] px-8 py-3.5 rounded-full font-bold flex items-center gap-3 shadow-2xl transition-all hover:scale-105">
               <Phone size={20} fill="#58595B" />
               <span>{t('contact_now')}</span>
-            </button>
+            </Link>
           </div>
 
           <div className="flex flex-row justify-center lg:justify-start gap-[48px] xl:gap-[112px] w-full lg:w-auto">

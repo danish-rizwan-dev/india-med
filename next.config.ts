@@ -31,8 +31,7 @@ const nextConfig: NextConfig = {
       // Unbuilt pages → nearest live parent
       { source: "/services", destination: "/speciality", permanent: true },
       { source: "/services/:slug*", destination: "/speciality", permanent: true },
-      { source: "/contact", destination: "/#beyond-boundaries", permanent: false },
-      { source: "/appointment", destination: "/#beyond-boundaries", permanent: false },
+      { source: "/appointment", destination: "/contact", permanent: false },
       { source: "/about", destination: "/", permanent: false },
       // Blog posts → under-construction until real pages are built
       { source: "/blog/:slug*", destination: "/under-construction", permanent: false },
