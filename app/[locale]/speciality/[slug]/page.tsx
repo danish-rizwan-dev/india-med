@@ -1,4 +1,4 @@
-import React from "react";
+
 import { setRequestLocale } from "next-intl/server";
 import SpecialityTemplate from "@/components/speciality/SpecialityTemplate";
 import { notFound } from "next/navigation";

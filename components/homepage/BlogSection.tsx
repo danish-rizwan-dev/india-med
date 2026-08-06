@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import { useRef } from "react";
 import Image from "next/image";
 import { ChevronRight } from "lucide-react";
 import {Link} from "@/i18n/routing";

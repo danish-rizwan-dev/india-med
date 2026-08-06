@@ -1,4 +1,4 @@
-import React from "react";
+
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import Footer from "@/components/layout/Footer";
 import { 

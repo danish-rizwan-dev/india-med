@@ -1,4 +1,4 @@
-import React from "react";
+
 import { useTranslations } from "next-intl";
 import { specialitiesData } from "./data";
 import SpecialityFAQCustom from "./sections/SpecialityFAQCustom";

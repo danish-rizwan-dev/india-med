@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useCallback, useState, useEffect } from "react";
+import { useCallback, useState, useEffect } from "react";
 import Image from "next/image";
 import { ChevronLeft, ChevronRight, Star, X } from "lucide-react";
 import useEmblaCarousel from "embla-carousel-react";

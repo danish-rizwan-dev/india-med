@@ -1,29 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Check, ChevronDown } from "lucide-react";
 import { useLocale } from "next-intl";
 import {
   countryPhoneCodes,
   type CountryPhoneCode,
 } from "@/lib/countryPhoneCodes";
-
-interface Country {
-  code: string;
-  name: string;
-  flag: string;
-  localeCode: string;
-}
-
-const countries: Country[] = [
-  { code: "+7", name: "Kazakhstan", flag: "🇰🇿", localeCode: "KZ" },
-  { code: "+7", name: "Russia", flag: "🇷🇺", localeCode: "RU" },
-  { code: "+998", name: "Uzbekistan", flag: "🇺🇿", localeCode: "UZ" },
-  { code: "+91", name: "India", flag: "🇮🇳", localeCode: "IN" },
-  { code: "+1", name: "USA / Canada", flag: "🇺🇸", localeCode: "US" },
-  { code: "+44", name: "United Kingdom", flag: "🇬🇧", localeCode: "GB" },
-  { code: "+971", name: "UAE", flag: "🇦🇪", localeCode: "AE" },
-];
 
 const translations: Record<string, any> = {
   en: {

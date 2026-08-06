@@ -589,6 +589,7 @@
     "patient_fallback": "Verified Patient",
     "location_fallback": "Uzbekistan",
     "stories": [
+      { "id": "lYIaCqUTA_c", "rating": 5 },
       { "id": "Jvjsx4SYpAc", "rating": 5 },
       { "id": "A1w5rJ2X-oU", "rating": 5 },
       { "id": "YG_XPZTdcV4", "rating": 5 },

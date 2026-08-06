@@ -1,4 +1,4 @@
-import React from "react";
+
 import {useTranslations, useLocale} from 'next-intl';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://indiamedservice.com";

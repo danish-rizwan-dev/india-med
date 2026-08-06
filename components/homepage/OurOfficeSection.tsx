@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+
 import Image from "next/image";
 import { useTranslations, useLocale } from 'next-intl';
 
@@ -12,8 +12,8 @@ export default function OurOfficeSection() {
     "@context": "https://schema.org",
     "@type": "MedicalOrganization",
     "name": "India Med",
-    "url": "https://indiamed.com",
-    "logo": "https://indiamed.com/logo.png",
+    "url": "https://indiamedservice.com",
+    "logo": "https://indiamedservice.com/logo.png",
     "contactPoint": [
       {
         "@type": "ContactPoint",

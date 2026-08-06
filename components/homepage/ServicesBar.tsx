@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import { Link } from "@/i18n/routing";
-import React from "react";
+
 import { useTranslations } from 'next-intl';
 
 export default function ServiceBar() {

@@ -206,15 +206,6 @@ export default function DoctorsDirectory({ doctors }: Props) {
   );
 }
 
-function Stat({ value, label }: { value: string; label: string }) {
-  return (
-    <div className="min-w-[86px] rounded-[18px] bg-[#FFF5F2] px-3 py-4 text-center">
-      <div className="text-[24px] font-bold text-[#EE4423]">{value}</div>
-      <div className="mt-1 text-[11px] font-bold uppercase text-[#58595B]">{label}</div>
-    </div>
-  );
-}
-
 function FilterSelect({
   label,
   value,

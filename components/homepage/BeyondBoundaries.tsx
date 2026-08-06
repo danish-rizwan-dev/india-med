@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef } from "react";
 import Image from "next/image";
 import { Phone, ChevronRight } from "lucide-react";
 import { useTranslations, useLocale } from 'next-intl';

@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { CheckCircle, ArrowRight, FileText, Plane, Globe, Users, Shield, IdCard, Stamp, BookOpen } from "lucide-react";
+import { CheckCircle, ArrowRight, FileText, Plane, Globe, Users, IdCard, Stamp, BookOpen } from "lucide-react";
 import { Link } from "@/i18n/routing";
 
 type Locale = "en" | "ru" | "uz" | "kk";
